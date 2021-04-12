@@ -2,5 +2,5 @@
 authors = ["Twilight Sparkle"]
 language = "en"
 multilingual = false
-src = "docs"
+src = "src"
 title = "Matrix Wiki"
