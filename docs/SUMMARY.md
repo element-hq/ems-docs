@@ -1,12 +1,10 @@
 * [Home and License](https://github.com/Twi1ightSparkle/matrix-documentation/wiki)
 * [Frequently Asked Questions](https://github.com/Twi1ightSparkle/matrix-documentation/wiki/Frequently-Asked-Questions)
-* Element
     * [Add Email to Your Account](https://github.com/Twi1ightSparkle/matrix-documentation/wiki/Add-Email-to-Your-Account)
     * [Add Free Slack Bridge](https://github.com/Twi1ightSparkle/matrix-documentation/wiki/Add-Free-Slack-Bridge)
     * [Change Account Password](https://github.com/Twi1ightSparkle/matrix-documentation/wiki/Change-Account-Password)
     * [Create a Conference Call in a Room](https://github.com/Twi1ightSparkle/matrix-documentation/wiki/Create-a-Conference-Call-in-a-Room)
     * [Submit Debug Logs](https://github.com/Twi1ightSparkle/matrix-documentation/wiki/Submit-Debug-Logs)
-    * Cross Signing
         * [Set up Cross Signing](https://github.com/Twi1ightSparkle/matrix-documentation/wiki/Set-up-Cross-Signing)
         * [Check Status](https://github.com/Twi1ightSparkle/matrix-documentation/wiki/Check-Status)
         * [Export and Import E2E Room Keys](https://github.com/Twi1ightSparkle/matrix-documentation/wiki/Export-and-Import-E2E-Room-Keys)
