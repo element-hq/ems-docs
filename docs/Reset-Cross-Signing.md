@@ -12,7 +12,7 @@ Please read through the entire document before starting to make sure you underst
 
 ## If you have an active session
 
-1. You may wish to backup your keys before doing this just to be on the safe side if something goes wrong: See [Export-And-Import-E2E-Room-Keys](Export-And-Import-E2E-Room-Keys.md)
+1. You may wish to backup your keys before doing this just to be on the safe side if something goes wrong: See [Export and Import E2E Room Keys](Export-and-Import-E2E-Room-Keys.md)
 
 2. Go to Element `Security & Privacy` settings  
 ![](images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png)
