@@ -4,7 +4,7 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 
 Resetting the account password will log out all your sessions. Before doing this, make sure that
 * all your sessions are connected to key backup,
-* all sessions have backed up all their keys. See [[Check-Status]], and
+* all sessions have backed up all their keys. See [Check-Status](Check-Status.md), and
 * you have your correct key backup passphrase available.
 
 <br />
@@ -20,9 +20,9 @@ Resetting the account password will log out all your sessions. Before doing this
 1. Enter your current password and your new password  
 ![](images/Screen%20Shot%202020-09-17%20at%205.26.13%20PM.png)
 
-1. You might want to export your `E2E room keys`. Just to be on the safe side in case something goes wrong. See also [[Export-and-Import-E2E-Room-Keys]]
+1. You might want to export your `E2E room keys`. Just to be on the safe side in case something goes wrong. See also [Export-and-Import-E2E-Room-Keys](Export-and-Import-E2E-Room-Keys.md)
 
-1. Click `Continue`.  
+2. Click `Continue`.  
 Note: This warning is outdated, see [this issue](https://github.com/vector-im/element-web/issues/15226)  
 ![](images/Screen%20Shot%202020-09-17%20at%205.28.52%20PM.png)
 

@@ -1,6 +1,4 @@
-# Matrix Wiki
-
-- [Home and License](index.md)
+- [Matrix Wiki](index.md)
 - [Frequently Asked Questions](Frequently-Asked-Questions.md)
 
 # Element
