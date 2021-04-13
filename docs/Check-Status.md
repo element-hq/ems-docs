@@ -1,6 +1,6 @@
 # Check Status <!-- omit in toc -->
 
-This article is licensed under the standard MIT license. See [[Home]] for a full copy.
+This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
 1. Go to Element `Security & Privacy` settings  
 ![](images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png)

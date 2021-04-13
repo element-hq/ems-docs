@@ -1,6 +1,6 @@
 # Import Database and Media Dump <!-- omit in toc -->
 
-This article is licensed under the standard MIT license. See [[Home]] for a full copy.
+This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
 This article is structured for an export from EMS, but may also be applicable in other circumstances.
 

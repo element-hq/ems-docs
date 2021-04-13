@@ -1,6 +1,6 @@
 # Get Your Own EMS Server <!-- omit in toc -->
 
-This article is licensed under the standard MIT license. See [[Home]] for a full copy.
+This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
 1. Go to [https://ems.element.io/](https://ems.element.io/)
 
@@ -27,7 +27,7 @@ This article is licensed under the standard MIT license. See [[Home]] for a full
 1. Select your hostname and click Check. Keep in mind that this cannot be changed later  
 ![](images/Screen%20Shot%202020-07-30%20at%202.19.40%20PM.png)
 
-1. Configure your host settings, then click Next. If you want to use Custom DNS (ie. have your usernames be `@someone:yourdomain.com` instead of `@someone:yourhost.ems.host` and have your Element client on your own domain), see [[EMS-Server-With-Custom-Domain]]  
+1. Configure your host settings, then click Next. If you want to use Custom DNS (ie. have your usernames be `@someone:yourdomain.com` instead of `@someone:yourhost.ems.host` and have your Element client on your own domain), see [EMS-Server-With-Custom-Domain](EMS-Server-With-Custom-Domain.md)  
 ![](images/Screen%20Shot%202020-07-30%20at%202.20.45%20PM.png)
 
 1. Select Monthly or Annual billing and confirm your payment options. Then click Purchase  

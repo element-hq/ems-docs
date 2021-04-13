@@ -1,6 +1,6 @@
 # Add Email to Your Account <!-- omit in toc -->
 
-This article is licensed under the standard MIT license. See [[Home]] for a full copy.
+This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
 1. Go to Element `All settings`  
 ![](images/Screen%20Shot%202020-09-17%20at%205.24.15%20PM.png)

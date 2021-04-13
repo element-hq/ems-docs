@@ -1,6 +1,6 @@
 # Reset Cross Signing <!-- omit in toc -->
 
-This article is licensed under the standard MIT license. See [[Home]] for a full copy.
+This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
 Only do this if you have forgotten or lost your cross signing backup passphrase.
 
@@ -12,9 +12,9 @@ Please read through the entire document before starting to make sure you underst
 
 ## If you have an active session
 
-1. You may wish to backup your keys before doing this just to be on the safe side if something goes wrong: See [[Export-And-Import-E2E-Room-Keys]]
+1. You may wish to backup your keys before doing this just to be on the safe side if something goes wrong: See [Export-And-Import-E2E-Room-Keys](Export-And-Import-E2E-Room-Keys.md)
 
-1. Go to Element `Security & Privacy` settings  
+2. Go to Element `Security & Privacy` settings  
 ![](images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png)
 
 1. Click `Reset cross-signing and secret storage`  

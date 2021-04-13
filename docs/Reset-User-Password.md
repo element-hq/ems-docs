@@ -1,10 +1,10 @@
 # Reset User Password <!-- omit in toc -->
 
-This article is licensed under the standard MIT license. See [[Home]] for a full copy.
+This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
 Resetting an account password will log out all sessions. Before doing this, make sure that
 * all sessions are connected to key backup,
-* all sessions have backed up all their keys. See [[Check-Status]], and
+* all sessions have backed up all their keys. See [Check-Status](Check-Status.md), and
 * the correct key backup passphrase available.
 
 <br />

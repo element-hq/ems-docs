@@ -1,17 +1,17 @@
 # Ems Server With Custom Domain <!-- omit in toc -->
 
-This article is licensed under the standard MIT license. See [[Home]] for a full copy.
+This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
 For this guide, I will be using the domain [twily.org](https://twily.org/). I will set up EMS so that the Matrix usernames becomes `@someone:twily.org`, and the Element client will be at [https://chat.twily.org/](https://chat.twily.org/)
 
-From the guide at [[Get-Your-Own-EMS-Server]], I will be replacing the EMS hostname `ems-demo-staging.ems.host` with `ems-custom-demo-staging.ems.host`
+From the guide at [Get-Your-Own-EMS-Server](Get-Your-Own-EMS-Server.md), I will be replacing the EMS hostname `ems-demo-staging.ems.host` with `ems-custom-demo-staging.ems.host`
 
 The guide assumes you already have a website on the root of your domain with https enabled.  
 ![](images/Screen%20Shot%202020-07-31%20at%209.06.17%20AM.png)
 
-1. Follow step 1 - 10 from [[Get-Your-Own-EMS-Server]]
+1. Follow step 1 - 10 from [Get-Your-Own-EMS-Server](Get-Your-Own-EMS-Server.md)
 
-1. On step 10 from [[Get-Your-Own-EMS-Server]], turn ON `Custom DNS`  
+1. On step 10 from [Get-Your-Own-EMS-Server](Get-Your-Own-EMS-Server.md), turn ON `Custom DNS`  
 ![](images/Screen%20Shot%202020-07-31%20at%209.07.59%20AM.png)
 
 1. In the `Custom Homeserver domain` field, enter `twily.org`  
@@ -193,4 +193,4 @@ While not required, you should also add the header `Content-Type application/jso
         chat.twily.org                 CNAME  299   Answer     ems-custom-demo-staging.element.io
         ```
 
-1. Continue from step 11 on [[Get-Your-Own-EMS-Server]]
+1. Continue from step 11 on [Get-Your-Own-EMS-Server](Get-Your-Own-EMS-Server.md)

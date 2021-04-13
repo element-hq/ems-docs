@@ -1,6 +1,6 @@
 # Leave Community On Dead Homeserver <!-- omit in toc -->
 
-This article is licensed under the standard MIT license. See [[Home]] for a full copy.
+This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
 This guide explains a working, but dirty solution to leave a community that used to live on a homeserver that now is dead.
 

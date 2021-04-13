@@ -1,6 +1,6 @@
 # Add Free Slack Bridge <!-- omit in toc -->
 
-This article is licensed under the standard MIT license. See [[Home]] for a full copy.
+This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
 This guide explains how to use the free Slack bridge from the Matrix.org Integration Manager to integrate yur Matrix room with a Slack room.
 

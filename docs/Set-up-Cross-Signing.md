@@ -1,6 +1,6 @@
 # Set up Cross Signing <!-- omit in toc -->
 
-This article is licensed under the standard MIT license. See [[Home]] for a full copy.
+This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
 <!-- TOC -->
 
