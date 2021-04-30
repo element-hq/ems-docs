@@ -24,6 +24,7 @@
 - [EMS Server With Custom Domain](EMS-Server-With-Custom-Domain.md)
 - [Get Your Own EMS Server](Get-Your-Own-EMS-Server.md)
 - [Reset User Password](Reset-User-Password.md)
+- [Migrate From Self-Hosted to EMS](Migrate-From-Self-Hosted-to-EMS)
 
 # Contribute
 - [Contribute](Contribute.md)
