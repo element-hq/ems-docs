@@ -31,6 +31,7 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
   - [If required, split into smaller files](#if-required-split-into-smaller-files-3)
 - [Transfer](#transfer)
 - [Cleanup](#cleanup)
+- [Note on users and Element](#note-on-users-and-element)
 
 <!-- /TOC -->
 
@@ -213,3 +214,7 @@ scp -r -P 1234 -i ~/.ssh/matrix-server youruser@1.2.3.4:/tmp/synapse_export /som
 ## Cleanup
 
 We strongly recommend that you leave the export and Synapse untouched until the import is finished and everything is verified working
+
+## Note on users and Element
+
+Element does have support for changing the delegated homeserver URL. All your users will have to sign out and sign in again to Element. You should ensure everyone have Key Backup set configurd and working.
