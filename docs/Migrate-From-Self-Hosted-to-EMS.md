@@ -2,38 +2,6 @@
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
-## Table of Contents <!-- omit in toc -->
-<!-- TOC -->
-
-- [Notes](#notes)
-- [SSH to your matrix server](#ssh-to-your-matrix-server)
-- [Generate password for gpg encryption](#generate-password-for-gpg-encryption)
-- [GPG](#gpg)
-- [Create a folder to store everything](#create-a-folder-to-store-everything)
-  - [Set restrictive permissions on the folder](#set-restrictive-permissions-on-the-folder)
-- [Copy Synapse config](#copy-synapse-config)
-- [Stop Synapse](#stop-synapse)
-- [Database export](#database-export)
-  - [PostgreSQL](#postgresql)
-    - [Dump, compress and encrypt](#dump-compress-and-encrypt)
-    - [If required, split into smaller files](#if-required-split-into-smaller-files)
-  - [SQLIte](#sqlite)
-    - [Compress and encrypt](#compress-and-encrypt)
-    - [If required, split into smaller files](#if-required-split-into-smaller-files-1)
-- [Media export](#media-export)
-  - [If you are using SQLIte as database](#if-you-are-using-sqlite-as-database)
-  - [Download the export tool](#download-the-export-tool)
-  - [Run the export](#run-the-export)
-  - [Compress and encrypt](#compress-and-encrypt-1)
-  - [If required, split into smaller files](#if-required-split-into-smaller-files-2)
-- [Backup media export](#backup-media-export)
-  - [Compress and encrypt](#compress-and-encrypt-2)
-  - [If required, split into smaller files](#if-required-split-into-smaller-files-3)
-- [Transfer](#transfer)
-- [Cleanup](#cleanup)
-- [Note on users and Element](#note-on-users-and-element)
-
-<!-- /TOC -->
 
 ## Notes
 

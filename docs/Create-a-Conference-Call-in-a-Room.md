@@ -2,14 +2,6 @@
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
-<!-- TOC -->
-
-- [Setting up](#setting-up)
-- [Inviting external participants](#inviting-external-participants)
-- [Screen sharing](#screen-sharing)
-
-<!-- /TOC -->
-
 # Setting up
 
 1. Create a room  

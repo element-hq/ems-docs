@@ -1,4 +1,4 @@
-- [Matrix Wiki](index.md)
+- [Element Wiki](index.md)
 - [Frequently Asked Questions](Frequently-Asked-Questions.md)
 
 # Element

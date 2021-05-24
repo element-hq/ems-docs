@@ -2,22 +2,6 @@
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
-# Table of Contents
-<!-- TOC depthfrom:1-->
-
-- [Table of Contents](#table-of-contents)
-- [Element Web and Desktop](#element-web-and-desktop)
-  - [Export Web](#export-web)
-  - [Import Web](#import-web)
-- [Element iOS](#element-ios)
-  - [Export iOS](#export-ios)
-  - [Import iOS](#import-ios)
-- [Element and RiotX Android](#element-and-riotx-android)
-  - [Export Android](#export-android)
-  - [Import Android](#import-android)
-
-<!-- /TOC -->
-
 # Element Web and Desktop
 
 ## Export Web

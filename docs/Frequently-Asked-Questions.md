@@ -2,43 +2,6 @@
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
-<!-- TOC -->
-
-- [Matrix General](#matrix-general)
-  - [What is an Identity Server and how does it work?](#what-is-an-identity-server-and-how-does-it-work)
-- [Element Matrix Services](#element-matrix-services)
-  - [Account Management](#account-management)
-    - [Please discontinue my account.](#please-discontinue-my-account)
-  - [Integrations](#integrations)
-    - [Bots? What's the reason for using them?](#bots-whats-the-reason-for-using-them)
-    - [Can I host my own Telegram bridge?](#can-i-host-my-own-telegram-bridge)
-    - [How do I add a GitHub integration?](#how-do-i-add-a-github-integration)
-    - [How do I add RSS integration to my matrix server?](#how-do-i-add-rss-integration-to-my-matrix-server)
-    - [With Jitsi video conferencing, how is the data being transferred?](#with-jitsi-video-conferencing-how-is-the-data-being-transferred)
-  - [Miscellaneous](#miscellaneous)
-    - [Are all my messages stored on my homeserver?](#are-all-my-messages-stored-on-my-homeserver)
-    - [Is there a maximum file size per upload?](#is-there-a-maximum-file-size-per-upload)
-    - [What are exactly the benefits of paying for a EMS homeserver?](#what-are-exactly-the-benefits-of-paying-for-a-ems-homeserver)
-    - [What are the limitations in terms of storage?](#what-are-the-limitations-in-terms-of-storage)
-  - [Pricing & Payments](#pricing--payments)
-    - [Do you offer other payment options like IBAN/SEPA?](#do-you-offer-other-payment-options-like-ibansepa)
-    - [How do I update my payment info?](#how-do-i-update-my-payment-info)
-    - [If I join a room with a lot of external users from my homeserver will I be charged for those?](#if-i-join-a-room-with-a-lot-of-external-users-from-my-homeserver-will-i-be-charged-for-those)
-  - [Server Configuration & Management](#server-configuration--management)
-    - [Are you able to use a custom domain like: "matrix.example.com"?](#are-you-able-to-use-a-custom-domain-like-matrixexamplecom)
-    - [Can I customize the Element web login page?](#can-i-customize-the-element-web-login-page)
-    - [CNAME and .well-known?](#cname-and-well-known)
-    - [CNAME doesn't work with CloudFlare?](#cname-doesnt-work-with-cloudflare)
-    - [Could you expand on "over federation"?](#could-you-expand-on-over-federation)
-    - [DNS not resolving](#dns-not-resolving)
-    - [How do I change the servers custom domain?](#how-do-i-change-the-servers-custom-domain)
-    - [How do I delete users when administering the server?](#how-do-i-delete-users-when-administering-the-server)
-    - [I deleted my host, now my server name is taken and I cannot rebuild](#i-deleted-my-host-now-my-server-name-is-taken-and-i-cannot-rebuild)
-    - [If I in the future want to migrate from EMS to self-hosted, how?](#if-i-in-the-future-want-to-migrate-from-ems-to-self-hosted-how)
-    - [Is upload of custom yaml supported?](#is-upload-of-custom-yaml-supported)
-    - [Online users are displayed as offline?](#online-users-are-displayed-as-offline)
-
-<!-- /TOC -->
 
 ## Matrix General
 

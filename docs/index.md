@@ -1,4 +1,4 @@
-# Welcome to the matrix-documentation wiki!
+# Welcome to the Element wiki!
 
 ## Disclaimer
 

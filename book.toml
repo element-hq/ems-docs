@@ -1,6 +1,34 @@
+# Documentation for possible options in this file is at
+# https://rust-lang.github.io/mdBook/format/config.html
 [book]
-authors = ["Twilight Sparkle"]
+title = "Element Wiki"
+authors = ["Element"]
+description = "Guides for EMS, Element, and Matrix by the EMS team"
 language = "en"
 multilingual = false
+
+# The directory that documentation files are stored in
 src = "docs"
-title = "Matrix Wiki"
+
+[build]
+# Prevent markdown pages from being automatically generated when they're
+# linked to in SUMMARY.md
+create-missing = false
+
+[output.html]
+# The URL visitors will be directed to when they try to edit a page
+edit-url-template = "https://github.com/Twi1ightSparkle/matrix-documentation/edit/master/{path}"
+
+# The source code URL of the repository
+git-repository-url = "https://github.com/Twi1ightSparkle/matrix-documentation"
+
+# The path that the docs are hosted on
+#site-url = "/synapse/"
+
+
+# Additional HTML, JS, CSS that's injected into each page of the book.
+# We currently use this to provide a table of contents to each page
+# via https://github.com/JorelAli/mdBook-pagetoc
+additional-css = ["docs/book-assets/style.css", "docs/book-assets/remove-nav-buttons.css"]
+additional-js = ["docs/book-assets/sidebar.js"]
+theme = "docs/book-assets/theme"
