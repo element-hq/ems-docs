@@ -77,12 +77,15 @@ function setTocEntry() {
 window.addEventListener('load', () => {
     // Only create table of contents if there is more than one header on the page
     if (headers.length > 1) {
-        headers.forEach(header => {
+        headers.forEach((header, index) => {
             const link = document.createElement('a');
 
             // Indent shows hierarchy
             let indent = '0px';
             switch (header.parentElement.tagName) {
+                case 'H1':
+                    indent = '10px';
+                    break;
                 case 'H2':
                     indent = '20px';
                     break;
@@ -102,7 +105,17 @@ window.addEventListener('load', () => {
                     break;
             }
 
-            link.appendChild(document.createTextNode(header.text));
+            let tocEntry;
+            if (index === 0) {
+                // Create a bolded title for the first element
+                tocEntry = document.createElement('strong');
+                tocEntry.innerHTML = header.text;
+            } else {
+                // All other elements are non-bold
+                tocEntry = document.createTextNode(header.text);
+            }
+            link.appendChild(tocEntry);
+
             link.style.paddingLeft = indent;
             link.href = header.href;
             pageToc.appendChild(link);
