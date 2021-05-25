@@ -8,7 +8,7 @@ language = "en"
 multilingual = false
 
 # The directory that documentation files are stored in
-src = "docs"
+src = "src"
 
 [build]
 # Prevent markdown pages from being automatically generated when they're
@@ -22,13 +22,10 @@ edit-url-template = "https://github.com/Twi1ightSparkle/matrix-documentation/edi
 # The source code URL of the repository
 git-repository-url = "https://github.com/Twi1ightSparkle/matrix-documentation"
 
-# The path that the docs are hosted on
-#site-url = "/synapse/"
-
 
 # Additional HTML, JS, CSS that's injected into each page of the book.
 # We currently use this to provide a table of contents to each page
 # via https://github.com/JorelAli/mdBook-pagetoc
-additional-css = ["docs/book-assets/style.css", "docs/book-assets/remove-nav-buttons.css"]
-additional-js = ["docs/book-assets/sidebar.js"]
-theme = "docs/book-assets/theme"
+additional-css = ["src/book-assets/style.css", "src/book-assets/remove-nav-buttons.css"]
+additional-js = ["src/book-assets/sidebar.js"]
+theme = "src/book-assets/theme"
