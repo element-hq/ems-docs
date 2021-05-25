@@ -189,10 +189,4 @@ We are actively working on improving bridging support for EMS hosts and hope tha
 
 #### Online users are displayed as offline?
 
-
-This is actually intended. User presence can be quite complex and resource intensive to calculate (especially for larger rooms). For this reason, user presence is disabled by default for smaller instances.
-
-You can re-enable it from your host management dashboard in EMS [https://ems.element.io/user/hosting](https://ems.element.io/user/hosting). However, please be aware that this may have a negative impact on your server performance, especially if you are joining larger rooms, so please try it and see how it works for you.
-
-Note that you will not be able to see presence for users of other homeservers with presence disabled (matrix.org) for example.
-
+Unfortunately we are not able to offer user presence as a feature at the moment. This is due to potential performance impact and excess resource usage on hosts when this feature is enabled. The Synapse team are aware of this and it is on their road map to address. However, we do not currently have a timeline for when it will be available again.
