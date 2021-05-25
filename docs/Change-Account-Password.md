@@ -1,4 +1,4 @@
-# Change Account Password <!-- omit in toc -->
+# Change Account Password
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 

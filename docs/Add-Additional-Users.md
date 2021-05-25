@@ -1,4 +1,4 @@
-# Add Additional Users <!-- omit in toc -->
+# Add Additional Users
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 

@@ -1,4 +1,4 @@
-# Export and Import E2E Room Keys <!-- omit in toc -->
+# Export and Import E2E Room Keys
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 

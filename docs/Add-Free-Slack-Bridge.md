@@ -1,4 +1,4 @@
-# Add Free Slack Bridge <!-- omit in toc -->
+# Add Free Slack Bridge
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 

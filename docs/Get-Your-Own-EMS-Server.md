@@ -1,4 +1,4 @@
-# Get Your Own EMS Server <!-- omit in toc -->
+# Get Your Own EMS Server
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 

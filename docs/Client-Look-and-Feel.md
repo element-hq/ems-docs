@@ -1,4 +1,4 @@
-# Client Look and Feel <!-- omit in toc -->
+# Client Look and Feel
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 

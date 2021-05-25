@@ -1,4 +1,4 @@
-# Add Email to Your Account <!-- omit in toc -->
+# Add Email to Your Account
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 

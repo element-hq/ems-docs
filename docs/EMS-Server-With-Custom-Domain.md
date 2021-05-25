@@ -1,4 +1,4 @@
-# Ems Server With Custom Domain <!-- omit in toc -->
+# Ems Server With Custom Domain
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 

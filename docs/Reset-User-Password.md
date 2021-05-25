@@ -1,4 +1,4 @@
-# Reset User Password <!-- omit in toc -->
+# Reset User Password
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 

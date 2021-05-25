@@ -1,4 +1,4 @@
-# Leave Community On Dead Homeserver <!-- omit in toc -->
+# Leave Community On Dead Homeserver
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 

@@ -1,4 +1,4 @@
-# Frequently Asked Questions <!-- omit in toc -->
+# Frequently Asked Questions
 
 This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
