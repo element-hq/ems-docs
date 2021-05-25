@@ -1,6 +1,7 @@
-const getPageTocChildren = () => [...document.getElementsByClassName('pagetoc')[0].children];
+const getPageToc = () => document.getElementsByClassName('pagetoc')[0];
 
-const pageTocChildren = getPageTocChildren();
+const pageToc = getPageToc();
+const pageTocChildren = [...pageToc.children];
 const headers = [...document.getElementsByClassName('header')];
 
 // Select highlighted item in ToC when clicking an item
@@ -15,66 +16,142 @@ pageTocChildren.forEach((child) => {
 
 
 /**
+* Test whether a node is in the viewport
+*/
+function isInViewport(node) {
+    const rect = node.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+
+/**
  * Update highlighted header in ToC when scrolling
  */
-const updateFunction = () => {
-    let id;
-    const pageTocChildren = getPageTocChildren();
+// const setTocEntry = () => {
+//     let id;
+//     const pageTocChildren = [...getPageToc().children];
+
+//     // Calculate which header is the current one at the top of screen
+//     headers.forEach((header) => {
+//         if (window.pageYOffset >= header.offsetTop) {
+//             id = header;
+//         }
+//     });
+
+//     // Update selected item in ToC when scrolling
+//     pageTocChildren.forEach((child) => {
+//         if (id.href.localeCompare(child.href) === 0) {
+//             child.classList.add('active');
+//         } else {
+//             child.classList.remove('active');
+//         }
+//     });
+// };
+
+
+/** 
+ * Set a new ToC entry.
+ * Clear any previously highlighted ToC items, set the new one,
+ * and adjust the ToC scroll position.
+*/
+function setTocEntry() {
+    let activeEntry;
+    const pageTocChildren = [...getPageToc().children];
 
     // Calculate which header is the current one at the top of screen
     headers.forEach((header) => {
         if (window.pageYOffset >= header.offsetTop) {
-            id = header;
+            activeEntry = header;
         }
     });
 
+    // console.log(activeEntry);
     // Update selected item in ToC when scrolling
-    pageTocChildren.forEach((element) => {
-        if (id.href.localeCompare(element.href) === 0) {
-            element.classList.add('active');
+    pageTocChildren.forEach((child) => {
+        if (activeEntry.href.localeCompare(child.href) === 0) {
+            child.classList.add('active');
         } else {
-            element.classList.remove('active');
+            child.classList.remove('active');
         }
     });
-};
+
+    const loc = document.location;
+    if (loc) {
+      let tocEntryForLocation = document.querySelector(`nav a[href="${loc}"]`);
+    // if the hash isn't a direct match for a ToC item, check the data attributes
+    //   if (!tocEntryForLocation) {
+    //     const fragment = hash.substring(1);
+    //     tocEntryForLocation = document.querySelector(`nav li a[data-${fragment}]`);
+    //   }
+      if (tocEntryForLocation) {
+        const headingForLocation = document.querySelector(loc.hash);
+        if (headingForLocation) {
+            // Update ToC scroll
+            const nav = getPageToc();
+            const content = document.querySelector("html");
+            if (content.scrollTop !== 0) {
+                nav.scrollTop = tocEntryForLocation.offsetTop;
+            } else {
+                nav.scrollTop = 0;
+            }
+        //   setTocEntry(tocEntryForLocation);
+        //   return;
+        }
+      }
+    }
+  
+
+    // console.log(`content.scrollTop: ${content.scrollTop}
+    // nav.scrollTop: ${nav.scrollTop}
+    // activeEntry.offsetTop: ${activeEntry.offsetTop}`);
+}
 
 /**
  * Populate sidebar on load
  */
 window.addEventListener('load', () => {
-    const pagetoc = document.getElementsByClassName('pagetoc')[0];
-    headers.forEach((header) => {
-        const link = document.createElement('a');
+    // Only create table of contents if there is more than one header on the page
+    if (headers.length > 1) {
+        headers.forEach((header) => {
+            const link = document.createElement('a');
 
-        // Indent shows hierarchy
-        let indent = '0px';
-        switch (header.parentElement.tagName) {
-            case 'H2':
-                indent = '20px';
-                break;
-            case 'H3':
-                indent = '30px';
-                break;
-            case 'H4':
-                indent = '40px';
-                break;
-            case 'H5':
-                indent = '50px';
-                break;
-            case 'H6':
-                indent = '60px';
-                break;
-            default:
-                break;
-        }
+            // Indent shows hierarchy
+            let indent = '0px';
+            switch (header.parentElement.tagName) {
+                case 'H2':
+                    indent = '20px';
+                    break;
+                case 'H3':
+                    indent = '30px';
+                    break;
+                case 'H4':
+                    indent = '40px';
+                    break;
+                case 'H5':
+                    indent = '50px';
+                    break;
+                case 'H6':
+                    indent = '60px';
+                    break;
+                default:
+                    break;
+            }
 
-        link.appendChild(document.createTextNode(header.text));
-        link.style.paddingLeft = indent;
-        link.href = header.href;
-        pagetoc.appendChild(link);
-    });
-    updateFunction.call();
+            link.appendChild(document.createTextNode(header.text));
+            link.style.paddingLeft = indent;
+            link.href = header.href;
+            pageToc.appendChild(link);
+        });
+        setTocEntry.call();
+    }
 });
 
-// Handle active headers on scroll
-window.addEventListener('scroll', updateFunction);
+// Handle active headers on scroll, if there is more than one header on the page
+if (headers.length > 1) {
+    window.addEventListener('scroll', setTocEntry);
+}
