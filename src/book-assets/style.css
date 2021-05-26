@@ -41,7 +41,14 @@
 }
 
 .header-logo {
-    height: calc(var(--menu-bar-height) * 0.75);
+    height: calc(var(--menu-bar-height) * 0.6);
     margin: auto;
     display: block;
+    border: none;
+}
+
+img {
+    max-height: 350px;
+    max-width: 450px;
+    border: 1px solid var(--fg);
 }
