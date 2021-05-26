@@ -1,6 +1,16 @@
 - [Element Wiki](index.md)
 - [Frequently Asked Questions](Frequently-Asked-Questions.md)
 
+# Element Matrix Services
+
+- [Add Additional Users](Add-Additional-Users.md)
+- [Add Users](Add-Users.md)
+- [Client Look & Feel](Client-Look-and-Feel.md)
+- [EMS Server With Custom Domain](EMS-Server-With-Custom-Domain.md)
+- [Get Your Own EMS Server](Get-Your-Own-EMS-Server.md)
+- [Reset User Password](Reset-User-Password.md)
+- [Migrate From Self-Hosted to EMS](Migrate-From-Self-Hosted-to-EMS.md)
+
 # Element
 
 - [Add Email to Your Account](Add-Email-to-Your-Account.md)
@@ -16,15 +26,6 @@
 - [Export and Import E2E Room Keys](Export-and-Import-E2E-Room-Keys.md)
 - [Reset Cross Signing](Reset-Cross-Signing.md)
 
-# Element Matrix Services
-
-- [Add Additional Users](Add-Additional-Users.md)
-- [Add Users](Add-Users.md)
-- [Client Look & Feel](Client-Look-and-Feel.md)
-- [EMS Server With Custom Domain](EMS-Server-With-Custom-Domain.md)
-- [Get Your Own EMS Server](Get-Your-Own-EMS-Server.md)
-- [Reset User Password](Reset-User-Password.md)
-- [Migrate From Self-Hosted to EMS](Migrate-From-Self-Hosted-to-EMS.md)
-
 # Contribute
+
 - [Contribute](Contribute.md)
