@@ -43,3 +43,6 @@ no-section-label = true
 
 # The CNAME to use for GitHub pages
 cname = "element-wiki.twily.me"
+
+# Font settings
+copy-fonts = true
