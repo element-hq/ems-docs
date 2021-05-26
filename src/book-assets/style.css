@@ -45,6 +45,7 @@
     margin: auto;
     display: block;
     border: none;
+    content: var(--logotype-src);
 }
 
 img {
