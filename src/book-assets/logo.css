@@ -1,0 +1,23 @@
+.element {
+    --logotype-src: content:url(element-logotype-dark.svg);
+}
+
+.ayu {
+    --logotype-src: content:url(element-logotype-light.svg);
+}
+
+.coal {
+    --logotype-src: content:url(element-logotype-light.svg);
+}
+
+.light {
+    --logotype-src: content:url(element-logotype-dark.svg);
+}
+
+.navy {
+    --logotype-src: content:url(element-logotype-light.svg);
+}
+
+.rust {
+    --logotype-src: content:url(element-logotype-dark.svg);
+}
