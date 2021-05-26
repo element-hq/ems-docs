@@ -1,25 +1,25 @@
 .element {
-    --bg: hsl(0, 95%, 48%);
-    --fg: hsl(0, 0%, 0%);
+    --bg: white;
+    --fg: #1e1e1e;
 
-    --sidebar-bg: #fafafa;
-    --sidebar-fg: hsl(0, 0%, 0%);
+    --sidebar-bg: #c8c8c9;
+    --sidebar-fg: #1e1e1e;
     --sidebar-non-existant: #aaaaaa;
-    --sidebar-active: #1f1fff;
+    --sidebar-active: #0dbd8b;
     --sidebar-spacer: #f4f4f4;
 
     --scrollbar: #8F8F8F;
 
     --icons: #747474;
-    --icons-hover: #000000;
+    --icons-hover: #0dbd8b;
 
-    --links: #20609f;
+    --links: #0dbd8b;
 
     --inline-code-color: #301900;
 
-    --theme-popup-bg: #fafafa;
+    --theme-popup-bg: #white;
     --theme-popup-border: #cccccc;
-    --theme-hover: #e6e6e6;
+    --theme-hover: #0dbd8b;
 
     --quote-bg: hsl(197, 37%, 96%);
     --quote-border: hsl(197, 37%, 91%);
@@ -29,8 +29,8 @@
     --table-alternate-bg: hsl(0, 0%, 97%);
 
     --searchbar-border-color: #aaa;
-    --searchbar-bg: #fafafa;
-    --searchbar-fg: #000;
+    --searchbar-bg: #c8c8c9;
+    --searchbar-fg: #1e1e1e;
     --searchbar-shadow-color: #aaa;
     --searchresults-header-fg: #666;
     --searchresults-border-color: #888;

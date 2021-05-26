@@ -41,5 +41,5 @@ input-404 = "404.md"
 # Do not add numbers to each link in the left-hand column
 no-section-label = true
 
-# The CNAME fo use for GitHub pages
+# The CNAME to use for GitHub pages
 cname = "element-wiki.twily.me"
