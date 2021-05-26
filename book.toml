@@ -28,6 +28,7 @@ git-repository-url = "https://github.com/Twi1ightSparkle/matrix-documentation"
 # via https://github.com/JorelAli/mdBook-pagetoc
 additional-css = [
     "src/book-assets/element-theme.css",
+    "src/book-assets/font.css",
     "src/book-assets/remove-nav-buttons.css",
     "src/book-assets/style.css",
 ]
@@ -45,4 +46,4 @@ no-section-label = true
 cname = "element-wiki.twily.me"
 
 # Font settings
-copy-fonts = true
+copy-fonts = false

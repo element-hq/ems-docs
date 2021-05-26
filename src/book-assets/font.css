@@ -1,0 +1,5 @@
+/* Use custom font if specified in theme, of not use the default font */
+
+html {
+    font-family: var(--font, "Open Sans", sans-serif);
+}
