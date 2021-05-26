@@ -27,7 +27,7 @@ git-repository-url = "https://github.com/Twi1ightSparkle/matrix-documentation"
 # We currently use this to provide a table of contents to each page
 # via https://github.com/JorelAli/mdBook-pagetoc
 additional-css = [
-    "src/book-assets/element-theme.css"
+    "src/book-assets/element-theme.css",
     "src/book-assets/remove-nav-buttons.css",
     "src/book-assets/style.css",
 ]
