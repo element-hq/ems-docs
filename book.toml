@@ -2,7 +2,7 @@
 # https://rust-lang.github.io/mdBook/format/config.html
 [book]
 title = "Element Wiki"
-authors = "Element Matrix Services"
+authors = ["Element Matrix Services"]
 description = "Guides for EMS, Element, and Matrix by the EMS team"
 language = "en"
 multilingual = false
