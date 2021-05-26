@@ -20,7 +20,7 @@
         width: 250px;
         overflow: auto;
         right: 20px;
-        height: calc(100% - var(--menu-bar-height));
+        height: calc(90% - var(--menu-bar-height));
     }
     .pagetoc a {
         color: var(--fg) !important;
