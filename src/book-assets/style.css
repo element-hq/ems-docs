@@ -39,3 +39,9 @@
         color: var(--sidebar-fg);
     }
 }
+
+.header-logo {
+    height: calc(var(--menu-bar-height) * 0.75);
+    margin: auto;
+    display: block;
+}

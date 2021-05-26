@@ -34,7 +34,7 @@ additional-css = [
 ]
 additional-js = ["src/book-assets/sidebar.js"]
 theme = "src/book-assets/theme"
-default-theme = "light"
+default-theme = "element"
 
 # 404 page
 input-404 = "404.md"
