@@ -29,3 +29,6 @@ git-repository-url = "https://github.com/Twi1ightSparkle/matrix-documentation"
 additional-css = ["src/book-assets/style.css", "src/book-assets/remove-nav-buttons.css"]
 additional-js = ["src/book-assets/sidebar.js"]
 theme = "src/book-assets/theme"
+
+# 404 page
+input-404 = "not-found.md"
