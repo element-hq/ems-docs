@@ -26,9 +26,20 @@ git-repository-url = "https://github.com/Twi1ightSparkle/matrix-documentation"
 # Additional HTML, JS, CSS that's injected into each page of the book.
 # We currently use this to provide a table of contents to each page
 # via https://github.com/JorelAli/mdBook-pagetoc
-additional-css = ["src/book-assets/style.css", "src/book-assets/remove-nav-buttons.css"]
+additional-css = [
+    "src/book-assets/element-theme.css"
+    "src/book-assets/remove-nav-buttons.css",
+    "src/book-assets/style.css",
+]
 additional-js = ["src/book-assets/sidebar.js"]
 theme = "src/book-assets/theme"
+default-theme = "light"
 
 # 404 page
-input-404 = "not-found.md"
+input-404 = "404.md"
+
+# Do not add numbers to each link in the left-hand column
+no-section-label = true
+
+# The CNAME fo use for GitHub pages
+cname = "element-wiki.twily.me"
