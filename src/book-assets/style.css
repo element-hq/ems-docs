@@ -40,12 +40,25 @@
     }
 }
 
+/* Use the Element logo with text on wid screens, and change text color based on theme */
+@media screen and (min-width:850px) {
+    .header-logo {
+        content: var(--logotype-src);
+    }
+}
+
+/* Only the Element logo on narrow screens */
+@media screen and (max-width:849px) {
+    .header-logo {
+        content: url(https://element-wiki.twily.me/book-assets/element-logo.svg);
+    }
+}
+
 .header-logo {
     height: calc(var(--menu-bar-height) * 0.6);
     margin: auto;
     display: block;
-    border: none;
-    content: var(--logotype-src);
+    /* border: none; */
 }
 
 img {
