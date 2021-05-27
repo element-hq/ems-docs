@@ -58,7 +58,7 @@
     height: calc(var(--menu-bar-height) * 0.6);
     margin: auto;
     display: block;
-    /* border: none; */
+    border: none;
 }
 
 img {
