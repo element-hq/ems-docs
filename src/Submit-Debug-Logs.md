@@ -7,7 +7,7 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
     * Element iOS: [https://github.com/vector-im/element-ios/issues](https://github.com/vector-im/element-ios/issues)
     * Element Android: [https://github.com/vector-im/element-android/issues](https://github.com/vector-im/element-android/issues)
 
-1. If you cannot find any, create one by clicking `New issue`, then `Get started` in the `Bug report` section  
+1. If you cannot find any, create one by clicking `New issue`, then `Get started` in the `Bug report` section.  
 ![](images/Screen%20Shot%202020-09-17%20at%206.57.13%20PM.png)  
 ![](images/Screen%20Shot%202020-09-17%20at%206.57.21%20PM.png)
 
