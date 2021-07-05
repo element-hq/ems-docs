@@ -7,7 +7,7 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 1. Click `Sign up or Sign in` &#8595;<br />
 ![](images/Screen%20Shot%202020-07-30%20at%2012.57.04%20PM.png)
 
-1. Enter your email address &#8595;
+1. Enter your email address &#8595;<br />
 ![](images/Screen%20Shot%202020-07-30%20at%2012.58.03%20PM.png)
 
 1. Click the confirmation link in the email &#8595;<br />
@@ -24,17 +24,17 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 1. Click the `Setup` tab, and choose your Host Size  &#8595;<br />
 ![](images/Screen%20Shot%202020-07-30%20at%202.17.55%20PM.png)
 
-1. Select your hostname and click Check. Keep in mind that this cannot be changed later  &#8595;
+1. Select your hostname and click Check. Keep in mind that this cannot be changed later  &#8595;<br />
 ![](images/Screen%20Shot%202020-07-30%20at%202.19.40%20PM.png)
 
-1. Configure your host settings, then click Next. If you want to use Custom DNS (ie. have your usernames be `@someone:yourdomain.com` instead of `@someone:yourhost.ems.host` and have your Element client on your own domain), see [EMS-Server-With-Custom-Domain](EMS-Server-With-Custom-Domain.md)  &#8595;
+1. Configure your host settings, then click Next. If you want to use Custom DNS (ie. have your usernames be `@someone:yourdomain.com` instead of `@someone:yourhost.ems.host` and have your Element client on your own domain), see [EMS-Server-With-Custom-Domain](EMS-Server-With-Custom-Domain.md)  &#8595;<br />
 ![](images/Screen%20Shot%202020-07-30%20at%202.20.45%20PM.png)
 
-1. Select Monthly or Annual billing and confirm your payment options. Then click Purchase  &#8595;
+1. Select Monthly or Annual billing and confirm your payment options. Then click Purchase  &#8595;<br />
 ![](images/Screen%20Shot%202020-07-30%20at%202.21.47%20PM.png)
 
-1. Sit tight for a few minutes while your server is being built  &#8595;
+1. Sit tight for a few minutes while your server is being built  &#8595;<br />
 ![](images/Screen%20Shot%202020-07-30%20at%202.23.01%20PM.png)
 
-1. When it's done, click `Manage hosts` to configure additional settings and add users.
+1. When it's done, click `Manage hosts` to configure additional settings and add users. &#8595;<br />
 ![](images/Screen%20Shot%202020-07-30%20at%202.25.37%20PM.png)

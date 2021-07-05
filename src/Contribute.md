@@ -7,5 +7,5 @@
 4. Ensure that Rust is installed on your system
 5. `cargo install mdbook`
 6. `mdbook build`
-7. `sensible-browser book/index.html` - make sure it looks good, and that all links etc. is working
+7. `sensible-browser book/index.html` - make sure it looks good, and that all links etc. are working
 8. Make a pull request

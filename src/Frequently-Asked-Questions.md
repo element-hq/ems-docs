@@ -44,7 +44,7 @@ Bots allow you to get information and perform actions inline with your chat, the
 
 Unfortunately you are not currently able to host your own bridges to work with your EMS hosted homeserver. As of December 2020, we have added a Telegram bridge to EMS. See our blog post:  [EMS brings more interoperability to messaging](https://element.io/blog/telegram-bridging/)
 
-If you have federation enabled for your homeserver you are also able to bridge into publicly accessible rooms, for example using [https://t2bot.io/](https://t2bot.io/) or integrations available on public homeservers such as matrix.org.
+If you have federation enabled for your homeserver, you are also able to bridge into publicly accessible rooms, for example using [https://t2bot.io/](https://t2bot.io/) or integrations available on public homeservers such as matrix.org.
 
 #### How do I add a GitHub integration?
 
@@ -54,7 +54,7 @@ Note that your server needs to have federation enabled for integrations to work.
 
 #### How do I add RSS integration to my matrix server?
 
-To create RSS integration in a room,  click on the `i` icon at the top right, accept the privacy policy, click `Add widgets, bridges & bots`, click `Add integrations`and select RSS Bot from the Bots list. Enter the RSS URL and click Subscribe.
+To create RSS integration in a room,  click on the `i` icon at the top right, accept the privacy policy, click `Add widgets, bridges & bots`, click `Add integrations`and select RSS Bot from the Bots list. Enter the RSS URL and click `Subscribe`.
 
 Note that your server needs to have federation enabled for integrations to work.
 
@@ -102,7 +102,7 @@ No, you are only ever charged for users that are registered on your server, who 
 
 Yes, absolutely! However you need to set this at host creation time as the homeserver name is "baked in" to all of the events that the homeserver creates.
 
-You can set both the homeserver name, e.g. "example.com" (so your Matrix user IDs would be of the form "@foo:example.com") and your (Element) client address, which might be something like "webchat.example.com". However, in order to prove that you own the domain in question you will need to place some JSON / text, .well-known files on the web server for your domain. You will be guided through this process when setting up the custom domain for your server in the setup wizard.
+You can set both the homeserver name, e.g. `example.com` (so your Matrix user IDs would be of the form `@foo:example.com`) and your (Element) client address, which might be something like `webchat.example.com`. However, in order to prove that you own the domain in question you will need to place some JSON / text into two `well-known` files on the web server for your domain. You will be guided through this process when setting up the custom domain for your server in the setup wizard.
 
 #### Can I customize the Element web login page?
 
@@ -119,7 +119,7 @@ You will be able to enter the customization preferences from the managed host pa
 (please note that proxy must be turned off if you are using CloudFlare)
 
 
-* You need to set up a website on your domain example.com.
+* You need to set up a website on your domain e.g. `example.com`.
 * This website needs HTTPS enabled.
 
 
@@ -173,7 +173,7 @@ So, you would need to deprovision an existing server and create a new one, selec
 
 You can deactivate users from the admin dashboard for your host, at [https://ems.element.io/user/hosting](https://ems.element.io/user/hosting).
 
-Select the "Server Admin" tab and then the "User Info." sub-tab. From here you can search for the relevant user and hit the "Deactivate account button".
+Select the `Server Admin` tab and then the `User Info` sub-tab. From here you can search for the relevant user and hit the `Deactivate account button`.
 
 #### I deleted my host, now my server name is taken and I cannot rebuild
 
