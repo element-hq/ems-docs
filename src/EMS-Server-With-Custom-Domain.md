@@ -31,7 +31,7 @@ While not required, you should also add the header `Content-Type application/jso
 
     2. `https://twily.org/.well-known/matrix/client`  
     ![](images/Screen%20Shot%202020-07-31%20at%209.19.07%20AM.png)  
-         You need to enable the CORS header `Access-Control-Allow-Origin: *` on the web server for this file. See [https://enable-cors.org/](https://enable-cors.org/) for instructions on how to do this.
+    You need to enable the CORS header `Access-Control-Allow-Origin: *` on the web server for this file. See [https://enable-cors.org/](https://enable-cors.org/) for instructions on how to do this.
         ```json
         {
             "m.homeserver": {
@@ -62,7 +62,7 @@ While not required, you should also add the header `Content-Type application/jso
         expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
         server: cloudflare
         cf-ray: 5...
-        
+
         {
             "m.homeserver": {
                 "base_url": "https://ems-custom-demo-staging.ems.host"
@@ -71,7 +71,7 @@ While not required, you should also add the header `Content-Type application/jso
                 "base_url": "https://vector.im"
             }
         }
-        
+
         $ curl -i https://twily.org/.well-known/matrix/server
         HTTP/2 200 
         date: Fri, 31 Jul 2020 09:11:25 GMT
@@ -84,10 +84,10 @@ While not required, you should also add the header `Content-Type application/jso
         expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
         server: cloudflare
         cf-ray: 5...
-        
+
         {
             "m.server": "ems-custom-demo-staging.ems.host:443"
-        }   
+        }  
         ```
 
     2. On Windows, using `PowerShell`  
@@ -163,21 +163,21 @@ While not required, you should also add the header `Content-Type application/jso
     1. On Mac or Linux, using your `terminal`  
         ```
         $ dig chat.twily.org CNAME
-    
+
         ; <<>> DiG 9.10.6 <<>> chat.twily.org CNAME
         ;; global options: +cmd
         ;; Got answer:
         ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 57888
         ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
-    
+
         ;; OPT PSEUDOSECTION:
         ; EDNS: version: 0, flags:; udp: 512
         ;; QUESTION SECTION:
         ;chat.twily.org.			IN	CNAME
-    
+
         ;; ANSWER SECTION:
         chat.twily.org.		299	IN	CNAME	ems-custom-demo-staging.element.io.
-    
+
         ;; Query time: 32 msec
         ;; SERVER: 8.8.4.4#53(8.8.4.4)
         ;; WHEN: Fri Jul 31 10:21:56 BST 2020
@@ -187,7 +187,7 @@ While not required, you should also add the header `Content-Type application/jso
     2. On Windows, using `PowerShell`  
         ```
         PS C:\Users\twilight> Resolve-DnsName -Name chat.twily.org -Type CNAME
-    
+
         Name                           Type   TTL   Section    NameHost
         ----                           ----   ---   -------    --------
         chat.twily.org                 CNAME  299   Answer     ems-custom-demo-staging.element.io

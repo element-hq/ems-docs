@@ -52,7 +52,7 @@ To create a GitHub integration in a room, click on the `i` icon at the top right
 
 Note that your server needs to have federation enabled for integrations to work.
 
-#### How do I add RSS integration to my matrix server?
+#### How do I add RSS integration to my Matrix server?
 
 To create RSS integration in a room,  click on the `i` icon at the top right, accept the privacy policy, click `Add widgets, bridges & bots`, click `Add integrations`and select RSS Bot from the Bots list. Enter the RSS URL and click `Subscribe`.
 
@@ -179,7 +179,7 @@ Select the `Server Admin` tab and then the `User Info` sub-tab. From here you ca
 
 This is actually part of a security measure - We generally prevent hosts from returning to the pool after they were initially claimed in order to prevent people from attempting to imitate old servers / users. Contact support from [https://ems.element.io/support](https://ems.element.io/support) while signed in to get the hostname released.
 
-#### If I in the future I want to migrate from EMS to self-hosted, how?
+#### How do I migrate from EMS to self-hosted if I choose to do so in the future?
 
 Currently the process for migrating away is manual. However, we hope to have an automated, self-serve system in the not too distant future. For the time being, if you wish to migrate away, please simply email ems-support@element.io (while your EMS server is still up and running) and ask for a snapshot of your Synapse database. We will then generate a snapshot for you and generate a link for you to download the data. You can then use this to restore the database / Synapse instance on your own infrastructure.
 

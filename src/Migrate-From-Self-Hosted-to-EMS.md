@@ -17,7 +17,7 @@ You might want to run everything in a `tmux` or a `screen` session to avoid disr
 pwgen -s 64 1
 ```
 
-Alternately, you can use our GPG key. Note, this expires on 2022-04-22, if this is soon, please talk to your EMS contact.    
+Alternately, you can use our GPG key. Note, this expires on 2022-04-22, if this is soon, please talk to your EMS contact.  
 [ems-support-public.pgp](ems-support-public.pgp)
 
 ## GPG
