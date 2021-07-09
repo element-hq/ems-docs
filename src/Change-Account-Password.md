@@ -69,4 +69,4 @@ Note: This warning is outdated, see [this issue](https://github.com/vector-im/el
 1. Click `Return to login screen`  
 ![](images/Screen%20Shot%202020-10-26%20at%2012.28.38%20PM.png)
 
-1. Sign in like normal with your new password. Note that all your other sessions have been signed out and you need to sign in again
+1. Sign in like normal with your new password. Note that all your other sessions have been signed out and you need to sign in again.
