@@ -75,7 +75,7 @@ This is a temporary solution until [this issue](https://github.com/vector-im/ele
 1. Tap the room name again  
 ![](images/IMG_0402.PNG)
 
-1. Under Advances, enable encryption
+1. Under Advances, enable encryption  
 ![](images/IMG_0403.PNG)
 
 1. Tab `Done` in the top right  

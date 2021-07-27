@@ -22,7 +22,7 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 1. Click the `X` to close the integration manager  
 ![](images/Screen%20Shot%202020-09-15%20at%203.31.11%20PM.png)
 
-1. To join the room conference, expand the Jitsi section at the top. Then click Join Conference`  
+1. To join the room conference, expand the Jitsi section at the top. Then click `Join Conference`  
 ![](images/Screen%20Shot%202020-09-15%20at%203.32.26%20PM.png)
 
 1. Allow camera and microphone access. Note this might be different depending on your browser and operating system  
@@ -40,7 +40,7 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 1. Click `Copy`  
 ![](images/Screen%20Shot%202020-09-15%20at%203.39.45%20PM.png)
 
-1. Send the link to the external participant. They can just copy and paste it to their browser to join
+1. Send the link to the external participant. They can just copy and paste it to their browser to join  
 ![](images/Screen%20Shot%202020-09-15%20at%203.56.33%20PM.png)
 
 
