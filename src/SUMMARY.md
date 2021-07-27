@@ -14,6 +14,7 @@
 # Element
 
 - [Add Email to Your Account](Add-Email-to-Your-Account.md)
+- [Add WhatsApp Bridge](Add-WhatsApp-Bridge.md)
 - [Add Free Slack Bridge](Add-Free-Slack-Bridge.md)
 - [Change Account Password](Change-Account-Password.md)
 - [Create a Conference Call in a Room](Create-a-Conference-Call-in-a-Room.md)
