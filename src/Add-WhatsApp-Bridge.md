@@ -16,8 +16,13 @@ Click the `Integrations` tab  and if you have more than one server, select the s
 1. Choose `WhatsApp` from the list of available Bridges
 ![](images/wa-matrix-choose-bridge.png)  
 
-1. Enter the maxium number of users in `Maximum WhatsApp users` e.g. `20` and then click `Purchase`  
-![](images/wa-enter-number-users-click-purchase.png)
+1. Enter the maximum number of users in `Maximum WhatsApp users`  
+Please note:  **this is the maximum number of WhatsApp users who actually send messages over the bridge each month. You are only billed for the number of WhatsApp users who are active. Once you exceed the maximum, then the bridge will be disabled until you increase the maximum.**  
+If you enter less than `5`, you will get a warning  
+![](images/wa-low-rmau-warning.png)  
+If you enter a number `5` or greater in `Maximum WhatsApp users` e.g. `20`, you will not see a warning  
+![](images/wa-enter-number-users-click-purchase.png)  
+Once you have entered `Maximum WhatsApp users`, click `Purchase` (remember you can always go back to this step and increase the maximum number of `WhatsApp` users if you need more in the future).
 
 1. A dialogue will remind you of the price per user and ask if you wish to proceed. Click `Purchase` if you wish to proceed with the `WhatsApp` Integration  
 ![](images/wa-confirm-subscription-click-purchase.png)  
