@@ -1,8 +1,10 @@
 # Add Free Slack Bridge
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
+This article is licensed under the standard MIT license. See Home for a full copy.
 
-This guide explains how to use the free Slack bridge from the Matrix.org Integration Manager to integrate yur Matrix room with a Slack room.
+This guide explains how to use the free Slack bridge from the Matrix.org Integration Manager to integrate your Matrix room with a Slack room.
+
+Note that EMS offers a paid Slack bridge with more features. This is available from the Integrations tab on [https://ems.element.io/user/hosting](https://ems.element.io/user/hosting)
 
 It requires your homeserver to be able to federate with Matrix.org.
 

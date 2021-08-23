@@ -24,7 +24,7 @@ The guide assumes you already have a website on any domain with https enabled.
 1. Looks like this in your web browser:  
     ![](images/Screen%20Shot%202020-09-15%20at%2011.02.57%20AM.png)
 
-1. Edit `ems_welcome.html`. This is a bit more complex, but can be almost anything you want as long as it has links to `Login` (/#/login) and `Create account` (/#/register). The default design is based off [this template](https://github.com/vector-im/element-web/blob/master/res/welcome.html). You can get creative with the CSS and the `!important` tag.
+1. Edit `ems_welcome.html`. This is a bit more complex, but can be almost anything you want as long as it has links to `Login` (/#/login) and `Create account` (/#/register). The default design is based on [this template](https://github.com/vector-im/element-web/blob/master/res/welcome.html). You can get creative with the CSS and the `!important` tag.
 
 1. Add links to your files on the EMS control panel and click `Save`.  
 ![](images/Screen%20Shot%202020-09-15%20at%2011.21.45%20AM.png)

@@ -19,24 +19,24 @@ You need these items to complete the import. If you are migrating from EMS, EMS 
 
 1. Following official documentation, install and configure
    1. [PostgreSQL](https://www.postgresql.org/)
-   2. [Synapse](https://github.com/matrix-org/synapse/)
-   3. [matrix-media-repo](https://github.com/turt2live/matrix-media-repo)
-2. When generating your Synapse configuration file, you MUST use the same domain as your EMS server.
-3. Do not start Synapse yet.
-4. In the Synapse config file (usually `homeserver.yaml`), set:
-   1. [pepper](https://github.com/matrix-org/synapse/blob/develop/docs/sample_config.yaml#L2020-L2034) to the value received. If you do not to this you have to reset all passwords.
-   2. Signing key. This is stored in a file. See [this](https://github.com/matrix-org/synapse/blob/develop/docs/sample_config.yaml#L1452-L1454) config file option for path. Alternatively, add the old key to [old_signing_keys](https://github.com/matrix-org/synapse/blob/develop/docs/sample_config.yaml#L1459-L1469).
-5. Download the database and media exports provided.
-6. Decrypt and extract the exports
+   1. [Synapse](https://github.com/matrix-org/synapse/)
+   1. [matrix-media-repo](https://github.com/turt2live/matrix-media-repo)
+1. When generating your Synapse configuration file, you MUST use the same domain as your EMS server.
+1. Do not start Synapse yet.
+1. In the Synapse config file (usually `homeserver.yaml`), set:
+   1. [pepper](https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L2148-L2151) to the value received. If you do not to this you have to reset all passwords.
+   1. Signing key. This is stored in a file. See [this](https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L1409-L1411) config file option for path. Alternatively, add the old key to [old_signing_keys](https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L1413-L1426).
+1. Download the database and media exports provided.
+1. Decrypt and extract the exports
     ```bash
     gpg --no-symkey-cache --output postgres-export.sql.gz --decrypt postgres-export.sql.gz.gpg
     gpg --no-symkey-cache --output export-part-1.tgz --decrypt export-part-1.tgz.gpg
     gzip --decompress postgres-export.sql.gz
     tar zxvf export-part-1.tgz
     ```
-7. Import the database dump
+1. Import the database dump
    1. If your Synapse database is not empty, empty it  
-        **WARNING - THIS WILL IMMEDIATELY AND IRRECOVERABLY DELETE DATA. I TAKE NO RESPONSIBILITY IF YOU DELETE THE WRONG DATABASE OR THE WRONG DATA**
+        **WARNING - THIS WILL IMMEDIATELY AND IRRECOVERABLY DELETE DATA. WE TAKE NO RESPONSIBILITY IF YOU DELETE THE WRONG DATABASE OR THE WRONG DATA**
 
         Connect to the database with `psql`, then run the following queries:
         ```sql
@@ -52,15 +52,15 @@ You need these items to complete the import. If you are migrating from EMS, EMS 
         DROP sequence state_group_id_seq;
         DROP sequence user_id_seq;
         ```
-   2. Disconnect from the database, then import the database dump
+   1. Disconnect from the database, then import the database dump
         ```bash
         psql --username=USERNAME --host=HOSTNAME DATABASE_NAME < postgres-export.sql
         ```
-   3. Verify that sequence was set correctly. Connect to the database and run the query
+   1. Verify that sequence was set correctly. Connect to the database and run the query
         ```sql
         SELECT * FROM state_group_id_seq;
         ```
         `last_value` should be greater than 1
-8. Import media according to documentation [here](https://github.com/turt2live/matrix-media-repo/blob/master/docs/admin.md#exportingimporting-data).
-9. Start Synapse.
-10. Optionally, install [Element Web](https://github.com/vector-im/element-web) or use another [Matrix client](https://matrix.org/clients/).
+1. Import media according to documentation [here](https://github.com/turt2live/matrix-media-repo/blob/master/docs/admin.md#exportingimporting-data).
+1. Start Synapse.
+1. Optionally, install [Element Web](https://github.com/vector-im/element-web) or use another [Matrix client](https://matrix.org/clients/).

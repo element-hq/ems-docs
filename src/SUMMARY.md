@@ -10,12 +10,14 @@
 - [Get Your Own EMS Server](Get-Your-Own-EMS-Server.md)
 - [Reset User Password](Reset-User-Password.md)
 - [Migrate From Self-Hosted to EMS](Migrate-From-Self-Hosted-to-EMS.md)
+- [Import Database and Media Dump](Import-Database-and-Media-Dump.md)
 
 # Integrations
 
 - [Create a Conference Call in a Room](Create-a-Conference-Call-in-a-Room.md)
-- [Add WhatsApp Bridge](Add-WhatsApp-Bridge.md)
 - [Add Free Slack Bridge](Add-Free-Slack-Bridge.md)
+- [Add Signal Bridge](Add-Signal-Bridge.md)
+- [Add WhatsApp Bridge](Add-WhatsApp-Bridge.md)
 
 # Element
 

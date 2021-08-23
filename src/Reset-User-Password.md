@@ -11,7 +11,7 @@ Resetting an account password will log out all sessions. Before doing this, make
 
 1. Click `Your Account` and `Manage Servers` or click this link [https://ems.element.io/user/hosting](https://ems.element.io/user/hosting).
 
-1. Click `Server Admin`, select your host, then `Users`.
+1. Click `Server Admin`, select your host, then `Users`
 
 1. Click the user you want to manage  
 ![](images/Screen%20Shot%202020-07-30%20at%202.45.40%20PM.png)
