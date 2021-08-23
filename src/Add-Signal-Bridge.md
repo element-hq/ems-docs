@@ -1,6 +1,7 @@
 # Add a Signal Bridge
 
-This article is licensed under the standard MIT license. See Home for a full copy.
+
+This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
 
 This guide explains how to use the Signal bridge from the EMS Integration Manager to integrate your Signal chats with your EMS server.
 
