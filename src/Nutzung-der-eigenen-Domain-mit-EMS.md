@@ -45,7 +45,7 @@ Damit Anwendungen Ihren Matrix-Server bei EMS finden, müssen Sie auf Ihrer Doma
 Erstellen Sie zwei statische JSON-Dateien auf Ihrer Webseite. Diese müssen unter den folgenden Pfaden öffentlich aus dem Internet erreichbar sein.
 
 - [https://matrix.org/.well-known/matrix/client](https://matrix.org/.well-known/matrix/client)
-- [https://matrix.org/.well-known/matrix/serve](https://matrix.org/.well-known/matrix/serve)
+- [https://matrix.org/.well-known/matrix/server](https://matrix.org/.well-known/matrix/server)
 
 Statt matrix.org, sind hier die entsprechenden Pfade auf Ihrer Domain gemeint.
 
@@ -74,7 +74,7 @@ Die JSON-Dateien client und server dürfen keine Dateiendung haben und müssen d
 }
 ```
 
-**Ersetzen Sie in beiden Beispielen unternehmen.ems.host durch Ihre EMS-Serveradresse**
+**Ersetzen Sie in beiden Beispielen unternehmen.ems.host durch Ihre EMS-Serveradresse.**
 
 ## Fehlerbehebung
 
