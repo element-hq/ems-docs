@@ -1,7 +1,5 @@
 # Migrate From Self Hosted to EMS
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
 
 ## Notes
 

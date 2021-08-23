@@ -1,7 +1,5 @@
 # Nutzung der eigenen Domain mit EMS
 
-Dieser Artikel ist unter der englischen Standard-MIT-Lizenz veröffentlicht. Siehe [Home](index.md) für eine vollständige Kopie.
-
 Matrix ist ein Chat-Protokoll, mit dem Nutzer*innen auf verschiedenen Servern miteinander chatten können. Deshalb ist, wie bei E-Mail-Adressen, der Server fester Bestandteil einer jeden Nutzer-Adresse: @jennifer:unternehmen.de.
 
 Nach dem @-Zeichen folgt der Benutzername und nach dem Doppelpunkt folgt die Server-Adresse.

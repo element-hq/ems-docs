@@ -1,7 +1,5 @@
 # Submit Debug Logs
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
 1. Search for other issues of the same problem on
     * Element Web and Desktop: [https://github.com/vector-im/element-web/issues](https://github.com/vector-im/element-web/issues)
     * Element iOS: [https://github.com/vector-im/element-ios/issues](https://github.com/vector-im/element-ios/issues)

@@ -1,7 +1,5 @@
 # Set up Cross Signing
 
-This article is licensed under the standard MIT license. See Home for a full copy.
-
 # On first login to a new account
 
 1. Sign up or log in  

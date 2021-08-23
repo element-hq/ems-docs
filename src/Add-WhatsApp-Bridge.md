@@ -1,7 +1,5 @@
 # Add a WhatsApp Bridge
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
 This guide explains how to use the WhatsApp bridge from the EMS Integration Manager to integrate your WhatsApp chats with your EMS server.
 
 It requires your EMS server to have federation on.

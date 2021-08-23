@@ -1,7 +1,5 @@
 # Create a Conference Call in a Room
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
 # Setting up
 
 1. Create a room  

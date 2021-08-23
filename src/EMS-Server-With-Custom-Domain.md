@@ -1,7 +1,5 @@
 # EMS Server With Custom Domain
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
 For this guide, I will be using the domain [twily.org](https://twily.org/). I will set up EMS so that the Matrix usernames becomes `@someone:twily.org`, and the Element client will be at [https://chat.twily.org/](https://chat.twily.org/)
 
 From the guide at [Get-Your-Own-EMS-Server](Get-Your-Own-EMS-Server.md), I will be replacing the EMS hostname `ems-demo-staging.ems.host` with `ems-custom-demo-staging.ems.host`

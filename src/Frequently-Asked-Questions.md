@@ -1,7 +1,5 @@
 # Frequently Asked Questions
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
 
 ## Matrix General
 

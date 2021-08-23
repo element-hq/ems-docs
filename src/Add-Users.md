@@ -1,7 +1,5 @@
 # Add Users
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
 1. Click `Your Account` and `Manage Servers` or click this link: [https://ems.element.io/user/hosting](https://ems.element.io/user/hosting)
 
 1. Click `Server Admin`
