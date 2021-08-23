@@ -9,8 +9,8 @@ Resetting the account password will log out all your sessions. Before doing this
 
 <br />
 
-- [If you know your current password](#if-you-know-your-current-password)
-- [If you do not know your current password](#if-you-do-not-know-your-current-password)
+  - [If you know your current password](#if-you-know-your-current-password)
+  - [If you do not know your current password](#if-you-do-not-know-your-current-password)
 
 ## If you know your current password
 
@@ -33,7 +33,7 @@ Note: This warning is outdated, see [this issue](https://github.com/vector-im/el
 
 ## If you do not know your current password
 
-Note, this will ony work if you have an email address attached to your Matrix account. If you do not have an email address attached, contact the administrators of your homeserver. (support@matrix.org does not reset passwords in any circumstance)
+Note, this will only work if you have an email address attached to your Matrix account. If you do not have an email address attached, contact the administrators of your homeserver. (support@matrix.org does not reset passwords in any circumstance)
 
 1. Sign out of Element  
 ![](images/Screen%20Shot%202020-10-26%20at%2012.32.36%20PM.png)
@@ -54,7 +54,7 @@ Note: This warning is outdated, see [this issue](https://github.com/vector-im/el
 1. When you get this message, check your email  
 ![](images/Screen%20Shot%202020-10-26%20at%2012.22.21%20PM.png)
 
-1. Click the link in the email. Mae sure it opens in  new browser tab, leaving your Element client open  
+1. Click the link in the email. Make sure it opens in  new browser tab, leaving your Element client open  
 ![](images/Screen%20Shot%202020-10-26%20at%2012.23.42%20PM.png)
 
 1. Click `Confirm changing my password`  

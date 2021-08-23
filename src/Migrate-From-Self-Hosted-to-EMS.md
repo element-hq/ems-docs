@@ -5,6 +5,8 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 
 ## Notes
 
+Before starting with this guide, please contact EMS support from [https://ems.element.io/support](https://ems.element.io/support) or by emailing [ems-support@element.io](mailto:ems-support@element.io)
+
 * Except where specified, you should be able to just copy-paste each command in succession.
 * Please do not change any file names anywhere.
 
@@ -17,7 +19,7 @@ You might want to run everything in a `tmux` or a `screen` session to avoid disr
 pwgen -s 64 1
 ```
 
-Alternately, you can use our GPG key. Note, this expires on 2022-04-22, if this is soon, please talk to your EMS contact.  
+Alternatively, you can use our GPG key. Note, this expires on 2022-04-22, if this is soon, please talk to your EMS contact.  
 [ems-support-public.pgp](ems-support-public.pgp)
 
 ## GPG
@@ -185,4 +187,4 @@ We strongly recommend that you leave the export and Synapse untouched until the 
 
 ## Note on users and Element
 
-Element does have support for changing the delegated homeserver URL. All your users will have to sign out and sign in again to Element. You should ensure everyone have Key Backup set configured and working.
+Element does have support for changing the delegated homeserver URL. All your users will have to sign out and sign in again to Element. You should ensure everyone has Key Backup configured and working.

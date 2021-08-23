@@ -13,13 +13,9 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 
 1. Go to the section for your device
 
-<!-- TOC -->
-
 - [Element Web and Desktop](#element-web-and-desktop)
 - [Element iOS](#element-ios)
 - [Element Android](#element-android)
-
-<!-- /TOC -->
 
 # Element Web and Desktop
 

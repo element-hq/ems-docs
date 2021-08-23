@@ -1,14 +1,6 @@
 # Set up Cross Signing
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
-<!-- TOC -->
-
-- [On first login to a new account](#on-first-login-to-a-new-account)
-- [If you did not set it up on first login, or if you did not get asked](#if-you-did-not-set-it-up-on-first-login-or-if-you-did-not-get-asked)
-- [If you clicked Don't ask me again](#if-you-clicked-dont-ask-me-again)
-
-<!-- /TOC -->
+This article is licensed under the standard MIT license. See Home for a full copy.
 
 # On first login to a new account
 

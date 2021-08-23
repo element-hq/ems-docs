@@ -18,20 +18,6 @@ This guide explains a working, but dirty solution to leave a community that used
 
 This guide will explain how to leave the community `+deadCommunity:deadHsDomain.com` when the homeserver on the domain `deadHsDomain.com` is dead. You do not need to own or have access to this domain to continue.
 
-<!-- TOC depthfrom:3 -->
-
-- [Requirements](#requirements)
-- [Overview](#overview)
-- [Steps](#steps)
-  - [Serve well-known files on deadHsDomain.com](#serve-well-known-files-on-deadhsdomaincom)
-  - [Set up a Synapse server on deadHsDomain.com](#set-up-a-synapse-server-on-deadhsdomaincom)
-  - [Log in to deadHsDomain.com and create the community](#log-in-to-deadhsdomaincom-and-create-the-community)
-  - [Make your primary Synapse federate with deadHsDomain.com](#make-your-primary-synapse-federate-with-deadhsdomaincom)
-  - [Leave the community](#leave-the-community)
-  - [Clean up](#clean-up)
-
-<!-- /TOC -->
-
 ## Steps
 
 ### Serve well-known files on deadHsDomain.com
@@ -110,7 +96,7 @@ federation_verify_certificates: false
 use_insecure_ssl_client_just_for_testing_do_not_use: true
 ```
 
-Then replace 
+Then replace
 ```
 trusted_key_servers:
   - server_name: "matrix.org"
@@ -148,7 +134,7 @@ Stop the `deadHsDomain.com` Synapse
 
 Add the following to the Synapse DB on `deadHsDomain.com`. Replace
 * `+deadCommunity:deadHsDomain.com` with the community you created earlier
-* `@you:yourMatrixDomain.com` wth your primary Matrix ID, the user you want to leave the community
+* `@you:yourMatrixDomain.com` with your primary Matrix ID, the user you want to leave the community
 * `1601386190185` with a timestamp a couple of days into the future
 * `yourMatrixDomain.com`  with the domain of your primary Matrix server
 
@@ -178,7 +164,7 @@ federation_verify_certificates: false
 use_insecure_ssl_client_just_for_testing_do_not_use: true
 ```
 
-Replace 
+Replace
 ```
 trusted_key_servers:
   - server_name: "matrix.org"
