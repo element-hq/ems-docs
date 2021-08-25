@@ -106,7 +106,7 @@ You can set both the homeserver name, e.g. `example.com` (so your Matrix user ID
 
 Yes, you can modify the look and feel of your client to suit you.
 
-Please see our blog article on custom branding for your Element instance, here [https://element.io/blog/custom-branding/](https://element.io/blog/custom-branding/), for more details.
+Please see our blog article on custom branding for your Element instance, here [https://element.io/blog/custom-branding/](https://element.io/blog/custom-branding/) and [Client Look and Feel](Client-Look-and-Feel.md), for more details.
 
 You will be able to enter the customization preferences from the managed host page of your EMS account - [https://ems.element.io/user/hosting](https://ems.element.io/user/hosting).
 

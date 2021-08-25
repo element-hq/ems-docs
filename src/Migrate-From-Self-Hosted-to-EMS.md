@@ -1,6 +1,5 @@
 # Migrate From Self Hosted to EMS
 
-
 ## Notes
 
 Before starting with this guide, please contact EMS support from [https://ems.element.io/support](https://ems.element.io/support) or by emailing [ems-support@element.io](mailto:ems-support@element.io)
