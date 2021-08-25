@@ -1,7 +1,5 @@
 # Submit Debug Logs
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
 1. Search for other issues of the same problem on
     * Element Web and Desktop: [https://github.com/vector-im/element-web/issues](https://github.com/vector-im/element-web/issues)
     * Element iOS: [https://github.com/vector-im/element-ios/issues](https://github.com/vector-im/element-ios/issues)
@@ -17,7 +15,7 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 - [Element iOS](#element-ios)
 - [Element Android](#element-android)
 
-# Element Web and Desktop
+## Element Web and Desktop
 
 1. Go to Element `All settings`  
     ![](images/Screen%20Shot%202020-09-17%20at%205.24.15%20PM.png)   Under `Help & About`, click `Submit debug logs`  
@@ -29,7 +27,7 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 1. Click `OK`  
 ![](images/Screen%20Shot%202020-09-17%20at%207.03.16%20PM.png)
 
-# Element iOS
+## Element iOS
 
 1. Tap the cog in the top left of Element  
 ![](images/IMG_0393.PNG)
@@ -40,7 +38,7 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 1. Enter a GitHub issue link and a description, make sure `Send logs` is checked, then click `Send`  
 ![](images/IMG_0449.PNG)
 
-# Element Android
+## Element Android
 
 1. Tap the three stacked dots in the top right  
 ![](images/Screenshot_20200821-144905.png)

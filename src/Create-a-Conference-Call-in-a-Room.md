@@ -1,8 +1,6 @@
 # Create a Conference Call in a Room
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
-# Setting up
+## Setting up
 
 1. Create a room  
 ![](images/Screen%20Shot%202020-09-15%20at%203.26.14%20PM.png)
@@ -32,7 +30,7 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 ![](images/Screen%20Shot%202020-09-15%20at%203.36.05%20PM.png)
 
 
-# Inviting external participants
+## Inviting external participants
 
 1. Click the info button in the bottom right corner  
 ![](images/Screen%20Shot%202020-09-15%20at%203.39.08%20PM.png)
@@ -44,7 +42,7 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 ![](images/Screen%20Shot%202020-09-15%20at%203.56.33%20PM.png)
 
 
-# Screen sharing
+## Screen sharing
 1. Click the screen sharing in the bottom left corner  
 ![](images/Screen%20Shot%202020-09-15%20at%203.58.07%20PM.png)
 

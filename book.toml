@@ -1,9 +1,9 @@
 # Documentation for possible options in this file is at
 # https://rust-lang.github.io/mdBook/format/config.html
 [book]
-title = "Element Wiki"
+title = "Element Documentation"
 authors = ["Element Matrix Services"]
-description = "Guides for EMS, Element, and Matrix by the EMS team"
+description = "Documentation for Element and EMS by the EMS team"
 language = "en"
 multilingual = false
 
@@ -17,15 +17,14 @@ create-missing = false
 
 [output.html]
 # The URL visitors will be directed to when they try to edit a page
-edit-url-template = "https://github.com/Twi1ightSparkle/matrix-documentation/edit/master/{path}"
+edit-url-template = "https://github.com/vector-im/ems-docs/edit/main/{path}"
 
 # The source code URL of the repository
-git-repository-url = "https://github.com/Twi1ightSparkle/matrix-documentation"
+git-repository-url = "https://github.com/vector-im/ems-docs"
 
 
 # Additional HTML, JS, CSS that's injected into each page of the book.
-# We currently use this to provide a table of contents to each page
-# via https://github.com/JorelAli/mdBook-pagetoc
+# Table of contents is via https://github.com/JorelAli/mdBook-pagetoc
 additional-css = [
     "src/book-assets/element-theme.css",
     "src/book-assets/font.css",
@@ -44,7 +43,7 @@ input-404 = "404.md"
 no-section-label = true
 
 # The CNAME to use for GitHub pages
-cname = "element-wiki.twily.me"
+cname = "ems-docs.element.io"
 
 # Font settings
 copy-fonts = false

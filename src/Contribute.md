@@ -1,8 +1,8 @@
 # Contribute
 
-1. Fork the [GitHib repo](https://github.com/Twi1ightSparkle/matrix-documentation)
+1. Fork the [GitHib repo](https://github.com/vector-im/ems-docs)
 
-1. Look at other pages, make your contributions in the same style and formatting etc.
+1. Look at other pages, make your contributions in the same style and formatting etc.  
 
 1. Add to `SUMMARY.md`
 

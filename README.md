@@ -1,4 +1,5 @@
-# Matrix Wiki
-[Click here to  goto mdbooks](https://element-wiki.twily.me/)
+# Element and EMS documentation
 
-Still work in progress
+[https://ems-docs.element.io/](https://ems-docs.element.io/)
+
+Provided by the [Element Matrix Services](https://ems.element.io/) team
