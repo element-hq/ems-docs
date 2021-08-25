@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js element">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Deutsch: Nutzung der eigenen Domain mit EMS - Element Documentation</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for Element and EMS by the EMS team">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+                <link rel="stylesheet" href="src/book-assets/element-theme.css">
+                <link rel="stylesheet" href="src/book-assets/font.css">
+                <link rel="stylesheet" href="src/book-assets/logo.css">
+                <link rel="stylesheet" href="src/book-assets/remove-nav-buttons.css">
+                <link rel="stylesheet" href="src/book-assets/style.css">
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "element";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('element')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Element Wiki</a></li><li class="chapter-item expanded affix "><a href="Frequently-Asked-Questions.html">Frequently Asked Questions</a></li><li class="chapter-item expanded affix "><li class="part-title">Element Matrix Services</li><li class="chapter-item expanded "><a href="Add-Additional-Users.html">Add Additional Users</a></li><li class="chapter-item expanded "><a href="Add-Users.html">Add Users</a></li><li class="chapter-item expanded "><a href="Client-Look-and-Feel.html">Client Look &amp; Feel</a></li><li class="chapter-item expanded "><a href="EMS-Server-With-Custom-Domain.html">EMS Server With Custom Domain</a></li><li class="chapter-item expanded "><a href="Get-Your-Own-EMS-Server.html">Get Your Own EMS Server</a></li><li class="chapter-item expanded "><a href="Reset-User-Password.html">Reset User Password</a></li><li class="chapter-item expanded "><a href="Migrate-From-Self-Hosted-to-EMS.html">Migrate From Self-Hosted to EMS</a></li><li class="chapter-item expanded "><a href="Import-Database-and-Media-Dump.html">Import Database and Media Dump</a></li><li class="chapter-item expanded affix "><li class="part-title">Integrations</li><li class="chapter-item expanded "><a href="Create-a-Conference-Call-in-a-Room.html">Create a Conference Call in a Room</a></li><li class="chapter-item expanded "><a href="Add-Free-Slack-Bridge.html">Add Free Slack Bridge</a></li><li class="chapter-item expanded "><a href="Add-Signal-Bridge.html">Add Signal Bridge</a></li><li class="chapter-item expanded "><a href="Add-WhatsApp-Bridge.html">Add WhatsApp Bridge</a></li><li class="chapter-item expanded affix "><li class="part-title">Element</li><li class="chapter-item expanded "><a href="Add-Email-to-Your-Account.html">Add Email to Your Account</a></li><li class="chapter-item expanded "><a href="Change-Account-Password.html">Change Account Password</a></li><li class="chapter-item expanded "><a href="Submit-Debug-Logs.html">Submit Debug Logs</a></li><li class="chapter-item expanded affix "><li class="part-title">Cross Signing</li><li class="chapter-item expanded "><a href="Set-up-Cross-Signing.html">Set up Cross Signing</a></li><li class="chapter-item expanded "><a href="Check-Status.html">Check Status</a></li><li class="chapter-item expanded "><a href="Export-and-Import-E2E-Room-Keys.html">Export and Import E2E Room Keys</a></li><li class="chapter-item expanded "><a href="Reset-Cross-Signing.html">Reset Cross Signing</a></li><li class="chapter-item expanded affix "><li class="part-title">Contribute</li><li class="chapter-item expanded "><a href="Contribute.html">Contribute</a></li><li class="chapter-item expanded affix "><li class="part-title">Non-English</li><li class="chapter-item expanded "><a href="Nutzung-der-eigenen-Domain-mit-EMS.html" class="active">Deutsch: Nutzung der eigenen Domain mit EMS</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="element">Element (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                                <img alt="Element logo" class="header-logo" src="">
+                    </div>
+
+                    <h1 class="menu-title">Element Documentation</h1>
+
+                    <div class="right-buttons">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        <a href="https://github.com/vector-im/ems-docs" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                                                                        <a href="https://github.com/vector-im/ems-docs/edit/main/src/Nutzung-der-eigenen-Domain-mit-EMS.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <h1 id="nutzung-der-eigenen-domain-mit-ems"><a class="header" href="#nutzung-der-eigenen-domain-mit-ems">Nutzung der eigenen Domain mit EMS</a></h1>
+<p>Matrix ist ein Chat-Protokoll, mit dem Nutzer*innen auf verschiedenen Servern miteinander chatten können. Deshalb ist, wie bei E-Mail-Adressen, der Server fester Bestandteil einer jeden Nutzer-Adresse: @jennifer:unternehmen.de.</p>
+<p>Nach dem @-Zeichen folgt der Benutzername und nach dem Doppelpunkt folgt die Server-Adresse.</p>
+<p>Dies ist auch der Fall, wenn sie die Kommunikation mit anderen Matrix-Servern verbieten und ausschließlich intern chatten.</p>
+<p>Gerne können Sie Ihre eigene Domain mit Element Matrix Services (EMS) nutzen. Damit werden die Matrix-Adressen Ihrer Anwender kürzer und auf Ihre Organisation anpasst.</p>
+<p>Alternativ bietet Ihnen EMS ohne Aufpreis eine Subdomain. Hierbei ist keine Einrichtung Ihrerseits notwendig. Dann sehen die Adressen Ihrer Anwender*innen beispielsweise so aus: @jennifer:unternehmen.ems.host.</p>
+<p>Hier sind die Vorteile der Optionen:</p>
+<table><thead><tr><th>Nutzung einer eigenen Domain</th><th>Nutzung einer EMS-Subdomain</th></tr></thead><tbody>
+<tr><td>Nutzer- und Chat-Raum-Adressen sind kürzer und auf Ihre Organisation angepasst</td><td>Sie können sofort mit einer verfügbaren Subdomain starten</td></tr>
+<tr><td>Benötigt die Ablage von zwei Dateien auf Ihrer Webseite oder einen DNS-Eintrag (Anleitung für Ihr IT-Team ist unten im Text)</td><td>Keine Anpassung in Ihrer IT notwendig</td></tr>
+<tr><td>Migration zu anderen Anbietern oder in die eigene IT-Landschaft möglich</td><td>Migration zu anderen Anbietern und in die eigene IT später nicht leicht möglich*</td></tr>
+<tr><td>Ihre Domain muss erreichbar bleiben</td><td>Keine Verantwortung auf Ihrer Seite</td></tr>
+</tbody></table>
+<p>* Ein Wechsel der Domain ist momentan nicht einfach möglich, da die Domain ein Teil der Nutzer- und Chat-Raum-Adressen wird. Die Entscheidung muss daher bei der Einrichtung des Servers getroffen werden.</p>
+<h2 id="reihenfolge-der-einrichtung"><a class="header" href="#reihenfolge-der-einrichtung">Reihenfolge der Einrichtung</a></h2>
+<p>Sie haben sich entschieden Ihre eigene Domain zu nutzen? Sehr gut!</p>
+<ol>
+<li>Bestellen Sie den Matrix-Server bei EMS unter Angabe ihrer eigenen Domain. Sie müssen auch eine EMS-Serveradresse im Format unternehmen.ems.host wählen.</li>
+<li>Folgen Sie der Anleitung im Abschnitt “Einrichtung auf Ihrem Webspace”.</li>
+<li>Überprüfen Sie auf https://ems.element.io/user/hosting, dass Ihre Domain erfolgreich eingerichtet wurde.</li>
+</ol>
+<h2 id="einrichtung-auf-ihrem-webspace"><a class="header" href="#einrichtung-auf-ihrem-webspace">Einrichtung auf Ihrem Webspace</a></h2>
+<p>Diese Schritte müssen Sie tätigen, um Ihre eigene Domain zu verwenden.</p>
+<p>Sollten Sie eine englische Anleitung bevorzugen, finden Sie diese hier:
+<a href="https://github.com/matrix-org/synapse/blob/master/docs/delegate.md">https://github.com/matrix-org/synapse/blob/master/docs/delegate.md</a></p>
+<p>Damit Anwendungen Ihren Matrix-Server bei EMS finden, müssen Sie auf Ihrer Domain einen Hinweis auf dessen Ort hinterlassen. Sie haben dafür die zwei folgenden Optionen.</p>
+<h2 id="ablage-von-well-known-dateien-empfohlene-option"><a class="header" href="#ablage-von-well-known-dateien-empfohlene-option">Ablage von .well-known Dateien (empfohlene Option)</a></h2>
+<p>Erstellen Sie zwei statische JSON-Dateien auf Ihrer Webseite. Diese müssen unter den folgenden Pfaden öffentlich aus dem Internet erreichbar sein.</p>
+<ul>
+<li><a href="https://matrix.org/.well-known/matrix/client">https://matrix.org/.well-known/matrix/client</a></li>
+<li><a href="https://matrix.org/.well-known/matrix/server">https://matrix.org/.well-known/matrix/server</a></li>
+</ul>
+<p>Statt matrix.org, sind hier die entsprechenden Pfade auf Ihrer Domain gemeint.</p>
+<p>Ist der Ordner .well-known auf Ihrem Webspace nicht vorhanden, erstellen Sie ihn. Manche Programme blenden Ordner aus, wenn sie mit einem Punkt starten. Er könnte also schon existieren. Erstellen Sie darin einen Ordner matrix.</p>
+<p>Die JSON-Dateien client und server dürfen keine Dateiendung haben und müssen die folgenden Inhalte haben. Ersetzen Sie “unternehmen” mit Ihrem EMS-Hostnamen. Diesen finden Sie auf <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a> vor “.ems.host”, z.B. “unternehmen.ems.host”. Wurde Ihr Server vor dem Sommer 2020 angelegt, hat er vermutlich die Endung “.modular.im”.</p>
+<p><code>/.well-known/matrix/client</code></p>
+<pre><code class="language-json">{
+    &quot;m.homeserver&quot;: {
+        &quot;base_url&quot;: &quot;https://unternehmen.ems.host&quot;
+    },
+    &quot;m.identity_server&quot;: {
+        &quot;base_url&quot;: &quot;https://vector.im&quot;
+    }
+}
+</code></pre>
+<p><code>/.well-known/matrix/server</code></p>
+<pre><code class="language-json">{
+    &quot;m.server&quot;: &quot;unternehmen.ems.host:443&quot;
+}
+</code></pre>
+<p><strong>Ersetzen Sie in beiden Beispielen unternehmen.ems.host durch Ihre EMS-Serveradresse.</strong></p>
+<h2 id="fehlerbehebung"><a class="header" href="#fehlerbehebung">Fehlerbehebung</a></h2>
+<p>Um zu überprüfen, ob alles korrekt eingerichtet wurde, geben Sie Ihre Domain auf der folgenden Webseite ein.</p>
+<p><a href="https://federationtester.matrix.org/">https://federationtester.matrix.org/</a> (Nur in englischer Sprache)</p>
+<p>Eine grüne Fläche mit dem Wort “SUCCESS” signalisiert eine erfolgreiche Einrichtung. Auch in EMS sollten Sie nun unter https://ems.element.io/user/hosting eine erfolgreiche Prüfung der Domain vorfinden.</p>
+<p>Ist eine rote Nachricht “Connection Errors” zu sehen, war eine Verbindung zum Server nicht möglich. Haben Sie den Server bei EMS schon bestellt? Ist Ihre Webseite nicht über HTTPS erreichbar? Hier sollte der .well-known Ordner und die darin enthaltene Datei öffentlich aus dem Internet zugänglich sein.</p>
+<p>Sehen Sie die Nachricht “No SRV Records”, wurde der DNS-Eintrag nicht gefunden. Dieser Eintrag ist nur notwendig, sollten Sie keine Datei auf Ihrem Webspace veröffentlichen können. Überprüfen Sie, ob Sie alles richtig eingegeben haben und das Formular Ihres Domain-Anbieters gespeichert haben. Ist alles richtig, brauchen Sie vielleicht nur etwas zu warten. Nach dem Ändern von DNS-Einträgen braucht es ein paar Minuten, bis sich die Änderung im Internet verteilt.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="Contribute.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="Contribute.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+                <script type="text/javascript" src="src/book-assets/sidebar.js"></script>
+        
+        
+    </body>
+</html>

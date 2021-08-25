@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js element">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Migrate From Self-Hosted to EMS - Element Documentation</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for Element and EMS by the EMS team">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+                <link rel="stylesheet" href="src/book-assets/element-theme.css">
+                <link rel="stylesheet" href="src/book-assets/font.css">
+                <link rel="stylesheet" href="src/book-assets/logo.css">
+                <link rel="stylesheet" href="src/book-assets/remove-nav-buttons.css">
+                <link rel="stylesheet" href="src/book-assets/style.css">
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "element";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('element')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Element Wiki</a></li><li class="chapter-item expanded affix "><a href="Frequently-Asked-Questions.html">Frequently Asked Questions</a></li><li class="chapter-item expanded affix "><li class="part-title">Element Matrix Services</li><li class="chapter-item expanded "><a href="Add-Additional-Users.html">Add Additional Users</a></li><li class="chapter-item expanded "><a href="Add-Users.html">Add Users</a></li><li class="chapter-item expanded "><a href="Client-Look-and-Feel.html">Client Look &amp; Feel</a></li><li class="chapter-item expanded "><a href="EMS-Server-With-Custom-Domain.html">EMS Server With Custom Domain</a></li><li class="chapter-item expanded "><a href="Get-Your-Own-EMS-Server.html">Get Your Own EMS Server</a></li><li class="chapter-item expanded "><a href="Reset-User-Password.html">Reset User Password</a></li><li class="chapter-item expanded "><a href="Migrate-From-Self-Hosted-to-EMS.html" class="active">Migrate From Self-Hosted to EMS</a></li><li class="chapter-item expanded "><a href="Import-Database-and-Media-Dump.html">Import Database and Media Dump</a></li><li class="chapter-item expanded affix "><li class="part-title">Integrations</li><li class="chapter-item expanded "><a href="Create-a-Conference-Call-in-a-Room.html">Create a Conference Call in a Room</a></li><li class="chapter-item expanded "><a href="Add-Free-Slack-Bridge.html">Add Free Slack Bridge</a></li><li class="chapter-item expanded "><a href="Add-Signal-Bridge.html">Add Signal Bridge</a></li><li class="chapter-item expanded "><a href="Add-WhatsApp-Bridge.html">Add WhatsApp Bridge</a></li><li class="chapter-item expanded affix "><li class="part-title">Element</li><li class="chapter-item expanded "><a href="Add-Email-to-Your-Account.html">Add Email to Your Account</a></li><li class="chapter-item expanded "><a href="Change-Account-Password.html">Change Account Password</a></li><li class="chapter-item expanded "><a href="Submit-Debug-Logs.html">Submit Debug Logs</a></li><li class="chapter-item expanded affix "><li class="part-title">Cross Signing</li><li class="chapter-item expanded "><a href="Set-up-Cross-Signing.html">Set up Cross Signing</a></li><li class="chapter-item expanded "><a href="Check-Status.html">Check Status</a></li><li class="chapter-item expanded "><a href="Export-and-Import-E2E-Room-Keys.html">Export and Import E2E Room Keys</a></li><li class="chapter-item expanded "><a href="Reset-Cross-Signing.html">Reset Cross Signing</a></li><li class="chapter-item expanded affix "><li class="part-title">Contribute</li><li class="chapter-item expanded "><a href="Contribute.html">Contribute</a></li><li class="chapter-item expanded affix "><li class="part-title">Non-English</li><li class="chapter-item expanded "><a href="Nutzung-der-eigenen-Domain-mit-EMS.html">Deutsch: Nutzung der eigenen Domain mit EMS</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="element">Element (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                                <img alt="Element logo" class="header-logo" src="">
+                    </div>
+
+                    <h1 class="menu-title">Element Documentation</h1>
+
+                    <div class="right-buttons">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        <a href="https://github.com/vector-im/ems-docs" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                                                                        <a href="https://github.com/vector-im/ems-docs/edit/main/src/Migrate-From-Self-Hosted-to-EMS.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <h1 id="migrate-from-self-hosted-to-ems"><a class="header" href="#migrate-from-self-hosted-to-ems">Migrate From Self Hosted to EMS</a></h1>
+<h2 id="notes"><a class="header" href="#notes">Notes</a></h2>
+<p>Before starting with this guide, please contact EMS support from <a href="https://ems.element.io/support">https://ems.element.io/support</a> or by emailing <a href="mailto:ems-support@element.io">ems-support@element.io</a></p>
+<ul>
+<li>Except where specified, you should be able to just copy-paste each command in succession.</li>
+<li>Please do not change any file names anywhere.</li>
+</ul>
+<h2 id="ssh-to-your-matrix-server"><a class="header" href="#ssh-to-your-matrix-server">SSH to your matrix server</a></h2>
+<p>You might want to run everything in a <code>tmux</code> or a <code>screen</code> session to avoid disruption in case of a lost SSH connection.</p>
+<h2 id="generate-password-for-gpg-encryption"><a class="header" href="#generate-password-for-gpg-encryption">Generate password for gpg encryption</a></h2>
+<pre><code class="language-bash">pwgen -s 64 1
+</code></pre>
+<p>Alternatively, you can use our GPG key. Note, this expires on 2022-04-22, if this is soon, please talk to your EMS contact.<br />
+<a href="ems-support-public.pgp">ems-support-public.pgp</a></p>
+<h2 id="gpg"><a class="header" href="#gpg">GPG</a></h2>
+<p>If <code>gpg</code> is being uncooperative, use the command <code>gpgconf --kill gpg-agent</code>.</p>
+<h2 id="create-a-folder-to-store-everything"><a class="header" href="#create-a-folder-to-store-everything">Create a folder to store everything</a></h2>
+<pre><code class="language-bash">mkdir -p /tmp/synapse_export
+cd /tmp/synapse_export
+</code></pre>
+<p>The guide from here on assumes your current working directory is <code>/tmp/synapse_export</code>.</p>
+<h3 id="set-restrictive-permissions-on-the-folder"><a class="header" href="#set-restrictive-permissions-on-the-folder">Set restrictive permissions on the folder</a></h3>
+<p>If you are working as root: (otherwise set restrictive permissions as needed):</p>
+<pre><code class="language-bash">chmod 000 /tmp/synapse_export
+</code></pre>
+<h2 id="copy-synapse-config"><a class="header" href="#copy-synapse-config">Copy Synapse config</a></h2>
+<p>Copy the following files and send to EMS Support:</p>
+<ul>
+<li>Your Synapse configuration file (usually <code>homeserver.yaml</code>)</li>
+<li>Your message signing key.
+<ul>
+<li>This is stored in a separate file. See the Synapse config file for the path. The variable is <code>signing_key_path</code> <a href="https://github.com/matrix-org/synapse/blob/v1.32.2/docs/sample_config.yaml#L1526-L1528">https://github.com/matrix-org/synapse/blob/v1.32.2/docs/sample_config.yaml#L1526-L1528</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="stop-synapse"><a class="header" href="#stop-synapse">Stop Synapse</a></h2>
+<p><strong>DO NOT START IT AGAIN AFTER THIS</strong></p>
+<h2 id="database-export"><a class="header" href="#database-export">Database export</a></h2>
+<h3 id="postgresql"><a class="header" href="#postgresql">PostgreSQL</a></h3>
+<h4 id="dump-compress-and-encrypt"><a class="header" href="#dump-compress-and-encrypt">Dump, compress and encrypt</a></h4>
+<p>Replace:</p>
+<ul>
+<li><code>&lt;dbhost&gt;</code> (ip or fqdn for your database server)</li>
+<li><code>&lt;dbusername&gt;</code> (username for your synapse database)</li>
+<li><code>&lt;dbname&gt;</code> (the name of the database for synapse)</li>
+</ul>
+<pre><code class="language-bash">pg_dump -O -h &lt;dbhost&gt; -U &lt;dbusername&gt; -d &lt;dbname&gt; | gzip &gt; customer_db_export.sql.gz
+gpg --symmetric --no-symkey-cache customer_db_export.sql.gz
+rm customer_db_export.sql.gz
+</code></pre>
+<h4 id="if-required-split-into-smaller-files"><a class="header" href="#if-required-split-into-smaller-files">If required, split into smaller files</a></h4>
+<p>Please only do this if you have a slow connection and are worried about transferring a single large file.</p>
+<pre><code class="language-bash">split -b 100m customer_db_export.sql.gz.gpg customer_db_export.sql.gz.gpg.part-
+rm customer_db_export.sql.gz.gpg
+</code></pre>
+<h3 id="sqlite"><a class="header" href="#sqlite">SQLIte</a></h3>
+<h4 id="compress-and-encrypt"><a class="header" href="#compress-and-encrypt">Compress and encrypt</a></h4>
+<pre><code class="language-bash">tar -zcvf homeserver.db.tar.gz /path/to/homeserver.db
+gpg --symmetric --no-symkey-cache homeserver.db.tar.gz
+rm homeserver.db.tar.gz
+</code></pre>
+<h4 id="if-required-split-into-smaller-files-1"><a class="header" href="#if-required-split-into-smaller-files-1">If required, split into smaller files</a></h4>
+<p>Please only do this if you have a slow connection and are worried about transferring a single large file.</p>
+<pre><code class="language-bash">split -b 100m homeserver.db.tar.gz homeserver.db.tar.gz.part-
+rm homeserver.db.tar.gz
+</code></pre>
+<h2 id="media-export"><a class="header" href="#media-export">Media export</a></h2>
+<h3 id="if-you-are-using-sqlite-as-database"><a class="header" href="#if-you-are-using-sqlite-as-database">If you are using SQLIte as database</a></h3>
+<p>Skip ahead to and follow <a href="#backup-media-export">Backup media export</a>.</p>
+<h3 id="download-the-export-tool"><a class="header" href="#download-the-export-tool">Download the export tool</a></h3>
+<p>Download the latest version of <code>export_synapse_for_import-linux-x64</code> (or <code> export_synapse_for_import-win-x64.exe</code>) from <a href="https://github.com/turt2live/matrix-media-repo/releases">https://github.com/turt2live/matrix-media-repo/releases</a></p>
+<pre><code class="language-bash">wget https://github.com/turt2live/matrix-media-repo/releases/download/vx.x.x/export_synapse_for_import-linux-x64
+chmod +x export_synapse_for_import-linux-x64
+</code></pre>
+<h3 id="run-the-export"><a class="header" href="#run-the-export">Run the export</a></h3>
+<p>Replace:</p>
+<ul>
+<li><code>&lt;dbhost&gt;</code> (ip or fqdn for your database server)</li>
+<li><code>&lt;dbname&gt;</code> (the name of the database for synapse)</li>
+<li><code>&lt;dbusername&gt;</code> (username for your synapse database)</li>
+<li><code>/path/to/synapse/media_store</code> (the path to where synapse stores your media)</li>
+<li><code>&lt;yourdomain.tld&gt;</code> (the domain for your server. this is the part that is in your usernames)</li>
+</ul>
+<pre><code class="language-bash">./export_synapse_for_import-linux-x64 -h
+./export_synapse_for_import-linux-x64 -dbHost &lt;dbhost&gt; -dbPort 5432 -dbName &lt;dbname&gt; -dbUsername &lt;dbusername&gt; -mediaDirectory /path/to/synapse/media_store -serverName &lt;yourdomain.tld&gt; -destination ./customer_media_export
+mv logs customer_media_export
+mv media-repo.yaml customer_media_export
+rm export_synapse_for_import-linux-x64
+</code></pre>
+<h3 id="compress-and-encrypt-1"><a class="header" href="#compress-and-encrypt-1">Compress and encrypt</a></h3>
+<pre><code class="language-bash">tar -zcvf customer_media_export.tar.gz customer_media_export
+gpg --symmetric --no-symkey-cache customer_media_export.tar.gz
+rm customer_media_export.tar.gz
+rm -r customer_media_export
+</code></pre>
+<h3 id="if-required-split-into-smaller-files-2"><a class="header" href="#if-required-split-into-smaller-files-2">If required, split into smaller files</a></h3>
+<p>Please only do this if you have a slow connection and are worried about transferring a single large file.</p>
+<pre><code class="language-bash">split -b 100m customer_media_export.tar.gz.gpg customer_media_export.tar.gz.gpg.part-
+rm customer_media_export.tar.gz.gpg
+</code></pre>
+<h2 id="backup-media-export"><a class="header" href="#backup-media-export">Backup media export</a></h2>
+<h3 id="compress-and-encrypt-2"><a class="header" href="#compress-and-encrypt-2">Compress and encrypt</a></h3>
+<p>Replace * <code>/path/to/synapse/media_store</code> (the path to where synapse stores your media)</p>
+<pre><code class="language-bash">tar -zcvf customer_backup_media_export.tar.gz /path/to/synapse/media_store
+gpg --symmetric --no-symkey-cache customer_backup_media_export.tar.gz
+rm customer_backup_media_export.tar.gz
+</code></pre>
+<h3 id="if-required-split-into-smaller-files-3"><a class="header" href="#if-required-split-into-smaller-files-3">If required, split into smaller files</a></h3>
+<p>Please only do this if you have a slow connection and are worried about transferring a single large file.</p>
+<pre><code class="language-bash">split -b 100m customer_backup_media_export.tar.gz.gpg customer_backup_media_export.tar.gz.gpg.part-
+rm customer_backup_media_export.tar.gz.gpg
+</code></pre>
+<h2 id="transfer"><a class="header" href="#transfer">Transfer</a></h2>
+<p>Download the files, then upload to the Google Drive folder shared by EMS or a location as agreed with your EMS contact.</p>
+<p>While transfer is running, you should edit or create the well-known files and CNAME DNS records to point to your EMS host.</p>
+<p>On your local computer:</p>
+<pre><code class="language-bash">scp -r -P 1234 -i ~/.ssh/matrix-server youruser@1.2.3.4:/tmp/synapse_export /some/local/folder
+</code></pre>
+<h2 id="cleanup"><a class="header" href="#cleanup">Cleanup</a></h2>
+<p>We strongly recommend that you leave the export and Synapse untouched until the import is finished and everything is verified working.</p>
+<h2 id="note-on-users-and-element"><a class="header" href="#note-on-users-and-element">Note on users and Element</a></h2>
+<p>Element does have support for changing the delegated homeserver URL. All your users will have to sign out and sign in again to Element. You should ensure everyone has Key Backup configured and working.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="Reset-User-Password.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="Import-Database-and-Media-Dump.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="Reset-User-Password.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="Import-Database-and-Media-Dump.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+                <script type="text/javascript" src="src/book-assets/sidebar.js"></script>
+        
+        
+    </body>
+</html>

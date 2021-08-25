@@ -1,0 +1,68 @@
+@media only screen and (max-width:1439px) {
+    .sidetoc {
+        display: none;
+    }
+}
+
+@media only screen and (min-width:1440px) {
+    main {
+        position: relative;
+        margin-left: 100px !important;
+    }
+    .sidetoc {
+        margin-left: auto;
+        margin-right: auto;
+        left: calc(100% + (var(--content-max-width))/4 - 140px);
+        position: absolute;
+    }
+    .pagetoc {
+        position: fixed;
+        width: 250px;
+        overflow: auto;
+        right: 20px;
+        height: calc(90% - var(--menu-bar-height));
+    }
+    .pagetoc a {
+        color: var(--fg) !important;
+        display: block;
+        padding: 5px 15px 5px 10px;
+        text-align: left;
+        text-decoration: none;
+    }
+    .pagetoc a:hover,
+    .pagetoc a.active {
+        background: var(--sidebar-bg) !important;
+        color: var(--sidebar-fg) !important;
+    }
+    .pagetoc .active {
+        background: var(--sidebar-bg);
+        color: var(--sidebar-fg);
+    }
+}
+
+/* Use the Element logo with text on wid screens, and change text color based on theme */
+@media screen and (min-width:900px) {
+    .header-logo {
+        content: var(--logotype-src);
+    }
+}
+
+/* Only the Element logo on narrow screens */
+@media screen and (max-width:899px) {
+    .header-logo {
+        content: url(https://element-wiki.twily.me/book-assets/element-logo.svg);
+    }
+}
+
+.header-logo {
+    height: calc(var(--menu-bar-height) * 0.6);
+    margin: auto;
+    display: block;
+    border: none;
+}
+
+img {
+    max-height: 350px;
+    max-width: 450px;
+    border: 1px solid var(--fg);
+}

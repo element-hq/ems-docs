@@ -1,0 +1,1763 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js element">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Element Documentation</title>
+                <meta name="robots" content="noindex" />
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Documentation for Element and EMS by the EMS team">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+                <link rel="stylesheet" href="src/book-assets/element-theme.css">
+                <link rel="stylesheet" href="src/book-assets/font.css">
+                <link rel="stylesheet" href="src/book-assets/logo.css">
+                <link rel="stylesheet" href="src/book-assets/remove-nav-buttons.css">
+                <link rel="stylesheet" href="src/book-assets/style.css">
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "element";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('element')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Element Wiki</a></li><li class="chapter-item expanded affix "><a href="Frequently-Asked-Questions.html">Frequently Asked Questions</a></li><li class="chapter-item expanded affix "><li class="part-title">Element Matrix Services</li><li class="chapter-item expanded "><a href="Add-Additional-Users.html">Add Additional Users</a></li><li class="chapter-item expanded "><a href="Add-Users.html">Add Users</a></li><li class="chapter-item expanded "><a href="Client-Look-and-Feel.html">Client Look &amp; Feel</a></li><li class="chapter-item expanded "><a href="EMS-Server-With-Custom-Domain.html">EMS Server With Custom Domain</a></li><li class="chapter-item expanded "><a href="Get-Your-Own-EMS-Server.html">Get Your Own EMS Server</a></li><li class="chapter-item expanded "><a href="Reset-User-Password.html">Reset User Password</a></li><li class="chapter-item expanded "><a href="Migrate-From-Self-Hosted-to-EMS.html">Migrate From Self-Hosted to EMS</a></li><li class="chapter-item expanded "><a href="Import-Database-and-Media-Dump.html">Import Database and Media Dump</a></li><li class="chapter-item expanded affix "><li class="part-title">Integrations</li><li class="chapter-item expanded "><a href="Create-a-Conference-Call-in-a-Room.html">Create a Conference Call in a Room</a></li><li class="chapter-item expanded "><a href="Add-Free-Slack-Bridge.html">Add Free Slack Bridge</a></li><li class="chapter-item expanded "><a href="Add-Signal-Bridge.html">Add Signal Bridge</a></li><li class="chapter-item expanded "><a href="Add-WhatsApp-Bridge.html">Add WhatsApp Bridge</a></li><li class="chapter-item expanded affix "><li class="part-title">Element</li><li class="chapter-item expanded "><a href="Add-Email-to-Your-Account.html">Add Email to Your Account</a></li><li class="chapter-item expanded "><a href="Change-Account-Password.html">Change Account Password</a></li><li class="chapter-item expanded "><a href="Submit-Debug-Logs.html">Submit Debug Logs</a></li><li class="chapter-item expanded affix "><li class="part-title">Cross Signing</li><li class="chapter-item expanded "><a href="Set-up-Cross-Signing.html">Set up Cross Signing</a></li><li class="chapter-item expanded "><a href="Check-Status.html">Check Status</a></li><li class="chapter-item expanded "><a href="Export-and-Import-E2E-Room-Keys.html">Export and Import E2E Room Keys</a></li><li class="chapter-item expanded "><a href="Reset-Cross-Signing.html">Reset Cross Signing</a></li><li class="chapter-item expanded affix "><li class="part-title">Contribute</li><li class="chapter-item expanded "><a href="Contribute.html">Contribute</a></li><li class="chapter-item expanded affix "><li class="part-title">Non-English</li><li class="chapter-item expanded "><a href="Nutzung-der-eigenen-Domain-mit-EMS.html">Deutsch: Nutzung der eigenen Domain mit EMS</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="element">Element (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                                <img alt="Element logo" class="header-logo" src="">
+                    </div>
+
+                    <h1 class="menu-title">Element Documentation</h1>
+
+                    <div class="right-buttons">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        <a href="https://github.com/vector-im/ems-docs" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                                                
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <h1 id="element-and-ems-documentation"><a class="header" href="#element-and-ems-documentation">Element and EMS documentation</a></h1>
+<p>Provided by the <a href="https://ems.element.io/">Element Matrix Services</a> team</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="frequently-asked-questions"><a class="header" href="#frequently-asked-questions">Frequently Asked Questions</a></h1>
+<h2 id="matrix-general"><a class="header" href="#matrix-general">Matrix General</a></h2>
+<h3 id="what-is-an-identity-server-and-how-does-it-work"><a class="header" href="#what-is-an-identity-server-and-how-does-it-work">What is an Identity Server and how does it work?</a></h3>
+<p>The best response to 'What is an Identity Server' is detailed in section 2. of the vector.im Identity Server privacy policy, available here: <a href="https://element.io/is-privacy-notice">https://element.io/is-privacy-notice</a></p>
+<p>New Vector runs two identity servers, one at matrix.org, and another at vector.im. These servers run in a closed federation - this means that if you add (or remove) your data from one, it is added to (or removed from) the other automatically, too.</p>
+<p>The behavior and role of Identity Servers is changing. Historically, Identity Servers provided three sets of functionality:</p>
+<ol>
+<li>Letting users publish their third party identifiers (email/telephone number) to a directory to allow other Matrix users to discover them.</li>
+<li>Letting users send invites to a Matrix chat room to an email address instead of a Matrix ID.</li>
+<li>Letting homeservers send emails/SMS text messages to verify that they belong to a given Matrix user so that user can log in to the homeserver using a third-party identifier instead of a Matrix ID.</li>
+</ol>
+<p>Identity Servers continue to provide the functionality described in 1. The features described in 2. and 3. are now provided by the homeserver instead, and will be deprecated and phased out of the Identity Server in the future.</p>
+<p>For a period in 2019, while privacy functionality was being enhanced on vector.im and matrix.org, these Identity Servers were restricted to only provide services for users on New Vector homeservers. Once privacy improvements landed, this restriction was lifted.</p>
+<h2 id="element-matrix-services"><a class="header" href="#element-matrix-services">Element Matrix Services</a></h2>
+<h3 id="account-management"><a class="header" href="#account-management">Account Management</a></h3>
+<h4 id="please-discontinue-my-account"><a class="header" href="#please-discontinue-my-account">Please discontinue my account.</a></h4>
+<p>It is best if EMS customers delete their host or account themselves. Here's how:</p>
+<p>Delete the host from the  host management page at <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a> by clicking on the <code>Delete host</code> button (and confirming deletion in the resultant dialog). This will delete the host and cancel all associated subscriptions.</p>
+<p>Or delete the EMS account entirely.  This is done from the  user account page <a href="https://ems.element.io/user/account">https://ems.element.io/user/account</a>, by clicking on the <code>Delete account</code> button and confirming. This will delete all hosts and subscriptions before removing the user's account.</p>
+<h3 id="integrations"><a class="header" href="#integrations">Integrations</a></h3>
+<h4 id="bots-whats-the-reason-for-using-them"><a class="header" href="#bots-whats-the-reason-for-using-them">Bots? What's the reason for using them?</a></h4>
+<p>Bots allow you to get information and perform actions inline with your chat, there are a bunch that can be found in <a href="https://matrix.org/docs/projects/bots/">https://matrix.org/docs/projects/bots/</a>.</p>
+<h4 id="can-i-host-my-own-telegram-bridge"><a class="header" href="#can-i-host-my-own-telegram-bridge">Can I host my own Telegram bridge?</a></h4>
+<p>Unfortunately you are not currently able to host your own bridges to work with your EMS hosted homeserver. As of December 2020, we have added a Telegram bridge to EMS. See our blog post:  <a href="https://element.io/blog/telegram-bridging/">EMS brings more interoperability to messaging</a></p>
+<p>If you have federation enabled for your homeserver, you are also able to bridge into publicly accessible rooms, for example using <a href="https://t2bot.io/">https://t2bot.io/</a> or integrations available on public homeservers such as matrix.org.</p>
+<h4 id="how-do-i-add-a-github-integration"><a class="header" href="#how-do-i-add-a-github-integration">How do I add a GitHub integration?</a></h4>
+<p>To create a GitHub integration in a room, click on the <code>i</code> icon at the top right, accept the privacy policy, click <code>Add widgets, bridges &amp; bots</code>, click <code>Add integrations</code> and select GitHub from the Bots list. Log in to GitHub when prompted and select the repositories and functions you want.</p>
+<p>Note that your server needs to have federation enabled for integrations to work.</p>
+<h4 id="how-do-i-add-rss-integration-to-my-matrix-server"><a class="header" href="#how-do-i-add-rss-integration-to-my-matrix-server">How do I add RSS integration to my Matrix server?</a></h4>
+<p>To create RSS integration in a room,  click on the <code>i</code> icon at the top right, accept the privacy policy, click <code>Add widgets, bridges &amp; bots</code>, click <code>Add integrations</code>and select RSS Bot from the Bots list. Enter the RSS URL and click <code>Subscribe</code>.</p>
+<p>Note that your server needs to have federation enabled for integrations to work.</p>
+<h4 id="with-jitsi-video-conferencing-how-is-the-data-being-transferred"><a class="header" href="#with-jitsi-video-conferencing-how-is-the-data-being-transferred">With Jitsi video conferencing, how is the data being transferred?</a></h4>
+<p>Jitsi conferencing data goes directly from the browser to the Jitsi server, it does not use the Matrix protocol. If you add a Jitsi widget to a room, that widget will be stored in the room state as Matrix events, but the Jitsi communication itself is from the client to the Jitsi server used.</p>
+<h3 id="miscellaneous"><a class="header" href="#miscellaneous">Miscellaneous</a></h3>
+<h4 id="are-all-my-messages-stored-on-my-homeserver"><a class="header" href="#are-all-my-messages-stored-on-my-homeserver">Are all my messages stored on my homeserver?</a></h4>
+<p>Messages are stored on your server. However, if you are communicating with users registered on other servers, then relevant messages / events will also exist on their server.</p>
+<h4 id="is-there-a-maximum-file-size-per-upload"><a class="header" href="#is-there-a-maximum-file-size-per-upload">Is there a maximum file size per upload?</a></h4>
+<p>The file upload limit for Small hosts is currently set at 100MB.</p>
+<h4 id="what-are-exactly-the-benefits-of-paying-for-an-ems-homeserver"><a class="header" href="#what-are-exactly-the-benefits-of-paying-for-an-ems-homeserver">What are exactly the benefits of paying for an EMS homeserver?</a></h4>
+<p>EMS aims to take the hassle out of having to host and manage your own Matrix stack. There is a significant technical overhead (in terms of technical knowledge required) as well as ongoing time and resources to ensure that your server continues running and is kept up to date with all of the latest security updates etc. With EMS you don't have to worry about that as it is all taken care of for you, at the touch of a button.</p>
+<p>We also provide a (growing) suite of proprietary host administration tools in the form of the EMS Synapse admin dashboard to help give you better insight and control of your server.</p>
+<h4 id="what-are-the-limitations-in-terms-of-storage"><a class="header" href="#what-are-the-limitations-in-terms-of-storage">What are the limitations in terms of storage?</a></h4>
+<p>For storage, we’ve shied away from hard limits, and instead adopted a fair use policy. If you are using the server for business conversations and sharing a few images as part of your discussions you will never have problems, if you are sharing thousands of images daily per user then you will hit a limit.</p>
+<h3 id="pricing--payments"><a class="header" href="#pricing--payments">Pricing &amp; Payments</a></h3>
+<h4 id="do-you-offer-other-payment-options-like-ibansepa"><a class="header" href="#do-you-offer-other-payment-options-like-ibansepa">Do you offer other payment options like IBAN/SEPA?</a></h4>
+<p>Currently, we only accept Credit or Debit / bank account cards as payment. &quot;Debit cards&quot; should work with any normal bank account.</p>
+<h4 id="how-do-i-update-my-payment-info"><a class="header" href="#how-do-i-update-my-payment-info">How do I update my payment info?</a></h4>
+<p>To update your payment info, go to <a href="https://ems.element.io/user/billing">https://ems.element.io/user/billing</a>. From here you can update your payment details.</p>
+<h4 id="if-i-join-a-room-with-a-lot-of-external-users-from-my-homeserver-will-i-be-charged-for-those"><a class="header" href="#if-i-join-a-room-with-a-lot-of-external-users-from-my-homeserver-will-i-be-charged-for-those">If I join a room with a lot of external users from my homeserver will I be charged for those?</a></h4>
+<p>No, you are only ever charged for users that are registered on your server, who have been active for more than two days in a month. These users make up your Monthly Active User (MAU) total. Users that are registered on other servers (that you communicate with over federation), guest users and users who are only briefly active on your server are not counted.</p>
+<h3 id="server-configuration--management"><a class="header" href="#server-configuration--management">Server Configuration &amp; Management</a></h3>
+<h4 id="are-you-able-to-use-a-custom-domain-like-matrixexamplecom"><a class="header" href="#are-you-able-to-use-a-custom-domain-like-matrixexamplecom">Are you able to use a custom domain like: &quot;matrix.example.com&quot;?</a></h4>
+<p>Yes, absolutely! However you need to set this at host creation time as the homeserver name is &quot;baked in&quot; to all of the events that the homeserver creates.</p>
+<p>You can set both the homeserver name, e.g. <code>example.com</code> (so your Matrix user IDs would be of the form <code>@foo:example.com</code>) and your (Element) client address, which might be something like <code>webchat.example.com</code>. However, in order to prove that you own the domain in question you will need to place some JSON / text into two <code>well-known</code> files on the web server for your domain. You will be guided through this process when setting up the custom domain for your server in the setup wizard.</p>
+<h4 id="can-i-customize-the-element-web-login-page"><a class="header" href="#can-i-customize-the-element-web-login-page">Can I customize the Element web login page?</a></h4>
+<p>Yes, you can modify the look and feel of your client to suit you.</p>
+<p>Please see our blog article on custom branding for your Element instance, here <a href="https://element.io/blog/custom-branding/">https://element.io/blog/custom-branding/</a> and <a href="Client-Look-and-Feel.html">Client Look and Feel</a>, for more details.</p>
+<p>You will be able to enter the customization preferences from the managed host page of your EMS account - <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a>.</p>
+<h4 id="cname-and-well-known"><a class="header" href="#cname-and-well-known">CNAME and .well-known?</a></h4>
+<ul>
+<li>
+<p>You need to create a CNAME record with your DNS provider. This need to be:<br />
+<strong>chat.example.com. CNAME yourEMShost.element.io.</strong><br />
+(please note that proxy must be turned off if you are using CloudFlare)</p>
+</li>
+<li>
+<p>You need to set up a website on your domain e.g. <code>example.com</code>.</p>
+</li>
+<li>
+<p>This website needs HTTPS enabled.</p>
+</li>
+<li>
+<p>You need to create two files on the web server. These need to be located at exactly:</p>
+<ul>
+<li>https://example.com/.well-known/matrix/client</li>
+<li>https://example.com/.well-known/matrix/server</li>
+</ul>
+</li>
+<li>
+<p>You need to enable the CORS header <code>Access-Control-Allow-Origin: *</code> on the web server for the client file. See <a href="https://enable-cors.org/">https://enable-cors.org/</a> for instructions on how to do this.</p>
+</li>
+</ul>
+<p>The client file needs to contain:</p>
+<pre><code class="language-json">{
+    &quot;m.homeserver&quot;: {
+        &quot;base_url&quot;: &quot;https://yourEMShost.ems.host&quot;
+    },
+    &quot;m.identity_server&quot;: {
+        &quot;base_url&quot;: &quot;https://vector.im&quot;
+    }
+}
+</code></pre>
+<p>The server file needs to contain:</p>
+<pre><code class="language-json">{
+    &quot;m.server&quot;: &quot;yourEMShost.ems.host:443&quot;
+}
+</code></pre>
+<h4 id="cname-doesnt-work-with-cloudflare"><a class="header" href="#cname-doesnt-work-with-cloudflare">CNAME doesn't work with CloudFlare?</a></h4>
+<p>You can use the CNAME with CloudFlare, but you have to change Proxy status to DNS only.</p>
+<h4 id="could-you-expand-on-over-federation"><a class="header" href="#could-you-expand-on-over-federation">Could you expand on &quot;over federation&quot;?</a></h4>
+<p>If you have federation turned on in your server configuration, you are able to communicate with users registered on other servers (e.g. matrix.org).</p>
+<p>You are only ever charged for users that are registered on your server, who have been active for more than two days in a month. These users make up your Monthly Active User (MAU) total. Users that are registered on other servers (that you communicate with over federation), guest users and users who are only briefly active on your server are not counted.</p>
+<h4 id="dns-not-resolving"><a class="header" href="#dns-not-resolving">DNS not resolving</a></h4>
+<p>This problem is most likely caused by a delay in DNS replication downstream of your DNS servers.</p>
+<h4 id="how-do-i-change-the-servers-custom-domain"><a class="header" href="#how-do-i-change-the-servers-custom-domain">How do I change the server's custom domain?</a></h4>
+<p>You can only set a custom domain name for a server at setup time. This is because the domain name of the server is &quot;baked-in&quot; to all of the events that are generated by the server.</p>
+<p>So, you would need to deprovision an existing server and create a new one, selecting your custom DNS preferences from the advanced settings section of host setup configuration if you wished to change existing host DNS.</p>
+<h4 id="how-do-i-delete-users-when-administering-the-server"><a class="header" href="#how-do-i-delete-users-when-administering-the-server">How do I delete users when administering the server?</a></h4>
+<p>You can deactivate users from the admin dashboard for your host, at <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a>.</p>
+<p>Select the <code>Server Admin</code> tab and then the <code>User Info</code> sub-tab. From here you can search for the relevant user and hit the <code>Deactivate account button</code>.</p>
+<h4 id="i-deleted-my-host-now-my-server-name-is-taken-and-i-cannot-rebuild"><a class="header" href="#i-deleted-my-host-now-my-server-name-is-taken-and-i-cannot-rebuild">I deleted my host, now my server name is taken and I cannot rebuild</a></h4>
+<p>This is actually part of a security measure - We generally prevent hosts from returning to the pool after they were initially claimed in order to prevent people from attempting to imitate old servers / users. Contact support from <a href="https://ems.element.io/support">https://ems.element.io/support</a> while signed in to get the hostname released.</p>
+<h4 id="how-do-i-migrate-from-ems-to-self-hosted-if-i-choose-to-do-so-in-the-future"><a class="header" href="#how-do-i-migrate-from-ems-to-self-hosted-if-i-choose-to-do-so-in-the-future">How do I migrate from EMS to self-hosted if I choose to do so in the future?</a></h4>
+<p>Currently the process for migrating away is manual. However, we hope to have an automated, self-serve system in the not too distant future. For the time being, if you wish to migrate away, please simply email ems-support@element.io (while your EMS server is still up and running) and ask for a snapshot of your Synapse database. We will then generate a snapshot for you and generate a link for you to download the data. You can then use this to restore the database / Synapse instance on your own infrastructure.</p>
+<h4 id="is-upload-of-custom-yaml-supported"><a class="header" href="#is-upload-of-custom-yaml-supported">Is upload of custom yaml supported?</a></h4>
+<p>Upload of custom (yaml) config is not currently supported for EMS hosts.</p>
+<p>We are actively working on improving bridging support for EMS hosts and hope that this will be something that you see substantial improvement in over the coming months.</p>
+<h4 id="online-users-are-displayed-as-offline"><a class="header" href="#online-users-are-displayed-as-offline">Online users are displayed as offline?</a></h4>
+<p>Unfortunately, we are not able to offer user presence as a feature at the moment. This is due to potential performance impact and excess resource usage on hosts when this feature is enabled. The Synapse team is aware of this and it is on their road map to address. However, we do not currently have a timeline for when it will be available again.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="add-additional-users"><a class="header" href="#add-additional-users">Add Additional Users</a></h1>
+<ol>
+<li>
+<p>Click <code>Your Account</code> and <code>Manage Servers</code> or click this link <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a></p>
+</li>
+<li>
+<p>Click the <code>Hosts</code> tab.</p>
+</li>
+<li>
+<p>Say you want a total of 10 Monthly Active Users on your EMS Nickel server. Add <code>5</code> in the <code>Additional users</code> field. Then click <code>Save</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.28.57%20PM.png" alt="" /></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="add-users"><a class="header" href="#add-users">Add Users</a></h1>
+<ol>
+<li>
+<p>Click <code>Your Account</code> and <code>Manage Servers</code> or click this link: <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a></p>
+</li>
+<li>
+<p>Click <code>Server Admin</code></p>
+</li>
+<li>
+<p>Select your host</p>
+</li>
+<li>
+<p>Click <code>Add user</code> Enter the username and click <code>Add</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.34.01%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Select <code>Make new user server admin</code> if you want this user to be able to use the <a href="https://matrix-org.github.io/synapse/latest/usage/administration/admin_api/index.html">Synapse Admin API</a> to perform administrative tasks on your server. Be careful with this as this option has a lot of power on your server.</p>
+</li>
+<li>
+<p>The username and password for the new user is displayed. You will only be able to see this information once so send the password to the user in a secure manner and then delete it<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.37.05%20PM.png" alt="" /></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="client-look-and-feel"><a class="header" href="#client-look-and-feel">Client Look and Feel</a></h1>
+<p>This feature allows you to customize the home and welcome page on your EMS provided Element Web client.</p>
+<p>The guide assumes you already have a website on any domain with https enabled.</p>
+<ol>
+<li>
+<p>Create two files on your web server, for example <a href="https://twily.org/ems_home.html">https://twily.org/ems_home.html</a> and <a href="https://twily.org/ems_welcome.html">https://twily.org/ems_welcome.html</a><br />
+<img src="images/Screen%20Shot%202020-09-15%20at%2011.01.00%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Edit <code>ems_home.html</code>. This can be as simple as a couple of lines of HTML, for example:</p>
+<pre><code class="language-html">&lt;h1&gt;Demo Company LTD&lt;/h1&gt;
+&lt;h2&gt;Rooms to join&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href='/#/room/#welcome:ems-demo-staging.ems.host'&gt;Welcome to Demo web chat (#welcome)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='/#/room/#support:ems-demo-staging.ems.host'&gt;Support (#support)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href='/#/room/#offtopic:ems-demo-staging.ems.host'&gt;Off topic conversation (#offtopic)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>Or you can add a more complex html and styling.</p>
+</li>
+<li>
+<p>Looks like this in your web browser:<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%2011.02.57%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Edit <code>ems_welcome.html</code>. This is a bit more complex, but can be almost anything you want as long as it has links to <code>Login</code> (/#/login) and <code>Create account</code> (/#/register). The default design is based on <a href="https://github.com/vector-im/element-web/blob/master/res/welcome.html">this template</a>. You can get creative with the CSS and the <code>!important</code> tag.</p>
+</li>
+<li>
+<p>Add links to your files on the EMS control panel and click <code>Save</code>.<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%2011.21.45%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Check that it looks correct and that everything works. You do not need to click save or rebuild in the EMS control panel if you make changes to the files. As long as the URL does not change, refreshing the Element Web Client page is enough.</p>
+</li>
+<li>
+<p>With some hacking you can make it look as you want. (and the following example is why I am a developer, not a designer...)<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%2011.37.18%20AM.png" alt="" /><br />
+<img src="images/Screen%20Shot%202020-09-15%20at%2011.38.54%20AM.png" alt="" /><br />
+<img src="images/Screen%20Shot%202020-09-15%20at%2011.42.57%20AM.png" alt="" /></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ems-server-with-custom-domain"><a class="header" href="#ems-server-with-custom-domain">EMS Server With Custom Domain</a></h1>
+<p>For this guide, I will be using the domain <a href="https://twily.org/">twily.org</a>. I will set up EMS so that the Matrix usernames becomes <code>@someone:twily.org</code>, and the Element client will be at <a href="https://chat.twily.org/">https://chat.twily.org/</a></p>
+<p>From the guide at <a href="Get-Your-Own-EMS-Server.html">Get Your Own EMS Server</a>, I will be replacing the EMS hostname <code>ems-demo-staging.ems.host</code> with <code>ems-custom-demo-staging.ems.host</code></p>
+<p>The guide assumes you already have a website on the root of your domain with <code>https</code> enabled.<br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.06.17%20AM.png" alt="" /></p>
+<ol>
+<li>
+<p>Follow step 1 - 10 from <a href="Get-Your-Own-EMS-Server.html">Get Your Own EMS Server</a></p>
+</li>
+<li>
+<p>On step 10 from <a href="Get-Your-Own-EMS-Server.html">Get Your Own EMS Server</a>, turn ON <code>Custom DNS</code><br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.07.59%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>In the <code>Custom Homeserver domain</code> field, enter <code>twily.org</code><br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.08.47%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Create two files on your website according to the instructions given.<br />
+The path cannot be changed, but up to 30 redirects are supported.<br />
+While not required, you should also add the header <code>Content-Type application/json</code> to both files.</p>
+<ol>
+<li>
+<p><code>https://twily.org/.well-known/matrix/server</code><br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.12.39%20AM.png" alt="" /></p>
+<pre><code class="language-json">{
+    &quot;m.server&quot;: &quot;ems-custom-demo-staging.ems.host:443&quot;
+}
+</code></pre>
+</li>
+<li>
+<p><code>https://twily.org/.well-known/matrix/client</code><br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.19.07%20AM.png" alt="" /><br />
+You need to enable the CORS header <code>Access-Control-Allow-Origin: *</code> on the web server for this file. See <a href="https://enable-cors.org/">https://enable-cors.org/</a> for instructions on how to do this.</p>
+<pre><code class="language-json">{
+    &quot;m.homeserver&quot;: {
+        &quot;base_url&quot;: &quot;https://ems-custom-demo-staging.ems.host&quot;
+    },
+    &quot;m.identity_server&quot;: {
+        &quot;base_url&quot;: &quot;https://vector.im&quot;
+    }
+}
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <code>Check again</code> to verify that your <code>.well-known</code> files are configured correctly<br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.22.19%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>You can also verify your <code>.well-known</code> files from the command line. Note the lines <code>access-control-allow-origin: *</code> and <code>content-type: application/json</code></p>
+<ol>
+<li>
+<p>On Mac or Linux, using your <code>terminal</code></p>
+<pre><code>$ curl -i https://twily.org/.well-known/matrix/client
+HTTP/2 200 
+date: Fri, 31 Jul 2020 09:11:21 GMT
+content-type: application/json
+content-length: 129
+set-cookie: __cfduid=x...; expires=Sun, 30-Aug-20 09:11:21 GMT; path=/; domain=.twily.org; HttpOnly; SameSite=Lax
+access-control-allow-origin: *
+cf-cache-status: DYNAMIC
+cf-request-id: 0...
+expect-ct: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+server: cloudflare
+cf-ray: 5...
+
+{
+    &quot;m.homeserver&quot;: {
+        &quot;base_url&quot;: &quot;https://ems-custom-demo-staging.ems.host&quot;
+    },
+    &quot;m.identity_server&quot;: {
+        &quot;base_url&quot;: &quot;https://vector.im&quot;
+    }
+}
+
+$ curl -i https://twily.org/.well-known/matrix/server
+HTTP/2 200 
+date: Fri, 31 Jul 2020 09:11:25 GMT
+content-type: application/json
+content-length: 52
+set-cookie: __cfduid=x...; expires=Sun, 30-Aug-20 09:11:25 GMT; path=/; domain=.twily.org; HttpOnly; SameSite=Lax
+access-control-allow-origin: *
+cf-cache-status: DYNAMIC
+cf-request-id: 0...
+expect-ct: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;
+server: cloudflare
+cf-ray: 5...
+
+{
+    &quot;m.server&quot;: &quot;ems-custom-demo-staging.ems.host:443&quot;
+}  
+</code></pre>
+</li>
+<li>
+<p>On Windows, using <code>PowerShell</code></p>
+<pre><code>PS C:\Users\twilight&gt; Invoke-WebRequest -Uri https://twily.org/.well-known/matrix/client
+
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : {
+                        &quot;m.homeserver&quot;: {
+                            &quot;base_url&quot;: &quot;https://ems-custom-demo-staging.ems.host&quot;
+                        },
+                        &quot;m.identity_server&quot;: {
+                            &quot;base_url&quot;: &quot;https://vector.im&quot;
+                        }
+                    }
+RawContent        : HTTP/1.1 200 OK
+                    Connection: keep-alive
+                    Access-Control-Allow-Origin: *
+                    CF-Cache-Status: DYNAMIC
+                    cf-request-id: 0...
+                    Expect-CT: max-age=604800, report-uri=&quot;https://repor...
+Forms             : {}
+Headers           : {[Connection, keep-alive], [Access-Control-Allow-Origin, *], [CF-Cache-Status, DYNAMIC], [cf-request-id, 0...]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : System.__ComObject
+RawContentLength  : 129
+
+
+PS C:\Users\twilight&gt; Invoke-WebRequest -Uri https://twily.org/.well-known/matrix/server
+
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : {
+                        &quot;m.server&quot;: &quot;ems-custom-demo-staging.ems.host:443&quot;
+                    }
+RawContent        : HTTP/1.1 200 OK
+                    Connection: keep-alive
+                    Access-Control-Allow-Origin: *
+                    CF-Cache-Status: DYNAMIC
+                    cf-request-id: 0...
+                    Expect-CT: max-age=604800, report-uri=&quot;https://repor...
+Forms             : {}
+Headers           : {[Connection, keep-alive], [Access-Control-Allow-Origin, *], [CF-Cache-Status, DYNAMIC], [cf-request-id, 0...]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : System.__ComObject
+RawContentLength  : 52
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>You can continue without the <code>.well-known</code> files in place, but your server will have limited functionality until this is fixed</p>
+</li>
+<li>
+<p>In the <code>Custom Client domain</code> field, enter <code>chat.twily.org</code>. This can be any domain, except the same as <code>Custom Homeserver domain</code><br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.26.35%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Create a CNAME DNS record with your DNS provider according to the instructions given<br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.51.37%20AM.png" alt="" /><br />
+<code>chat.twily.org.  CNAME  ems-custom-demo-staging.element.io.</code></p>
+</li>
+<li>
+<p>This shows how this is done with CloudFlare DNS. Depending on your DNS provider this might be different. Consult the documentation for your provider. Note that Proxy must be turned off with CloudFlare.<br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.52.41%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Back on EMS, click <code>Check again</code>. Note that sometimes it might take a while for your new DNS record to propagate. You can still continue, but functionality will be limited. Check back with the Hosts tab on <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a> and click <code>Rebuild Host</code> once the DNS record is in place.<br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.56.18%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>You can also verify your CNAME DNS record using the command line</p>
+<ol>
+<li>
+<p>On Mac or Linux, using your <code>terminal</code></p>
+<pre><code>$ dig chat.twily.org CNAME
+
+; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; chat.twily.org CNAME
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 57888
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;chat.twily.org.			IN	CNAME
+
+;; ANSWER SECTION:
+chat.twily.org.		299	IN	CNAME	ems-custom-demo-staging.element.io.
+
+;; Query time: 32 msec
+;; SERVER: 8.8.4.4#53(8.8.4.4)
+;; WHEN: Fri Jul 31 10:21:56 BST 2020
+;; MSG SIZE  rcvd: 91
+</code></pre>
+</li>
+<li>
+<p>On Windows, using <code>PowerShell</code></p>
+<pre><code>PS C:\Users\twilight&gt; Resolve-DnsName -Name chat.twily.org -Type CNAME
+
+Name                           Type   TTL   Section    NameHost
+----                           ----   ---   -------    --------
+chat.twily.org                 CNAME  299   Answer     ems-custom-demo-staging.element.io
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>Continue from step 11 on <a href="Get-Your-Own-EMS-Server.html">Get Your Own EMS Server</a></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="get-your-own-ems-server"><a class="header" href="#get-your-own-ems-server">Get Your Own EMS Server</a></h1>
+<ol>
+<li>
+<p>Go to <a href="https://ems.element.io/">https://ems.element.io/</a></p>
+</li>
+<li>
+<p>Click <code>Sign up or Sign in</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%2012.57.04%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your email address<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%2012.58.03%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click the confirmation link in the email<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%2012.59.54%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your name or company name and a password on <a href="https://ems.element.io/user/account">https://ems.element.io/user/account</a>. Then click <a href="https://ems.element.io/user/billing">Billing address and payment method</a><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.13.48%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your billing address and credit card information on <a href="https://ems.element.io/user/billing">https://ems.element.io/user/billing</a><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.15.49%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Your Account</code>, then <code>Manage Servers</code> to get started setting up your EMS server</p>
+</li>
+<li>
+<p>Click the <code>Setup</code> tab, and choose your Host Size<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.17.55%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Select your hostname and click Check. Keep in mind that this cannot be changed later<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.19.40%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Configure your host settings, then click Next. If you want to use Custom DNS (ie. have your usernames be <code>@someone:yourdomain.com</code> instead of <code>@someone:yourhost.ems.host</code> and have your Element client on your own domain), see <a href="EMS-Server-With-Custom-Domain.html">EMS-Server-With-Custom-Domain</a><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.20.45%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Select Monthly or Annual billing and confirm your payment options. Then click Purchase<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.21.47%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Sit tight for a few minutes while your server is being built<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.23.01%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>When it's done, click <code>Manage hosts</code> to configure additional settings and add users<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.25.37%20PM.png" alt="" /></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reset-user-password"><a class="header" href="#reset-user-password">Reset User Password</a></h1>
+<p>Resetting an account password will log out all sessions. Before doing this, make sure that</p>
+<ul>
+<li>all sessions are connected to key backup,</li>
+<li>all sessions have backed up all their keys. See <a href="Check-Status.html">Check-Status</a>, and</li>
+<li>the correct key backup passphrase is available.</li>
+</ul>
+<br />
+<ol>
+<li>
+<p>Click <code>Your Account</code> and <code>Manage Servers</code> or click this link <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a>.</p>
+</li>
+<li>
+<p>Click <code>Server Admin</code>, select your host, then <code>Users</code></p>
+</li>
+<li>
+<p>Click the user you want to manage<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.45.40%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Reset password</code>, enter a new password and click <code>Go</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.47.25%20PM.png" alt="" /></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="migrate-from-self-hosted-to-ems"><a class="header" href="#migrate-from-self-hosted-to-ems">Migrate From Self Hosted to EMS</a></h1>
+<h2 id="notes"><a class="header" href="#notes">Notes</a></h2>
+<p>Before starting with this guide, please contact EMS support from <a href="https://ems.element.io/support">https://ems.element.io/support</a> or by emailing <a href="mailto:ems-support@element.io">ems-support@element.io</a></p>
+<ul>
+<li>Except where specified, you should be able to just copy-paste each command in succession.</li>
+<li>Please do not change any file names anywhere.</li>
+</ul>
+<h2 id="ssh-to-your-matrix-server"><a class="header" href="#ssh-to-your-matrix-server">SSH to your matrix server</a></h2>
+<p>You might want to run everything in a <code>tmux</code> or a <code>screen</code> session to avoid disruption in case of a lost SSH connection.</p>
+<h2 id="generate-password-for-gpg-encryption"><a class="header" href="#generate-password-for-gpg-encryption">Generate password for gpg encryption</a></h2>
+<pre><code class="language-bash">pwgen -s 64 1
+</code></pre>
+<p>Alternatively, you can use our GPG key. Note, this expires on 2022-04-22, if this is soon, please talk to your EMS contact.<br />
+<a href="ems-support-public.pgp">ems-support-public.pgp</a></p>
+<h2 id="gpg"><a class="header" href="#gpg">GPG</a></h2>
+<p>If <code>gpg</code> is being uncooperative, use the command <code>gpgconf --kill gpg-agent</code>.</p>
+<h2 id="create-a-folder-to-store-everything"><a class="header" href="#create-a-folder-to-store-everything">Create a folder to store everything</a></h2>
+<pre><code class="language-bash">mkdir -p /tmp/synapse_export
+cd /tmp/synapse_export
+</code></pre>
+<p>The guide from here on assumes your current working directory is <code>/tmp/synapse_export</code>.</p>
+<h3 id="set-restrictive-permissions-on-the-folder"><a class="header" href="#set-restrictive-permissions-on-the-folder">Set restrictive permissions on the folder</a></h3>
+<p>If you are working as root: (otherwise set restrictive permissions as needed):</p>
+<pre><code class="language-bash">chmod 000 /tmp/synapse_export
+</code></pre>
+<h2 id="copy-synapse-config"><a class="header" href="#copy-synapse-config">Copy Synapse config</a></h2>
+<p>Copy the following files and send to EMS Support:</p>
+<ul>
+<li>Your Synapse configuration file (usually <code>homeserver.yaml</code>)</li>
+<li>Your message signing key.
+<ul>
+<li>This is stored in a separate file. See the Synapse config file for the path. The variable is <code>signing_key_path</code> <a href="https://github.com/matrix-org/synapse/blob/v1.32.2/docs/sample_config.yaml#L1526-L1528">https://github.com/matrix-org/synapse/blob/v1.32.2/docs/sample_config.yaml#L1526-L1528</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="stop-synapse"><a class="header" href="#stop-synapse">Stop Synapse</a></h2>
+<p><strong>DO NOT START IT AGAIN AFTER THIS</strong></p>
+<h2 id="database-export"><a class="header" href="#database-export">Database export</a></h2>
+<h3 id="postgresql"><a class="header" href="#postgresql">PostgreSQL</a></h3>
+<h4 id="dump-compress-and-encrypt"><a class="header" href="#dump-compress-and-encrypt">Dump, compress and encrypt</a></h4>
+<p>Replace:</p>
+<ul>
+<li><code>&lt;dbhost&gt;</code> (ip or fqdn for your database server)</li>
+<li><code>&lt;dbusername&gt;</code> (username for your synapse database)</li>
+<li><code>&lt;dbname&gt;</code> (the name of the database for synapse)</li>
+</ul>
+<pre><code class="language-bash">pg_dump -O -h &lt;dbhost&gt; -U &lt;dbusername&gt; -d &lt;dbname&gt; | gzip &gt; customer_db_export.sql.gz
+gpg --symmetric --no-symkey-cache customer_db_export.sql.gz
+rm customer_db_export.sql.gz
+</code></pre>
+<h4 id="if-required-split-into-smaller-files"><a class="header" href="#if-required-split-into-smaller-files">If required, split into smaller files</a></h4>
+<p>Please only do this if you have a slow connection and are worried about transferring a single large file.</p>
+<pre><code class="language-bash">split -b 100m customer_db_export.sql.gz.gpg customer_db_export.sql.gz.gpg.part-
+rm customer_db_export.sql.gz.gpg
+</code></pre>
+<h3 id="sqlite"><a class="header" href="#sqlite">SQLIte</a></h3>
+<h4 id="compress-and-encrypt"><a class="header" href="#compress-and-encrypt">Compress and encrypt</a></h4>
+<pre><code class="language-bash">tar -zcvf homeserver.db.tar.gz /path/to/homeserver.db
+gpg --symmetric --no-symkey-cache homeserver.db.tar.gz
+rm homeserver.db.tar.gz
+</code></pre>
+<h4 id="if-required-split-into-smaller-files-1"><a class="header" href="#if-required-split-into-smaller-files-1">If required, split into smaller files</a></h4>
+<p>Please only do this if you have a slow connection and are worried about transferring a single large file.</p>
+<pre><code class="language-bash">split -b 100m homeserver.db.tar.gz homeserver.db.tar.gz.part-
+rm homeserver.db.tar.gz
+</code></pre>
+<h2 id="media-export"><a class="header" href="#media-export">Media export</a></h2>
+<h3 id="if-you-are-using-sqlite-as-database"><a class="header" href="#if-you-are-using-sqlite-as-database">If you are using SQLIte as database</a></h3>
+<p>Skip ahead to and follow <a href="Migrate-From-Self-Hosted-to-EMS.html#backup-media-export">Backup media export</a>.</p>
+<h3 id="download-the-export-tool"><a class="header" href="#download-the-export-tool">Download the export tool</a></h3>
+<p>Download the latest version of <code>export_synapse_for_import-linux-x64</code> (or <code> export_synapse_for_import-win-x64.exe</code>) from <a href="https://github.com/turt2live/matrix-media-repo/releases">https://github.com/turt2live/matrix-media-repo/releases</a></p>
+<pre><code class="language-bash">wget https://github.com/turt2live/matrix-media-repo/releases/download/vx.x.x/export_synapse_for_import-linux-x64
+chmod +x export_synapse_for_import-linux-x64
+</code></pre>
+<h3 id="run-the-export"><a class="header" href="#run-the-export">Run the export</a></h3>
+<p>Replace:</p>
+<ul>
+<li><code>&lt;dbhost&gt;</code> (ip or fqdn for your database server)</li>
+<li><code>&lt;dbname&gt;</code> (the name of the database for synapse)</li>
+<li><code>&lt;dbusername&gt;</code> (username for your synapse database)</li>
+<li><code>/path/to/synapse/media_store</code> (the path to where synapse stores your media)</li>
+<li><code>&lt;yourdomain.tld&gt;</code> (the domain for your server. this is the part that is in your usernames)</li>
+</ul>
+<pre><code class="language-bash">./export_synapse_for_import-linux-x64 -h
+./export_synapse_for_import-linux-x64 -dbHost &lt;dbhost&gt; -dbPort 5432 -dbName &lt;dbname&gt; -dbUsername &lt;dbusername&gt; -mediaDirectory /path/to/synapse/media_store -serverName &lt;yourdomain.tld&gt; -destination ./customer_media_export
+mv logs customer_media_export
+mv media-repo.yaml customer_media_export
+rm export_synapse_for_import-linux-x64
+</code></pre>
+<h3 id="compress-and-encrypt-1"><a class="header" href="#compress-and-encrypt-1">Compress and encrypt</a></h3>
+<pre><code class="language-bash">tar -zcvf customer_media_export.tar.gz customer_media_export
+gpg --symmetric --no-symkey-cache customer_media_export.tar.gz
+rm customer_media_export.tar.gz
+rm -r customer_media_export
+</code></pre>
+<h3 id="if-required-split-into-smaller-files-2"><a class="header" href="#if-required-split-into-smaller-files-2">If required, split into smaller files</a></h3>
+<p>Please only do this if you have a slow connection and are worried about transferring a single large file.</p>
+<pre><code class="language-bash">split -b 100m customer_media_export.tar.gz.gpg customer_media_export.tar.gz.gpg.part-
+rm customer_media_export.tar.gz.gpg
+</code></pre>
+<h2 id="backup-media-export"><a class="header" href="#backup-media-export">Backup media export</a></h2>
+<h3 id="compress-and-encrypt-2"><a class="header" href="#compress-and-encrypt-2">Compress and encrypt</a></h3>
+<p>Replace * <code>/path/to/synapse/media_store</code> (the path to where synapse stores your media)</p>
+<pre><code class="language-bash">tar -zcvf customer_backup_media_export.tar.gz /path/to/synapse/media_store
+gpg --symmetric --no-symkey-cache customer_backup_media_export.tar.gz
+rm customer_backup_media_export.tar.gz
+</code></pre>
+<h3 id="if-required-split-into-smaller-files-3"><a class="header" href="#if-required-split-into-smaller-files-3">If required, split into smaller files</a></h3>
+<p>Please only do this if you have a slow connection and are worried about transferring a single large file.</p>
+<pre><code class="language-bash">split -b 100m customer_backup_media_export.tar.gz.gpg customer_backup_media_export.tar.gz.gpg.part-
+rm customer_backup_media_export.tar.gz.gpg
+</code></pre>
+<h2 id="transfer"><a class="header" href="#transfer">Transfer</a></h2>
+<p>Download the files, then upload to the Google Drive folder shared by EMS or a location as agreed with your EMS contact.</p>
+<p>While transfer is running, you should edit or create the well-known files and CNAME DNS records to point to your EMS host.</p>
+<p>On your local computer:</p>
+<pre><code class="language-bash">scp -r -P 1234 -i ~/.ssh/matrix-server youruser@1.2.3.4:/tmp/synapse_export /some/local/folder
+</code></pre>
+<h2 id="cleanup"><a class="header" href="#cleanup">Cleanup</a></h2>
+<p>We strongly recommend that you leave the export and Synapse untouched until the import is finished and everything is verified working.</p>
+<h2 id="note-on-users-and-element"><a class="header" href="#note-on-users-and-element">Note on users and Element</a></h2>
+<p>Element does have support for changing the delegated homeserver URL. All your users will have to sign out and sign in again to Element. You should ensure everyone has Key Backup configured and working.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="import-database-and-media-dump"><a class="header" href="#import-database-and-media-dump">Import Database and Media Dump</a></h1>
+<p>This article is structured for an export from EMS, but may also be applicable in other circumstances.</p>
+<p>For support on Synapse or matrix-media-repo, ask in the Matrix rooms <a href="https://matrix.to/#/#synapse:matrix.org">#synapse:matrix.org</a> and <a href="https://matrix.to/#/#mediarepo:t2bot.io">#mediarepo:t2bot.io</a></p>
+<h2 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h2>
+<p>You need these items to complete the import. If you are migrating from EMS, EMS support will provide all five to you</p>
+<ul>
+<li>Database dump</li>
+<li>Media export</li>
+<li>GPG decryption password</li>
+<li>Pepper</li>
+<li>Synapse signing key</li>
+</ul>
+<h2 id="import-process"><a class="header" href="#import-process">Import process</a></h2>
+<ol>
+<li>Following official documentation, install and configure
+<ol>
+<li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+<li><a href="https://github.com/matrix-org/synapse/">Synapse</a></li>
+<li><a href="https://github.com/turt2live/matrix-media-repo">matrix-media-repo</a></li>
+</ol>
+</li>
+<li>When generating your Synapse configuration file, you MUST use the same domain as your EMS server.</li>
+<li>Do not start Synapse yet.</li>
+<li>In the Synapse config file (usually <code>homeserver.yaml</code>), set:
+<ol>
+<li><a href="https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L2148-L2151">pepper</a> to the value received. If you do not to this you have to reset all passwords.</li>
+<li>Signing key. This is stored in a file. See <a href="https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L1409-L1411">this</a> config file option for path. Alternatively, add the old key to <a href="https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L1413-L1426">old_signing_keys</a>.</li>
+</ol>
+</li>
+<li>Download the database and media exports provided.</li>
+<li>Decrypt and extract the exports
+<pre><code class="language-bash">gpg --no-symkey-cache --output postgres-export.sql.gz --decrypt postgres-export.sql.gz.gpg
+gpg --no-symkey-cache --output export-part-1.tgz --decrypt export-part-1.tgz.gpg
+gzip --decompress postgres-export.sql.gz
+tar zxvf export-part-1.tgz
+</code></pre>
+</li>
+<li>Import the database dump
+<ol>
+<li>
+<p>If your Synapse database is not empty, empty it<br />
+<strong>WARNING - THIS WILL IMMEDIATELY AND IRRECOVERABLY DELETE DATA. WE TAKE NO RESPONSIBILITY IF YOU DELETE THE WRONG DATABASE OR THE WRONG DATA</strong></p>
+<p>Connect to the database with <code>psql</code>, then run the following queries:</p>
+<pre><code class="language-sql">DO $$ DECLARE
+r RECORD;
+BEGIN
+    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = current_schema()) LOOP
+        EXECUTE 'DROP TABLE ' || quote_ident(r.tablename) || ' CASCADE';
+    END LOOP;
+END $$;
+
+DROP sequence cache_invalidation_stream_seq;
+DROP sequence state_group_id_seq;
+DROP sequence user_id_seq;
+</code></pre>
+</li>
+<li>
+<p>Disconnect from the database, then import the database dump</p>
+<pre><code class="language-bash">psql --username=USERNAME --host=HOSTNAME DATABASE_NAME &lt; postgres-export.sql
+</code></pre>
+</li>
+<li>
+<p>Verify that sequence was set correctly. Connect to the database and run the query</p>
+<pre><code class="language-sql">SELECT * FROM state_group_id_seq;
+</code></pre>
+<p><code>last_value</code> should be greater than 1</p>
+</li>
+</ol>
+</li>
+<li>Import media according to documentation <a href="https://github.com/turt2live/matrix-media-repo/blob/master/docs/admin.md#exportingimporting-data">here</a>.</li>
+<li>Start Synapse.</li>
+<li>Optionally, install <a href="https://github.com/vector-im/element-web">Element Web</a> or use another <a href="https://matrix.org/clients/">Matrix client</a>.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="create-a-conference-call-in-a-room"><a class="header" href="#create-a-conference-call-in-a-room">Create a Conference Call in a Room</a></h1>
+<h2 id="setting-up"><a class="header" href="#setting-up">Setting up</a></h2>
+<ol>
+<li>
+<p>Create a room<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%203.26.14%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Room Info</code>, then <code>Add apps, bridges &amp; bots</code><br />
+<img src="images/Screen%20Shot%202020-09-15%20at%203.26.00%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Read and accept the Terms of Service for the Integration Manager<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%203.25.37%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Select Jitsi from the list of available widgets<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%203.28.29%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Save the URL if you wish, this is also easily available later. Then click <code>Save</code><br />
+<img src="images/Screen%20Shot%202020-09-15%20at%203.29.46%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click the <code>X</code> to close the integration manager<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%203.31.11%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>To join the room conference, expand the Jitsi section at the top. Then click <code>Join Conference</code><br />
+<img src="images/Screen%20Shot%202020-09-15%20at%203.32.26%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Allow camera and microphone access. Note this might be different depending on your browser and operating system<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%203.36.41%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>You are now in the conference<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%203.36.05%20PM.png" alt="" /></p>
+</li>
+</ol>
+<h2 id="inviting-external-participants"><a class="header" href="#inviting-external-participants">Inviting external participants</a></h2>
+<ol>
+<li>
+<p>Click the info button in the bottom right corner<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%203.39.08%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Copy</code><br />
+<img src="images/Screen%20Shot%202020-09-15%20at%203.39.45%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Send the link to the external participant. They can just copy and paste it to their browser to join<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%203.56.33%20PM.png" alt="" /></p>
+</li>
+</ol>
+<h2 id="screen-sharing"><a class="header" href="#screen-sharing">Screen sharing</a></h2>
+<ol>
+<li>
+<p>Click the screen sharing in the bottom left corner<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%203.58.07%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Give permissions when asked</p>
+<ul>
+<li>In macOS<br />
+you need to grant the <code>Screen Recording</code> Privacy permission, and<br />
+screen sharing does not work with the Element Desktop app</li>
+</ul>
+</li>
+<li>
+<p>Select the application or screen you want to share, then click Allow. Note this might be different depending on your browser and operating system<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%204.02.52%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Everyone can now see your screen<br />
+<img src="images/Screen%20Shot%202020-09-15%20at%204.04.44%20PM.png" alt="" /></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="add-free-slack-bridge"><a class="header" href="#add-free-slack-bridge">Add Free Slack Bridge</a></h1>
+<p>This guide explains how to use the free Slack bridge from the Matrix.org Integration Manager to integrate your Matrix room with a Slack room.</p>
+<p>Note that EMS offers a paid Slack bridge with more features. This is available from the Integrations tab on <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a></p>
+<p>It requires your homeserver to be able to federate with Matrix.org.</p>
+<p>An EMS server is not required.</p>
+<ol>
+<li>
+<p>Create a new room in Matrix, with encryption off<br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.12.35%20AM.png" alt="" /><br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.12.48%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Room Info</code> in the top right corner of the room<br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.13.57%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Add widgets, bridges &amp; bots</code><br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.14.55%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Choose <code>Slack</code> from the list of available bridges and integrations<br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.15.37%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Add Bridge</code><br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.16.21%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Add to Slack</code><br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.17.07%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your Slack workspace URL, and click <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.18.22%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your Slack email address and password, then click <code>Sign in</code><br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.19.10%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Allow</code><br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.21.07%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Close the Slack tab and return to Element<br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.21.48%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>List channels</code><br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.23.00%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Click the Slack channel you want to bridge to the Matrix room<br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.23.42%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Slack is now added to the Matrix room<br />
+<img src="images/Screen%20Shot%202020-10-27%20at%204.51.41%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Go to the channel you selected on Slack, and invite the riot bot with the command <code>/invite @riot_bridge</code><br />
+<img src="images/Screen%20Shot%202020-10-27%20at%204.56.16%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>The Matrix room and Slack channel is now bridged<br />
+<img src="images/Screen%20Shot%202020-10-27%20at%204.57.34%20PM.png" alt="" /><br />
+<img src="images/Screen%20Shot%202020-10-27%20at%204.57.48%20PM.png" alt="" /></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="add-a-signal-bridge"><a class="header" href="#add-a-signal-bridge">Add a Signal Bridge</a></h1>
+<p>This guide explains how to use the Signal bridge from the EMS Integration Manager to integrate your Signal chats with your EMS server.</p>
+<p>It requires your EMS server to have federation on.</p>
+<p>The following instructions are done with the  Element Desktop on the Element side and on Element iOS for the Signal side. Element Android should be almost identical to Element Web.</p>
+<h2 id="purchase--the-signal-integration"><a class="header" href="#purchase--the-signal-integration">Purchase  the Signal integration</a></h2>
+<ol>
+<li>
+<p>Open the EMS control panel at: <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a><br />
+Click the <code>Integrations</code> tab  and if you have more than one server, select the server you wish to add the Signal integration to<br />
+<img src="images/click-integration-tab-ems-user-hosting.png" alt="" /></p>
+</li>
+<li>
+<p>Click on <code>Signal Bridge</code> in the list of available Bridges
+<img src="images/signalbridge-integrations-bridges-list-with-signal.png" alt="" /></p>
+</li>
+<li>
+<p>Enter the maximum number of users in <code>Maximum Signal users</code>.<br />
+Please note:  <strong>this is the maximum number of Signal users who actually send messages over the bridge each month. You are only billed for the number of Signal users who are active. Once you exceed the maximum, then the bridge will be disabled until you increase the maximum.</strong><br />
+If you enter less than <code>5</code>, you will get a warning<br />
+<img src="images/si-low-rmau-warning.png" alt="" /><br />
+If you enter <code>5</code> or greater in <code>Maximum Signal users</code>, you will not see a warning<br />
+<img src="images/si-enter-number-users-click-purchase.png" alt="" /><br />
+Once you have entered <code>Maximum Signal users</code>, click <code>Purchase</code> (remember you can always go back to this step and increase the maximum number of Signal users if you need more in the future).</p>
+</li>
+<li>
+<p>A dialogue will remind you of the price per user and ask if you wish to proceed. Click <code>Purchase</code> if you wish to proceed with the Signal Integration<br />
+<img src="images/si-confirm-subscription-click-purchase.png" alt="" /></p>
+</li>
+<li>
+<p>You will have to wait a few minutes while your host is reprovisioned with the Signal bridge.
+Once reprovisioning is finished, you are able to bridge Signal to your EMS server using your Element client.</p>
+</li>
+</ol>
+<h2 id="bridge-signal-to-your-ems-server"><a class="header" href="#bridge-signal-to-your-ems-server">Bridge Signal to your EMS server</a></h2>
+<ol>
+<li>
+<p>Once the bridge is running, open your Element app. Click on the <code>+</code> next to <code>People</code><br />
+<img src="images/start-chat.png" alt="" /></p>
+</li>
+<li>
+<p>Create a Direct Message conversation by typing <code>@signalbot:example.ems.host</code> (replace the domain with the one of your homeserver). Then click<code>Go</code>
+<img src="images/dm-si-bot.png" alt="" /></p>
+</li>
+<li>
+<p>The bridge account will join your room and tell you how to use it
+<img src="images/sibridge-bot-joins-room.png" alt="" /></p>
+</li>
+<li>
+<p>Open Signal on your mobile device (iOS or Android) and tap on your avatar to go to <code>Settings</code> and then <code>Linked Devices</code> and then <code>Link New Device</code> to start the Signal QR code scanner. You will use this QR code scanner to scan a QR code displayed by your Element client in the next step<br />
+<img src="images/sibridge-signal-ios-qrcode.jpg" alt="" /></p>
+</li>
+<li>
+<p>From your Element client, send a <code>link</code> message to the bot to connect to your Signal account<br />
+<img src="images/sibridge-send-link-message.png" alt="" /></p>
+</li>
+<li>
+<p>A QR code will be displayed. Quickly scan the QR code with Signal on your mobile device. You have about a minute before it times out. If it times out, just send the login message again to generate another QR code<br />
+<img src="images/sibridge-qr-code-from-link-command.png" alt="" /></p>
+</li>
+<li>
+<p>On your Element client, you will see <code>Successfully logged in as &lt;your_phone_number&gt;</code> e.g. <code>Successfully logged in as +1 555-555-5555</code> and you will see invitations for each of your Signal chats in your Element client. Each Signal chat is a separate Matrix room. Join one or more chats and start chatting from either your Element app on desktop, iOS or Android or your Signal on mobile.</p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="add-a-whatsapp-bridge"><a class="header" href="#add-a-whatsapp-bridge">Add a WhatsApp Bridge</a></h1>
+<p>This guide explains how to use the WhatsApp bridge from the EMS Integration Manager to integrate your WhatsApp chats with your EMS server.</p>
+<p>It requires your EMS server to have federation on.</p>
+<p>The following instructions are done with the  Element Desktop on the Element side and on Element iOS for the WhatsApp side. Element Android should be almost identical to Element Web.</p>
+<h2 id="purchase--the-whatsapp-integration"><a class="header" href="#purchase--the-whatsapp-integration">Purchase  the WhatsApp integration</a></h2>
+<ol>
+<li>
+<p>Open the EMS control panel at: <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a><br />
+Click the <code>Integrations</code> tab  and if you have more than one server, select the server you wish to add the WhatsApp integration to
+<img src="images/click-integration-tab-ems-user-hosting.png" alt="" /></p>
+</li>
+<li>
+<p>Click on <code>WhatsApp Bridge</code> in the list of available Bridges
+<img src="images/wa-matrix-choose-bridge.png" alt="" /></p>
+</li>
+<li>
+<p>Enter the maximum number of users in <code>Maximum WhatsApp users</code>.<br />
+Please note:  <strong>this is the maximum number of WhatsApp users who actually send messages over the bridge each month. You are only billed for the number of WhatsApp users who are active. Once you exceed the maximum, then the bridge will be disabled until you increase the maximum.</strong><br />
+If you enter less than <code>5</code>, you will get a warning<br />
+<img src="images/wa-low-rmau-warning.png" alt="" /><br />
+If you enter <code>5</code> or greater in <code>Maximum WhatsApp users</code>, you will not see a warning<br />
+<img src="images/wa-enter-number-users-click-purchase.png" alt="" /><br />
+Once you have entered <code>Maximum WhatsApp users</code>, click <code>Purchase</code> (remember you can always go back to this step and increase the maximum number of WhatsApp users if you need more in the future).</p>
+</li>
+<li>
+<p>A dialogue will remind you of the price per user and ask if you wish to proceed. Click <code>Purchase</code> if you wish to proceed with the WhatsApp Integration<br />
+<img src="images/wa-confirm-subscription-click-purchase.png" alt="" /></p>
+</li>
+<li>
+<p>You will have to wait a few minutes while your host is reprovisioned with the WhatsApp bridge.
+Once reprovisioning is finished, you are able to bridge WhatsApp to your EMS server using your Element client.</p>
+</li>
+</ol>
+<h2 id="bridge-whatsapp-to-your-ems-server"><a class="header" href="#bridge-whatsapp-to-your-ems-server">Bridge WhatsApp to your EMS server</a></h2>
+<ol>
+<li>
+<p>Once the bridge is running, open your Element app. Click on the <code>+</code> next to <code>People</code><br />
+<img src="images/start-chat.png" alt="" /></p>
+</li>
+<li>
+<p>Create a Direct Message conversation by typing <code>@whatsappbot:example.ems.host</code> (replace the domain with the one of your homeserver). Then click<code>Go</code>
+<img src="images/dm-wa-bot.png" alt="" /></p>
+</li>
+<li>
+<p>The bridge account will join your room and tell you how to use it
+<img src="images/wabridge-bot-joins-room.png" alt="" /></p>
+</li>
+<li>
+<p>Open WhatsApp on your mobile device (iOS or Android) and go to <code>Settings</code> and then <code>Linked Devices</code> and then <code>Link a Device</code> and tap <code>OK</code> to start the WhatsApp QR code scanner. You will use this QR code scanner to scan a QR code displayed by your Element client in the next step<br />
+<img src="images/wabridge-whatsapp-ios-qrcode.png" alt="" /></p>
+</li>
+<li>
+<p>From your Element client, send a <code>login</code> message to the bot to connect to your WhatsApp account<br />
+<img src="images/wabridge-send-login-message.png" alt="" /></p>
+</li>
+<li>
+<p>A QR code will be displayed. Quickly scan the QR code with WhatsApp on your mobile device. You have about a minute before it times out. If it times out, just send the login message again to generate another QR code<br />
+<img src="images/wabridge-qr-code-from-login-command.png" alt="" /></p>
+</li>
+<li>
+<p>On your Element client, you will see <code>Successfully logged in, synchronizing chats...</code> and you will see invitations for each of your WhatsApp chats in your Element client. Each WhatsApp chat is a separate Matrix room. Join one or more chats and start chatting from either your Element app on desktop, iOS or Android or your WhatsApp on mobile.</p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="add-email-to-your-account"><a class="header" href="#add-email-to-your-account">Add Email to Your Account</a></h1>
+<ol>
+<li>
+<p>Go to Element <code>All settings</code><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%205.24.15%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your email address and click <code>Add</code><br />
+<img src="images/Screen%20Shot%202020-10-20%20at%2011.51.19%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>When you get this message, check your email<br />
+<img src="images/Screen%20Shot%202020-10-20%20at%2011.57.57%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Click the link in the email. Make sure it opens in another tab/window, leaving your Element client where it is<br />
+<img src="images/Screen%20Shot%202020-10-20%20at%2011.55.01%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>When you get this message, you can close the verification tab/window and return to Element<br />
+<img src="images/Screen%20Shot%202020-10-20%20at%2012.00.03%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Go back to Element and click <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-10-20%20at%2011.57.57%20AM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your account password, then click <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-10-20%20at%2012.01.34%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>If all worked correctly, your new email should now show up under the <code>Email addresses</code> section in Element settings. If not, something went wrong and you need to try again<br />
+<img src="images/Screen%20Shot%202020-10-20%20at%2012.02.17%20PM.png" alt="" /></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="change-account-password"><a class="header" href="#change-account-password">Change Account Password</a></h1>
+<p>Resetting the account password will log out all your sessions. Before doing this, make sure that</p>
+<ul>
+<li>all your sessions are connected to key backup,</li>
+<li>all sessions have backed up all their keys. See <a href="Check-Status.html">Check-Status</a>, and</li>
+<li>you have your correct key backup passphrase available.</li>
+</ul>
+<br />
+<ul>
+<li><a href="Change-Account-Password.html#if-you-know-your-current-password">If you know your current password</a></li>
+<li><a href="Change-Account-Password.html#if-you-do-not-know-your-current-password">If you do not know your current password</a></li>
+</ul>
+<h2 id="if-you-know-your-current-password"><a class="header" href="#if-you-know-your-current-password">If you know your current password</a></h2>
+<ol>
+<li>
+<p>Go to Element <code>All settings</code><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%205.24.15%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your current password and your new password<br />
+<img src="images/Screen%20Shot%202020-09-17%20at%205.26.13%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>You might want to export your <code>E2E room keys</code>. Just to be on the safe side in case something goes wrong. See also <a href="Export-and-Import-E2E-Room-Keys.html">Export-and-Import-E2E-Room-Keys</a></p>
+</li>
+<li>
+<p>Click <code>Continue</code>.<br />
+Note: This warning is outdated, see <a href="https://github.com/vector-im/element-web/issues/15226">this issue</a><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%205.28.52%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>OK</code><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%205.31.01%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>You now need to sign in again on all your other devices</p>
+</li>
+</ol>
+<h2 id="if-you-do-not-know-your-current-password"><a class="header" href="#if-you-do-not-know-your-current-password">If you do not know your current password</a></h2>
+<p>Note, this will only work if you have an email address attached to your Matrix account. If you do not have an email address attached, contact the administrators of your homeserver. (support@matrix.org does not reset passwords in any circumstance)</p>
+<ol>
+<li>
+<p>Sign out of Element<br />
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.32.36%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Sign out</code><br />
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.15.05%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click &quot;Not sure of your password? <code>Set a new one</code>&quot;<br />
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.15.56%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your email address, and a new password. Then click <code>Send Reset Email</code><br />
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.20.13%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Continue</code>.<br />
+Note: This warning is outdated, see <a href="https://github.com/vector-im/element-web/issues/15226">this issue</a><br />
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.33.47%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>When you get this message, check your email<br />
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.22.21%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click the link in the email. Make sure it opens in  new browser tab, leaving your Element client open<br />
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.23.42%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Confirm changing my password</code><br />
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.26.36%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>You can now close this tab and return to Element<br />
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.27.21%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>i have verified my email address</code><br />
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.22.21%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Return to login screen</code><br />
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.28.38%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Sign in like normal with your new password. Note that all your other sessions have been signed out and you need to sign in again.</p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="submit-debug-logs"><a class="header" href="#submit-debug-logs">Submit Debug Logs</a></h1>
+<ol>
+<li>
+<p>Search for other issues of the same problem on</p>
+<ul>
+<li>Element Web and Desktop: <a href="https://github.com/vector-im/element-web/issues">https://github.com/vector-im/element-web/issues</a></li>
+<li>Element iOS: <a href="https://github.com/vector-im/element-ios/issues">https://github.com/vector-im/element-ios/issues</a></li>
+<li>Element Android: <a href="https://github.com/vector-im/element-android/issues">https://github.com/vector-im/element-android/issues</a></li>
+</ul>
+</li>
+<li>
+<p>If you cannot find any, create one by clicking <code>New issue</code>, then <code>Get started</code> in the <code>Bug report</code> section.<br />
+<img src="images/Screen%20Shot%202020-09-17%20at%206.57.13%20PM.png" alt="" /><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%206.57.21%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Go to the section for your device</p>
+</li>
+</ol>
+<ul>
+<li><a href="Submit-Debug-Logs.html#element-web-and-desktop">Element Web and Desktop</a></li>
+<li><a href="Submit-Debug-Logs.html#element-ios">Element iOS</a></li>
+<li><a href="Submit-Debug-Logs.html#element-android">Element Android</a></li>
+</ul>
+<h2 id="element-web-and-desktop"><a class="header" href="#element-web-and-desktop">Element Web and Desktop</a></h2>
+<ol>
+<li>
+<p>Go to Element <code>All settings</code><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%205.24.15%20PM.png" alt="" />   Under <code>Help &amp; About</code>, click <code>Submit debug logs</code><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%206.54.25%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter a GitHub issue link and a description. Then click <code>Send logs</code><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%206.59.39%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>OK</code><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%207.03.16%20PM.png" alt="" /></p>
+</li>
+</ol>
+<h2 id="element-ios"><a class="header" href="#element-ios">Element iOS</a></h2>
+<ol>
+<li>
+<p>Tap the cog in the top left of Element<br />
+<img src="images/IMG_0393.PNG" alt="" /></p>
+</li>
+<li>
+<p>Scroll down to the <code>OTHER</code> section, then tap <code>Report bug</code><br />
+<img src="images/IMG_0447.PNG" alt="" /></p>
+</li>
+<li>
+<p>Enter a GitHub issue link and a description, make sure <code>Send logs</code> is checked, then click <code>Send</code><br />
+<img src="images/IMG_0449.PNG" alt="" /></p>
+</li>
+</ol>
+<h2 id="element-android"><a class="header" href="#element-android">Element Android</a></h2>
+<ol>
+<li>
+<p>Tap the three stacked dots in the top right<br />
+<img src="images/Screenshot_20200821-144905.png" alt="" /></p>
+</li>
+<li>
+<p>Tap <code>Report bug</code><br />
+<img src="images/Screenshot_20200917-192220.png" alt="" /></p>
+</li>
+<li>
+<p>Enter a GitHub issue link and a description, make sure <code>Send logs</code>, and <code>Send crash logs</code> are checked, then tap the send arrow in the top right<br />
+<img src="images/Screenshot_20200917-192050.png" alt="" /></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="set-up-cross-signing"><a class="header" href="#set-up-cross-signing">Set up Cross Signing</a></h1>
+<h2 id="on-first-login-to-a-new-account"><a class="header" href="#on-first-login-to-a-new-account">On first login to a new account</a></h2>
+<ol>
+<li>
+<p>Sign up or log in<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.59.21%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Generate a Security Key</code> or <code>Enter a Security Phrase</code>. Then click <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.06.50%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Take note of your key, then click <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.07.52%20PM.png" alt="" /></p>
+</li>
+</ol>
+<h2 id="if-you-did-not-set-it-up-on-first-login-or-if-you-did-not-get-asked"><a class="header" href="#if-you-did-not-set-it-up-on-first-login-or-if-you-did-not-get-asked">If you did not set it up on first login, or if you did not get asked</a></h2>
+<ol>
+<li>
+<p>If you do not have key backup configured, you will be asked to set it up the first time you enter an encrypted room. Click <code>Start using Key Backup</code><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%204.41.12%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Generate a Security Key</code> or <code>Enter a Security Phrase</code>. Then <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.06.50%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Take note of your key, then click <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.07.52%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your account password, then click <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.09.47%20PM.png" alt="" /></p>
+</li>
+</ol>
+<h2 id="if-you-clicked-dont-ask-me-again"><a class="header" href="#if-you-clicked-dont-ask-me-again">If you clicked Don't ask me again</a></h2>
+<ol>
+<li>
+<p>Go to Element <code>Security &amp; Privacy</code> settings<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Start using Key Backup</code><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%204.42.12%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Generate a Security Key</code> or <code>Enter a Security Phrase</code>. Then <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.06.50%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Take note of your key, then click <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.07.52%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your account password, then click <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.09.47%20PM.png" alt="" /></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="check-status"><a class="header" href="#check-status">Check Status</a></h1>
+<ol>
+<li>
+<p>Go to Element <code>Security &amp; Privacy</code> settings<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Expand the <code>Advanced</code> section<br />
+<img src="images/Screen%20Shot%202020-09-17%20at%205.12.57%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Look for <code>All keys backed up</code><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%205.14.42%20PM.png" alt="" /></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="export-and-import-e2e-room-keys"><a class="header" href="#export-and-import-e2e-room-keys">Export and Import E2E Room Keys</a></h1>
+<h2 id="element-web-and-desktop-1"><a class="header" href="#element-web-and-desktop-1">Element Web and Desktop</a></h2>
+<h3 id="export"><a class="header" href="#export">Export</a></h3>
+<ol>
+<li>
+<p>Go to Element <code>Security &amp; Privacy</code> settings<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Export E2E room keys</code><br />
+<img src="images/Screen%20Shot%202020-08-21%20at%201.47.38%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter a secure passphrase and click <code>Export</code><br />
+<img src="images/Screen%20Shot%202020-08-21%20at%201.49.03%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Choose to save the file<br />
+<img src="images/Screen%20Shot%202020-08-21%20at%201.50.05%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Select a directory on your computer<br />
+<img src="images/Screen%20Shot%202020-08-21%20at%201.50.52%20PM.png" alt="" /></p>
+</li>
+</ol>
+<h3 id="import"><a class="header" href="#import">Import</a></h3>
+<ol>
+<li>
+<p>Go to Element <code>Security &amp; Privacy</code> settings<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Import E2E room keys</code><br />
+<img src="images/Screen%20Shot%202020-08-21%20at%201.47.38%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Browse</code><br />
+<img src="images/Screen%20Shot%202020-08-21%20at%201.52.49%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Select your export<br />
+<img src="images/Screen%20Shot%202020-08-21%20at%201.53.11%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your passphrase and click <code>Import</code><br />
+<img src="images/Screen%20Shot%202020-08-21%20at%201.55.34%20PM.png" alt="" /></p>
+</li>
+</ol>
+<h2 id="element-ios-1"><a class="header" href="#element-ios-1">Element iOS</a></h2>
+<h3 id="export-1"><a class="header" href="#export-1">Export</a></h3>
+<ol>
+<li>
+<p>Tap the cog in the top left of Element<br />
+<img src="images/IMG_0393.PNG" alt="" /></p>
+</li>
+<li>
+<p>Tap <code>Security</code><br />
+<img src="images/IMG_0394.PNG" alt="" /></p>
+</li>
+<li>
+<p>Tap <code>Export keys manually</code><br />
+<img src="images/IMG_0395.PNG" alt="" /></p>
+</li>
+<li>
+<p>Enter a secure passphrase and tap <code>Export</code><br />
+<img src="images/IMG_0396.PNG" alt="" /></p>
+</li>
+<li>
+<p>Choose <code>Save to Files</code><br />
+<img src="images/IMG_0397.PNG" alt="" /></p>
+</li>
+<li>
+<p>Choose a location then tap <code>Save</code><br />
+<img src="images/IMG_0398.PNG" alt="" /></p>
+</li>
+</ol>
+<h3 id="import-1"><a class="header" href="#import-1">Import</a></h3>
+<p>This is a temporary solution until <a href="https://github.com/vector-im/element-ios/issues/1027">this issue</a> is resolved</p>
+<ol>
+<li>
+<p>Tap the <code>+</code> in the bottom right corner<br />
+<img src="images/IMG_0399.PNG" alt="" /></p>
+</li>
+<li>
+<p>Tap <code>Create room</code><br />
+<img src="images/IMG_0400.PNG" alt="" /></p>
+</li>
+<li>
+<p>Tap the room name (Empty room) at the top<br />
+<img src="images/IMG_0401.PNG" alt="" /></p>
+</li>
+<li>
+<p>Tap the room name again<br />
+<img src="images/IMG_0402.PNG" alt="" /></p>
+</li>
+<li>
+<p>Under Advances, enable encryption<br />
+<img src="images/IMG_0403.PNG" alt="" /></p>
+</li>
+<li>
+<p>Tab <code>Done</code> in the top right<br />
+<img src="images/IMG_0404.PNG" alt="" /></p>
+</li>
+<li>
+<p>Tab the <code>+</code> to send a file<br />
+<img src="images/IMG_0405.PNG" alt="" /></p>
+</li>
+<li>
+<p>Tap <code>Send file</code><br />
+<img src="images/IMG_0406.PNG" alt="" /></p>
+</li>
+<li>
+<p>Browse to and select your export<br />
+<img src="images/IMG_0413.PNG" alt="" /></p>
+</li>
+<li>
+<p>Tap the file you just sent<br />
+<img src="images/IMG_0410.PNG" alt="" /></p>
+</li>
+<li>
+<p>Tap <code>Import</code><br />
+<img src="images/IMG_0411.PNG" alt="" /></p>
+</li>
+<li>
+<p>Enter your passphrase and tap <code>Import</code><br />
+<img src="images/IMG_0412.PNG" alt="" /></p>
+</li>
+</ol>
+<h2 id="element-android-1"><a class="header" href="#element-android-1">Element Android</a></h2>
+<h3 id="export-2"><a class="header" href="#export-2">Export</a></h3>
+<ol>
+<li>
+<p>Tap your user picture in the top right<br />
+<img src="images/Screenshot_20200821-144905.png" alt="" /></p>
+</li>
+<li>
+<p>Tap the cog<br />
+<img src="images/Screenshot_20200821-144908.png" alt="" /></p>
+</li>
+<li>
+<p>Tap <code>Security &amp; Privacy</code><br />
+<img src="images/Screenshot_20200821-144911.png" alt="" /></p>
+</li>
+<li>
+<p>Tap <code>Export E2E room keys</code><br />
+<img src="images/Screenshot_20200821-144916.png" alt="" /></p>
+</li>
+<li>
+<p>Select a location and a file name, then tap <code>SAVE</code><br />
+<img src="images/Screenshot_20200821-144923.png" alt="" /></p>
+</li>
+<li>
+<p>Enter a secure passphrase, then tap <code>EXPORT</code><br />
+<img src="images/Screenshot_20200821-144941.png" alt="" /></p>
+</li>
+</ol>
+<h3 id="import-2"><a class="header" href="#import-2">Import</a></h3>
+<ol>
+<li>
+<p>Tap your user picture in the top right<br />
+<img src="images/Screenshot_20200821-144905.png" alt="" /></p>
+</li>
+<li>
+<p>Tap the cog<br />
+<img src="images/Screenshot_20200821-144908.png" alt="" /></p>
+</li>
+<li>
+<p>Tap <code>Security &amp; Privacy</code><br />
+<img src="images/Screenshot_20200821-144911.png" alt="" /></p>
+</li>
+<li>
+<p>Tap <code>Import E2E room keys</code><br />
+<img src="images/Screenshot_20200821-144916.png" alt="" /></p>
+</li>
+<li>
+<p>Browse to and select your export<br />
+<img src="images/Screenshot_20200821-145048.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your passphrase and tap <code>IMPORT</code><br />
+<img src="images/Screenshot_20200821-145058.png" alt="" /></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reset-cross-signing"><a class="header" href="#reset-cross-signing">Reset Cross Signing</a></h1>
+<p>Only do this if you have forgotten or lost your cross signing backup passphrase.</p>
+<p>Please read through the entire document before starting to make sure you understand the consequences of doing this.</p>
+<ul>
+<li><strong><a href="Reset-Cross-Signing.html#if-you-have-an-active-session">If you have an active session</a></strong></li>
+<li><strong><a href="Reset-Cross-Signing.html#if-you-do-not-have-an-active-session">If you DO NOT have an active session</a></strong></li>
+</ul>
+<h2 id="if-you-have-an-active-session"><a class="header" href="#if-you-have-an-active-session">If you have an active session</a></h2>
+<ol>
+<li>
+<p>You may wish to backup your keys before doing this just to be on the safe side if something goes wrong: See <a href="Export-and-Import-E2E-Room-Keys.html">Export and Import E2E Room Keys</a></p>
+</li>
+<li>
+<p>Go to Element <code>Security &amp; Privacy</code> settings<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Reset cross-signing and secret storage</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.05.05%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Clear cross-signing keys</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.06.18%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Generate a Security Key</code> or <code>Enter a Security Phrase</code>. Then <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.06.50%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Take note of your key then click <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.07.52%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Enter your account password and click <code>Continue</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.09.47%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>You can delete any untrusted sessions in Element <code>Security &amp; Privacy</code> settings. Select the sessions you want to remove and click <code>Delete 1 session</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.14.55%20PM.png" alt="" /></p>
+</li>
+</ol>
+<h2 id="if-you-do-not-have-an-active-session"><a class="header" href="#if-you-do-not-have-an-active-session">If you DO NOT have an active session</a></h2>
+<p>Doing this will destroy all your keys and you will NOT be able to access any historical encrypted messages.</p>
+<ol>
+<li>
+<p>Log in to Element<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%202.59.21%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Skip</code><br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.00.40%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Click <code>Skip</code> again<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.01.08%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Do not connect to Key Backup or verify session when asked</p>
+</li>
+<li>
+<p>Note that you will not be able to decrypt any previous messages after doing this<br />
+<img src="images/Screen%20Shot%202020-07-30%20at%203.12.36%20PM.png" alt="" /></p>
+</li>
+<li>
+<p>Follow the steps from <a href="Reset-Cross-Signing.html#if-you-have-an-active-session">If you have an active session</a></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contribute"><a class="header" href="#contribute">Contribute</a></h1>
+<ol>
+<li>
+<p>Fork the <a href="https://github.com/vector-im/ems-docs">GitHib repo</a></p>
+</li>
+<li>
+<p>Look at other pages, make your contributions in the same style and formatting etc.</p>
+</li>
+<li>
+<p>Add to <code>SUMMARY.md</code></p>
+</li>
+<li>
+<p><code>pngcrush</code> all your images with <code>pngcrush -brute -ow &quot;Screen Shot 2020-10-20 at 12.02.17 PM.png&quot;</code></p>
+</li>
+<li>
+<p>Ensure that Rust is installed on your system</p>
+</li>
+<li>
+<p><code>cargo install mdbook</code></p>
+</li>
+<li>
+<p><code>mdbook build</code></p>
+</li>
+<li>
+<p><code>sensible-browser book/index.html</code> - make sure it looks good, and that all links etc. are working</p>
+</li>
+<li>
+<p>Make a pull request</p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="nutzung-der-eigenen-domain-mit-ems"><a class="header" href="#nutzung-der-eigenen-domain-mit-ems">Nutzung der eigenen Domain mit EMS</a></h1>
+<p>Matrix ist ein Chat-Protokoll, mit dem Nutzer*innen auf verschiedenen Servern miteinander chatten können. Deshalb ist, wie bei E-Mail-Adressen, der Server fester Bestandteil einer jeden Nutzer-Adresse: @jennifer:unternehmen.de.</p>
+<p>Nach dem @-Zeichen folgt der Benutzername und nach dem Doppelpunkt folgt die Server-Adresse.</p>
+<p>Dies ist auch der Fall, wenn sie die Kommunikation mit anderen Matrix-Servern verbieten und ausschließlich intern chatten.</p>
+<p>Gerne können Sie Ihre eigene Domain mit Element Matrix Services (EMS) nutzen. Damit werden die Matrix-Adressen Ihrer Anwender kürzer und auf Ihre Organisation anpasst.</p>
+<p>Alternativ bietet Ihnen EMS ohne Aufpreis eine Subdomain. Hierbei ist keine Einrichtung Ihrerseits notwendig. Dann sehen die Adressen Ihrer Anwender*innen beispielsweise so aus: @jennifer:unternehmen.ems.host.</p>
+<p>Hier sind die Vorteile der Optionen:</p>
+<table><thead><tr><th>Nutzung einer eigenen Domain</th><th>Nutzung einer EMS-Subdomain</th></tr></thead><tbody>
+<tr><td>Nutzer- und Chat-Raum-Adressen sind kürzer und auf Ihre Organisation angepasst</td><td>Sie können sofort mit einer verfügbaren Subdomain starten</td></tr>
+<tr><td>Benötigt die Ablage von zwei Dateien auf Ihrer Webseite oder einen DNS-Eintrag (Anleitung für Ihr IT-Team ist unten im Text)</td><td>Keine Anpassung in Ihrer IT notwendig</td></tr>
+<tr><td>Migration zu anderen Anbietern oder in die eigene IT-Landschaft möglich</td><td>Migration zu anderen Anbietern und in die eigene IT später nicht leicht möglich*</td></tr>
+<tr><td>Ihre Domain muss erreichbar bleiben</td><td>Keine Verantwortung auf Ihrer Seite</td></tr>
+</tbody></table>
+<p>* Ein Wechsel der Domain ist momentan nicht einfach möglich, da die Domain ein Teil der Nutzer- und Chat-Raum-Adressen wird. Die Entscheidung muss daher bei der Einrichtung des Servers getroffen werden.</p>
+<h2 id="reihenfolge-der-einrichtung"><a class="header" href="#reihenfolge-der-einrichtung">Reihenfolge der Einrichtung</a></h2>
+<p>Sie haben sich entschieden Ihre eigene Domain zu nutzen? Sehr gut!</p>
+<ol>
+<li>Bestellen Sie den Matrix-Server bei EMS unter Angabe ihrer eigenen Domain. Sie müssen auch eine EMS-Serveradresse im Format unternehmen.ems.host wählen.</li>
+<li>Folgen Sie der Anleitung im Abschnitt “Einrichtung auf Ihrem Webspace”.</li>
+<li>Überprüfen Sie auf https://ems.element.io/user/hosting, dass Ihre Domain erfolgreich eingerichtet wurde.</li>
+</ol>
+<h2 id="einrichtung-auf-ihrem-webspace"><a class="header" href="#einrichtung-auf-ihrem-webspace">Einrichtung auf Ihrem Webspace</a></h2>
+<p>Diese Schritte müssen Sie tätigen, um Ihre eigene Domain zu verwenden.</p>
+<p>Sollten Sie eine englische Anleitung bevorzugen, finden Sie diese hier:
+<a href="https://github.com/matrix-org/synapse/blob/master/docs/delegate.md">https://github.com/matrix-org/synapse/blob/master/docs/delegate.md</a></p>
+<p>Damit Anwendungen Ihren Matrix-Server bei EMS finden, müssen Sie auf Ihrer Domain einen Hinweis auf dessen Ort hinterlassen. Sie haben dafür die zwei folgenden Optionen.</p>
+<h2 id="ablage-von-well-known-dateien-empfohlene-option"><a class="header" href="#ablage-von-well-known-dateien-empfohlene-option">Ablage von .well-known Dateien (empfohlene Option)</a></h2>
+<p>Erstellen Sie zwei statische JSON-Dateien auf Ihrer Webseite. Diese müssen unter den folgenden Pfaden öffentlich aus dem Internet erreichbar sein.</p>
+<ul>
+<li><a href="https://matrix.org/.well-known/matrix/client">https://matrix.org/.well-known/matrix/client</a></li>
+<li><a href="https://matrix.org/.well-known/matrix/server">https://matrix.org/.well-known/matrix/server</a></li>
+</ul>
+<p>Statt matrix.org, sind hier die entsprechenden Pfade auf Ihrer Domain gemeint.</p>
+<p>Ist der Ordner .well-known auf Ihrem Webspace nicht vorhanden, erstellen Sie ihn. Manche Programme blenden Ordner aus, wenn sie mit einem Punkt starten. Er könnte also schon existieren. Erstellen Sie darin einen Ordner matrix.</p>
+<p>Die JSON-Dateien client und server dürfen keine Dateiendung haben und müssen die folgenden Inhalte haben. Ersetzen Sie “unternehmen” mit Ihrem EMS-Hostnamen. Diesen finden Sie auf <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a> vor “.ems.host”, z.B. “unternehmen.ems.host”. Wurde Ihr Server vor dem Sommer 2020 angelegt, hat er vermutlich die Endung “.modular.im”.</p>
+<p><code>/.well-known/matrix/client</code></p>
+<pre><code class="language-json">{
+    &quot;m.homeserver&quot;: {
+        &quot;base_url&quot;: &quot;https://unternehmen.ems.host&quot;
+    },
+    &quot;m.identity_server&quot;: {
+        &quot;base_url&quot;: &quot;https://vector.im&quot;
+    }
+}
+</code></pre>
+<p><code>/.well-known/matrix/server</code></p>
+<pre><code class="language-json">{
+    &quot;m.server&quot;: &quot;unternehmen.ems.host:443&quot;
+}
+</code></pre>
+<p><strong>Ersetzen Sie in beiden Beispielen unternehmen.ems.host durch Ihre EMS-Serveradresse.</strong></p>
+<h2 id="fehlerbehebung"><a class="header" href="#fehlerbehebung">Fehlerbehebung</a></h2>
+<p>Um zu überprüfen, ob alles korrekt eingerichtet wurde, geben Sie Ihre Domain auf der folgenden Webseite ein.</p>
+<p><a href="https://federationtester.matrix.org/">https://federationtester.matrix.org/</a> (Nur in englischer Sprache)</p>
+<p>Eine grüne Fläche mit dem Wort “SUCCESS” signalisiert eine erfolgreiche Einrichtung. Auch in EMS sollten Sie nun unter https://ems.element.io/user/hosting eine erfolgreiche Prüfung der Domain vorfinden.</p>
+<p>Ist eine rote Nachricht “Connection Errors” zu sehen, war eine Verbindung zum Server nicht möglich. Haben Sie den Server bei EMS schon bestellt? Ist Ihre Webseite nicht über HTTPS erreichbar? Hier sollte der .well-known Ordner und die darin enthaltene Datei öffentlich aus dem Internet zugänglich sein.</p>
+<p>Sehen Sie die Nachricht “No SRV Records”, wurde der DNS-Eintrag nicht gefunden. Dieser Eintrag ist nur notwendig, sollten Sie keine Datei auf Ihrem Webspace veröffentlichen können. Überprüfen Sie, ob Sie alles richtig eingegeben haben und das Formular Ihres Domain-Anbieters gespeichert haben. Ist alles richtig, brauchen Sie vielleicht nur etwas zu warten. Nach dem Ändern von DNS-Einträgen braucht es ein paar Minuten, bis sich die Änderung im Internet verteilt.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+                <script type="text/javascript" src="src/book-assets/sidebar.js"></script>
+        
+                        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+                
+    </body>
+</html>
