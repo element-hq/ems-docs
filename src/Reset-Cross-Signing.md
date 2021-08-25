@@ -1,7 +1,5 @@
 # Reset Cross Signing
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
 Only do this if you have forgotten or lost your cross signing backup passphrase.
 
 Please read through the entire document before starting to make sure you understand the consequences of doing this.

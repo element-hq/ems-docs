@@ -1,10 +1,8 @@
 # Export and Import E2E Room Keys
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
+## Element Web and Desktop
 
-# Element Web and Desktop
-
-## Export
+### Export
 1. Go to Element `Security & Privacy` settings  
 ![](images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png)
 
@@ -20,7 +18,7 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 1. Select a directory on your computer  
 ![](images/Screen%20Shot%202020-08-21%20at%201.50.52%20PM.png)
 
-## Import
+### Import
 1. Go to Element `Security & Privacy` settings  
 ![](images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png)
 
@@ -37,9 +35,9 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 ![](images/Screen%20Shot%202020-08-21%20at%201.55.34%20PM.png)
 
 
-# Element iOS
+## Element iOS
 
-## Export
+### Export
 
 1. Tap the cog in the top left of Element  
 ![](images/IMG_0393.PNG)
@@ -59,7 +57,7 @@ This article is licensed under the standard MIT license. See [Home](index.md) fo
 1. Choose a location then tap `Save`  
 ![](images/IMG_0398.PNG)
 
-## Import
+### Import
 
 This is a temporary solution until [this issue](https://github.com/vector-im/element-ios/issues/1027) is resolved
 
@@ -100,9 +98,9 @@ This is a temporary solution until [this issue](https://github.com/vector-im/ele
 ![](images/IMG_0412.PNG)
 
 
-# Element Android
+## Element Android
 
-## Export
+### Export
 
 1. Tap your user picture in the top right  
 ![](images/Screenshot_20200821-144905.png)
@@ -123,7 +121,7 @@ This is a temporary solution until [this issue](https://github.com/vector-im/ele
 ![](images/Screenshot_20200821-144941.png)
 
 
-## Import
+### Import
 
 1. Tap your user picture in the top right  
 ![](images/Screenshot_20200821-144905.png)

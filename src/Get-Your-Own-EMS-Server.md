@@ -1,7 +1,5 @@
 # Get Your Own EMS Server
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
 1. Go to [https://ems.element.io/](https://ems.element.io/)
 
 1. Click `Sign up or Sign in`  

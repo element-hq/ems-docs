@@ -1,7 +1,5 @@
 # Change Account Password
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
 Resetting the account password will log out all your sessions. Before doing this, make sure that
 * all your sessions are connected to key backup,
 * all sessions have backed up all their keys. See [Check-Status](Check-Status.md), and

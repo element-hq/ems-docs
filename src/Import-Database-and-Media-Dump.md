@@ -1,7 +1,5 @@
 # Import Database and Media Dump
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
 This article is structured for an export from EMS, but may also be applicable in other circumstances.
 
 For support on Synapse or matrix-media-repo, ask in the Matrix rooms [#synapse:matrix.org](https://matrix.to/#/#synapse:matrix.org) and [#mediarepo:t2bot.io](https://matrix.to/#/#mediarepo:t2bot.io)

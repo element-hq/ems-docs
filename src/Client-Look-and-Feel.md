@@ -1,7 +1,5 @@
 # Client Look and Feel
 
-This article is licensed under the standard MIT license. See [Home](index.md) for a full copy.
-
 This feature allows you to customize the home and welcome page on your EMS provided Element Web client.
 
 The guide assumes you already have a website on any domain with https enabled.
