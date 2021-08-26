@@ -5,7 +5,7 @@
 1. Use American English
 1. Make your changes
 1. Install `pngcrush`, `mdbook`, `markdownlint-cli`, and a local web server, for example `sensible-browser`
-1. Add your new to `SUMMARY.md` if applicable
+1. Add your new page to `SUMMARY.md` if applicable
 1. `pngcrush` all your images with `pngcrush -brute -ow "Screen Shot 2020-10-20 at 12.02.17 PM.png"`
 1. Run the linter and fix any errors
 1. Compile the book using `mdbook build`
