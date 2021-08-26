@@ -31,11 +31,11 @@
 - [Check Status](Check-Status.md)
 - [Export and Import E2E Room Keys](Export-and-Import-E2E-Room-Keys.md)
 - [Reset Cross Signing](Reset-Cross-Signing.md)
+  
+# Non-English
+
+- [Deutsch: Nutzung der eigenen Domain mit EMS](Nutzung-der-eigenen-Domain-mit-EMS.md)
 
 # Contribute
 
 - [Contribute](Contribute.md)
-
-# Non-English
-
-- [Deutsch: Nutzung der eigenen Domain mit EMS](Nutzung-der-eigenen-Domain-mit-EMS.md)
