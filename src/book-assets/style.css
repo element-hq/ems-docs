@@ -50,7 +50,7 @@
 /* Only the Element logo on narrow screens */
 @media screen and (max-width:899px) {
     .header-logo {
-        content: url(https://element-wiki.twily.me/book-assets/element-logo.svg);
+        content: url(https://ems-docs.element.io/book-assets/element-logo.svg);
     }
 }
 
