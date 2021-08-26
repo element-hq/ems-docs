@@ -1,4 +1,4 @@
-- [Element Wiki](index.md)
+- [Element Docs](index.md)
 - [Frequently Asked Questions](Frequently-Asked-Questions.md)
 
 # Element Matrix Services
