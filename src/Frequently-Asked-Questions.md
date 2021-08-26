@@ -1,6 +1,5 @@
 # Frequently Asked Questions
 
-
 ## Matrix General
 
 ### What is an Identity Server and how does it work?
@@ -19,12 +18,11 @@ Identity Servers continue to provide the functionality described in 1. The featu
 
 For a period in 2019, while privacy functionality was being enhanced on vector.im and matrix.org, these Identity Servers were restricted to only provide services for users on New Vector homeservers. Once privacy improvements landed, this restriction was lifted.
 
-
 ## Element Matrix Services
 
 ### Account Management
 
-#### Please discontinue my account.
+#### Please discontinue my account
 
 It is best if EMS customers delete their host or account themselves. Here's how:
 
@@ -112,23 +110,21 @@ You will be able to enter the customization preferences from the managed host pa
 
 #### CNAME and .well-known?
 
-* You need to create a CNAME record with your DNS provider. This need to be:  
+- You need to create a CNAME record with your DNS provider. This need to be:  
     **chat.example.com. CNAME yourEMShost.element.io.**  
 (please note that proxy must be turned off if you are using CloudFlare)
 
+- You need to set up a website on your domain e.g. `example.com`.
+- This website needs HTTPS enabled.
 
-* You need to set up a website on your domain e.g. `example.com`.
-* This website needs HTTPS enabled.
+- You need to create two files on the web server. These need to be located at exactly:  
+  - <https://example.com/.well-known/matrix/client>  
+  - <https://example.com/.well-known/matrix/server>  
 
-
-* You need to create two files on the web server. These need to be located at exactly:  
-  - https://example.com/.well-known/matrix/client  
-  - https://example.com/.well-known/matrix/server  
-
-
-* You need to enable the CORS header `Access-Control-Allow-Origin: *` on the web server for the client file. See [https://enable-cors.org/](https://enable-cors.org/) for instructions on how to do this.
+- You need to enable the CORS header `Access-Control-Allow-Origin: *` on the web server for the client file. See [https://enable-cors.org/](https://enable-cors.org/) for instructions on how to do this.
 
 The client file needs to contain:
+
 ```json
 {
     "m.homeserver": {
@@ -141,6 +137,7 @@ The client file needs to contain:
 ```
 
 The server file needs to contain:
+
 ```json
 {
     "m.server": "yourEMShost.ems.host:443"

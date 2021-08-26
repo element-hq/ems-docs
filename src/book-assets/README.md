@@ -1,6 +1,6 @@
 # Book Assets
 
-This directory contains extra files for modifying the look and functionality of 
+This directory contains extra files for modifying the look and functionality of
 [mdbook](https://github.com/rust-lang/mdBook), the documentation software that's
 used to generate Synapse's documentation website.
 
@@ -10,7 +10,7 @@ addition, the `theme` directory contains files that overwrite their counterparts
 each of the default themes included with mdbook.
 
 Currently we use these files to generate [a floating Table of Contents page]
-(https://github.com/JorelAli/mdBook-pagetoc/).
+(<https://github.com/JorelAli/mdBook-pagetoc/>).
 
 More information can be found in mdbook's official documentation for
 [injecting page JS/CSS](https://rust-lang.github.io/mdBook/format/config.html)

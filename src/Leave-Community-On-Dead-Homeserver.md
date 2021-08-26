@@ -8,9 +8,9 @@ This guide explains a working, but dirty solution to leave a community that used
 
 ## Requirements
 
-* Your account is on your own homeserver, or a homeserver you have access to change the configuration of
-* You own any domain (in ths guide, this will be `yourDomain.com`)
-* You have a web server to host a web site and a temporary Synapse on. This guide include examples for nginx
+- Your account is on your own homeserver, or a homeserver you have access to change the configuration of
+- You own any domain (in ths guide, this will be `yourDomain.com`)
+- You have a web server to host a web site and a temporary Synapse on. This guide include examples for nginx
 
 ## Overview
 
@@ -22,7 +22,7 @@ This guide will explain how to leave the community `+deadCommunity:deadHsDomain.
 
 On your web server, create `/etc/nginx/sites-available/deadHsDomain.com` with the following content:
 
-```
+```none
 server {
         listen 443;
         listen [::]:443;
@@ -47,17 +47,17 @@ Reload nginx: `systemctl reload nginx`
 
 Add the following to the `hosts` file on your local computer, and to your primary Matrix server. Use the IP of your web server
 
-```
+```none
 1.2.3.4 deadHsDomain.com
 ```
 
 You should now be able to talk to this domain from both your local computer and from your primary Matrix server.
 
-```
+```bash
 $ curl --insecure "https://deadHsDomain.com/.well-known/matrix/client"
 {"m.homeserver": {"base_url": "https://temporarySubDomain.yourDomain.com"},"m.identity_server": {"base_url": "https://vector.im"}}
 
-curl --insecure "https://deadHsDomain.com/.well-known/matrix/server"
+$ curl --insecure "https://deadHsDomain.com/.well-known/matrix/server"
 {"m.server": "temporarySubDomain.yourDomain.com:443"
 ```
 
@@ -67,7 +67,7 @@ Create a DNS `A` record for the sub domain you added to the well-known files in 
 
 On your web server, create `/etc/nginx/sites-available/temporarySubDomain.yourDomain.com` with the following content:
 
-```
+```none
 server {
     listen 80;
     listen [::]:80;
@@ -89,18 +89,21 @@ Postgres not needed as this server is temporary
 
 Add the following to the top of the Synapse config file:
 
-```
+```yaml
 federation_verify_certificates: false
 use_insecure_ssl_client_just_for_testing_do_not_use: true
 ```
 
 Then replace
-```
+
+```yaml
 trusted_key_servers:
   - server_name: "matrix.org"
 ```
+
 with
-```
+
+```yaml
 trusted_key_servers:
   - server_name: "matrix.org"
     accept_keys_insecurely: true
@@ -110,9 +113,7 @@ Start Synapse
 
 You should now be able to load `https://temporarySubDomain.yourDomain.com/_matrix/static/` in your browser with no errors and valid certificate. It should show `It works! Synapse is running`
 
-Create an account on the homeserver according to https://github.com/matrix-org/synapse/blob/develop/INSTALL.md#registering-a-user - Which username you choose does not matter
-
-
+Create an account on the homeserver according to <https://github.com/matrix-org/synapse/blob/develop/INSTALL.md#registering-a-user> - Which username you choose does not matter
 
 ### Log in to deadHsDomain.com and create the community
 
@@ -131,10 +132,11 @@ Create the community you want to leave
 Stop the `deadHsDomain.com` Synapse
 
 Add the following to the Synapse DB on `deadHsDomain.com`. Replace
-* `+deadCommunity:deadHsDomain.com` with the community you created earlier
-* `@you:yourMatrixDomain.com` with your primary Matrix ID, the user you want to leave the community
-* `1601386190185` with a timestamp a couple of days into the future
-* `yourMatrixDomain.com`  with the domain of your primary Matrix server
+
+- `+deadCommunity:deadHsDomain.com` with the community you created earlier
+- `@you:yourMatrixDomain.com` with your primary Matrix ID, the user you want to leave the community
+- `1601386190185` with a timestamp a couple of days into the future
+- `yourMatrixDomain.com`  with the domain of your primary Matrix server
 
 ```sql
 INSERT INTO group_attestations_renewals (group_id, user_id, valid_until_ms)
@@ -149,26 +151,26 @@ VALUES ('+deadCommunity:deadHsDomain.com', '@you:yourMatrixDomain.com', 16014023
 
 Start the `deadHsDomain.com` Synapse
 
-
 ### Make your primary Synapse federate with deadHsDomain.com
 
 **NOTE: this step makes your homeserver insecure. You want to have it running with these options as short as possible**
-
-
 Add the following to the top of the Synapse config file:
 
-```
+```yaml
 federation_verify_certificates: false
 use_insecure_ssl_client_just_for_testing_do_not_use: true
 ```
 
 Replace
-```
+
+```yaml
 trusted_key_servers:
   - server_name: "matrix.org"
 ```
+
 With
-```
+
+```yaml
 trusted_key_servers:
   - server_name: "matrix.org"
     accept_keys_insecurely: true
@@ -184,7 +186,7 @@ In Element, on your main account. Go to the community -- Community settings -- L
 
 Remove these three lines from the Synapse config file on your primary Synapse
 
-```
+```yaml
 federation_verify_certificates: false
 use_insecure_ssl_client_just_for_testing_do_not_use: true
     accept_keys_insecurely: true

@@ -59,9 +59,10 @@ MD023: true
 # Multiple headings with the same content <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md024>
 MD024:
   allow_different_nesting: true
+  siblings_only: true
 
 # Multiple top level headings in the same document <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md025>
-MD025: true
+MD025: false
 
 # Trailing punctuation in heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md026>
 MD026: true
@@ -97,7 +98,7 @@ MD035:
   style: '---'
 
 # Emphasis used instead of a heading <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md036>
-MD036: false
+MD036: true
 
 # Spaces inside emphasis markers <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md037>
 MD037: true
@@ -124,7 +125,7 @@ MD043: false
 MD044: false
 
 # Images should have alternate text (alt text) <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md045>
-MD045: false
+MD045: true
 
 # Code block style <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md046>
 MD046:

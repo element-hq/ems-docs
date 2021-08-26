@@ -27,7 +27,7 @@ Sie haben sich entschieden Ihre eigene Domain zu nutzen? Sehr gut!
 
 1. Bestellen Sie den Matrix-Server bei EMS unter Angabe ihrer eigenen Domain. Sie müssen auch eine EMS-Serveradresse im Format unternehmen.ems.host wählen.
 1. Folgen Sie der Anleitung im Abschnitt “Einrichtung auf Ihrem Webspace”.
-1. Überprüfen Sie auf https://ems.element.io/user/hosting, dass Ihre Domain erfolgreich eingerichtet wurde.
+1. Überprüfen Sie auf <https://ems.element.io/user/hosting>, dass Ihre Domain erfolgreich eingerichtet wurde.
 
 ## Einrichtung auf Ihrem Webspace
 
@@ -80,7 +80,7 @@ Um zu überprüfen, ob alles korrekt eingerichtet wurde, geben Sie Ihre Domain a
 
 [https://federationtester.matrix.org/](https://federationtester.matrix.org/) (Nur in englischer Sprache)
 
-Eine grüne Fläche mit dem Wort “SUCCESS” signalisiert eine erfolgreiche Einrichtung. Auch in EMS sollten Sie nun unter https://ems.element.io/user/hosting eine erfolgreiche Prüfung der Domain vorfinden.
+Eine grüne Fläche mit dem Wort “SUCCESS” signalisiert eine erfolgreiche Einrichtung. Auch in EMS sollten Sie nun unter <https://ems.element.io/user/hosting> eine erfolgreiche Prüfung der Domain vorfinden.
 
 Ist eine rote Nachricht “Connection Errors” zu sehen, war eine Verbindung zum Server nicht möglich. Haben Sie den Server bei EMS schon bestellt? Ist Ihre Webseite nicht über HTTPS erreichbar? Hier sollte der .well-known Ordner und die darin enthaltene Datei öffentlich aus dem Internet zugänglich sein.
 
