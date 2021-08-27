@@ -170,6 +170,10 @@ You can deactivate users from the admin dashboard for your host, at [https://ems
 
 Select the `Server Admin` tab and then the `User Info` sub-tab. From here you can search for the relevant user and hit the `Deactivate account button`.
 
+#### How do I enable the public room directory?
+
+The public room directory is enabled on your EMS server if both `Federation` and `Guest users` is enabled.
+
 #### I deleted my host, now my server name is taken and I cannot rebuild
 
 This is actually part of a security measure - We generally prevent hosts from returning to the pool after they were initially claimed in order to prevent people from attempting to imitate old servers / users. Contact support from [https://ems.element.io/support](https://ems.element.io/support) while signed in to get the hostname released.
