@@ -5,4 +5,4 @@
 1. Click the `Hosts` tab.
 
 1. Say you want a total of 10 Monthly Active Users on your EMS Nickel server. Add `5` in the `Additional users` field. Then click `Save`  
-![](images/Screen%20Shot%202020-07-30%20at%202.28.57%20PM.png)
+![temp](images/Screen%20Shot%202020-07-30%20at%202.28.57%20PM.png)

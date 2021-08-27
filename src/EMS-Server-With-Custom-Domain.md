@@ -5,31 +5,33 @@ For this guide, I will be using the domain [twily.org](https://twily.org/). I wi
 From the guide at [Get Your Own EMS Server](Get-Your-Own-EMS-Server.md), I will be replacing the EMS hostname `ems-demo-staging.ems.host` with `ems-custom-demo-staging.ems.host`
 
 The guide assumes you already have a website on the root of your domain with `https` enabled.  
-![](images/Screen%20Shot%202020-07-31%20at%209.06.17%20AM.png)
+![temp](images/Screen%20Shot%202020-07-31%20at%209.06.17%20AM.png)
 
 1. Follow step 1 - 10 from [Get Your Own EMS Server](Get-Your-Own-EMS-Server.md)
 
 1. On step 10 from [Get Your Own EMS Server](Get-Your-Own-EMS-Server.md), turn ON `Custom DNS`  
-![](images/Screen%20Shot%202020-07-31%20at%209.07.59%20AM.png)
+![temp](images/Screen%20Shot%202020-07-31%20at%209.07.59%20AM.png)
 
 1. In the `Custom Homeserver domain` field, enter `twily.org`  
-![](images/Screen%20Shot%202020-07-31%20at%209.08.47%20AM.png)
+![temp](images/Screen%20Shot%202020-07-31%20at%209.08.47%20AM.png)
 
 1. Create two files on your website according to the instructions given.  
 The path cannot be changed, but up to 30 redirects are supported.  
 While not required, you should also add the header `Content-Type application/json` to both files.
 
     1. `https://twily.org/.well-known/matrix/server`  
-    ![](images/Screen%20Shot%202020-07-31%20at%209.12.39%20AM.png)
+    ![temp](images/Screen%20Shot%202020-07-31%20at%209.12.39%20AM.png)
+
         ```json
         {
             "m.server": "ems-custom-demo-staging.ems.host:443"
         }
         ```
 
-    2. `https://twily.org/.well-known/matrix/client`  
-    ![](images/Screen%20Shot%202020-07-31%20at%209.19.07%20AM.png)  
+    1. `https://twily.org/.well-known/matrix/client`  
+    ![temp](images/Screen%20Shot%202020-07-31%20at%209.19.07%20AM.png)  
     You need to enable the CORS header `Access-Control-Allow-Origin: *` on the web server for this file. See [https://enable-cors.org/](https://enable-cors.org/) for instructions on how to do this.
+
         ```json
         {
             "m.homeserver": {
@@ -42,12 +44,13 @@ While not required, you should also add the header `Content-Type application/jso
         ```
 
 1. Click `Check again` to verify that your `.well-known` files are configured correctly  
-![](images/Screen%20Shot%202020-07-31%20at%209.22.19%20AM.png)
+![temp](images/Screen%20Shot%202020-07-31%20at%209.22.19%20AM.png)
 
 1. You can also verify your `.well-known` files from the command line. Note the lines `access-control-allow-origin: *` and `content-type: application/json`
 
     1. On Mac or Linux, using your `terminal`  
-        ```
+
+        ```bash
         $ curl -i https://twily.org/.well-known/matrix/client
         HTTP/2 200 
         date: Fri, 31 Jul 2020 09:11:21 GMT
@@ -89,7 +92,8 @@ While not required, you should also add the header `Content-Type application/jso
         ```
 
     1. On Windows, using `PowerShell`  
-        ```
+
+        ```powershell
         PS C:\Users\twilight> Invoke-WebRequest -Uri https://twily.org/.well-known/matrix/client
 
 
@@ -144,22 +148,23 @@ While not required, you should also add the header `Content-Type application/jso
 1. You can continue without the `.well-known` files in place, but your server will have limited functionality until this is fixed
 
 1. In the `Custom Client domain` field, enter `chat.twily.org`. This can be any domain, except the same as `Custom Homeserver domain`  
-![](images/Screen%20Shot%202020-07-31%20at%209.26.35%20AM.png)
+![temp](images/Screen%20Shot%202020-07-31%20at%209.26.35%20AM.png)
 
 1. Create a CNAME DNS record with your DNS provider according to the instructions given  
-![](images/Screen%20Shot%202020-07-31%20at%209.51.37%20AM.png)  
+![temp](images/Screen%20Shot%202020-07-31%20at%209.51.37%20AM.png)  
 `chat.twily.org.  CNAME  ems-custom-demo-staging.element.io.`
 
 1. This shows how this is done with CloudFlare DNS. Depending on your DNS provider this might be different. Consult the documentation for your provider. Note that Proxy must be turned off with CloudFlare.  
-![](images/Screen%20Shot%202020-07-31%20at%209.52.41%20AM.png)
+![temp](images/Screen%20Shot%202020-07-31%20at%209.52.41%20AM.png)
 
 1. Back on EMS, click `Check again`. Note that sometimes it might take a while for your new DNS record to propagate. You can still continue, but functionality will be limited. Check back with the Hosts tab on [https://ems.element.io/user/hosting](https://ems.element.io/user/hosting) and click `Rebuild Host` once the DNS record is in place.  
-![](images/Screen%20Shot%202020-07-31%20at%209.56.18%20AM.png)
+![temp](images/Screen%20Shot%202020-07-31%20at%209.56.18%20AM.png)
 
 1. You can also verify your CNAME DNS record using the command line
 
     1. On Mac or Linux, using your `terminal`  
-        ```
+
+        ```bash
         $ dig chat.twily.org CNAME
 
         ; <<>> DiG 9.10.6 <<>> chat.twily.org CNAME
@@ -171,10 +176,10 @@ While not required, you should also add the header `Content-Type application/jso
         ;; OPT PSEUDOSECTION:
         ; EDNS: version: 0, flags:; udp: 512
         ;; QUESTION SECTION:
-        ;chat.twily.org.			IN	CNAME
+        ;chat.twily.org.   IN CNAME
 
         ;; ANSWER SECTION:
-        chat.twily.org.		299	IN	CNAME	ems-custom-demo-staging.element.io.
+        chat.twily.org.  299 IN CNAME ems-custom-demo-staging.element.io.
 
         ;; Query time: 32 msec
         ;; SERVER: 8.8.4.4#53(8.8.4.4)
@@ -183,7 +188,8 @@ While not required, you should also add the header `Content-Type application/jso
         ```
 
     1. On Windows, using `PowerShell`  
-        ```
+
+        ```powershell
         PS C:\Users\twilight> Resolve-DnsName -Name chat.twily.org -Type CNAME
 
         Name                           Type   TTL   Section    NameHost
