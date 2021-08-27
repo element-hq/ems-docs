@@ -1,23 +1,23 @@
 .element {
-    --logotype-src: url(https://element-wiki.twily.me/book-assets/element-logotype-dark.svg);
+    --logotype-src: url(https://ems-docs.element.io/book-assets/element-logotype-dark.svg);
 }
 
 .ayu {
-    --logotype-src: url(https://element-wiki.twily.me/book-assets/element-logotype-light.svg);
+    --logotype-src: url(https://ems-docs.element.io/book-assets/element-logotype-light.svg);
 }
 
 .coal {
-    --logotype-src: url(https://element-wiki.twily.me/book-assets/element-logotype-light.svg);
+    --logotype-src: url(https://ems-docs.element.io/book-assets/element-logotype-light.svg);
 }
 
 .light {
-    --logotype-src: url(https://element-wiki.twily.me/book-assets/element-logotype-dark.svg);
+    --logotype-src: url(https://ems-docs.element.io/book-assets/element-logotype-dark.svg);
 }
 
 .navy {
-    --logotype-src: url(https://element-wiki.twily.me/book-assets/element-logotype-light.svg);
+    --logotype-src: url(https://ems-docs.element.io/book-assets/element-logotype-light.svg);
 }
 
 .rust {
-    --logotype-src: url(https://element-wiki.twily.me/book-assets/element-logotype-dark.svg);
+    --logotype-src: url(https://ems-docs.element.io/book-assets/element-logotype-dark.svg);
 }
