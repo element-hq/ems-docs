@@ -18,3 +18,5 @@ Provided by the [Element Matrix Services](https://ems.element.io/) team
 If you would like a guide for something that is not yet documented, or if you spot an error in the existing documentation, you can either click the <i class="fa fa-edit"></i> button and propose a fix, open a new issue on GitHub, or come and chat to us in [#ems:matrix.org](https://matrix.to/#/#ems:matrix.org).
 
 To open an issue on GitHub, click [here](https://github.com/vector-im/ems-docs/issues/new/choose) and follow the instructions.
+
+See [Contribute](Contribute.md) for more information about contributing.
