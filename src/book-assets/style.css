@@ -66,3 +66,7 @@ img {
     max-width: 450px;
     border: 1px solid var(--fg);
 }
+
+table {
+    margin-left: 0;
+}
