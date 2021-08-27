@@ -17,6 +17,7 @@ jobs:
           ignore: './src/SUMMARY.md'
           config: './lint/config/default.yml'
 
+      # Summary has MD025 and MD041 turned off due to how mdbook expects the file SUMMARY.md
       - name: Check SUMMARY.md
         uses: ./
         with:
