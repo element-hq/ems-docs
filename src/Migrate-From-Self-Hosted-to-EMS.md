@@ -4,14 +4,15 @@
 
 Before starting with this guide, please contact EMS support from [https://ems.element.io/support](https://ems.element.io/support) or by emailing [ems-support@element.io](mailto:ems-support@element.io)
 
-* Except where specified, you should be able to just copy-paste each command in succession.
-* Please do not change any file names anywhere.
+- Except where specified, you should be able to just copy-paste each command in succession.
+- Please do not change any file names anywhere.
 
 ## SSH to your matrix server
 
 You might want to run everything in a `tmux` or a `screen` session to avoid disruption in case of a lost SSH connection.
 
 ## Generate password for gpg encryption
+
 ```bash
 pwgen -s 64 1
 ```
@@ -43,14 +44,15 @@ chmod 000 /tmp/synapse_export
 ## Copy Synapse config
 
 Copy the following files and send to EMS Support:
-* Your Synapse configuration file (usually `homeserver.yaml`)
-* Your message signing key.
-    * This is stored in a separate file. See the Synapse config file for the path. The variable is `signing_key_path` [https://github.com/matrix-org/synapse/blob/v1.32.2/docs/sample_config.yaml#L1526-L1528](https://github.com/matrix-org/synapse/blob/v1.32.2/docs/sample_config.yaml#L1526-L1528)
 
+- Your Synapse configuration file (usually `homeserver.yaml`)
+- Your message signing key.
+  - This is stored in a separate file. See the Synapse config file for the path. The variable is `signing_key_path` [https://github.com/matrix-org/synapse/blob/v1.32.2/docs/sample_config.yaml#L1526-L1528](https://github.com/matrix-org/synapse/blob/v1.32.2/docs/sample_config.yaml#L1526-L1528)
 
 ## Stop Synapse
 
 **DO NOT START IT AGAIN AFTER THIS**
+Doing so can cause issues with federation and inconsistent data for your users
 
 ## Database export
 
@@ -59,9 +61,10 @@ Copy the following files and send to EMS Support:
 #### Dump, compress and encrypt
 
 Replace:
-* `<dbhost>` (ip or fqdn for your database server)
-* `<dbusername>` (username for your synapse database)
-* `<dbname>` (the name of the database for synapse)
+
+- `<dbhost>` (ip or fqdn for your database server)
+- `<dbusername>` (username for your synapse database)
+- `<dbname>` (the name of the database for synapse)
 
 ```bash
 pg_dump -O -h <dbhost> -U <dbusername> -d <dbname> | gzip > customer_db_export.sql.gz
@@ -105,7 +108,7 @@ Skip ahead to and follow [Backup media export](#backup-media-export).
 
 ### Download the export tool
 
-Download the latest version of `export_synapse_for_import-linux-x64` (or ` export_synapse_for_import-win-x64.exe`) from [https://github.com/turt2live/matrix-media-repo/releases](https://github.com/turt2live/matrix-media-repo/releases)
+Download the latest version of `export_synapse_for_import-linux-x64` (or `export_synapse_for_import-win-x64.exe`) from [https://github.com/turt2live/matrix-media-repo/releases](https://github.com/turt2live/matrix-media-repo/releases)
 
 ```bash
 wget https://github.com/turt2live/matrix-media-repo/releases/download/vx.x.x/export_synapse_for_import-linux-x64
@@ -115,11 +118,12 @@ chmod +x export_synapse_for_import-linux-x64
 ### Run the export
 
 Replace:
-* `<dbhost>` (ip or fqdn for your database server)
-* `<dbname>` (the name of the database for synapse)
-* `<dbusername>` (username for your synapse database)
-* `/path/to/synapse/media_store` (the path to where synapse stores your media)
-* `<yourdomain.tld>` (the domain for your server. this is the part that is in your usernames)
+
+- `<dbhost>` (ip or fqdn for your database server)
+- `<dbname>` (the name of the database for synapse)
+- `<dbusername>` (username for your synapse database)
+- `/path/to/synapse/media_store` (the path to where synapse stores your media)
+- `<yourdomain.tld>` (the domain for your server. this is the part that is in your usernames)
 
 ```bash
 ./export_synapse_for_import-linux-x64 -h
@@ -130,6 +134,7 @@ rm export_synapse_for_import-linux-x64
 ```
 
 ### Compress and encrypt
+
 ```bash
 tar -zcvf customer_media_export.tar.gz customer_media_export
 gpg --symmetric --no-symkey-cache customer_media_export.tar.gz
@@ -168,6 +173,7 @@ rm customer_backup_media_export.tar.gz.gpg
 ```
 
 ## Transfer
+
 Download the files, then upload to the Google Drive folder shared by EMS or a location as agreed with your EMS contact.
 
 While transfer is running, you should edit or create the well-known files and CNAME DNS records to point to your EMS host.

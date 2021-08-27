@@ -5,6 +5,7 @@ This article is structured for an export from EMS, but may also be applicable in
 For support on Synapse or matrix-media-repo, ask in the Matrix rooms [#synapse:matrix.org](https://matrix.to/#/#synapse:matrix.org) and [#mediarepo:t2bot.io](https://matrix.to/#/#mediarepo:t2bot.io)
 
 ## Prerequisites
+
 You need these items to complete the import. If you are migrating from EMS, EMS support will provide all five to you
 
 - Database dump
@@ -26,17 +27,20 @@ You need these items to complete the import. If you are migrating from EMS, EMS 
    1. Signing key. This is stored in a file. See [this](https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L1409-L1411) config file option for path. Alternatively, add the old key to [old_signing_keys](https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L1413-L1426).
 1. Download the database and media exports provided.
 1. Decrypt and extract the exports
+
     ```bash
     gpg --no-symkey-cache --output postgres-export.sql.gz --decrypt postgres-export.sql.gz.gpg
     gpg --no-symkey-cache --output export-part-1.tgz --decrypt export-part-1.tgz.gpg
     gzip --decompress postgres-export.sql.gz
     tar zxvf export-part-1.tgz
     ```
+
 1. Import the database dump
    1. If your Synapse database is not empty, empty it  
         **WARNING - THIS WILL IMMEDIATELY AND IRRECOVERABLY DELETE DATA. WE TAKE NO RESPONSIBILITY IF YOU DELETE THE WRONG DATABASE OR THE WRONG DATA**
 
         Connect to the database with `psql`, then run the following queries:
+
         ```sql
         DO $$ DECLARE
         r RECORD;
@@ -50,14 +54,19 @@ You need these items to complete the import. If you are migrating from EMS, EMS 
         DROP sequence state_group_id_seq;
         DROP sequence user_id_seq;
         ```
+
    1. Disconnect from the database, then import the database dump
+
         ```bash
         psql --username=USERNAME --host=HOSTNAME DATABASE_NAME < postgres-export.sql
         ```
+
    1. Verify that sequence was set correctly. Connect to the database and run the query
+
         ```sql
         SELECT * FROM state_group_id_seq;
         ```
+
         `last_value` should be greater than 1
 1. Import media according to documentation [here](https://github.com/turt2live/matrix-media-repo/blob/master/docs/admin.md#exportingimporting-data).
 1. Start Synapse.
