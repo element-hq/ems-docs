@@ -194,7 +194,8 @@ cd /tmp/synapse_export
 </li>
 </ul>
 <h2 id="stop-synapse"><a class="header" href="#stop-synapse">Stop Synapse</a></h2>
-<p><strong>DO NOT START IT AGAIN AFTER THIS</strong></p>
+<p><strong>DO NOT START IT AGAIN AFTER THIS</strong>
+Doing so can cause issues with federation and inconsistent data for your users</p>
 <h2 id="database-export"><a class="header" href="#database-export">Database export</a></h2>
 <h3 id="postgresql"><a class="header" href="#postgresql">PostgreSQL</a></h3>
 <h4 id="dump-compress-and-encrypt"><a class="header" href="#dump-compress-and-encrypt">Dump, compress and encrypt</a></h4>
@@ -228,7 +229,7 @@ rm homeserver.db.tar.gz
 <h3 id="if-you-are-using-sqlite-as-database"><a class="header" href="#if-you-are-using-sqlite-as-database">If you are using SQLIte as database</a></h3>
 <p>Skip ahead to and follow <a href="#backup-media-export">Backup media export</a>.</p>
 <h3 id="download-the-export-tool"><a class="header" href="#download-the-export-tool">Download the export tool</a></h3>
-<p>Download the latest version of <code>export_synapse_for_import-linux-x64</code> (or <code> export_synapse_for_import-win-x64.exe</code>) from <a href="https://github.com/turt2live/matrix-media-repo/releases">https://github.com/turt2live/matrix-media-repo/releases</a></p>
+<p>Download the latest version of <code>export_synapse_for_import-linux-x64</code> (or <code>export_synapse_for_import-win-x64.exe</code>) from <a href="https://github.com/turt2live/matrix-media-repo/releases">https://github.com/turt2live/matrix-media-repo/releases</a></p>
 <pre><code class="language-bash">wget https://github.com/turt2live/matrix-media-repo/releases/download/vx.x.x/export_synapse_for_import-linux-x64
 chmod +x export_synapse_for_import-linux-x64
 </code></pre>

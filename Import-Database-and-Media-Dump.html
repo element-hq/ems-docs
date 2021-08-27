@@ -172,30 +172,40 @@
 </ul>
 <h2 id="import-process"><a class="header" href="#import-process">Import process</a></h2>
 <ol>
-<li>Following official documentation, install and configure
+<li>
+<p>Following official documentation, install and configure</p>
 <ol>
 <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
 <li><a href="https://github.com/matrix-org/synapse/">Synapse</a></li>
 <li><a href="https://github.com/turt2live/matrix-media-repo">matrix-media-repo</a></li>
 </ol>
 </li>
-<li>When generating your Synapse configuration file, you MUST use the same domain as your EMS server.</li>
-<li>Do not start Synapse yet.</li>
-<li>In the Synapse config file (usually <code>homeserver.yaml</code>), set:
+<li>
+<p>When generating your Synapse configuration file, you MUST use the same domain as your EMS server.</p>
+</li>
+<li>
+<p>Do not start Synapse yet.</p>
+</li>
+<li>
+<p>In the Synapse config file (usually <code>homeserver.yaml</code>), set:</p>
 <ol>
 <li><a href="https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L2148-L2151">pepper</a> to the value received. If you do not to this you have to reset all passwords.</li>
 <li>Signing key. This is stored in a file. See <a href="https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L1409-L1411">this</a> config file option for path. Alternatively, add the old key to <a href="https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L1413-L1426">old_signing_keys</a>.</li>
 </ol>
 </li>
-<li>Download the database and media exports provided.</li>
-<li>Decrypt and extract the exports
+<li>
+<p>Download the database and media exports provided.</p>
+</li>
+<li>
+<p>Decrypt and extract the exports</p>
 <pre><code class="language-bash">gpg --no-symkey-cache --output postgres-export.sql.gz --decrypt postgres-export.sql.gz.gpg
 gpg --no-symkey-cache --output export-part-1.tgz --decrypt export-part-1.tgz.gpg
 gzip --decompress postgres-export.sql.gz
 tar zxvf export-part-1.tgz
 </code></pre>
 </li>
-<li>Import the database dump
+<li>
+<p>Import the database dump</p>
 <ol>
 <li>
 <p>If your Synapse database is not empty, empty it<br />
@@ -227,9 +237,15 @@ DROP sequence user_id_seq;
 </li>
 </ol>
 </li>
-<li>Import media according to documentation <a href="https://github.com/turt2live/matrix-media-repo/blob/master/docs/admin.md#exportingimporting-data">here</a>.</li>
-<li>Start Synapse.</li>
-<li>Optionally, install <a href="https://github.com/vector-im/element-web">Element Web</a> or use another <a href="https://matrix.org/clients/">Matrix client</a>.</li>
+<li>
+<p>Import media according to documentation <a href="https://github.com/turt2live/matrix-media-repo/blob/master/docs/admin.md#exportingimporting-data">here</a>.</p>
+</li>
+<li>
+<p>Start Synapse.</p>
+</li>
+<li>
+<p>Optionally, install <a href="https://github.com/vector-im/element-web">Element Web</a> or use another <a href="https://matrix.org/clients/">Matrix client</a>.</p>
+</li>
 </ol>
 
                     </main>

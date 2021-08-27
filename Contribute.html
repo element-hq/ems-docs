@@ -160,34 +160,27 @@
 
                         <h1 id="contribute"><a class="header" href="#contribute">Contribute</a></h1>
 <ol>
-<li>
-<p>Fork the <a href="https://github.com/vector-im/ems-docs">GitHib repo</a></p>
-</li>
-<li>
-<p>Look at other pages, make your contributions in the same style and formatting etc.</p>
-</li>
-<li>
-<p>Add to <code>SUMMARY.md</code></p>
-</li>
-<li>
-<p><code>pngcrush</code> all your images with <code>pngcrush -brute -ow &quot;Screen Shot 2020-10-20 at 12.02.17 PM.png&quot;</code></p>
-</li>
-<li>
-<p>Ensure that Rust is installed on your system</p>
-</li>
-<li>
-<p><code>cargo install mdbook</code></p>
-</li>
-<li>
-<p><code>mdbook build</code></p>
-</li>
-<li>
-<p><code>sensible-browser book/index.html</code> - make sure it looks good, and that all links etc. are working</p>
-</li>
-<li>
-<p>Make a pull request</p>
-</li>
+<li>Fork the <a href="https://github.com/vector-im/ems-docs">GitHib repo</a></li>
+<li>Look at other pages, make your contributions in the same style and formatting etc</li>
+<li>Use American English</li>
+<li>Make your changes</li>
+<li>Install <code>pngcrush</code>, <code>mdbook</code>, <code>markdownlint-cli</code>, and a local web server, for example <code>sensible-browser</code></li>
+<li>Add your new page to <code>SUMMARY.md</code> if applicable</li>
+<li><code>pngcrush</code> all your images with <code>pngcrush -brute -ow &quot;Screen Shot 2020-10-20 at 12.02.17 PM.png&quot;</code></li>
+<li>Run the linter and fix any errors</li>
+<li>Compile the book using <code>mdbook build</code></li>
+<li><code>sensible-browser book/index.html</code> - make sure it looks good, and that all links etc. are working</li>
+<li>Make a pull request</li>
 </ol>
+<h2 id="linter"><a class="header" href="#linter">Linter</a></h2>
+<p><a href="https://github.com/igorshubovych/markdownlint-cli">markdownlint</a> is used to ensure consistent Markdown formatting across all documents.</p>
+<p>You can run the checks locally by installing <code>markdownlint-cli</code> and running:</p>
+<pre><code class="language-bash">markdownlint '**/*.md' --config ./lint/config/default.yml --ignore ./src/SUMMARY.md
+markdownlint 'src/SUMMARY.md' --config ./lint/config/summary.yml
+</code></pre>
+<p>The rules are defined in <code>lint/config/default.yml</code> and <code>lint/config/summary.yml</code>. Summary has <code>MD025</code> and <code>MD041</code> turned off due to how <code>mdbook</code> expects the file <code>SUMMARY.md</code>.</p>
+<p>Extended rule descriptions, including how to fix any formatting errors, are available <a href="https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md">here</a>.</p>
+<p><a href="https://meta.stackexchange.com/questions/184108/what-is-syntax-highlighting-and-how-does-it-work">Here</a> is a list of languages for code blocks. Please use a language where possible, otherwise you may use <code>none</code>.</p>
 
                     </main>
 

@@ -162,18 +162,18 @@
 <p>For this guide, I will be using the domain <a href="https://twily.org/">twily.org</a>. I will set up EMS so that the Matrix usernames becomes <code>@someone:twily.org</code>, and the Element client will be at <a href="https://chat.twily.org/">https://chat.twily.org/</a></p>
 <p>From the guide at <a href="Get-Your-Own-EMS-Server.html">Get Your Own EMS Server</a>, I will be replacing the EMS hostname <code>ems-demo-staging.ems.host</code> with <code>ems-custom-demo-staging.ems.host</code></p>
 <p>The guide assumes you already have a website on the root of your domain with <code>https</code> enabled.<br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.06.17%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.06.17%20AM.png" alt="temp" /></p>
 <ol>
 <li>
 <p>Follow step 1 - 10 from <a href="Get-Your-Own-EMS-Server.html">Get Your Own EMS Server</a></p>
 </li>
 <li>
 <p>On step 10 from <a href="Get-Your-Own-EMS-Server.html">Get Your Own EMS Server</a>, turn ON <code>Custom DNS</code><br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.07.59%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.07.59%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>In the <code>Custom Homeserver domain</code> field, enter <code>twily.org</code><br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.08.47%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.08.47%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Create two files on your website according to the instructions given.<br />
@@ -182,7 +182,7 @@ While not required, you should also add the header <code>Content-Type applicatio
 <ol>
 <li>
 <p><code>https://twily.org/.well-known/matrix/server</code><br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.12.39%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.12.39%20AM.png" alt="temp" /></p>
 <pre><code class="language-json">{
     &quot;m.server&quot;: &quot;ems-custom-demo-staging.ems.host:443&quot;
 }
@@ -190,7 +190,7 @@ While not required, you should also add the header <code>Content-Type applicatio
 </li>
 <li>
 <p><code>https://twily.org/.well-known/matrix/client</code><br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.19.07%20AM.png" alt="" /><br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.19.07%20AM.png" alt="temp" /><br />
 You need to enable the CORS header <code>Access-Control-Allow-Origin: *</code> on the web server for this file. See <a href="https://enable-cors.org/">https://enable-cors.org/</a> for instructions on how to do this.</p>
 <pre><code class="language-json">{
     &quot;m.homeserver&quot;: {
@@ -206,14 +206,14 @@ You need to enable the CORS header <code>Access-Control-Allow-Origin: *</code> o
 </li>
 <li>
 <p>Click <code>Check again</code> to verify that your <code>.well-known</code> files are configured correctly<br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.22.19%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.22.19%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>You can also verify your <code>.well-known</code> files from the command line. Note the lines <code>access-control-allow-origin: *</code> and <code>content-type: application/json</code></p>
 <ol>
 <li>
 <p>On Mac or Linux, using your <code>terminal</code></p>
-<pre><code>$ curl -i https://twily.org/.well-known/matrix/client
+<pre><code class="language-bash">$ curl -i https://twily.org/.well-known/matrix/client
 HTTP/2 200 
 date: Fri, 31 Jul 2020 09:11:21 GMT
 content-type: application/json
@@ -255,7 +255,7 @@ cf-ray: 5...
 </li>
 <li>
 <p>On Windows, using <code>PowerShell</code></p>
-<pre><code>PS C:\Users\twilight&gt; Invoke-WebRequest -Uri https://twily.org/.well-known/matrix/client
+<pre><code class="language-powershell">PS C:\Users\twilight&gt; Invoke-WebRequest -Uri https://twily.org/.well-known/matrix/client
 
 
 StatusCode        : 200
@@ -313,27 +313,27 @@ RawContentLength  : 52
 </li>
 <li>
 <p>In the <code>Custom Client domain</code> field, enter <code>chat.twily.org</code>. This can be any domain, except the same as <code>Custom Homeserver domain</code><br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.26.35%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.26.35%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Create a CNAME DNS record with your DNS provider according to the instructions given<br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.51.37%20AM.png" alt="" /><br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.51.37%20AM.png" alt="temp" /><br />
 <code>chat.twily.org.  CNAME  ems-custom-demo-staging.element.io.</code></p>
 </li>
 <li>
 <p>This shows how this is done with CloudFlare DNS. Depending on your DNS provider this might be different. Consult the documentation for your provider. Note that Proxy must be turned off with CloudFlare.<br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.52.41%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.52.41%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Back on EMS, click <code>Check again</code>. Note that sometimes it might take a while for your new DNS record to propagate. You can still continue, but functionality will be limited. Check back with the Hosts tab on <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a> and click <code>Rebuild Host</code> once the DNS record is in place.<br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.56.18%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.56.18%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>You can also verify your CNAME DNS record using the command line</p>
 <ol>
 <li>
 <p>On Mac or Linux, using your <code>terminal</code></p>
-<pre><code>$ dig chat.twily.org CNAME
+<pre><code class="language-bash">$ dig chat.twily.org CNAME
 
 ; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; chat.twily.org CNAME
 ;; global options: +cmd
@@ -344,10 +344,10 @@ RawContentLength  : 52
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 512
 ;; QUESTION SECTION:
-;chat.twily.org.			IN	CNAME
+;chat.twily.org.   IN CNAME
 
 ;; ANSWER SECTION:
-chat.twily.org.		299	IN	CNAME	ems-custom-demo-staging.element.io.
+chat.twily.org.  299 IN CNAME ems-custom-demo-staging.element.io.
 
 ;; Query time: 32 msec
 ;; SERVER: 8.8.4.4#53(8.8.4.4)
@@ -357,7 +357,7 @@ chat.twily.org.		299	IN	CNAME	ems-custom-demo-staging.element.io.
 </li>
 <li>
 <p>On Windows, using <code>PowerShell</code></p>
-<pre><code>PS C:\Users\twilight&gt; Resolve-DnsName -Name chat.twily.org -Type CNAME
+<pre><code class="language-powershell">PS C:\Users\twilight&gt; Resolve-DnsName -Name chat.twily.org -Type CNAME
 
 Name                           Type   TTL   Section    NameHost
 ----                           ----   ---   -------    --------

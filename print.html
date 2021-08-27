@@ -173,7 +173,7 @@
 <p>For a period in 2019, while privacy functionality was being enhanced on vector.im and matrix.org, these Identity Servers were restricted to only provide services for users on New Vector homeservers. Once privacy improvements landed, this restriction was lifted.</p>
 <h2 id="element-matrix-services"><a class="header" href="#element-matrix-services">Element Matrix Services</a></h2>
 <h3 id="account-management"><a class="header" href="#account-management">Account Management</a></h3>
-<h4 id="please-discontinue-my-account"><a class="header" href="#please-discontinue-my-account">Please discontinue my account.</a></h4>
+<h4 id="please-discontinue-my-account"><a class="header" href="#please-discontinue-my-account">Please discontinue my account</a></h4>
 <p>It is best if EMS customers delete their host or account themselves. Here's how:</p>
 <p>Delete the host from the  host management page at <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a> by clicking on the <code>Delete host</code> button (and confirming deletion in the resultant dialog). This will delete the host and cancel all associated subscriptions.</p>
 <p>Or delete the EMS account entirely.  This is done from the  user account page <a href="https://ems.element.io/user/account">https://ems.element.io/user/account</a>, by clicking on the <code>Delete account</code> button and confirming. This will delete all hosts and subscriptions before removing the user's account.</p>
@@ -232,8 +232,8 @@
 <li>
 <p>You need to create two files on the web server. These need to be located at exactly:</p>
 <ul>
-<li>https://example.com/.well-known/matrix/client</li>
-<li>https://example.com/.well-known/matrix/server</li>
+<li><a href="https://example.com/.well-known/matrix/client">https://example.com/.well-known/matrix/client</a></li>
+<li><a href="https://example.com/.well-known/matrix/server">https://example.com/.well-known/matrix/server</a></li>
 </ul>
 </li>
 <li>
@@ -287,7 +287,7 @@
 </li>
 <li>
 <p>Say you want a total of 10 Monthly Active Users on your EMS Nickel server. Add <code>5</code> in the <code>Additional users</code> field. Then click <code>Save</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.28.57%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.28.57%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="add-users"><a class="header" href="#add-users">Add Users</a></h1>
@@ -303,14 +303,14 @@
 </li>
 <li>
 <p>Click <code>Add user</code> Enter the username and click <code>Add</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.34.01%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.34.01%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Select <code>Make new user server admin</code> if you want this user to be able to use the <a href="https://matrix-org.github.io/synapse/latest/usage/administration/admin_api/index.html">Synapse Admin API</a> to perform administrative tasks on your server. Be careful with this as this option has a lot of power on your server.</p>
 </li>
 <li>
 <p>The username and password for the new user is displayed. You will only be able to see this information once so send the password to the user in a secure manner and then delete it<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.37.05%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.37.05%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="client-look-and-feel"><a class="header" href="#client-look-and-feel">Client Look and Feel</a></h1>
@@ -319,7 +319,7 @@
 <ol>
 <li>
 <p>Create two files on your web server, for example <a href="https://twily.org/ems_home.html">https://twily.org/ems_home.html</a> and <a href="https://twily.org/ems_welcome.html">https://twily.org/ems_welcome.html</a><br />
-<img src="images/Screen%20Shot%202020-09-15%20at%2011.01.00%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%2011.01.00%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Edit <code>ems_home.html</code>. This can be as simple as a couple of lines of HTML, for example:</p>
@@ -335,41 +335,41 @@
 </li>
 <li>
 <p>Looks like this in your web browser:<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%2011.02.57%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%2011.02.57%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Edit <code>ems_welcome.html</code>. This is a bit more complex, but can be almost anything you want as long as it has links to <code>Login</code> (/#/login) and <code>Create account</code> (/#/register). The default design is based on <a href="https://github.com/vector-im/element-web/blob/master/res/welcome.html">this template</a>. You can get creative with the CSS and the <code>!important</code> tag.</p>
 </li>
 <li>
 <p>Add links to your files on the EMS control panel and click <code>Save</code>.<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%2011.21.45%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%2011.21.45%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Check that it looks correct and that everything works. You do not need to click save or rebuild in the EMS control panel if you make changes to the files. As long as the URL does not change, refreshing the Element Web Client page is enough.</p>
 </li>
 <li>
 <p>With some hacking you can make it look as you want. (and the following example is why I am a developer, not a designer...)<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%2011.37.18%20AM.png" alt="" /><br />
-<img src="images/Screen%20Shot%202020-09-15%20at%2011.38.54%20AM.png" alt="" /><br />
-<img src="images/Screen%20Shot%202020-09-15%20at%2011.42.57%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%2011.37.18%20AM.png" alt="temp" /><br />
+<img src="images/Screen%20Shot%202020-09-15%20at%2011.38.54%20AM.png" alt="temp" /><br />
+<img src="images/Screen%20Shot%202020-09-15%20at%2011.42.57%20AM.png" alt="temp" /></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ems-server-with-custom-domain"><a class="header" href="#ems-server-with-custom-domain">EMS Server With Custom Domain</a></h1>
 <p>For this guide, I will be using the domain <a href="https://twily.org/">twily.org</a>. I will set up EMS so that the Matrix usernames becomes <code>@someone:twily.org</code>, and the Element client will be at <a href="https://chat.twily.org/">https://chat.twily.org/</a></p>
 <p>From the guide at <a href="Get-Your-Own-EMS-Server.html">Get Your Own EMS Server</a>, I will be replacing the EMS hostname <code>ems-demo-staging.ems.host</code> with <code>ems-custom-demo-staging.ems.host</code></p>
 <p>The guide assumes you already have a website on the root of your domain with <code>https</code> enabled.<br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.06.17%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.06.17%20AM.png" alt="temp" /></p>
 <ol>
 <li>
 <p>Follow step 1 - 10 from <a href="Get-Your-Own-EMS-Server.html">Get Your Own EMS Server</a></p>
 </li>
 <li>
 <p>On step 10 from <a href="Get-Your-Own-EMS-Server.html">Get Your Own EMS Server</a>, turn ON <code>Custom DNS</code><br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.07.59%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.07.59%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>In the <code>Custom Homeserver domain</code> field, enter <code>twily.org</code><br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.08.47%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.08.47%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Create two files on your website according to the instructions given.<br />
@@ -378,7 +378,7 @@ While not required, you should also add the header <code>Content-Type applicatio
 <ol>
 <li>
 <p><code>https://twily.org/.well-known/matrix/server</code><br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.12.39%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.12.39%20AM.png" alt="temp" /></p>
 <pre><code class="language-json">{
     &quot;m.server&quot;: &quot;ems-custom-demo-staging.ems.host:443&quot;
 }
@@ -386,7 +386,7 @@ While not required, you should also add the header <code>Content-Type applicatio
 </li>
 <li>
 <p><code>https://twily.org/.well-known/matrix/client</code><br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.19.07%20AM.png" alt="" /><br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.19.07%20AM.png" alt="temp" /><br />
 You need to enable the CORS header <code>Access-Control-Allow-Origin: *</code> on the web server for this file. See <a href="https://enable-cors.org/">https://enable-cors.org/</a> for instructions on how to do this.</p>
 <pre><code class="language-json">{
     &quot;m.homeserver&quot;: {
@@ -402,14 +402,14 @@ You need to enable the CORS header <code>Access-Control-Allow-Origin: *</code> o
 </li>
 <li>
 <p>Click <code>Check again</code> to verify that your <code>.well-known</code> files are configured correctly<br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.22.19%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.22.19%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>You can also verify your <code>.well-known</code> files from the command line. Note the lines <code>access-control-allow-origin: *</code> and <code>content-type: application/json</code></p>
 <ol>
 <li>
 <p>On Mac or Linux, using your <code>terminal</code></p>
-<pre><code>$ curl -i https://twily.org/.well-known/matrix/client
+<pre><code class="language-bash">$ curl -i https://twily.org/.well-known/matrix/client
 HTTP/2 200 
 date: Fri, 31 Jul 2020 09:11:21 GMT
 content-type: application/json
@@ -451,7 +451,7 @@ cf-ray: 5...
 </li>
 <li>
 <p>On Windows, using <code>PowerShell</code></p>
-<pre><code>PS C:\Users\twilight&gt; Invoke-WebRequest -Uri https://twily.org/.well-known/matrix/client
+<pre><code class="language-powershell">PS C:\Users\twilight&gt; Invoke-WebRequest -Uri https://twily.org/.well-known/matrix/client
 
 
 StatusCode        : 200
@@ -509,27 +509,27 @@ RawContentLength  : 52
 </li>
 <li>
 <p>In the <code>Custom Client domain</code> field, enter <code>chat.twily.org</code>. This can be any domain, except the same as <code>Custom Homeserver domain</code><br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.26.35%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.26.35%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Create a CNAME DNS record with your DNS provider according to the instructions given<br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.51.37%20AM.png" alt="" /><br />
+<img src="images/Screen%20Shot%202020-07-31%20at%209.51.37%20AM.png" alt="temp" /><br />
 <code>chat.twily.org.  CNAME  ems-custom-demo-staging.element.io.</code></p>
 </li>
 <li>
 <p>This shows how this is done with CloudFlare DNS. Depending on your DNS provider this might be different. Consult the documentation for your provider. Note that Proxy must be turned off with CloudFlare.<br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.52.41%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.52.41%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Back on EMS, click <code>Check again</code>. Note that sometimes it might take a while for your new DNS record to propagate. You can still continue, but functionality will be limited. Check back with the Hosts tab on <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a> and click <code>Rebuild Host</code> once the DNS record is in place.<br />
-<img src="images/Screen%20Shot%202020-07-31%20at%209.56.18%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-31%20at%209.56.18%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>You can also verify your CNAME DNS record using the command line</p>
 <ol>
 <li>
 <p>On Mac or Linux, using your <code>terminal</code></p>
-<pre><code>$ dig chat.twily.org CNAME
+<pre><code class="language-bash">$ dig chat.twily.org CNAME
 
 ; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; chat.twily.org CNAME
 ;; global options: +cmd
@@ -540,10 +540,10 @@ RawContentLength  : 52
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 512
 ;; QUESTION SECTION:
-;chat.twily.org.			IN	CNAME
+;chat.twily.org.   IN CNAME
 
 ;; ANSWER SECTION:
-chat.twily.org.		299	IN	CNAME	ems-custom-demo-staging.element.io.
+chat.twily.org.  299 IN CNAME ems-custom-demo-staging.element.io.
 
 ;; Query time: 32 msec
 ;; SERVER: 8.8.4.4#53(8.8.4.4)
@@ -553,7 +553,7 @@ chat.twily.org.		299	IN	CNAME	ems-custom-demo-staging.element.io.
 </li>
 <li>
 <p>On Windows, using <code>PowerShell</code></p>
-<pre><code>PS C:\Users\twilight&gt; Resolve-DnsName -Name chat.twily.org -Type CNAME
+<pre><code class="language-powershell">PS C:\Users\twilight&gt; Resolve-DnsName -Name chat.twily.org -Type CNAME
 
 Name                           Type   TTL   Section    NameHost
 ----                           ----   ---   -------    --------
@@ -573,50 +573,50 @@ chat.twily.org                 CNAME  299   Answer     ems-custom-demo-staging.e
 </li>
 <li>
 <p>Click <code>Sign up or Sign in</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%2012.57.04%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%2012.57.04%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your email address<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%2012.58.03%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%2012.58.03%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click the confirmation link in the email<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%2012.59.54%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%2012.59.54%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your name or company name and a password on <a href="https://ems.element.io/user/account">https://ems.element.io/user/account</a>. Then click <a href="https://ems.element.io/user/billing">Billing address and payment method</a><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.13.48%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.13.48%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your billing address and credit card information on <a href="https://ems.element.io/user/billing">https://ems.element.io/user/billing</a><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.15.49%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.15.49%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Your Account</code>, then <code>Manage Servers</code> to get started setting up your EMS server</p>
 </li>
 <li>
 <p>Click the <code>Setup</code> tab, and choose your Host Size<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.17.55%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.17.55%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Select your hostname and click Check. Keep in mind that this cannot be changed later<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.19.40%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.19.40%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Configure your host settings, then click Next. If you want to use Custom DNS (ie. have your usernames be <code>@someone:yourdomain.com</code> instead of <code>@someone:yourhost.ems.host</code> and have your Element client on your own domain), see <a href="EMS-Server-With-Custom-Domain.html">EMS-Server-With-Custom-Domain</a><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.20.45%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.20.45%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Select Monthly or Annual billing and confirm your payment options. Then click Purchase<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.21.47%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.21.47%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Sit tight for a few minutes while your server is being built<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.23.01%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.23.01%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>When it's done, click <code>Manage hosts</code> to configure additional settings and add users<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.25.37%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.25.37%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reset-user-password"><a class="header" href="#reset-user-password">Reset User Password</a></h1>
@@ -636,11 +636,11 @@ chat.twily.org                 CNAME  299   Answer     ems-custom-demo-staging.e
 </li>
 <li>
 <p>Click the user you want to manage<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.45.40%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.45.40%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Reset password</code>, enter a new password and click <code>Go</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.47.25%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.47.25%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="migrate-from-self-hosted-to-ems"><a class="header" href="#migrate-from-self-hosted-to-ems">Migrate From Self Hosted to EMS</a></h1>
@@ -679,7 +679,8 @@ cd /tmp/synapse_export
 </li>
 </ul>
 <h2 id="stop-synapse"><a class="header" href="#stop-synapse">Stop Synapse</a></h2>
-<p><strong>DO NOT START IT AGAIN AFTER THIS</strong></p>
+<p><strong>DO NOT START IT AGAIN AFTER THIS</strong>
+Doing so can cause issues with federation and inconsistent data for your users</p>
 <h2 id="database-export"><a class="header" href="#database-export">Database export</a></h2>
 <h3 id="postgresql"><a class="header" href="#postgresql">PostgreSQL</a></h3>
 <h4 id="dump-compress-and-encrypt"><a class="header" href="#dump-compress-and-encrypt">Dump, compress and encrypt</a></h4>
@@ -713,7 +714,7 @@ rm homeserver.db.tar.gz
 <h3 id="if-you-are-using-sqlite-as-database"><a class="header" href="#if-you-are-using-sqlite-as-database">If you are using SQLIte as database</a></h3>
 <p>Skip ahead to and follow <a href="Migrate-From-Self-Hosted-to-EMS.html#backup-media-export">Backup media export</a>.</p>
 <h3 id="download-the-export-tool"><a class="header" href="#download-the-export-tool">Download the export tool</a></h3>
-<p>Download the latest version of <code>export_synapse_for_import-linux-x64</code> (or <code> export_synapse_for_import-win-x64.exe</code>) from <a href="https://github.com/turt2live/matrix-media-repo/releases">https://github.com/turt2live/matrix-media-repo/releases</a></p>
+<p>Download the latest version of <code>export_synapse_for_import-linux-x64</code> (or <code>export_synapse_for_import-win-x64.exe</code>) from <a href="https://github.com/turt2live/matrix-media-repo/releases">https://github.com/turt2live/matrix-media-repo/releases</a></p>
 <pre><code class="language-bash">wget https://github.com/turt2live/matrix-media-repo/releases/download/vx.x.x/export_synapse_for_import-linux-x64
 chmod +x export_synapse_for_import-linux-x64
 </code></pre>
@@ -779,30 +780,40 @@ rm customer_backup_media_export.tar.gz.gpg
 </ul>
 <h2 id="import-process"><a class="header" href="#import-process">Import process</a></h2>
 <ol>
-<li>Following official documentation, install and configure
+<li>
+<p>Following official documentation, install and configure</p>
 <ol>
 <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
 <li><a href="https://github.com/matrix-org/synapse/">Synapse</a></li>
 <li><a href="https://github.com/turt2live/matrix-media-repo">matrix-media-repo</a></li>
 </ol>
 </li>
-<li>When generating your Synapse configuration file, you MUST use the same domain as your EMS server.</li>
-<li>Do not start Synapse yet.</li>
-<li>In the Synapse config file (usually <code>homeserver.yaml</code>), set:
+<li>
+<p>When generating your Synapse configuration file, you MUST use the same domain as your EMS server.</p>
+</li>
+<li>
+<p>Do not start Synapse yet.</p>
+</li>
+<li>
+<p>In the Synapse config file (usually <code>homeserver.yaml</code>), set:</p>
 <ol>
 <li><a href="https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L2148-L2151">pepper</a> to the value received. If you do not to this you have to reset all passwords.</li>
 <li>Signing key. This is stored in a file. See <a href="https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L1409-L1411">this</a> config file option for path. Alternatively, add the old key to <a href="https://github.com/matrix-org/synapse/blob/v1.40.0/docs/sample_config.yaml#L1413-L1426">old_signing_keys</a>.</li>
 </ol>
 </li>
-<li>Download the database and media exports provided.</li>
-<li>Decrypt and extract the exports
+<li>
+<p>Download the database and media exports provided.</p>
+</li>
+<li>
+<p>Decrypt and extract the exports</p>
 <pre><code class="language-bash">gpg --no-symkey-cache --output postgres-export.sql.gz --decrypt postgres-export.sql.gz.gpg
 gpg --no-symkey-cache --output export-part-1.tgz --decrypt export-part-1.tgz.gpg
 gzip --decompress postgres-export.sql.gz
 tar zxvf export-part-1.tgz
 </code></pre>
 </li>
-<li>Import the database dump
+<li>
+<p>Import the database dump</p>
 <ol>
 <li>
 <p>If your Synapse database is not empty, empty it<br />
@@ -834,70 +845,76 @@ DROP sequence user_id_seq;
 </li>
 </ol>
 </li>
-<li>Import media according to documentation <a href="https://github.com/turt2live/matrix-media-repo/blob/master/docs/admin.md#exportingimporting-data">here</a>.</li>
-<li>Start Synapse.</li>
-<li>Optionally, install <a href="https://github.com/vector-im/element-web">Element Web</a> or use another <a href="https://matrix.org/clients/">Matrix client</a>.</li>
+<li>
+<p>Import media according to documentation <a href="https://github.com/turt2live/matrix-media-repo/blob/master/docs/admin.md#exportingimporting-data">here</a>.</p>
+</li>
+<li>
+<p>Start Synapse.</p>
+</li>
+<li>
+<p>Optionally, install <a href="https://github.com/vector-im/element-web">Element Web</a> or use another <a href="https://matrix.org/clients/">Matrix client</a>.</p>
+</li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="create-a-conference-call-in-a-room"><a class="header" href="#create-a-conference-call-in-a-room">Create a Conference Call in a Room</a></h1>
 <h2 id="setting-up"><a class="header" href="#setting-up">Setting up</a></h2>
 <ol>
 <li>
 <p>Create a room<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%203.26.14%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%203.26.14%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Room Info</code>, then <code>Add apps, bridges &amp; bots</code><br />
-<img src="images/Screen%20Shot%202020-09-15%20at%203.26.00%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%203.26.00%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Read and accept the Terms of Service for the Integration Manager<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%203.25.37%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%203.25.37%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Select Jitsi from the list of available widgets<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%203.28.29%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%203.28.29%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Save the URL if you wish, this is also easily available later. Then click <code>Save</code><br />
-<img src="images/Screen%20Shot%202020-09-15%20at%203.29.46%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%203.29.46%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click the <code>X</code> to close the integration manager<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%203.31.11%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%203.31.11%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>To join the room conference, expand the Jitsi section at the top. Then click <code>Join Conference</code><br />
-<img src="images/Screen%20Shot%202020-09-15%20at%203.32.26%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%203.32.26%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Allow camera and microphone access. Note this might be different depending on your browser and operating system<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%203.36.41%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%203.36.41%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>You are now in the conference<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%203.36.05%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%203.36.05%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <h2 id="inviting-external-participants"><a class="header" href="#inviting-external-participants">Inviting external participants</a></h2>
 <ol>
 <li>
 <p>Click the info button in the bottom right corner<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%203.39.08%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%203.39.08%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Copy</code><br />
-<img src="images/Screen%20Shot%202020-09-15%20at%203.39.45%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%203.39.45%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Send the link to the external participant. They can just copy and paste it to their browser to join<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%203.56.33%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%203.56.33%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <h2 id="screen-sharing"><a class="header" href="#screen-sharing">Screen sharing</a></h2>
 <ol>
 <li>
 <p>Click the screen sharing in the bottom left corner<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%203.58.07%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%203.58.07%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Give permissions when asked</p>
@@ -909,11 +926,11 @@ screen sharing does not work with the Element Desktop app</li>
 </li>
 <li>
 <p>Select the application or screen you want to share, then click Allow. Note this might be different depending on your browser and operating system<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%204.02.52%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%204.02.52%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Everyone can now see your screen<br />
-<img src="images/Screen%20Shot%202020-09-15%20at%204.04.44%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-15%20at%204.04.44%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="add-free-slack-bridge"><a class="header" href="#add-free-slack-bridge">Add Free Slack Bridge</a></h1>
@@ -924,65 +941,65 @@ screen sharing does not work with the Element Desktop app</li>
 <ol>
 <li>
 <p>Create a new room in Matrix, with encryption off<br />
-<img src="images/Screen%20Shot%202020-10-27%20at%2011.12.35%20AM.png" alt="" /><br />
-<img src="images/Screen%20Shot%202020-10-27%20at%2011.12.48%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.12.35%20AM.png" alt="temp" /><br />
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.12.48%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Room Info</code> in the top right corner of the room<br />
-<img src="images/Screen%20Shot%202020-10-27%20at%2011.13.57%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.13.57%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Add widgets, bridges &amp; bots</code><br />
-<img src="images/Screen%20Shot%202020-10-27%20at%2011.14.55%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.14.55%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Choose <code>Slack</code> from the list of available bridges and integrations<br />
-<img src="images/Screen%20Shot%202020-10-27%20at%2011.15.37%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.15.37%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Add Bridge</code><br />
-<img src="images/Screen%20Shot%202020-10-27%20at%2011.16.21%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.16.21%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Add to Slack</code><br />
-<img src="images/Screen%20Shot%202020-10-27%20at%2011.17.07%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.17.07%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your Slack workspace URL, and click <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-10-27%20at%2011.18.22%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.18.22%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your Slack email address and password, then click <code>Sign in</code><br />
-<img src="images/Screen%20Shot%202020-10-27%20at%2011.19.10%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.19.10%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Allow</code><br />
-<img src="images/Screen%20Shot%202020-10-27%20at%2011.21.07%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.21.07%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Close the Slack tab and return to Element<br />
-<img src="images/Screen%20Shot%202020-10-27%20at%2011.21.48%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.21.48%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>List channels</code><br />
-<img src="images/Screen%20Shot%202020-10-27%20at%2011.23.00%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.23.00%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click the Slack channel you want to bridge to the Matrix room<br />
-<img src="images/Screen%20Shot%202020-10-27%20at%2011.23.42%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%2011.23.42%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Slack is now added to the Matrix room<br />
-<img src="images/Screen%20Shot%202020-10-27%20at%204.51.41%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%204.51.41%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Go to the channel you selected on Slack, and invite the riot bot with the command <code>/invite @riot_bridge</code><br />
-<img src="images/Screen%20Shot%202020-10-27%20at%204.56.16%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%204.56.16%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>The Matrix room and Slack channel is now bridged<br />
-<img src="images/Screen%20Shot%202020-10-27%20at%204.57.34%20PM.png" alt="" /><br />
-<img src="images/Screen%20Shot%202020-10-27%20at%204.57.48%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-27%20at%204.57.34%20PM.png" alt="temp" /><br />
+<img src="images/Screen%20Shot%202020-10-27%20at%204.57.48%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="add-a-signal-bridge"><a class="header" href="#add-a-signal-bridge">Add a Signal Bridge</a></h1>
@@ -994,24 +1011,24 @@ screen sharing does not work with the Element Desktop app</li>
 <li>
 <p>Open the EMS control panel at: <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a><br />
 Click the <code>Integrations</code> tab  and if you have more than one server, select the server you wish to add the Signal integration to<br />
-<img src="images/click-integration-tab-ems-user-hosting.png" alt="" /></p>
+<img src="images/click-integration-tab-ems-user-hosting.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click on <code>Signal Bridge</code> in the list of available Bridges
-<img src="images/signalbridge-integrations-bridges-list-with-signal.png" alt="" /></p>
+<img src="images/signalbridge-integrations-bridges-list-with-signal.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter the maximum number of users in <code>Maximum Signal users</code>.<br />
 Please note:  <strong>this is the maximum number of Signal users who actually send messages over the bridge each month. You are only billed for the number of Signal users who are active. Once you exceed the maximum, then the bridge will be disabled until you increase the maximum.</strong><br />
 If you enter less than <code>5</code>, you will get a warning<br />
-<img src="images/si-low-rmau-warning.png" alt="" /><br />
+<img src="images/si-low-rmau-warning.png" alt="temp" /><br />
 If you enter <code>5</code> or greater in <code>Maximum Signal users</code>, you will not see a warning<br />
-<img src="images/si-enter-number-users-click-purchase.png" alt="" /><br />
+<img src="images/si-enter-number-users-click-purchase.png" alt="temp" /><br />
 Once you have entered <code>Maximum Signal users</code>, click <code>Purchase</code> (remember you can always go back to this step and increase the maximum number of Signal users if you need more in the future).</p>
 </li>
 <li>
 <p>A dialogue will remind you of the price per user and ask if you wish to proceed. Click <code>Purchase</code> if you wish to proceed with the Signal Integration<br />
-<img src="images/si-confirm-subscription-click-purchase.png" alt="" /></p>
+<img src="images/si-confirm-subscription-click-purchase.png" alt="temp" /></p>
 </li>
 <li>
 <p>You will have to wait a few minutes while your host is reprovisioned with the Signal bridge.
@@ -1021,28 +1038,28 @@ Once reprovisioning is finished, you are able to bridge Signal to your EMS serve
 <h2 id="bridge-signal-to-your-ems-server"><a class="header" href="#bridge-signal-to-your-ems-server">Bridge Signal to your EMS server</a></h2>
 <ol>
 <li>
-<p>Once the bridge is running, open your Element app. Click on the <code>+</code> next to <code>People</code><br />
-<img src="images/start-chat.png" alt="" /></p>
+<p>Once the bridge is running, open your Element app. Click on the <code>+</code> next to <code>People</code>
+<img src="images/start-chat.png" alt="temp" /></p>
 </li>
 <li>
 <p>Create a Direct Message conversation by typing <code>@signalbot:example.ems.host</code> (replace the domain with the one of your homeserver). Then click<code>Go</code>
-<img src="images/dm-si-bot.png" alt="" /></p>
+<img src="images/dm-si-bot.png" alt="temp" /></p>
 </li>
 <li>
 <p>The bridge account will join your room and tell you how to use it
-<img src="images/sibridge-bot-joins-room.png" alt="" /></p>
+<img src="images/sibridge-bot-joins-room.png" alt="temp" /></p>
 </li>
 <li>
 <p>Open Signal on your mobile device (iOS or Android) and tap on your avatar to go to <code>Settings</code> and then <code>Linked Devices</code> and then <code>Link New Device</code> to start the Signal QR code scanner. You will use this QR code scanner to scan a QR code displayed by your Element client in the next step<br />
-<img src="images/sibridge-signal-ios-qrcode.jpg" alt="" /></p>
+<img src="images/sibridge-signal-ios-qrcode.jpg" alt="temp" /></p>
 </li>
 <li>
 <p>From your Element client, send a <code>link</code> message to the bot to connect to your Signal account<br />
-<img src="images/sibridge-send-link-message.png" alt="" /></p>
+<img src="images/sibridge-send-link-message.png" alt="temp" /></p>
 </li>
 <li>
 <p>A QR code will be displayed. Quickly scan the QR code with Signal on your mobile device. You have about a minute before it times out. If it times out, just send the login message again to generate another QR code<br />
-<img src="images/sibridge-qr-code-from-link-command.png" alt="" /></p>
+<img src="images/sibridge-qr-code-from-link-command.png" alt="temp" /></p>
 </li>
 <li>
 <p>On your Element client, you will see <code>Successfully logged in as &lt;your_phone_number&gt;</code> e.g. <code>Successfully logged in as +1 555-555-5555</code> and you will see invitations for each of your Signal chats in your Element client. Each Signal chat is a separate Matrix room. Join one or more chats and start chatting from either your Element app on desktop, iOS or Android or your Signal on mobile.</p>
@@ -1057,24 +1074,24 @@ Once reprovisioning is finished, you are able to bridge Signal to your EMS serve
 <li>
 <p>Open the EMS control panel at: <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a><br />
 Click the <code>Integrations</code> tab  and if you have more than one server, select the server you wish to add the WhatsApp integration to
-<img src="images/click-integration-tab-ems-user-hosting.png" alt="" /></p>
+<img src="images/click-integration-tab-ems-user-hosting.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click on <code>WhatsApp Bridge</code> in the list of available Bridges
-<img src="images/wa-matrix-choose-bridge.png" alt="" /></p>
+<img src="images/wa-matrix-choose-bridge.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter the maximum number of users in <code>Maximum WhatsApp users</code>.<br />
 Please note:  <strong>this is the maximum number of WhatsApp users who actually send messages over the bridge each month. You are only billed for the number of WhatsApp users who are active. Once you exceed the maximum, then the bridge will be disabled until you increase the maximum.</strong><br />
 If you enter less than <code>5</code>, you will get a warning<br />
-<img src="images/wa-low-rmau-warning.png" alt="" /><br />
+<img src="images/wa-low-rmau-warning.png" alt="temp" /><br />
 If you enter <code>5</code> or greater in <code>Maximum WhatsApp users</code>, you will not see a warning<br />
-<img src="images/wa-enter-number-users-click-purchase.png" alt="" /><br />
+<img src="images/wa-enter-number-users-click-purchase.png" alt="temp" /><br />
 Once you have entered <code>Maximum WhatsApp users</code>, click <code>Purchase</code> (remember you can always go back to this step and increase the maximum number of WhatsApp users if you need more in the future).</p>
 </li>
 <li>
 <p>A dialogue will remind you of the price per user and ask if you wish to proceed. Click <code>Purchase</code> if you wish to proceed with the WhatsApp Integration<br />
-<img src="images/wa-confirm-subscription-click-purchase.png" alt="" /></p>
+<img src="images/wa-confirm-subscription-click-purchase.png" alt="temp" /></p>
 </li>
 <li>
 <p>You will have to wait a few minutes while your host is reprovisioned with the WhatsApp bridge.
@@ -1084,28 +1101,28 @@ Once reprovisioning is finished, you are able to bridge WhatsApp to your EMS ser
 <h2 id="bridge-whatsapp-to-your-ems-server"><a class="header" href="#bridge-whatsapp-to-your-ems-server">Bridge WhatsApp to your EMS server</a></h2>
 <ol>
 <li>
-<p>Once the bridge is running, open your Element app. Click on the <code>+</code> next to <code>People</code><br />
-<img src="images/start-chat.png" alt="" /></p>
+<p>Once the bridge is running, open your Element app. Click on the <code>+</code> next to <code>People</code>
+<img src="images/start-chat.png" alt="temp" /></p>
 </li>
 <li>
 <p>Create a Direct Message conversation by typing <code>@whatsappbot:example.ems.host</code> (replace the domain with the one of your homeserver). Then click<code>Go</code>
-<img src="images/dm-wa-bot.png" alt="" /></p>
+<img src="images/dm-wa-bot.png" alt="temp" /></p>
 </li>
 <li>
 <p>The bridge account will join your room and tell you how to use it
-<img src="images/wabridge-bot-joins-room.png" alt="" /></p>
+<img src="images/wabridge-bot-joins-room.png" alt="temp" /></p>
 </li>
 <li>
 <p>Open WhatsApp on your mobile device (iOS or Android) and go to <code>Settings</code> and then <code>Linked Devices</code> and then <code>Link a Device</code> and tap <code>OK</code> to start the WhatsApp QR code scanner. You will use this QR code scanner to scan a QR code displayed by your Element client in the next step<br />
-<img src="images/wabridge-whatsapp-ios-qrcode.png" alt="" /></p>
+<img src="images/wabridge-whatsapp-ios-qrcode.png" alt="temp" /></p>
 </li>
 <li>
 <p>From your Element client, send a <code>login</code> message to the bot to connect to your WhatsApp account<br />
-<img src="images/wabridge-send-login-message.png" alt="" /></p>
+<img src="images/wabridge-send-login-message.png" alt="temp" /></p>
 </li>
 <li>
 <p>A QR code will be displayed. Quickly scan the QR code with WhatsApp on your mobile device. You have about a minute before it times out. If it times out, just send the login message again to generate another QR code<br />
-<img src="images/wabridge-qr-code-from-login-command.png" alt="" /></p>
+<img src="images/wabridge-qr-code-from-login-command.png" alt="temp" /></p>
 </li>
 <li>
 <p>On your Element client, you will see <code>Successfully logged in, synchronizing chats...</code> and you will see invitations for each of your WhatsApp chats in your Element client. Each WhatsApp chat is a separate Matrix room. Join one or more chats and start chatting from either your Element app on desktop, iOS or Android or your WhatsApp on mobile.</p>
@@ -1115,35 +1132,35 @@ Once reprovisioning is finished, you are able to bridge WhatsApp to your EMS ser
 <ol>
 <li>
 <p>Go to Element <code>All settings</code><br />
-<img src="images/Screen%20Shot%202020-09-17%20at%205.24.15%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-17%20at%205.24.15%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your email address and click <code>Add</code><br />
-<img src="images/Screen%20Shot%202020-10-20%20at%2011.51.19%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-20%20at%2011.51.19%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>When you get this message, check your email<br />
-<img src="images/Screen%20Shot%202020-10-20%20at%2011.57.57%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-20%20at%2011.57.57%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click the link in the email. Make sure it opens in another tab/window, leaving your Element client where it is<br />
-<img src="images/Screen%20Shot%202020-10-20%20at%2011.55.01%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-20%20at%2011.55.01%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>When you get this message, you can close the verification tab/window and return to Element<br />
-<img src="images/Screen%20Shot%202020-10-20%20at%2012.00.03%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-20%20at%2012.00.03%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Go back to Element and click <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-10-20%20at%2011.57.57%20AM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-20%20at%2011.57.57%20AM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your account password, then click <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-10-20%20at%2012.01.34%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-20%20at%2012.01.34%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>If all worked correctly, your new email should now show up under the <code>Email addresses</code> section in Element settings. If not, something went wrong and you need to try again<br />
-<img src="images/Screen%20Shot%202020-10-20%20at%2012.02.17%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-20%20at%2012.02.17%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="change-account-password"><a class="header" href="#change-account-password">Change Account Password</a></h1>
@@ -1162,11 +1179,11 @@ Once reprovisioning is finished, you are able to bridge WhatsApp to your EMS ser
 <ol>
 <li>
 <p>Go to Element <code>All settings</code><br />
-<img src="images/Screen%20Shot%202020-09-17%20at%205.24.15%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-17%20at%205.24.15%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your current password and your new password<br />
-<img src="images/Screen%20Shot%202020-09-17%20at%205.26.13%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-17%20at%205.26.13%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>You might want to export your <code>E2E room keys</code>. Just to be on the safe side in case something goes wrong. See also <a href="Export-and-Import-E2E-Room-Keys.html">Export-and-Import-E2E-Room-Keys</a></p>
@@ -1174,11 +1191,11 @@ Once reprovisioning is finished, you are able to bridge WhatsApp to your EMS ser
 <li>
 <p>Click <code>Continue</code>.<br />
 Note: This warning is outdated, see <a href="https://github.com/vector-im/element-web/issues/15226">this issue</a><br />
-<img src="images/Screen%20Shot%202020-09-17%20at%205.28.52%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-17%20at%205.28.52%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>OK</code><br />
-<img src="images/Screen%20Shot%202020-09-17%20at%205.31.01%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-17%20at%205.31.01%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>You now need to sign in again on all your other devices</p>
@@ -1189,48 +1206,48 @@ Note: This warning is outdated, see <a href="https://github.com/vector-im/elemen
 <ol>
 <li>
 <p>Sign out of Element<br />
-<img src="images/Screen%20Shot%202020-10-26%20at%2012.32.36%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.32.36%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Sign out</code><br />
-<img src="images/Screen%20Shot%202020-10-26%20at%2012.15.05%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.15.05%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click &quot;Not sure of your password? <code>Set a new one</code>&quot;<br />
-<img src="images/Screen%20Shot%202020-10-26%20at%2012.15.56%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.15.56%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your email address, and a new password. Then click <code>Send Reset Email</code><br />
-<img src="images/Screen%20Shot%202020-10-26%20at%2012.20.13%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.20.13%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Continue</code>.<br />
 Note: This warning is outdated, see <a href="https://github.com/vector-im/element-web/issues/15226">this issue</a><br />
-<img src="images/Screen%20Shot%202020-10-26%20at%2012.33.47%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.33.47%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>When you get this message, check your email<br />
-<img src="images/Screen%20Shot%202020-10-26%20at%2012.22.21%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.22.21%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click the link in the email. Make sure it opens in  new browser tab, leaving your Element client open<br />
-<img src="images/Screen%20Shot%202020-10-26%20at%2012.23.42%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.23.42%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Confirm changing my password</code><br />
-<img src="images/Screen%20Shot%202020-10-26%20at%2012.26.36%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.26.36%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>You can now close this tab and return to Element<br />
-<img src="images/Screen%20Shot%202020-10-26%20at%2012.27.21%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.27.21%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>i have verified my email address</code><br />
-<img src="images/Screen%20Shot%202020-10-26%20at%2012.22.21%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.22.21%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Return to login screen</code><br />
-<img src="images/Screen%20Shot%202020-10-26%20at%2012.28.38%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-10-26%20at%2012.28.38%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Sign in like normal with your new password. Note that all your other sessions have been signed out and you need to sign in again.</p>
@@ -1248,8 +1265,8 @@ Note: This warning is outdated, see <a href="https://github.com/vector-im/elemen
 </li>
 <li>
 <p>If you cannot find any, create one by clicking <code>New issue</code>, then <code>Get started</code> in the <code>Bug report</code> section.<br />
-<img src="images/Screen%20Shot%202020-09-17%20at%206.57.13%20PM.png" alt="" /><br />
-<img src="images/Screen%20Shot%202020-09-17%20at%206.57.21%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-17%20at%206.57.13%20PM.png" alt="temp" /><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%206.57.21%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Go to the section for your device</p>
@@ -1264,46 +1281,46 @@ Note: This warning is outdated, see <a href="https://github.com/vector-im/elemen
 <ol>
 <li>
 <p>Go to Element <code>All settings</code><br />
-<img src="images/Screen%20Shot%202020-09-17%20at%205.24.15%20PM.png" alt="" />   Under <code>Help &amp; About</code>, click <code>Submit debug logs</code><br />
-<img src="images/Screen%20Shot%202020-09-17%20at%206.54.25%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-17%20at%205.24.15%20PM.png" alt="temp" />   Under <code>Help &amp; About</code>, click <code>Submit debug logs</code><br />
+<img src="images/Screen%20Shot%202020-09-17%20at%206.54.25%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter a GitHub issue link and a description. Then click <code>Send logs</code><br />
-<img src="images/Screen%20Shot%202020-09-17%20at%206.59.39%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-17%20at%206.59.39%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>OK</code><br />
-<img src="images/Screen%20Shot%202020-09-17%20at%207.03.16%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-17%20at%207.03.16%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <h2 id="element-ios"><a class="header" href="#element-ios">Element iOS</a></h2>
 <ol>
 <li>
 <p>Tap the cog in the top left of Element<br />
-<img src="images/IMG_0393.PNG" alt="" /></p>
+<img src="images/IMG_0393.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Scroll down to the <code>OTHER</code> section, then tap <code>Report bug</code><br />
-<img src="images/IMG_0447.PNG" alt="" /></p>
+<img src="images/IMG_0447.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Enter a GitHub issue link and a description, make sure <code>Send logs</code> is checked, then click <code>Send</code><br />
-<img src="images/IMG_0449.PNG" alt="" /></p>
+<img src="images/IMG_0449.PNG" alt="temp" /></p>
 </li>
 </ol>
 <h2 id="element-android"><a class="header" href="#element-android">Element Android</a></h2>
 <ol>
 <li>
 <p>Tap the three stacked dots in the top right<br />
-<img src="images/Screenshot_20200821-144905.png" alt="" /></p>
+<img src="images/Screenshot_20200821-144905.png" alt="temp" /></p>
 </li>
 <li>
 <p>Tap <code>Report bug</code><br />
-<img src="images/Screenshot_20200917-192220.png" alt="" /></p>
+<img src="images/Screenshot_20200917-192220.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter a GitHub issue link and a description, make sure <code>Send logs</code>, and <code>Send crash logs</code> are checked, then tap the send arrow in the top right<br />
-<img src="images/Screenshot_20200917-192050.png" alt="" /></p>
+<img src="images/Screenshot_20200917-192050.png" alt="temp" /></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="set-up-cross-signing"><a class="header" href="#set-up-cross-signing">Set up Cross Signing</a></h1>
@@ -1311,72 +1328,72 @@ Note: This warning is outdated, see <a href="https://github.com/vector-im/elemen
 <ol>
 <li>
 <p>Sign up or log in<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.59.21%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.59.21%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Generate a Security Key</code> or <code>Enter a Security Phrase</code>. Then click <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.06.50%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.06.50%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Take note of your key, then click <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.07.52%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.07.52%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <h2 id="if-you-did-not-set-it-up-on-first-login-or-if-you-did-not-get-asked"><a class="header" href="#if-you-did-not-set-it-up-on-first-login-or-if-you-did-not-get-asked">If you did not set it up on first login, or if you did not get asked</a></h2>
 <ol>
 <li>
 <p>If you do not have key backup configured, you will be asked to set it up the first time you enter an encrypted room. Click <code>Start using Key Backup</code><br />
-<img src="images/Screen%20Shot%202020-09-17%20at%204.41.12%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-17%20at%204.41.12%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Generate a Security Key</code> or <code>Enter a Security Phrase</code>. Then <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.06.50%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.06.50%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Take note of your key, then click <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.07.52%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.07.52%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your account password, then click <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.09.47%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.09.47%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <h2 id="if-you-clicked-dont-ask-me-again"><a class="header" href="#if-you-clicked-dont-ask-me-again">If you clicked Don't ask me again</a></h2>
 <ol>
 <li>
 <p>Go to Element <code>Security &amp; Privacy</code> settings<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Start using Key Backup</code><br />
-<img src="images/Screen%20Shot%202020-09-17%20at%204.42.12%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-17%20at%204.42.12%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Generate a Security Key</code> or <code>Enter a Security Phrase</code>. Then <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.06.50%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.06.50%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Take note of your key, then click <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.07.52%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.07.52%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your account password, then click <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.09.47%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.09.47%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="check-status"><a class="header" href="#check-status">Check Status</a></h1>
 <ol>
 <li>
 <p>Go to Element <code>Security &amp; Privacy</code> settings<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Expand the <code>Advanced</code> section<br />
-<img src="images/Screen%20Shot%202020-09-17%20at%205.12.57%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-17%20at%205.12.57%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Look for <code>All keys backed up</code><br />
-<img src="images/Screen%20Shot%202020-09-17%20at%205.14.42%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-09-17%20at%205.14.42%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="export-and-import-e2e-room-keys"><a class="header" href="#export-and-import-e2e-room-keys">Export and Import E2E Room Keys</a></h1>
@@ -1385,46 +1402,46 @@ Note: This warning is outdated, see <a href="https://github.com/vector-im/elemen
 <ol>
 <li>
 <p>Go to Element <code>Security &amp; Privacy</code> settings<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Export E2E room keys</code><br />
-<img src="images/Screen%20Shot%202020-08-21%20at%201.47.38%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-08-21%20at%201.47.38%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter a secure passphrase and click <code>Export</code><br />
-<img src="images/Screen%20Shot%202020-08-21%20at%201.49.03%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-08-21%20at%201.49.03%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Choose to save the file<br />
-<img src="images/Screen%20Shot%202020-08-21%20at%201.50.05%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-08-21%20at%201.50.05%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Select a directory on your computer<br />
-<img src="images/Screen%20Shot%202020-08-21%20at%201.50.52%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-08-21%20at%201.50.52%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <h3 id="import"><a class="header" href="#import">Import</a></h3>
 <ol>
 <li>
 <p>Go to Element <code>Security &amp; Privacy</code> settings<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Import E2E room keys</code><br />
-<img src="images/Screen%20Shot%202020-08-21%20at%201.47.38%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-08-21%20at%201.47.38%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Browse</code><br />
-<img src="images/Screen%20Shot%202020-08-21%20at%201.52.49%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-08-21%20at%201.52.49%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Select your export<br />
-<img src="images/Screen%20Shot%202020-08-21%20at%201.53.11%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-08-21%20at%201.53.11%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your passphrase and click <code>Import</code><br />
-<img src="images/Screen%20Shot%202020-08-21%20at%201.55.34%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-08-21%20at%201.55.34%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <h2 id="element-ios-1"><a class="header" href="#element-ios-1">Element iOS</a></h2>
@@ -1432,27 +1449,27 @@ Note: This warning is outdated, see <a href="https://github.com/vector-im/elemen
 <ol>
 <li>
 <p>Tap the cog in the top left of Element<br />
-<img src="images/IMG_0393.PNG" alt="" /></p>
+<img src="images/IMG_0393.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Tap <code>Security</code><br />
-<img src="images/IMG_0394.PNG" alt="" /></p>
+<img src="images/IMG_0394.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Tap <code>Export keys manually</code><br />
-<img src="images/IMG_0395.PNG" alt="" /></p>
+<img src="images/IMG_0395.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Enter a secure passphrase and tap <code>Export</code><br />
-<img src="images/IMG_0396.PNG" alt="" /></p>
+<img src="images/IMG_0396.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Choose <code>Save to Files</code><br />
-<img src="images/IMG_0397.PNG" alt="" /></p>
+<img src="images/IMG_0397.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Choose a location then tap <code>Save</code><br />
-<img src="images/IMG_0398.PNG" alt="" /></p>
+<img src="images/IMG_0398.PNG" alt="temp" /></p>
 </li>
 </ol>
 <h3 id="import-1"><a class="header" href="#import-1">Import</a></h3>
@@ -1460,51 +1477,51 @@ Note: This warning is outdated, see <a href="https://github.com/vector-im/elemen
 <ol>
 <li>
 <p>Tap the <code>+</code> in the bottom right corner<br />
-<img src="images/IMG_0399.PNG" alt="" /></p>
+<img src="images/IMG_0399.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Tap <code>Create room</code><br />
-<img src="images/IMG_0400.PNG" alt="" /></p>
+<img src="images/IMG_0400.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Tap the room name (Empty room) at the top<br />
-<img src="images/IMG_0401.PNG" alt="" /></p>
+<img src="images/IMG_0401.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Tap the room name again<br />
-<img src="images/IMG_0402.PNG" alt="" /></p>
+<img src="images/IMG_0402.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Under Advances, enable encryption<br />
-<img src="images/IMG_0403.PNG" alt="" /></p>
+<img src="images/IMG_0403.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Tab <code>Done</code> in the top right<br />
-<img src="images/IMG_0404.PNG" alt="" /></p>
+<img src="images/IMG_0404.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Tab the <code>+</code> to send a file<br />
-<img src="images/IMG_0405.PNG" alt="" /></p>
+<img src="images/IMG_0405.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Tap <code>Send file</code><br />
-<img src="images/IMG_0406.PNG" alt="" /></p>
+<img src="images/IMG_0406.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Browse to and select your export<br />
-<img src="images/IMG_0413.PNG" alt="" /></p>
+<img src="images/IMG_0413.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Tap the file you just sent<br />
-<img src="images/IMG_0410.PNG" alt="" /></p>
+<img src="images/IMG_0410.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Tap <code>Import</code><br />
-<img src="images/IMG_0411.PNG" alt="" /></p>
+<img src="images/IMG_0411.PNG" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your passphrase and tap <code>Import</code><br />
-<img src="images/IMG_0412.PNG" alt="" /></p>
+<img src="images/IMG_0412.PNG" alt="temp" /></p>
 </li>
 </ol>
 <h2 id="element-android-1"><a class="header" href="#element-android-1">Element Android</a></h2>
@@ -1512,54 +1529,54 @@ Note: This warning is outdated, see <a href="https://github.com/vector-im/elemen
 <ol>
 <li>
 <p>Tap your user picture in the top right<br />
-<img src="images/Screenshot_20200821-144905.png" alt="" /></p>
+<img src="images/Screenshot_20200821-144905.png" alt="temp" /></p>
 </li>
 <li>
 <p>Tap the cog<br />
-<img src="images/Screenshot_20200821-144908.png" alt="" /></p>
+<img src="images/Screenshot_20200821-144908.png" alt="temp" /></p>
 </li>
 <li>
 <p>Tap <code>Security &amp; Privacy</code><br />
-<img src="images/Screenshot_20200821-144911.png" alt="" /></p>
+<img src="images/Screenshot_20200821-144911.png" alt="temp" /></p>
 </li>
 <li>
 <p>Tap <code>Export E2E room keys</code><br />
-<img src="images/Screenshot_20200821-144916.png" alt="" /></p>
+<img src="images/Screenshot_20200821-144916.png" alt="temp" /></p>
 </li>
 <li>
 <p>Select a location and a file name, then tap <code>SAVE</code><br />
-<img src="images/Screenshot_20200821-144923.png" alt="" /></p>
+<img src="images/Screenshot_20200821-144923.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter a secure passphrase, then tap <code>EXPORT</code><br />
-<img src="images/Screenshot_20200821-144941.png" alt="" /></p>
+<img src="images/Screenshot_20200821-144941.png" alt="temp" /></p>
 </li>
 </ol>
 <h3 id="import-2"><a class="header" href="#import-2">Import</a></h3>
 <ol>
 <li>
 <p>Tap your user picture in the top right<br />
-<img src="images/Screenshot_20200821-144905.png" alt="" /></p>
+<img src="images/Screenshot_20200821-144905.png" alt="temp" /></p>
 </li>
 <li>
 <p>Tap the cog<br />
-<img src="images/Screenshot_20200821-144908.png" alt="" /></p>
+<img src="images/Screenshot_20200821-144908.png" alt="temp" /></p>
 </li>
 <li>
 <p>Tap <code>Security &amp; Privacy</code><br />
-<img src="images/Screenshot_20200821-144911.png" alt="" /></p>
+<img src="images/Screenshot_20200821-144911.png" alt="temp" /></p>
 </li>
 <li>
 <p>Tap <code>Import E2E room keys</code><br />
-<img src="images/Screenshot_20200821-144916.png" alt="" /></p>
+<img src="images/Screenshot_20200821-144916.png" alt="temp" /></p>
 </li>
 <li>
 <p>Browse to and select your export<br />
-<img src="images/Screenshot_20200821-145048.png" alt="" /></p>
+<img src="images/Screenshot_20200821-145048.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your passphrase and tap <code>IMPORT</code><br />
-<img src="images/Screenshot_20200821-145058.png" alt="" /></p>
+<img src="images/Screenshot_20200821-145058.png" alt="temp" /></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reset-cross-signing"><a class="header" href="#reset-cross-signing">Reset Cross Signing</a></h1>
@@ -1576,31 +1593,31 @@ Note: This warning is outdated, see <a href="https://github.com/vector-im/elemen
 </li>
 <li>
 <p>Go to Element <code>Security &amp; Privacy</code> settings<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.02.07%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Reset cross-signing and secret storage</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.05.05%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.05.05%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Clear cross-signing keys</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.06.18%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.06.18%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Generate a Security Key</code> or <code>Enter a Security Phrase</code>. Then <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.06.50%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.06.50%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Take note of your key then click <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.07.52%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.07.52%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Enter your account password and click <code>Continue</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.09.47%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.09.47%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>You can delete any untrusted sessions in Element <code>Security &amp; Privacy</code> settings. Select the sessions you want to remove and click <code>Delete 1 session</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.14.55%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.14.55%20PM.png" alt="temp" /></p>
 </li>
 </ol>
 <h2 id="if-you-do-not-have-an-active-session"><a class="header" href="#if-you-do-not-have-an-active-session">If you DO NOT have an active session</a></h2>
@@ -1608,22 +1625,22 @@ Note: This warning is outdated, see <a href="https://github.com/vector-im/elemen
 <ol>
 <li>
 <p>Log in to Element<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%202.59.21%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%202.59.21%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Skip</code><br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.00.40%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.00.40%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Click <code>Skip</code> again<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.01.08%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.01.08%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Do not connect to Key Backup or verify session when asked</p>
 </li>
 <li>
 <p>Note that you will not be able to decrypt any previous messages after doing this<br />
-<img src="images/Screen%20Shot%202020-07-30%20at%203.12.36%20PM.png" alt="" /></p>
+<img src="images/Screen%20Shot%202020-07-30%20at%203.12.36%20PM.png" alt="temp" /></p>
 </li>
 <li>
 <p>Follow the steps from <a href="Reset-Cross-Signing.html#if-you-have-an-active-session">If you have an active session</a></p>
@@ -1631,34 +1648,27 @@ Note: This warning is outdated, see <a href="https://github.com/vector-im/elemen
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="contribute"><a class="header" href="#contribute">Contribute</a></h1>
 <ol>
-<li>
-<p>Fork the <a href="https://github.com/vector-im/ems-docs">GitHib repo</a></p>
-</li>
-<li>
-<p>Look at other pages, make your contributions in the same style and formatting etc.</p>
-</li>
-<li>
-<p>Add to <code>SUMMARY.md</code></p>
-</li>
-<li>
-<p><code>pngcrush</code> all your images with <code>pngcrush -brute -ow &quot;Screen Shot 2020-10-20 at 12.02.17 PM.png&quot;</code></p>
-</li>
-<li>
-<p>Ensure that Rust is installed on your system</p>
-</li>
-<li>
-<p><code>cargo install mdbook</code></p>
-</li>
-<li>
-<p><code>mdbook build</code></p>
-</li>
-<li>
-<p><code>sensible-browser book/index.html</code> - make sure it looks good, and that all links etc. are working</p>
-</li>
-<li>
-<p>Make a pull request</p>
-</li>
+<li>Fork the <a href="https://github.com/vector-im/ems-docs">GitHib repo</a></li>
+<li>Look at other pages, make your contributions in the same style and formatting etc</li>
+<li>Use American English</li>
+<li>Make your changes</li>
+<li>Install <code>pngcrush</code>, <code>mdbook</code>, <code>markdownlint-cli</code>, and a local web server, for example <code>sensible-browser</code></li>
+<li>Add your new page to <code>SUMMARY.md</code> if applicable</li>
+<li><code>pngcrush</code> all your images with <code>pngcrush -brute -ow &quot;Screen Shot 2020-10-20 at 12.02.17 PM.png&quot;</code></li>
+<li>Run the linter and fix any errors</li>
+<li>Compile the book using <code>mdbook build</code></li>
+<li><code>sensible-browser book/index.html</code> - make sure it looks good, and that all links etc. are working</li>
+<li>Make a pull request</li>
 </ol>
+<h2 id="linter"><a class="header" href="#linter">Linter</a></h2>
+<p><a href="https://github.com/igorshubovych/markdownlint-cli">markdownlint</a> is used to ensure consistent Markdown formatting across all documents.</p>
+<p>You can run the checks locally by installing <code>markdownlint-cli</code> and running:</p>
+<pre><code class="language-bash">markdownlint '**/*.md' --config ./lint/config/default.yml --ignore ./src/SUMMARY.md
+markdownlint 'src/SUMMARY.md' --config ./lint/config/summary.yml
+</code></pre>
+<p>The rules are defined in <code>lint/config/default.yml</code> and <code>lint/config/summary.yml</code>. Summary has <code>MD025</code> and <code>MD041</code> turned off due to how <code>mdbook</code> expects the file <code>SUMMARY.md</code>.</p>
+<p>Extended rule descriptions, including how to fix any formatting errors, are available <a href="https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md">here</a>.</p>
+<p><a href="https://meta.stackexchange.com/questions/184108/what-is-syntax-highlighting-and-how-does-it-work">Here</a> is a list of languages for code blocks. Please use a language where possible, otherwise you may use <code>none</code>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="nutzung-der-eigenen-domain-mit-ems"><a class="header" href="#nutzung-der-eigenen-domain-mit-ems">Nutzung der eigenen Domain mit EMS</a></h1>
 <p>Matrix ist ein Chat-Protokoll, mit dem Nutzer*innen auf verschiedenen Servern miteinander chatten können. Deshalb ist, wie bei E-Mail-Adressen, der Server fester Bestandteil einer jeden Nutzer-Adresse: @jennifer:unternehmen.de.</p>
 <p>Nach dem @-Zeichen folgt der Benutzername und nach dem Doppelpunkt folgt die Server-Adresse.</p>
@@ -1678,7 +1688,7 @@ Note: This warning is outdated, see <a href="https://github.com/vector-im/elemen
 <ol>
 <li>Bestellen Sie den Matrix-Server bei EMS unter Angabe ihrer eigenen Domain. Sie müssen auch eine EMS-Serveradresse im Format unternehmen.ems.host wählen.</li>
 <li>Folgen Sie der Anleitung im Abschnitt “Einrichtung auf Ihrem Webspace”.</li>
-<li>Überprüfen Sie auf https://ems.element.io/user/hosting, dass Ihre Domain erfolgreich eingerichtet wurde.</li>
+<li>Überprüfen Sie auf <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a>, dass Ihre Domain erfolgreich eingerichtet wurde.</li>
 </ol>
 <h2 id="einrichtung-auf-ihrem-webspace"><a class="header" href="#einrichtung-auf-ihrem-webspace">Einrichtung auf Ihrem Webspace</a></h2>
 <p>Diese Schritte müssen Sie tätigen, um Ihre eigene Domain zu verwenden.</p>
@@ -1713,7 +1723,7 @@ Note: This warning is outdated, see <a href="https://github.com/vector-im/elemen
 <h2 id="fehlerbehebung"><a class="header" href="#fehlerbehebung">Fehlerbehebung</a></h2>
 <p>Um zu überprüfen, ob alles korrekt eingerichtet wurde, geben Sie Ihre Domain auf der folgenden Webseite ein.</p>
 <p><a href="https://federationtester.matrix.org/">https://federationtester.matrix.org/</a> (Nur in englischer Sprache)</p>
-<p>Eine grüne Fläche mit dem Wort “SUCCESS” signalisiert eine erfolgreiche Einrichtung. Auch in EMS sollten Sie nun unter https://ems.element.io/user/hosting eine erfolgreiche Prüfung der Domain vorfinden.</p>
+<p>Eine grüne Fläche mit dem Wort “SUCCESS” signalisiert eine erfolgreiche Einrichtung. Auch in EMS sollten Sie nun unter <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a> eine erfolgreiche Prüfung der Domain vorfinden.</p>
 <p>Ist eine rote Nachricht “Connection Errors” zu sehen, war eine Verbindung zum Server nicht möglich. Haben Sie den Server bei EMS schon bestellt? Ist Ihre Webseite nicht über HTTPS erreichbar? Hier sollte der .well-known Ordner und die darin enthaltene Datei öffentlich aus dem Internet zugänglich sein.</p>
 <p>Sehen Sie die Nachricht “No SRV Records”, wurde der DNS-Eintrag nicht gefunden. Dieser Eintrag ist nur notwendig, sollten Sie keine Datei auf Ihrem Webspace veröffentlichen können. Überprüfen Sie, ob Sie alles richtig eingegeben haben und das Formular Ihres Domain-Anbieters gespeichert haben. Ist alles richtig, brauchen Sie vielleicht nur etwas zu warten. Nach dem Ändern von DNS-Einträgen braucht es ein paar Minuten, bis sich die Änderung im Internet verteilt.</p>
 
