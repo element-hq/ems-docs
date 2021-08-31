@@ -182,9 +182,9 @@ This is actually part of a security measure - We generally prevent hosts from re
 
 Currently the process for migrating away is manual. However, we hope to have an automated, self-serve system in the not too distant future. For the time being, if you wish to migrate away, please simply email ems-support@element.io (while your EMS server is still up and running) and ask for a snapshot of your Synapse database. We will then generate a snapshot for you and generate a link for you to download the data. You can then use this to restore the database / Synapse instance on your own infrastructure.
 
-#### Is upload of custom yaml supported?
+#### Are custom appservices supported?
 
-Upload of custom (yaml) config is not currently supported for EMS hosts.
+Upload of custom (yaml) registration files for appservices is not currently supported for EMS hosts.
 
 We are actively working on improving bridging support for EMS hosts and hope that this will be something that you see substantial improvement in over the coming months.
 
