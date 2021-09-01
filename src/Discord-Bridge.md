@@ -4,18 +4,18 @@
 
 First, you need to register a Discord application for your bridge. Discord applications can be registered and managed in the [Discord Developer Portal](https://discord.com/developers/applications/).
 
-1. Click on the "New Application" button in the upper right corner.
-1. Give it a name (visible when authorizing the bridge), read Discord's Terms and click "Create".
+1. Click on the `New Application` button in the upper right corner.
+1. Give it a name (visible when authorizing the bridge), read Discord's Terms and click `Create`.
 1. Note the Client ID. It's required for the bridge.
-1. Navigate to the "Bot" tab. The navigation can be found on the left.
-1. Click "Add Bot". You may also need to click "Yes, do it!" to confirm your action.
+1. Navigate to the `Bot` tab. The navigation can be found on the left.
+1. Click `Add Bot`. You may also need to click `Yes, do it!` to confirm your action.
 1. Note the Bot Token. It's required for the bridge.
 
 ### Connect Discord server(s)
 
 You need to authorize your Discord App to each Discord server you wish to bridge. Give the following URL to a Discord server admin, if you aren't the Discord server admin.
 
-The authorization URL is `https://discordapp.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot&permissions=607250432`. Replace "YOUR_CLIENT_ID" with your Client ID mentioned above.
+The authorization URL is `https://discordapp.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot&permissions=607250432`. Replace `YOUR_CLIENT_ID` with your Client ID mentioned above.
 
 ## Usage
 
