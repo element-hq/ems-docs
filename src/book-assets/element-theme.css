@@ -2,13 +2,13 @@
     --bg: white;
     --fg: #1e1e1e;
 
-    --sidebar-bg: #c8c8c9;
+    --sidebar-bg: #f4f6fa;
     --sidebar-fg: #1e1e1e;
     --sidebar-non-existant: #aaaaaa;
     --sidebar-active: #0dbd8b;
     --sidebar-spacer: #f4f4f4;
 
-    --scrollbar: #8F8F8F;
+    --scrollbar: #B6B6B5;
 
     --icons: #747474;
     --icons-hover: #0dbd8b;
@@ -28,12 +28,12 @@
     --table-header-bg: hsl(0, 0%, 80%);
     --table-alternate-bg: hsl(0, 0%, 97%);
 
-    --searchbar-border-color: #aaa;
-    --searchbar-bg: #c8c8c9;
+    --searchbar-border-color: rgba(141,151,165,0);;
+    --searchbar-bg: rgba(141,151,165,0.2);;
     --searchbar-fg: #1e1e1e;
-    --searchbar-shadow-color: #aaa;
-    --searchresults-header-fg: #666;
-    --searchresults-border-color: #888;
+    --searchbar-shadow-color: rgba(141,151,165,0.1);
+    --searchresults-header-fg: #737D8C;
+    --searchresults-border-color: #8D97A5;
     --searchresults-li-bg: #e4f2fe;
     --search-mark-bg: #a2cff5;
 
