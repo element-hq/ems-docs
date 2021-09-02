@@ -1,4 +1,4 @@
-# Add a WhatsApp Bridge
+# WhatsApp Bridge
 
 This guide explains how to use the WhatsApp bridge from the EMS Integration Manager to integrate your WhatsApp chats with your EMS server.
 

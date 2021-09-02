@@ -1,4 +1,4 @@
-# Add Free Slack Bridge
+# Slack Bridge Free
 
 This guide explains how to use the free Slack bridge from the Matrix.org Integration Manager to integrate your Matrix room with a Slack room.
 
