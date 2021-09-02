@@ -16,9 +16,9 @@
 
 - [Create a Conference Call in a Room](Create-a-Conference-Call-in-a-Room.md)
 - [Discord Bridge](Discord-Bridge.md)
-- [Add Free Slack Bridge](Add-Free-Slack-Bridge.md)
-- [Add Signal Bridge](Add-Signal-Bridge.md)
-- [Add WhatsApp Bridge](Add-WhatsApp-Bridge.md)
+- [Signal Bridge](Signal-Bridge.md)
+- [Slack Bridge Free](Slack-Bridge-Free.md)
+- [WhatsApp Bridge](WhatsApp-Bridge.md)
 
 # Element
 

@@ -1,4 +1,4 @@
-# Add a Signal Bridge
+# Signal Bridge
 
 This guide explains how to use the Signal bridge from the EMS Integration Manager to integrate your Signal chats with your EMS server.
 
