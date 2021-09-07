@@ -46,7 +46,7 @@ Once reprovisioning is finished, you are able to bridge Signal to your EMS serve
 1. From your Element client, send a `link` message to the bot to connect to your Signal account  
 ![temp](images/sibridge-send-link-message.png)
 
-1. A QR code will be displayed. Quickly scan the QR code with Signal on your mobile device. You have about a minute before it times out. If it times out, just send the login message again to generate another QR code  
+1. A QR code will be displayed. Quickly scan the QR code with Signal on your mobile device. You have about a minute before it times out. If it times out, just send the `link` message again to generate another QR code  
 ![temp](images/sibridge-qr-code-from-link-command.png)
 
 1. On your Element client, you will see `Successfully logged in as <your_phone_number>` e.g. `Successfully logged in as +1 555-555-5555` and you will see invitations for each of your Signal chats in your Element client. Each Signal chat is a separate Matrix room. Join one or more chats and start chatting from either your Element app on desktop, iOS or Android or your Signal on mobile.
