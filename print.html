@@ -206,6 +206,9 @@
 <h4 id="can-i-host-my-own-telegram-bridge"><a class="header" href="#can-i-host-my-own-telegram-bridge">Can I host my own Telegram bridge?</a></h4>
 <p>Unfortunately you are not currently able to host your own bridges to work with your EMS hosted homeserver. As of December 2020, we have added a Telegram bridge to EMS. See our blog post:  <a href="https://element.io/blog/telegram-bridging/">EMS brings more interoperability to messaging</a></p>
 <p>If you have federation enabled for your homeserver, you are also able to bridge into publicly accessible rooms, for example using <a href="https://t2bot.io/">https://t2bot.io/</a> or integrations available on public homeservers such as matrix.org.</p>
+<h4 id="does-dms-count-towards-the-20-channel-limit-for-the-paid-slack-bridge"><a class="header" href="#does-dms-count-towards-the-20-channel-limit-for-the-paid-slack-bridge">Does DMs count towards the 20 channel limit for the paid Slack bridge?</a></h4>
+<p>Yes, but we're currently in the process of reviewing the bridging pricing models and soon we'll likely be offering Slack (as well as all of our other bridges) on a usage basis, rather than on a room / workspace capped basis.</p>
+<p>When this launches, existing customers will be able to stay on their existing plan, or choose to move to the new model.</p>
 <h4 id="how-do-i-add-a-github-integration"><a class="header" href="#how-do-i-add-a-github-integration">How do I add a GitHub integration?</a></h4>
 <p>To create a GitHub integration in a room, click on the <code>i</code> icon at the top right, accept the privacy policy, click <code>Add widgets, bridges &amp; bots</code>, click <code>Add integrations</code> and select GitHub from the Bots list. Log in to GitHub when prompted and select the repositories and functions you want.</p>
 <p>Note that your server needs to have federation enabled for integrations to work.</p>
@@ -214,6 +217,8 @@
 <p>Note that your server needs to have federation enabled for integrations to work.</p>
 <h4 id="how-do-i-bridge-to-libera-chat-irc-rooms-with-more-than-100-users"><a class="header" href="#how-do-i-bridge-to-libera-chat-irc-rooms-with-more-than-100-users">How do I bridge to Libera Chat IRC rooms with more than 100 users?</a></h4>
 <p>Please talk to your account manager, or open a support ticket by emailing <a href="mailto:support@matrix.org">support@matrix.org</a>. Requests will be considered by the bridge team on a case-by-case basis.</p>
+<h4 id="what-is-the-difference-between-the-free-and-paid-slack-bridge"><a class="header" href="#what-is-the-difference-between-the-free-and-paid-slack-bridge">What is the difference between the free and paid Slack bridge?</a></h4>
+<p>They're mostly the same. The big difference is that the free one doesn't bridge DMs / puppet your account. See also <a href="Frequently-Asked-Questions.html#does-dms-count-towards-the-20-channel-limit-for-the-paid-slack-bridge">Does DMs count towards the 20 channel limit for the paid Slack bridge?</a></p>
 <h4 id="with-jitsi-video-conferencing-how-is-the-data-being-transferred"><a class="header" href="#with-jitsi-video-conferencing-how-is-the-data-being-transferred">With Jitsi video conferencing, how is the data being transferred?</a></h4>
 <p>Jitsi conferencing data goes directly from the browser to the Jitsi server, it does not use the Matrix protocol. If you add a Jitsi widget to a room, that widget will be stored in the room state as Matrix events, but the Jitsi communication itself is from the client to the Jitsi server used.</p>
 <h3 id="miscellaneous"><a class="header" href="#miscellaneous">Miscellaneous</a></h3>
