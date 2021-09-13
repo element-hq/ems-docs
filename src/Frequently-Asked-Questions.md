@@ -64,9 +64,9 @@ If you have federation enabled for your homeserver, you are also able to bridge 
 
 #### Does DMs count towards the 20 channel limit for the paid Slack bridge?
 
-Yes, but we're currently in the process of reviewing the bridging pricing models and that we'll be offering Slack (as well as all of our other bridges) on a usage basis, rather than on a room / workspace capped basis.
+Yes, but we're currently in the process of reviewing the bridging pricing models and soon we'll likely be offering Slack (as well as all of our other bridges) on a usage basis, rather than on a room / workspace capped basis.
 
-When this launch, existing customers will be able to stay on their existing plan, or choose to move to the new model.
+When this launches, existing customers will be able to stay on their existing plan, or choose to move to the new model.
 
 #### How do I add a GitHub integration?
 
