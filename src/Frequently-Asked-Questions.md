@@ -62,6 +62,12 @@ Unfortunately you are not currently able to host your own bridges to work with y
 
 If you have federation enabled for your homeserver, you are also able to bridge into publicly accessible rooms, for example using [https://t2bot.io/](https://t2bot.io/) or integrations available on public homeservers such as matrix.org.
 
+#### Does DMs count towards the 20 channel limit for the paid Slack bridge?
+
+Yes, but we're currently in the process of reviewing the bridging pricing models and soon we'll likely be offering Slack (as well as all of our other bridges) on a usage basis, rather than on a room / workspace capped basis.
+
+When this launches, existing customers will be able to stay on their existing plan, or choose to move to the new model.
+
 #### How do I add a GitHub integration?
 
 To create a GitHub integration in a room, click on the `i` icon at the top right, accept the privacy policy, click `Add widgets, bridges & bots`, click `Add integrations` and select GitHub from the Bots list. Log in to GitHub when prompted and select the repositories and functions you want.
@@ -77,6 +83,10 @@ Note that your server needs to have federation enabled for integrations to work.
 #### How do I bridge to Libera Chat IRC rooms with more than 100 users?
 
 Please talk to your account manager, or open a support ticket by emailing [support@matrix.org](mailto:support@matrix.org). Requests will be considered by the bridge team on a case-by-case basis.
+
+#### What is the difference between the free and paid Slack bridge?
+
+They're mostly the same. The big difference is that the free one doesn't bridge DMs / puppet your account. See also [Does DMs count towards the 20 channel limit for the paid Slack bridge?](#does-dms-count-towards-the-20-channel-limit-for-the-paid-slack-bridge)
 
 #### With Jitsi video conferencing, how is the data being transferred?
 
