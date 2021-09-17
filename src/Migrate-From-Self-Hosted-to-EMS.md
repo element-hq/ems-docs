@@ -7,6 +7,22 @@ Before starting with this guide, please contact EMS support from [https://ems.el
 - Except where specified, you should be able to just copy-paste each command in succession.
 - Please do not change any file names anywhere.
 
+## Preparation
+
+This section outlines what you should do ahead of the migration in order to ensure the migration goes as quickly as possible and without issues.
+
+- At the latest 48 hours before your migration is scheduled, set the TTL on any DNS records that need to be updated to the lowest allowed value.
+- Upgrade your Synapse to the same version as EMS is running. Generally this will be the latest stable release. <https://vector.modular.im/_matrix/federation/v1/version> is a good indicator, but confirm version with your EMS contact.
+  - This is not required, but if your Synapse version is not the same as the EMS version, your migration will take longer.
+- Check the size of your database and report to your EMS contact:
+  - PostgreSQL: Connect to your database and issue the command `\l+`
+  - SQLite: `ls -lah /path/to/homeserver.db`
+- Check the size of your media repository and report to your EMS contact.
+  - Synapse Media Store: `du -hs /path/to/synapse/media_store/`
+  - Matrix Media Repo: <https://github.com/turt2live/matrix-media-repo/blob/master/docs/admin.md#per-server-usage>
+- If you are using SQLite instead of PostgreSQL, you should port your database to PostgreSQL by following [this](https://matrix-org.github.io/synapse/latest/postgres.html) guide before dumping your database and sending to your EMS contact.
+  - This step is not required, but will speed up your migration.
+
 ## SSH to your matrix server
 
 You might want to run everything in a `tmux` or a `screen` session to avoid disruption in case of a lost SSH connection.
@@ -51,8 +67,10 @@ Copy the following files and send to EMS Support:
 
 ## Stop Synapse
 
-**DO NOT START IT AGAIN AFTER THIS**
-Doing so can cause issues with federation and inconsistent data for your users
+**DO NOT START IT AGAIN AFTER THIS**  
+Doing so can cause issues with federation and inconsistent data for your users.
+
+While you wait for the database to export or files to transfer, you should edit or create the well-known files and DNS records to point to your EMS host. This can take a while to update so should be done as soon as possible in order to ensure your server will function properly when the migration is complete.
 
 ## Database export
 
@@ -108,7 +126,7 @@ Skip ahead to and follow [Backup media export](#backup-media-export).
 
 ### Download the export tool
 
-Download the latest version of `export_synapse_for_import-linux-x64` (or `export_synapse_for_import-win-x64.exe`) from [https://github.com/turt2live/matrix-media-repo/releases](https://github.com/turt2live/matrix-media-repo/releases)
+Download the latest version of `export_synapse_for_import-linux-x64` (or `export_synapse_for_import-win-x64.exe`) from <https://github.com/turt2live/matrix-media-repo/releases>
 
 ```bash
 wget https://github.com/turt2live/matrix-media-repo/releases/download/vx.x.x/export_synapse_for_import-linux-x64
@@ -176,8 +194,6 @@ rm customer_backup_media_export.tar.gz.gpg
 
 Download the files, then upload to the Google Drive folder shared by EMS or a location as agreed with your EMS contact.
 
-While transfer is running, you should edit or create the well-known files and CNAME DNS records to point to your EMS host.
-
 On your local computer:
 
 ```bash
@@ -191,3 +207,78 @@ We strongly recommend that you leave the export and Synapse untouched until the 
 ## Note on users and Element
 
 Element does have support for changing the delegated homeserver URL. All your users will have to sign out and sign in again to Element. You should ensure everyone has Key Backup configured and working.
+
+Your users will not be able to decrypt messages send in their encrypted rooms while your server is offline for the migration.
+
+### Force logout of old sessions after migration
+
+If you do not log out all sessions for your users before the migration, you can force this later. Below is a sample config file for `nginx` that tells all clients trying to connect to it to sign out.
+
+Note that the headers are important, otherwise this will not work one one or more of the Element clients. Valid HTTPS is required.
+
+This is not tested on any other Matrix clients, but it should work in theory if the client follows the Matrix Spec.
+
+```none
+server {
+    listen [::]:443 ssl http2;
+    listen 443 ssl http2;
+
+    server_name old.delegated.url.com;
+
+    location / {
+        if ($request_method = 'OPTIONS') {
+            add_header 'Access-Control-Allow-Origin' '*';
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+            add_header 'Access-Control-Allow-Headers' 'authorization,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';
+            add_header 'Access-Control-Max-Age' 1728000;
+            add_header 'Content-Type' 'text/plain; charset=utf-8';
+            add_header 'Content-Length' 0;
+            return 204;
+        }
+        if ($request_method = 'POST') {
+            add_header 'Access-Control-Allow-Origin' '*' always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'authorization,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
+            add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+        }
+        if ($request_method = 'GET') {
+            add_header 'Access-Control-Allow-Origin' '*' always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'authorization,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
+            add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+        }
+
+        default_type application/json;
+        return 401 '{"errcode":"M_UNKNOWN_TOKEN","error":"Server moved, please log in again."}';
+    }
+
+    ssl_session_timeout 1d;
+    ssl_session_cache shared:MozSSL:10m;  # about 40000 sessions
+    ssl_session_tickets off;
+    ssl_protocols TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    add_header Strict-Transport-Security "max-age=63072000" always;
+    ssl_stapling on;
+    ssl_stapling_verify on;
+
+    error_log /var/log/nginx/old.delegated.url.com.error.log;
+    access_log /var/log/nginx/old.delegated.url.com.access.log;
+
+    ssl_certificate /etc/letsencrypt/live/old.delegated.url.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/old.delegated.url.com/privkey.pem;
+}
+
+# Redirect HTTP to HTTPS
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name old.delegated.url.com;
+
+    if ($host = old.delegated.url.com) {
+        return 301 https://$host$request_uri;
+    }
+
+    return 404;
+}
+```
