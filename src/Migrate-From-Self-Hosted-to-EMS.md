@@ -70,7 +70,7 @@ Copy the following files and send to EMS Support:
 **DO NOT START IT AGAIN AFTER THIS**  
 Doing so can cause issues with federation and inconsistent data for your users.
 
-While you wait for the database to export or files to transfer, you should edit or create the well-known files and DNS records to point to your EMS host. This can take a while to update so should be done as soon as possible in order to ensure your server wil function properly when the migration is complete.
+While you wait for the database to export or files to transfer, you should edit or create the well-known files and DNS records to point to your EMS host. This can take a while to update so should be done as soon as possible in order to ensure your server will function properly when the migration is complete.
 
 ## Database export
 
