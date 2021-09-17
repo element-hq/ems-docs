@@ -695,6 +695,33 @@ chat.twily.org                 CNAME  299   Answer     ems-custom-demo-staging.e
 <li>Except where specified, you should be able to just copy-paste each command in succession.</li>
 <li>Please do not change any file names anywhere.</li>
 </ul>
+<h2 id="preparation"><a class="header" href="#preparation">Preparation</a></h2>
+<p>This section outlines what you should do ahead of the migration in order to ensure the migration goes as quickly as possible and without issues.</p>
+<ul>
+<li>At the latest 48 hours before your migration is scheduled, set the TTL on any DNS records that need to be updated to the lowest allowed value.</li>
+<li>Upgrade your Synapse to the same version as EMS is running. Generally this will be the latest stable release. <a href="https://vector.modular.im/_matrix/federation/v1/version">https://vector.modular.im/_matrix/federation/v1/version</a> is a good indicator, but confirm version with your EMS contact.
+<ul>
+<li>This is not required, but if your Synapse version is not the same as the EMS version, your migration will take longer.</li>
+</ul>
+</li>
+<li>Check the size of your database and report to your EMS contact:
+<ul>
+<li>PostgreSQL: Connect to your database and issue the command <code>\l+</code></li>
+<li>SQLite: <code>ls -lah /path/to/homeserver.db</code></li>
+</ul>
+</li>
+<li>Check the size of your media repository and report to your EMS contact.
+<ul>
+<li>Synapse Media Store: <code>du -hs /path/to/synapse/media_store/</code></li>
+<li>Matrix Media Repo: <a href="https://github.com/turt2live/matrix-media-repo/blob/master/docs/admin.md#per-server-usage">https://github.com/turt2live/matrix-media-repo/blob/master/docs/admin.md#per-server-usage</a></li>
+</ul>
+</li>
+<li>If you are using SQLite instead of PostgreSQL, you should port your database to PostgreSQL by following <a href="https://matrix-org.github.io/synapse/latest/postgres.html">this</a> guide before dumping your database and sending to your EMS contact.
+<ul>
+<li>This step is not required, but will speed up your migration.</li>
+</ul>
+</li>
+</ul>
 <h2 id="ssh-to-your-matrix-server"><a class="header" href="#ssh-to-your-matrix-server">SSH to your matrix server</a></h2>
 <p>You might want to run everything in a <code>tmux</code> or a <code>screen</code> session to avoid disruption in case of a lost SSH connection.</p>
 <h2 id="generate-password-for-gpg-encryption"><a class="header" href="#generate-password-for-gpg-encryption">Generate password for gpg encryption</a></h2>
@@ -724,8 +751,9 @@ cd /tmp/synapse_export
 </li>
 </ul>
 <h2 id="stop-synapse"><a class="header" href="#stop-synapse">Stop Synapse</a></h2>
-<p><strong>DO NOT START IT AGAIN AFTER THIS</strong>
-Doing so can cause issues with federation and inconsistent data for your users</p>
+<p><strong>DO NOT START IT AGAIN AFTER THIS</strong><br />
+Doing so can cause issues with federation and inconsistent data for your users.</p>
+<p>While you wait for the database to export or files to transfer, you should edit or create the well-known files and DNS records to point to your EMS host. This can take a while to update so should be done as soon as possible in order to ensure your server will function properly when the migration is complete.</p>
 <h2 id="database-export"><a class="header" href="#database-export">Database export</a></h2>
 <h3 id="postgresql"><a class="header" href="#postgresql">PostgreSQL</a></h3>
 <h4 id="dump-compress-and-encrypt"><a class="header" href="#dump-compress-and-encrypt">Dump, compress and encrypt</a></h4>
@@ -803,7 +831,6 @@ rm customer_backup_media_export.tar.gz.gpg
 </code></pre>
 <h2 id="transfer"><a class="header" href="#transfer">Transfer</a></h2>
 <p>Download the files, then upload to the Google Drive folder shared by EMS or a location as agreed with your EMS contact.</p>
-<p>While transfer is running, you should edit or create the well-known files and CNAME DNS records to point to your EMS host.</p>
 <p>On your local computer:</p>
 <pre><code class="language-bash">scp -r -P 1234 -i ~/.ssh/matrix-server youruser@1.2.3.4:/tmp/synapse_export /some/local/folder
 </code></pre>
@@ -811,6 +838,74 @@ rm customer_backup_media_export.tar.gz.gpg
 <p>We strongly recommend that you leave the export and Synapse untouched until the import is finished and everything is verified working.</p>
 <h2 id="note-on-users-and-element"><a class="header" href="#note-on-users-and-element">Note on users and Element</a></h2>
 <p>Element does have support for changing the delegated homeserver URL. All your users will have to sign out and sign in again to Element. You should ensure everyone has Key Backup configured and working.</p>
+<p>Your users will not be able to decrypt messages send in their encrypted rooms while your server is offline for the migration.</p>
+<h3 id="force-logout-of-old-sessions-after-migration"><a class="header" href="#force-logout-of-old-sessions-after-migration">Force logout of old sessions after migration</a></h3>
+<p>If you do not log out all sessions for your users before the migration, you can force this later. Below is a sample config file for <code>nginx</code> that tells all clients trying to connect to it to sign out.</p>
+<p>Note that the headers are important, otherwise this will not work one one or more of the Element clients. Valid HTTPS is required.</p>
+<p>This is not tested on any other Matrix clients, but it should work in theory if the client follows the Matrix Spec.</p>
+<pre><code class="language-none">server {
+    listen [::]:443 ssl http2;
+    listen 443 ssl http2;
+
+    server_name old.delegated.url.com;
+
+    location / {
+        if ($request_method = 'OPTIONS') {
+            add_header 'Access-Control-Allow-Origin' '*';
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+            add_header 'Access-Control-Allow-Headers' 'authorization,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';
+            add_header 'Access-Control-Max-Age' 1728000;
+            add_header 'Content-Type' 'text/plain; charset=utf-8';
+            add_header 'Content-Length' 0;
+            return 204;
+        }
+        if ($request_method = 'POST') {
+            add_header 'Access-Control-Allow-Origin' '*' always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'authorization,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
+            add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+        }
+        if ($request_method = 'GET') {
+            add_header 'Access-Control-Allow-Origin' '*' always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'authorization,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
+            add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+        }
+
+        default_type application/json;
+        return 401 '{&quot;errcode&quot;:&quot;M_UNKNOWN_TOKEN&quot;,&quot;error&quot;:&quot;Server moved, please log in again.&quot;}';
+    }
+
+    ssl_session_timeout 1d;
+    ssl_session_cache shared:MozSSL:10m;  # about 40000 sessions
+    ssl_session_tickets off;
+    ssl_protocols TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    add_header Strict-Transport-Security &quot;max-age=63072000&quot; always;
+    ssl_stapling on;
+    ssl_stapling_verify on;
+
+    error_log /var/log/nginx/old.delegated.url.com.error.log;
+    access_log /var/log/nginx/old.delegated.url.com.access.log;
+
+    ssl_certificate /etc/letsencrypt/live/old.delegated.url.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/old.delegated.url.com/privkey.pem;
+}
+
+# Redirect HTTP to HTTPS
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name old.delegated.url.com;
+
+    if ($host = old.delegated.url.com) {
+        return 301 https://$host$request_uri;
+    }
+
+    return 404;
+}
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="import-database-and-media-dump"><a class="header" href="#import-database-and-media-dump">Import Database and Media Dump</a></h1>
 <p>This article is structured for an export from EMS, but may also be applicable in other circumstances.</p>
 <p>For support on Synapse or matrix-media-repo, ask in the Matrix rooms <a href="https://matrix.to/#/#synapse:matrix.org">#synapse:matrix.org</a> and <a href="https://matrix.to/#/#mediarepo:t2bot.io">#mediarepo:t2bot.io</a></p>
