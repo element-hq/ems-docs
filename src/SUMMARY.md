@@ -32,6 +32,7 @@
 - [Check Status](Check-Status.md)
 - [Export and Import E2E Room Keys](Export-and-Import-E2E-Room-Keys.md)
 - [Reset Cross Signing](Reset-Cross-Signing.md)
+- [Verify new Login](Verify-new-Login.md)
   
 # Non-English
 
