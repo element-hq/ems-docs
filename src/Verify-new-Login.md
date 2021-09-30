@@ -5,7 +5,7 @@ When you log in to a new device/session, you must verify the login and connect i
 1. Log in to Element with your username and password  
 ![Element Web login screen](images/Verify-new-Login/Screen%20Shot%202021-09-28%20at%2011.55.36%20AM.png)
 
-1. Choose one of the below methods for cross signing
+1. Choose one of the methods below for cross signing
 
 ## Compare emojis using another login
 
