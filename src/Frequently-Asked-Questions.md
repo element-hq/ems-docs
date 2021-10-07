@@ -160,6 +160,26 @@ Please see our blog article on custom branding for your Element instance, here [
 
 You will be able to enter the customization preferences from the managed host page of your EMS account - [https://ems.element.io/user/hosting](https://ems.element.io/user/hosting).
 
+#### Can I use a subdomain instead of the root domain with my EMS server?
+
+Yes. However this is not recommended. For the same reason your email address probably is not `someone@email.example.com`, you probably don't want your Matrix IDs to be `@someone:matrix.example.com`.
+
+Please see <https://matrix-org.github.io/synapse/latest/setup/installation.html#choosing-your-server-name> for additional details on your server name.
+
+#### Can I use EMS hosted well-knowns with the root of my domain?
+
+Yes you can, however there are some limitations:
+
+- You will not be able to serve a website on the domain.
+- Using a CNAME DNS record on the root of a domain is not compliant with the DNS Specification (per [Domain Name System RFC 1034, paragraph 3.6.2](https://joinup.ec.europa.eu/collection/ict-standards-procurement/solution/dns-rfc-1034-rfc-1035-domain-name-system/about) specifically). But you may still be able to do this successfully if:
+  - Your DNS provider allows setting a CNAME record on the root of your domain. Be aware that certain other DNS records for your domain will not be returned properly, including SOA, NS, and TXT records. (Such as SPF, DMARC, and DKIM which is used for securing email), OR
+  - Your DNS provider offers a DNS Spec compliant workaround for using CNAME on root, this include ALIAS records and CloudFlare CNAME Flattening (note that proxy must be turned off).
+    - When using this, please note that the EMS Control Panel will not recognize your DNS record as correct, but your EMS server will function properly and without limitations (beyond the yellow warning in the EMS Control Panel)
+- If your DNS provider does not allow CNAME records on root or a DNS Spec compliant solution like ALIAS records, you can use an A record instead. To do this, finish setting up your EMS server without adding the DNS record when asked. After setup is complete, check the IP address of your EMS server, for example with `$ dig example.ems.host` in the Mac/Linux terminal or `Resolve-DnsName -Name example.ems.host` in Windows PowerShell, then add an A record on the root of your domain pointing to this IP address.
+  - **Please note that this is not officially supported from EMS and we reserve the rights to change the IP address of your EMS server without notice.**
+  - You will see the same error in the EMS Control Panel as above, but your EMS server will work with this configuration.
+- Using a subdomain for your EMS server. By doing this, you will not see any of the limitations and do not need any of the workarounds listed above. However please consider [Can I use a subdomain instead of the root domain with my EMS server?](#can-i-use-a-subdomain-instead-of-the-root-domain-with-my-ems-server)
+
 #### CNAME and .well-known?
 
 - You need to create a CNAME record with your DNS provider. This need to be:  
