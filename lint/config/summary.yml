@@ -116,7 +116,7 @@ MD040: true
 MD041: false
 
 # No empty links <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md042>
-MD042: true
+MD042: false # Allow these, as subheadings manifest as empty links
 
 # Required heading structure <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md043>
 MD043: false
