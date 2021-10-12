@@ -35,18 +35,20 @@ Once reprovisioning is finished, you are able to bridge Telegram to your EMS ser
 
 1. The bridge account will join your room.
 
-2. Open Telegram on your mobile device (iOS or Android) and tap on ≡, go to `Settings`, and then `Devices`, and then `Scan QR Code` to start the Telegram QR code scanner. You will use this QR code scanner to scan a QR code displayed by your Element client in the next step.
+1. Open Telegram on your mobile device (iOS or Android) and tap on ≡, go to `Settings`, and then `Devices`, and then `Scan QR Code` to start the Telegram QR code scanner. You will use this QR code scanner to scan a QR code displayed by your Element client in the next step.
 
-3. From your Element client, send a `login-qr` message to the bot to connect to your Telegram account  
+1. From your Element client, send a `login-qr` message to the bot to connect to your Telegram account  
 
-4. A QR code will be displayed. Quickly scan the QR code with Telegram on your mobile device.
+1. A QR code will be displayed. Quickly scan the QR code with Telegram on your mobile device.
 
-5. On your Element client, you will see `Successfully logged in as <username>`
+1. On your Element client, you will see `Successfully logged in as <username>`
 
 ## Sending a message to an Telegram User
 
 To send a message to a Telegram user, you must first be connected to the bridge (see above).
 
 1. On your Element client, open the "Telegram bridge bot" room.
-2. Say `pm ` followed by the phone number or username. The phone number must exist in your Telegram contacts.
-3. You will be invited to a DM with that user, and can send messages to them.
+
+1. Say `pm` followed by the phone number or username. The phone number must exist in your Telegram contacts.
+
+1. You will be invited to a DM with that user, and can send messages to them.

@@ -56,5 +56,5 @@ Once reprovisioning is finished, you are able to bridge Signal to your EMS serve
 To send a message to a Signal user, you must first be connected to the bridge (see above).
 
 1. On your Element client, open the "Signal bridge bot" room.
-1. Say `pm ` followed by the phone number for your contact.
+1. Say `pm` followed by the phone number for your contact.
 1. You will be invited to a DM with that user, and can send messages to them.

@@ -56,5 +56,5 @@ Once reprovisioning is finished, you are able to bridge WhatsApp to your EMS ser
 To send a message to a WhatsApp user, you must first be connected to the bridge (see above).
 
 1. On your Element client, open the "WhatsApp bridge bot" room.
-1. Say `pm ` followed by the **international** formatted phone number for your contact.
+1. Say `pm` followed by the **international** formatted phone number for your contact.
 1. You will be invited to a DM with that user, and can send messages to them.

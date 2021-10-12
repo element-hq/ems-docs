@@ -1,13 +1,14 @@
 # Public Slack Bridge
 
 Matrix.org provides a public free Slack bridge, which is free to use forever but comes with some limitations:
- - You can bridge to an unlimited number of channels, but only public channels.
- - You must bridge to a public room.
- - Matrix users cannot puppet themselves, or Direct Message other users.
+
+- You can bridge to an unlimited number of channels, but only public channels.
+- You must bridge to a public room.
+- Matrix users cannot puppet themselves, or Direct Message other users.
 
 This guide explains how to use the free Slack bridge from the Matrix.org Integration Manager to integrate your Matrix room with a Slack room.
 
-Note that EMS offers a [paid Slack bridge](./ems-Slack-Bridge.md) with more features. 
+Note that EMS offers a [paid Slack bridge](./ems-Slack-Bridge.md) with more features.
 
 It requires your homeserver to be able to federate with Matrix.org.
 

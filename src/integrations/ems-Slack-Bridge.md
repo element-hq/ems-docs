@@ -1,11 +1,10 @@
-## EMS Slack Bridge
+# EMS Slack Bridge
 
 The EMS Slack bridge is a paid integration for EMS homeservers. In addition to the features provided by the matrix.org bridge, it:
 
 - Allows you to bridge to private rooms and private channels.
 - Allows you to puppet your Slack identity from Matrix, appearing to send messages as if you were using Slack.
 - Direct Message other Slack users
-
 
 ## Purchase the Slack integration
 

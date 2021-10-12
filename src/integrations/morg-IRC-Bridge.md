@@ -1,4 +1,4 @@
-## Public IRC bridges
+# Public IRC bridges
 
 Matrix.org (and others) host a number of IRC bridged for public networks.
 
