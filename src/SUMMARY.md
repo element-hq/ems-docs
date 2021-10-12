@@ -15,10 +15,16 @@
 # Integrations
 
 - [Create a Conference Call in a Room](Create-a-Conference-Call-in-a-Room.md)
-- [Discord Bridge](Discord-Bridge.md)
-- [Signal Bridge](Signal-Bridge.md)
-- [Slack Bridge Free](Slack-Bridge-Free.md)
-- [WhatsApp Bridge](WhatsApp-Bridge.md)
+
+- [EMS bridges]()
+  - [Discord Bridge](integrations/Discord-Bridge.md)
+  - [Signal Bridge](integrations/Signal-Bridge.md)
+  - [Slack Bridge](integrations/ems-Slack-Bridge.md)
+  - [Telegram Bridge](integrations/Telegram-Bridge.md)
+  - [WhatsApp Bridge](integrations/WhatsApp-Bridge.md)
+- [Matrix.org hosted bridges]()
+  - [Public IRC Bridges](integrations/morg-IRC-Bridge.md)
+  - [Public Slack Bridge](integrations/morg-Slack-Bridge.md)
 
 # Element
 

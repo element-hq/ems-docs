@@ -22,14 +22,14 @@ The authorization URL is `https://discordapp.com/api/oauth2/authorize?client_id=
 ### Bridge a room
 
 1. In a web browser, navigate to the Discord room you wish to bridge. The URL includes the server ID (also called guild ID) and the channel ID. The URL format is `https://discord.com/channels/GUILD_ID/CHANNEL_ID`.  
-    ![Discord showing Channel ID in URL bar](images/Discord-Bridge/1-discord-channel-url.png)
+    ![Discord showing Channel ID in URL bar](/images/Discord-Bridge/1-discord-channel-url.png)
 1. In a Matrix room you want to bridge, invite `@discord:example.ems.host` (replace the domain with the one of your homeserver).  
 1. Post the message `!discord bridge GUILD_ID CHANNEL_ID` after replacing the two placeholders.  
-    ![Element showing the Discord bridge command](images/Discord-Bridge/2-element-bridge-command.png)
+    ![Element showing the Discord bridge command](../images/Discord-Bridge/2-element-bridge-command.png)
 1. A privileged Discord user will need to approve the bridge request by responding with `!matrix approve`  
-    ![Discord message showing the approve command](images/Discord-Bridge/3-discord-approve-bridge.png)
+    ![Discord message showing the approve command](../images/Discord-Bridge/3-discord-approve-bridge.png)
 1. Messages from Discord are now bridged to Matrix and vice versa.  
-    ![Element showing a message bridges from Discord](images/Discord-Bridge/4-message-from-discord.png)
+    ![Element showing a message bridges from Discord](../images/Discord-Bridge/4-message-from-discord.png)
 
 ### Unbridge
 
