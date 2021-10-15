@@ -18,7 +18,7 @@ You need these items to complete the import. If you are migrating from EMS, EMS 
 
 1. Following official documentation, install and configure
    1. [PostgreSQL](https://www.postgresql.org/)
-   1. [Synapse](https://github.com/matrix-org/synapse/)
+   1. [Synapse](https://matrix-org.github.io/synapse/latest/)
    1. [matrix-media-repo](https://github.com/turt2live/matrix-media-repo)
 1. When generating your Synapse configuration file, you MUST use the same domain as your EMS server.
 1. Do not start Synapse yet.
