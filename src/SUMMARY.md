@@ -16,10 +16,15 @@
 
 - [Create a Conference Call in a Room](Create-a-Conference-Call-in-a-Room.md)
 
+- [Authentication]()
+  - [Google SAML](authentication/Google-SAML.md)
+  - [LDAP Active Directory](authentication/LDAP-Active-Directory.md)
+  - [OpenID Connect](authentication/OpenID-Connect.md)
 - [EMS bridges]()
   - [Discord Bridge](integrations/Discord-Bridge.md)
   - [Signal Bridge](integrations/Signal-Bridge.md)
   - [Slack Bridge](integrations/ems-Slack-Bridge.md)
+  - [Teams Bridge](integrations/Teams-Bridge.md)
   - [Telegram Bridge](integrations/Telegram-Bridge.md)
   - [WhatsApp Bridge](integrations/WhatsApp-Bridge.md)
 - [Matrix.org hosted bridges]()
