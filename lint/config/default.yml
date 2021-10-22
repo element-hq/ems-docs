@@ -88,7 +88,7 @@ MD032: true
 
 # Inline HTML <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md033>
 MD033:
-  allowed_elements: ['i', 'br']
+  allowed_elements: ['i', 'br', 'embed']
 
 # Bare URL used <https://github.com/DavidAnson/markdownlint/blob/master/doc/Rules.md#md034>
 MD034: true
