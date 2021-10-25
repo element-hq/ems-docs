@@ -58,3 +58,11 @@ To send a message to a Signal user, you must first be connected to the bridge (s
 1. On your Element client, open the "Signal bridge bot" room.
 1. Say `pm` followed by the phone number for your contact.
 1. You will be invited to a DM with that user, and can send messages to them.
+
+## Why do Signal user names show up as phone numbers?
+
+Some signal users may appear as a phone number rather than their real name. This can because of one of the following reasons:
+
+1. The user has not spoken to you on Signal yet, and so has not sent their profile information.
+1. The user has not added you as a contact on their phone.
+1. The Signal bridge has not yet syncronoised the profile information of the user from Signal (this should happen fairly soon after your first interaction).
