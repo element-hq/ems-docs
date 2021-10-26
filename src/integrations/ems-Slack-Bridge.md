@@ -29,3 +29,10 @@ Once reprovisioning is finished, you are able to bridge Slack to your EMS server
 ## Setup
 
 The setup process for the EMS Slack bridge is explained [here](./morg-Slack-Bridge.md)
+
+## Initiate a DM with a Slack user from Matrix
+
+- Message the Slack bot user on Matrix.
+- Say `login`
+- An OAuth2 URL will be displayed. Follow it to get puppeted to the right Slack instance.
+- Click a Slack user in Matrix and DM as normal
