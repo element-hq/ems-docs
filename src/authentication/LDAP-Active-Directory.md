@@ -13,7 +13,7 @@ To enable authentication with LDAP and Active Directory, the following needs to 
 
 ## Configure Your EMS Server
 
-- Set up a Gold size EMS server.
+- Set up an Element Cloud Enterprise server.
 - Click the Integrations tab.
 - Select LDAP from the list of available Advanced Authentication methods.
 - Set the following configuration parameters:
