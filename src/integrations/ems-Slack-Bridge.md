@@ -34,5 +34,5 @@ The setup process for the EMS Slack bridge is explained [here](./morg-Slack-Brid
 
 - Message the Slack bot user on Matrix.
 - Say `login`
-- Follow the OAuth2 URL to get puppeted to the right Slack instance
+- An OAuth2 URL will be displayed. Follow it to get puppeted to the right Slack instance.
 - Click a Slack user in Matrix and DM as normal
