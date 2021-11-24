@@ -51,7 +51,7 @@ Once reprovisioning is finished, you are able to bridge Signal to your EMS serve
 
 1. On your Element client, you will see `Successfully logged in as <your_phone_number>` e.g. `Successfully logged in as +1 555-555-5555` and you will see invitations for each of your Signal chats in your Element client. Each Signal chat is a separate Matrix room. Join one or more chats and start chatting from either your Element app on desktop, iOS or Android or your Signal on mobile.
 
-## Sending a message to an Signal User
+## Sending a message to a Signal User
 
 To send a message to a Signal user, you must first be connected to the bridge (see above).
 
@@ -65,4 +65,4 @@ Some signal users may appear as a phone number rather than their real name. This
 
 1. The user has not spoken to you on Signal yet, and so has not sent their profile information.
 1. The user has not added you as a contact on their phone.
-1. The Signal bridge has not yet syncronoised the profile information of the user from Signal (this should happen fairly soon after your first interaction).
+1. The Signal bridge has not yet synchronized the profile information of the user from Signal (this should happen fairly soon after your first interaction).
