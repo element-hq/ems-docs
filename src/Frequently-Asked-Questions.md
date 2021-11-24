@@ -22,6 +22,10 @@ Room and space icons can be shown in a full screen lightbox, so the resolution s
 
 ## Matrix General
 
+### Can I sign in to multiple Matrix accounts in Element Desktop?
+
+If you have multiple Matrix accounts - for example an EMS account and a matrix.org account - you cannot login to both simultaneously in the Element Desktop client today. However, you can launch multiple instances of Element locally via [its Profiles feature](https://github.com/vector-im/element-desktop#profiles).
+
 ### What is an Identity Server and how does it work?
 
 The best response to 'What is an Identity Server' is detailed in section 2. of the vector.im Identity Server privacy policy, available here: [https://element.io/is-privacy-notice](https://element.io/is-privacy-notice)
@@ -49,10 +53,6 @@ It is best if EMS customers delete their host or account themselves. Here's how:
 Delete the host from the  host management page at [https://ems.element.io/user/hosting](https://ems.element.io/user/hosting) by clicking on the `Delete host` button (and confirming deletion in the resultant dialog). This will delete the host and cancel all associated subscriptions.
 
 Or delete the EMS account entirely.  This is done from the  user account page [https://ems.element.io/user/account](https://ems.element.io/user/account), by clicking on the `Delete account` button and confirming. This will delete all hosts and subscriptions before removing the user's account.
-
-#### Multiple Identity Servers: Logging in
-
-If you have multiple Matrix identities - for example an EMS identity and a matrix.org identity - you cannot login to both simultaneously in Element chat client today. However, you can launch multiple instances of Element locally via [its Profiles feature](https://github.com/vector-im/element-desktop#profiles).
 
 ### Integrations
 
