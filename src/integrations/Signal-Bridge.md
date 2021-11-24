@@ -65,4 +65,4 @@ Some signal users may appear as a phone number rather than their real name. This
 
 1. The user has not spoken to you on Signal yet, and so has not sent their profile information.
 1. The user has not added you as a contact on their phone.
-1. The Signal bridge has not yet synchronised the profile information of the user from Signal (this should happen fairly soon after your first interaction).
+1. The Signal bridge has not yet synchronized the profile information of the user from Signal (this should happen fairly soon after your first interaction).
