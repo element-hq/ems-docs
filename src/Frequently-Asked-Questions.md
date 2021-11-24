@@ -50,6 +50,10 @@ Delete the host from the  host management page at [https://ems.element.io/user/h
 
 Or delete the EMS account entirely.  This is done from the  user account page [https://ems.element.io/user/account](https://ems.element.io/user/account), by clicking on the `Delete account` button and confirming. This will delete all hosts and subscriptions before removing the user's account.
 
+#### Multiple Identity Servers: Logging in
+
+If you have multiple Matrix identities - for example an EMS identity and a matrix.org identity - you cannot login to both simultaneously in Element chat client today. However, you can launch multiple instances of Element locally via [its Profiles feature](https://github.com/vector-im/element-desktop#profiles).
+
 ### Integrations
 
 #### Bots? What's the reason for using them?
