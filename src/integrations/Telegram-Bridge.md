@@ -12,7 +12,7 @@ The following instructions are done with the  Element Desktop on the Element sid
 Click the `Integrations` tab  and if you have more than one server, select the server you wish to add the Telegram integration to.  
 ![temp](/images/click-integration-tab-ems-user-hosting.png)  
 
-1. Click on `Telegram Bridge` in the list of available Bridges. 
+1. Click on `Telegram Bridge` in the list of available Bridges.  
 ![temp](/images/bridge-integration-list.png)  
 
 1. Enter the maximum number of users in `Maximum Telegram users`.  
@@ -20,7 +20,7 @@ Please note:  **this is the maximum number of Telegram users who actually send m
 
 Once you have entered `Maximum Telegram users`, click `Purchase` (remember you can always go back to this step and increase the maximum number of Telegram users if you need more in the future).
 
-1. A dialogue will remind you of the price per user and ask if you wish to proceed. Click `Purchase` if you wish to proceed with the Telegram Integration. 
+1. A dialogue will remind you of the price per user and ask if you wish to proceed. Click `Purchase` if you wish to proceed with the Telegram Integration.  
 ![temp](/images/integrations/Telegram-Bridge/confirm-payment.png)  
 
 1. You will have to wait a few minutes while your host is reprovisioned.
@@ -28,7 +28,7 @@ Once reprovisioning is finished, you are able to bridge Telegram to your EMS ser
 
 ## Bridge Telegram to your Element account
 
-1. Once the bridge is running, open your Element app. Click on the `+` next to `People`. 
+1. Once the bridge is running, open your Element app. Click on the `+` next to `People`.  
 ![temp](/images/start-chat.png)
 
 1. Create a Direct Message conversation by typing `@telegram:example.ems.host` (replace the domain with the one of your homeserver). Then click `Go`.
