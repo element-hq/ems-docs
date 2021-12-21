@@ -157,12 +157,12 @@
 <ol>
 <li>
 <p>Open the EMS control panel at: <a href="https://ems.element.io/user/hosting">https://ems.element.io/user/hosting</a><br />
-Click the <code>Integrations</code> tab  and if you have more than one server, select the server you wish to add the Telegram integration to<br />
-<img src="/images/click-integration-tab-ems-user-hosting.png" alt="temp" /></p>
+Click the <code>Integrations</code> tab  and if you have more than one server, select the server you wish to add the Telegram integration to.<br />
+<img src="/images/click-integration-tab-ems-user-hosting.png" alt="" /></p>
 </li>
 <li>
-<p>Click on <code>Telegram Bridge</code> in the list of available Bridges
-<img src="/images/bridge-integration-list.png" alt="temp" /></p>
+<p>Click on <code>Telegram Bridge</code> in the list of available Bridges. 
+<img src="/images/bridge-integration-list.png" alt="" /></p>
 </li>
 <li>
 <p>Enter the maximum number of users in <code>Maximum Telegram users</code>.<br />
@@ -172,8 +172,8 @@ Please note:  <strong>this is the maximum number of Telegram users who actually 
 <p>Once you have entered <code>Maximum Telegram users</code>, click <code>Purchase</code> (remember you can always go back to this step and increase the maximum number of Telegram users if you need more in the future).</p>
 <ol>
 <li>
-<p>A dialogue will remind you of the price per user and ask if you wish to proceed. Click <code>Purchase</code> if you wish to proceed with the Telegram Integration<br />
-<img src="/images/integrations/Telegram-Bridge/confirm-payment.png" alt="temp" /></p>
+<p>A dialogue will remind you of the price per user and ask if you wish to proceed. Click <code>Purchase</code> if you wish to proceed with the Telegram Integration. 
+<img src="/images/integrations/Telegram-Bridge/confirm-payment.png" alt="" /></p>
 </li>
 <li>
 <p>You will have to wait a few minutes while your host is reprovisioned.
@@ -183,26 +183,26 @@ Once reprovisioning is finished, you are able to bridge Telegram to your EMS ser
 <h2 id="bridge-telegram-to-your-element-account"><a class="header" href="#bridge-telegram-to-your-element-account">Bridge Telegram to your Element account</a></h2>
 <ol>
 <li>
-<p>Once the bridge is running, open your Element app. Click on the <code>+</code> next to <code>People</code>
-<img src="/images/start-chat.png" alt="temp" /></p>
+<p>Once the bridge is running, open your Element app. Click on the <code>+</code> next to <code>People</code>. 
+<img src="/images/start-chat.png" alt="" /></p>
 </li>
 <li>
-<p>Create a Direct Message conversation by typing <code>@telegram:example.ems.host</code> (replace the domain with the one of your homeserver). Then click<code>Go</code></p>
+<p>Create a Direct Message conversation by typing <code>@telegram:example.ems.host</code> (replace the domain with the one of your homeserver). Then click <code>Go</code>.</p>
 </li>
 <li>
-<p>The bridge account will join your room.</p>
+<p>Wait for the bridge account to join your room.</p>
 </li>
 <li>
 <p>Open Telegram on your mobile device (iOS or Android) and tap on ≡, go to <code>Settings</code>, and then <code>Devices</code>, and then <code>Scan QR Code</code> to start the Telegram QR code scanner. You will use this QR code scanner to scan a QR code displayed by your Element client in the next step.</p>
 </li>
 <li>
-<p>From your Element client, send a <code>login-qr</code> message to the bot to connect to your Telegram account</p>
+<p>From your Element client, send a <code>login-qr</code> message to the bot to connect to your Telegram account.</p>
 </li>
 <li>
 <p>A QR code will be displayed. Quickly scan the QR code with Telegram on your mobile device.</p>
 </li>
 <li>
-<p>On your Element client, you will see <code>Successfully logged in as &lt;username&gt;</code></p>
+<p>On your Element client, you will see <code>Successfully logged in as &lt;username&gt;</code>.</p>
 </li>
 </ol>
 <h2 id="sending-a-message-to-an-telegram-user"><a class="header" href="#sending-a-message-to-an-telegram-user">Sending a message to an Telegram User</a></h2>
@@ -216,6 +216,20 @@ Once reprovisioning is finished, you are able to bridge Telegram to your EMS ser
 </li>
 <li>
 <p>You will be invited to a DM with that user, and can send messages to them.</p>
+</li>
+</ol>
+<h2 id="bridging-matrix-users-without-a-telegram-acccount"><a class="header" href="#bridging-matrix-users-without-a-telegram-acccount">Bridging Matrix users without a Telegram acccount</a></h2>
+<p>By default, a Matrix user will have to connect their Telegram account for their messages to be bridged to Telegram. If you provide a bot token, we will use this bot to relay the messages of any Matrix users to Telegram.</p>
+<p>Follow these steps to register a bot account with Telegram.</p>
+<ol>
+<li>
+<p>With your Telegram account, message <a href="https://www.t.me/BotFather">@BotFather</a>.</p>
+</li>
+<li>
+<p>Create a new bot by sending the message <code>/newbot</code> to BotFather.</p>
+</li>
+<li>
+<p>Wait for BotFather to provide you a bot token.</p>
 </li>
 </ol>
 
