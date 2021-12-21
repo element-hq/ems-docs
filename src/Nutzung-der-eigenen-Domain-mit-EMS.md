@@ -12,14 +12,14 @@ Alternativ bietet Ihnen EMS ohne Aufpreis eine Subdomain. Hierbei ist keine Einr
 
 Hier sind die Vorteile der Optionen:
 
-| Nutzung einer eigenen Domain                                                                                                 | Nutzung einer EMS-Subdomain                                                      |
+| Vorteile einer eigenen Domain                                                                                                 | Vorteiler einer EMS-Subdomain                                                      |
 | ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
 | Nutzer- und Chat-Raum-Adressen sind kürzer und auf Ihre Organisation angepasst                                               | Sie können sofort mit einer verfügbaren Subdomain starten                        |
 | Benötigt die Ablage von zwei Dateien auf Ihrer Webseite oder einen DNS-Eintrag (Anleitung für Ihr IT-Team ist unten im Text) | Keine Anpassung in Ihrer IT notwendig                                            |
-| Migration zu anderen Anbietern oder in die eigene IT-Landschaft möglich                                                      | Migration zu anderen Anbietern und in die eigene IT später nicht leicht möglich* |
+| Migration zu anderen Anbietern oder in die eigene IT-Landschaft möglich                                                      | Migration zu anderen Anbietern und in die eigene IT später nicht leicht möglich[^1] |
 | Ihre Domain muss erreichbar bleiben                                                                                          | Keine Verantwortung auf Ihrer Seite                                              |
 
-\* Ein Wechsel der Domain ist momentan nicht einfach möglich, da die Domain ein Teil der Nutzer- und Chat-Raum-Adressen wird. Die Entscheidung muss daher bei der Einrichtung des Servers getroffen werden.
+[^1]: Bei der Einrichtung eines Matrix Servers muss eine Domain festgelegt werden. Ein Wechsel der Domain ist momentan nicht möglich. Die Domain wird Teil der Nutzer- und Chat-Adressen. Dies betrifft auch Server, welche nicht mit anderen Servern föderieren.
 
 ## Reihenfolge der Einrichtung
 
