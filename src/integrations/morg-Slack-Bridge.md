@@ -56,9 +56,11 @@ An EMS server is not required.
 1. Slack is now added to the Matrix room  
 ![temp](/images/Screen%20Shot%202020-10-27%20at%204.51.41%20PM.png)
 
-1. Go to the channel you selected on Slack, and invite the riot bot with the command `/invite @element-bridge`  
-![temp](/images/Screen%20Shot%202020-10-27%20at%204.56.16%20PM.png)
+1. Go to the channel you selected on Slack, and add the Element App via the `Integrations` tab in the members sidebar  
+![temp](/images/Screen%20Shot%202022-01-25%20at%203%2006%2048%20PM)  
+![temp](/images/Screen%20Shot%202022-01-25%20at%203%2006%2059%20PM)  
+![temp](/images/Screen%20Shot%202022-01-25%20at%203%2007%2006%20PM)
 
-1. The Matrix room and Slack channel is now bridged  
+1. The Matrix room and Slack channel are now bridged  
 ![temp](/images/Screen%20Shot%202020-10-27%20at%204.57.34%20PM.png)  
 ![temp](/images/Screen%20Shot%202020-10-27%20at%204.57.48%20PM.png)
