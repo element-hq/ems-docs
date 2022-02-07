@@ -61,7 +61,7 @@ To send a message to a WhatsApp user, you must first be connected to the bridge 
 
 ## For the EMS bridge to work, you must login to WhatsApp on iOS or Android every 14 days
 
-From WhatsApp's documentation at: [faq.whatsapp.com/general/download-and-installation/about-linked-devices](https://faq.whatsapp.com/general/download-and-installation/about-linked-devices):
+From WhatsApp's documentation at: <https://faq.whatsapp.com/general/download-and-installation/about-linked-devices>:
 
 `Your phone won’t need to stay online to use WhatsApp on linked devices, but if you don’t use your phone for over 14 days, your linked devices will become disconnected.`
 
