@@ -58,3 +58,11 @@ To send a message to a WhatsApp user, you must first be connected to the bridge 
 1. On your Element client, open the "WhatsApp bridge bot" room.
 1. Say `pm` followed by the **international** formatted phone number for your contact.
 1. You will be invited to a DM with that user, and can send messages to them.
+
+## For the EMS bridge to work, you must login to WhatsApp on iOS or Android every 14 days
+
+From WhatsApp's documentation at: <https://faq.whatsapp.com/general/download-and-installation/about-linked-devices>:
+
+`Your phone won’t need to stay online to use WhatsApp on linked devices, but if you don’t use your phone for over 14 days, your linked devices will become disconnected.`
+
+This means that you cannot uninstall the iOS or Android WhatsApp app and that you must login to that app every 14 days. If you don't, the Element WhatsApp Bridge will stop working.
