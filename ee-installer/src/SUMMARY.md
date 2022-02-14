@@ -9,4 +9,3 @@
 - [Setting up Group Sync](./groupsync.md)
 
 [Last Updated: February 10, 2022 at 9:30pm London Time](./SUMMARY.md)
-
