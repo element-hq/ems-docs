@@ -16,7 +16,13 @@ jobs:
         with:
           mdbook-version: 'latest'
 
-      - run: mdbook build
+      - name: Build ems-docs
+        run: mdbook build
+
+      - name: Build ee-installer
+        run: mdbook build
+        with:
+          folder: ee-installer
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
