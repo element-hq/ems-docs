@@ -1,7 +1,7 @@
 # Documentation for possible options in this file is at
 # https://rust-lang.github.io/mdBook/format/config.html
 [book]
-title = "Element Documentation - Karl's Copy 2"
+title = "Element Documentation - Karl's Copy"
 authors = ["Element Matrix Services"]
 description = "Documentation for Element and EMS by the EMS team"
 language = "en"
