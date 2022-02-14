@@ -22,8 +22,11 @@ jobs:
       - name: Build ee-installer
         run: cd ./ee-installer && mdbook build
 
+      - name: Kludgy
+        run: mkdir ./book/ee-installer && cp -R ./ee-installer/book/* ./book/ee-installer/
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./ee-installer/book/
+          publish_dir: ./book/
