@@ -20,7 +20,7 @@ jobs:
         run: mdbook build
 
       - name: Build ee-installer
-        run: cd ./ee-installer && mdbook build
+        run: cd ./ee-installer && mdbook build && cd ../
 
       - name: Kludgy
         run: mkdir ./book/ee-installer && cp -R ./ee-installer/book/* ./book/ee-installer/
