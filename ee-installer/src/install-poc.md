@@ -40,7 +40,7 @@ be good to go.
 `/etc/hosts` may be used as an alternative to proper DNS in a POC scenario
 only. In this case, you will need entries similar to:
 
-```lang-none
+```bash
 192.168.122.39 element.local element
 192.168.122.39 synapse.local synapse
 ```
@@ -64,7 +64,7 @@ Make sure to select docker as a package option. Do set up ssh.
 
 Once you log in, please run:
 
-```lang-none
+```bash
 sudo apt-get update
 sudo apt-get upgrade
 ```
@@ -81,7 +81,7 @@ configuration of the installer.
 
 The `/mnt/data` directory should have at least 50 GB of space.
 
-```lang-none
+```bash
 # mkdir /mnt/data
 
 # apt-get install python3-signedjson -y
@@ -122,20 +122,20 @@ Hub image for Postgresql.
 
 To do this you can run:
 
-```lang-none
+```bash
 docker pull docker.io/postgres:latest
 ```
 
 Generate a password to replace `insert_random_password_here` in the script
 by doing:
 
-```lang-none
+```bash
 pwgen 32 1
 ```
 
 Then create a script, `start_postgresql`:
 
-```lang-none
+```bash
 #!/bin/bash
 
 docker run -d -p 5432:5432 -v $(pwd)/data:/var/lib/postgresql/data -e
@@ -146,19 +146,19 @@ ocker.io/postgres:latest
 
 Now create a directory for the postgresql database:
 
-```lang-none
+```bash
 mkdir data
 ```
 
 Set the executable permission on `start_postgresql`:
 
-```lang-none
+```bash
 chmod +x start_postgresql
 ```
 
 and finally start postgresql:
 
-```lang-none
+```bash
 ./start_postgresql
 ```
 
@@ -191,7 +191,7 @@ generate self-signed certificates. Element nor Canonical ship this tool and
 so these directions are provided as one example of how to get self-signed
 certificates.
 
-```lang-none
+```bash
 apt-get install wget libnss3-tools
 wget
 https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64
@@ -202,14 +202,14 @@ chmod +x /usr/bin/mkcert
 
 Once you have mkcert executable, you can run:
 
-```lang-none
+```bash
 # mkcert -install
 The local CA is now installed in the system trust store! ⚡️
 ```
 
 Now, you can verify the CA Root by doing:
 
-```lang-none
+```bash
 # mkcert -CAROOT
 /root/.local/share/mkcert
 ```
@@ -221,7 +221,7 @@ are both on the same host, `192.168.122.39`:
 
 The run for the element fqdn looks like this:
 
-```lang-none
+```bash
 # mkcert element.local element 192.168.122.39 127.0.0.1
 
 Created a new certificate valid for the following names
@@ -238,7 +238,7 @@ It will expire on 1 May 2024
 
 The run for the synapse fqdn looks like this:
 
-```lang-none
+```bash
 # mkcert synapse.local synapse 192.168.122.39 127.0.0.1
 
 Created a new certificate valid for the following names
@@ -260,7 +260,7 @@ must take the form of `fqdn.crt` and `fqdn.key`.
 Using our above example, these are the commands we would need to run from
 the installer directory: (We ran `mkcert` in that directory as well.)
 
-```lang-none
+```bash
 cp element.local+3.pem certs/element.local.crt
 cp element.local+3-key.pem certs/element.local.key
 cp synapse.local+3.pem certs/synapse.local.crt
@@ -280,7 +280,7 @@ Now it is time to set `parameters.yml`. Using the example hostnames of
 `element.local` and `synapse.local` (not resolvable on the internet), we
 would set the following parameters first in `parameters.yml`:
 
-```lang-none
+```bash
 domain_name: local
 element_fqdn: element.local
 synapse_fqdn: synapse.local
@@ -288,7 +288,7 @@ synapse_fqdn: synapse.local
 
 Next, we need to set the variables related to Postgres:
 
-```lang-none
+```bash
 postgres_fqdn: element.local
 postgres_user: element
 postgres_db: element
@@ -301,7 +301,7 @@ set to `/mnt/data` for the path and a media size of 50Gi. If you need to
 make changes you can, but the defaults are safe to leave in place as long
 as you can fit 50Gi on `/mnt/data`.
 
-```lang-none
+```bash
 media_host_data_path: "/mnt/data"
 media_size: "50Gi"
 ```
@@ -310,14 +310,14 @@ The next item in the configuration is the microk8s DNS resolvers. This
 defaults to using Google’s DNS. You may change this if you need to use
 your company’s DNS.
 
-```lang-none
+```bash
 microk8s_dns_resolvers: "8.8.8.8,8.8.4.4"
 ```
 
 The next section pertains to certmanager. If you are using your own
 certificates, please leave these items both blank, as such:
 
-```lang-none
+```bash
 certmanager_issuer:
 certmanager_admin_email:
 ```
@@ -326,7 +326,7 @@ If you have chosen to use letsencrypt, please specify “letsencrypt” for
 the certmanager_issue and an actual email address for who should manage the
 certificates for certmanager_admin_email:
 
-```lang-none
+```bash
 certmanager_issuer: 'letsencrypt'
 certmanager_admin_email: admin@mydomain.com'
 ```
@@ -347,19 +347,19 @@ For the `macaroon` key and the `registration_shared_secret`, you may
 generate them with the `pwgen` utility. If you do not have this utility,
 you may install it in Ubuntu with:
 
-```lang-none
+```bash
 apt-get install pwgen -y
 ```
 
 Once you have the 'pwgen' tool, you can use it as follows:
 
-```lang-none
+```bash
 pwgen 32 1
 ```
 
 At this point, you can set the following items in `secrets.yml`:
 
-```lang-none
+```bash
 macaroon: "uGaifaeTuGhaegh9zepieDaD6eemoosh"
 postgres_passwd: "insert_random_password_here"
 registration_shared_secret: "cuxeeBie0noo2Veex9biechei8aen0ri"
@@ -367,20 +367,20 @@ registration_shared_secret: "cuxeeBie0noo2Veex9biechei8aen0ri"
 
 In order to generate the signing key, we need to run:
 
-```lang-none
+```bash
 python3 tools/create_keys.py
 ```
 
 This will create output similar to:
 
-```lang-none
+```bash
 Signing key: ed25519 0 8uCMyhmX5X3N78tkxGYzzjtZrKN0hGAw03ue4Pa/294
 Verify key: ed25519 0 m9//8YDBgKCssHDp9AHpa5umUjn/B1HJXL0TngdUiFo
 ```
 
 From this, we can specify in `secrets.yml`:
 
-```lang-none
+```bash
 signing_key: “ed25519 0 8uCMyhmX5X3N78tkxGYzzjtZrKN0hGAw03ue4Pa/294”
 ```
 
@@ -442,7 +442,7 @@ installation.
 
 From the installer directory, run:
 
-```lang-none
+```bash
 bash install.sh
 ```
 
@@ -452,19 +452,19 @@ to log out and back in.
 Please log out and back in and re-run the installer from the installer
 directory again:
 
-```lang-none
+```bash
 bash install.sh
 ```
 
 Once this has finished, you can run:
 
-```lang-none
+```bash
 kubectl get pods -n element-onprem
 ```
 
 And you should get similar output to:
 
-```lang-none
+```bash
 NAME                                       READY   STATUS    RESTARTS   AGE
 app-element-web-5c8c6d8765-2hwvm           1/1     Running   0          52m
 server-well-known-59f87956d8-f5j2h         1/1     Running   0          52m
