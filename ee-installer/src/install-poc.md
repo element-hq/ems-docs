@@ -126,6 +126,11 @@ To do this you can run:
 docker pull docker.io/postgres:latest
 ```
 
+Install the `pwgen` utility:
+```bash
+apt-get install pwgen -y
+```
+
 Generate a password to replace `insert_random_password_here` in the script
 by doing:
 
@@ -361,9 +366,9 @@ pwgen 32 1
 At this point, you can set the following items in `secrets.yml`:
 
 ```bash
-macaroon: "uGaifaeTuGhaegh9zepieDaD6eemoosh"
+macaroon: "insert_pwgen_output_here"
 postgres_passwd: "insert_random_password_here"
-registration_shared_secret: "cuxeeBie0noo2Veex9biechei8aen0ri"
+registration_shared_secret: "insert_different_pwgen_output_here"
 ```
 
 In order to generate the signing key, we need to run:
@@ -390,9 +395,9 @@ Do not forget to also set the values for `registry_username` and
 
 ## Extra Configuration Items
 
-It is possible to configure anything in synapse's
+It is possible to configure anything in Synapse's
 [homeserver.yaml](https://github.com/matrix-org/synapse/blob/develop/docs/sample_config.yaml)
-or element’s
+or Element’s
 [config.json](https://github.com/vector-im/element-web/blob/develop/docs/config.md).
 
 To do so, you need to create json or yaml files in an `extra-config`
