@@ -127,6 +127,7 @@ docker pull docker.io/postgres:latest
 ```
 
 Install the `pwgen` utility:
+
 ```bash
 apt-get install pwgen -y
 ```
