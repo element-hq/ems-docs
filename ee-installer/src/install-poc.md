@@ -40,7 +40,7 @@ be good to go.
 `/etc/hosts` may be used as an alternative to proper DNS in a POC scenario
 only. In this case, you will need entries similar to:
 
-```bash
+```plaintext
 192.168.122.39 element.local element
 192.168.122.39 synapse.local synapse
 ```
@@ -175,7 +175,8 @@ accessible on the internet.
 
 In the case of self-signed certificates, these are acceptable for a PoC
 environment, but will not be supported in a production environment as the
-security risk would be too high.
+security risk would be too high. Configuring mobile clients and federation
+will not be possible with self-signed certificates.
 
 ### Certificates without letsencrypt
 
