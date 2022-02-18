@@ -180,7 +180,7 @@ will not be possible with self-signed certificates.
 
 ### Certificates without letsencrypt
 
-If you have certificates for your element fqdn and synapse fqdn already,
+If you have certificates for your Element fqdn and Synapse fqdn already,
 then you can simply place the `.crt` and `.key` files in the certs directory
 under the installer directory. Certificates in the certs directory must take
 the form of `fqdn.cert` and `fqdn.key`.
