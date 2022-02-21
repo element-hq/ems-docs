@@ -13,7 +13,7 @@ This ensures that you can moderate content in these rooms, invite and promote ro
 
 ## Use case examples
 * All active administrators in a room depromoted themselves. Use Admin Bot to regain control of this room.
-* Someone reported a Code of Conduct violation in a room without active moderators. Use Admin Bot to kick or ban the offender.
+* Someone reported a Code of Conduct violation in a room without active moderators. Use Admin Bot to redact the messages and kick or ban the offender.
 
 ## Good to know
 * Admin Bot joins all rooms and spaces created by your users.
