@@ -66,3 +66,8 @@ Some signal users may appear as a phone number rather than their real name. This
 1. The user has not spoken to you on Signal yet, and so has not sent their profile information.
 1. The user has not added you as a contact on their phone.
 1. The Signal bridge has not yet synchronized the profile information of the user from Signal (this should happen fairly soon after your first interaction).
+
+## EMS does not support the bridge as a primary device and the `register` command is not supported
+
+The EMS Signal Bridge is implemented as a secondary device bridge in order to prevent Signal from ratelimiting the bridge. This means that
+the `register` command is not suported and you still need Signal installed on your iOS or Android device.
