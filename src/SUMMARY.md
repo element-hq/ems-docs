@@ -30,6 +30,9 @@
 - [Matrix.org hosted bridges]()
   - [Public IRC Bridges](integrations/morg-IRC-Bridge.md)
   - [Public Slack Bridge](integrations/morg-Slack-Bridge.md)
+- [Extensions]()
+  - [Admin Bot](integrations/Admin-Bot.md)
+  - [Audit Bot](integrations/Audit-Bot.md)
 
 # Element
 
