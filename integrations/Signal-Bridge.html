@@ -226,6 +226,9 @@ Once reprovisioning is finished, you are able to bridge Signal to your EMS serve
 <li>The user has not added you as a contact on their phone.</li>
 <li>The Signal bridge has not yet synchronized the profile information of the user from Signal (this should happen fairly soon after your first interaction).</li>
 </ol>
+<h2 id="ems-does-not-support-the-bridge-as-a-primary-device-and-the-register-command-is-not-supported"><a class="header" href="#ems-does-not-support-the-bridge-as-a-primary-device-and-the-register-command-is-not-supported">EMS does not support the bridge as a primary device and the <code>register</code> command is not supported</a></h2>
+<p>The EMS Signal Bridge is implemented as a secondary device bridge in order to prevent Signal from ratelimiting the bridge. This means that
+the <code>register</code> command is not supported and you still need Signal installed on your iOS or Android device.</p>
 
                     </main>
 
