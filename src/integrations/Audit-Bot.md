@@ -5,23 +5,25 @@ Audit Bot is for compliance with the law or your organization's guidelines. This
 **Audit Bot is only available on homeservers with the Element Enterprise Cloud plan.**
 
 ## Use case examples
-* A law or organisational guideline requires you to store all written correspondence.
-* A legal investigation requires you to verify or deny if a certain message has been sent.
+
+- A law or organisational guideline requires you to store all written correspondence.
+- A legal investigation requires you to verify or deny if a certain message has been sent.
 
 ## Good to know
-* Audit Bot joins all rooms and spaces created by your users.
-* Audit Bot also joins Direct Message rooms created by your users.
-* The use of Audit Bot is visible to your users. The service account cannot be hidden. In Direct Message rooms it will not appear in the room title but is visible in the room member list.
-* Audit Bot does not join rooms created by users on others servers. You can still manually invite Audit Bot.
-* The user account `auditbot` will be used. The full Matrix ID will be something like `@auditbot:element.io`.
-* Audit Bot is able to read encrypted messages to allow you to read or store all messages.
+
+- Audit Bot joins all rooms and spaces created by your users.
+- Audit Bot also joins Direct Message rooms created by your users.
+- The use of Audit Bot is visible to your users. The service account cannot be hidden. In Direct Message rooms it will not appear in the room title but is visible in the room member list.
+- Audit Bot does not join rooms created by users on others servers. You can still manually invite Audit Bot.
+- The user account `auditbot` will be used. The full Matrix ID will be something like `@auditbot:element.io`.
+- Audit Bot is able to read encrypted messages to allow you to read or store all messages.
 
 ## Setup
 
 1. Go to the [Integrations tab on the EMS homeserver page](https://ems.element.io/user/hosting#/integrations).
-2. If you have more than one homesever, select the homeserver to add Audit Bot to.
-3. In the section Extensions, click on `Audit Bot`. If this is not visible, check that the homeserver is using the Element Enterprise Cloud plan.
-4. Click on `Set Up Integration` and confirm the pricing in a modal.
+1. If you have more than one homesever, select the homeserver to add Audit Bot to.
+1. In the section Extensions, click on `Audit Bot`. If this is not visible, check that the homeserver is using the Element Enterprise Cloud plan.
+1. Click on `Set Up Integration` and confirm the pricing in a modal.
 
 ### Optional export
 
@@ -34,11 +36,11 @@ Messages from the past are not exported retrospectively.
 You can use Element Web to log into the `auditbot` account:
 
 1. Go to the [Integrations tab on the EMS homeserver page](https://ems.element.io/user/hosting#/integrations).
-2. If you have more than one homeserver, select the one you want to administrate.
-3. In the section Extensions, click on `Audit Bot`. If this is not visible, check that the homeserver is using the Element Enterprise Cloud plan.
-4. If this is the first time you log in using this browser, click `Secure Backup Phrase (click to view)` and copy the phrase to your clipboard.  
+1. If you have more than one homeserver, select the one you want to administrate.
+1. In the section Extensions, click on `Audit Bot`. If this is not visible, check that the homeserver is using the Element Enterprise Cloud plan.
+1. If this is the first time you log in using this browser, click `Secure Backup Phrase (click to view)` and copy the phrase to your clipboard.  
 ![temp](/images/integrations/Admin-Bot/secure-backup-phrase.png)
-5. Click on `Log in as Audit bot`. You will need to enter the Secure Backup Phrase on first login with a new browser in order to access Secure Storage and encrypted messages.
+1. Click on `Log in as Audit bot`. You will need to enter the Secure Backup Phrase on first login with a new browser in order to access Secure Storage and encrypted messages.
 
 ## Removal
 
