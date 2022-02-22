@@ -32,13 +32,13 @@ This way you can moderate content in these rooms, invite and promote room member
 1. In the section Extensions, click on `Admin Bot`. If this is not visible, check that the homeserver is using the Element Enterprise Cloud plan.
 1. Click on `Set Up Integration` and confirm the pricing in a modal.
 
-![](/images/integrations/Admin-Bot/setup-button.png)
+![temp](/images/integrations/Admin-Bot/setup-button.png)
 
 ## Usage
 
 Admin Bot improves your ability to use the `Server Admin` tab on the EMS homeserver page and Synapse Admin API by having a local admin in every room.
 
-![](/images/integrations/Admin-Bot/logged-into-element.png)
+![temp](/images/integrations/Admin-Bot/logged-into-element.png)
 
 Furthermore, you can use Element Web to log into the `adminbot` account:
 
@@ -46,7 +46,7 @@ Furthermore, you can use Element Web to log into the `adminbot` account:
 1. If you have more than one homeserver, select the one you want to administrate.
 1. In the section Extensions, click on `Admin Bot`. If this is not visible, check that the homeserver is using the Element Enterprise Cloud plan.
 1. If this is the first time you log in using this browser, click `Secure Backup Phrase (click to view)` and copy the phrase to your clipboard.  
-![](/images/integrations/Admin-Bot/secure-backup-phrase.png)
+![temp](/images/integrations/Admin-Bot/secure-backup-phrase.png)
 1. Click on `Log in as Admin bot`. You will need to enter the Secure Backup Phrase on first login with a new browser in order to access Secure Storage and encrypted messages.
 
 ## Removal
