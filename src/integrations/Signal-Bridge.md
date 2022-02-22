@@ -70,4 +70,4 @@ Some signal users may appear as a phone number rather than their real name. This
 ## EMS does not support the bridge as a primary device and the `register` command is not supported
 
 The EMS Signal Bridge is implemented as a secondary device bridge in order to prevent Signal from ratelimiting the bridge. This means that
-the `register` command is not suported and you still need Signal installed on your iOS or Android device.
+the `register` command is not supported and you still need Signal installed on your iOS or Android device.
