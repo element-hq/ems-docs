@@ -39,7 +39,7 @@ You can use Element Web to log into the `auditbot` account:
 1. If you have more than one homeserver, select the one you want to administrate.
 1. In the section Extensions, click on `Audit Bot`. If this is not visible, check that the homeserver is using the Element Enterprise Cloud plan.
 1. If this is the first time you log in using this browser, click `Secure Backup Phrase (click to view)` and copy the phrase to your clipboard.  
-![temp](/images/integrations/Audit-Bot/secure-backup-phrase.png)
+![The Secure Backup Phrase is displayed in a read-only text input field.](/images/integrations/Audit-Bot/secure-backup-phrase.png)
 1. Click on `Log in as Audit bot`. You will need to enter the Secure Backup Phrase on first login with a new browser in order to access Secure Storage and encrypted messages.
 
 ## Removal
