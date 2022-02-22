@@ -1,0 +1,19 @@
+[book]
+title="Element Enterprise Installer Documentation"
+authors = ["Element"]
+language = "en"
+multilingual = false
+src = "src"
+
+[output.html]
+# Additional HTML, JS, CSS that's injected into each page of the book.
+# Table of contents is via https://github.com/JorelAli/mdBook-pagetoc
+additional-css = [
+    "src/book-assets/element-theme.css",
+    "src/book-assets/font.css",
+    "src/book-assets/logo.css",
+    "src/book-assets/style.css",
+]
+theme = "src/book-assets/theme"
+default-theme = "element"
+

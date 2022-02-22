@@ -16,7 +16,14 @@ jobs:
         with:
           mdbook-version: 'latest'
 
-      - run: mdbook build
+      - name: Build ems-docs
+        run: mdbook build
+
+      - name: Build ee-installer
+        run: cd ./ee-installer && mdbook build && cd ../
+
+      - name: Copy ee-installer into document root
+        run: mkdir ./book/ee-installer && cp -R ./ee-installer/book/* ./book/ee-installer/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
