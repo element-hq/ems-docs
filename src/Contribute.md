@@ -1,6 +1,6 @@
 # Contribute
 
-1. Fork the [GitHib repo](https://github.com/vector-im/ems-docs)
+1. Fork the [GitHub repo](https://github.com/vector-im/ems-docs)
 1. Look at other pages, make your contributions in the same style and formatting etc
 1. Use American English
 1. Make your changes
