@@ -120,6 +120,12 @@ We also provide a (growing) suite of proprietary host administration tools in th
 
 For storage, we’ve shied away from hard limits, and instead adopted a fair use policy. If you are using the server for business conversations and sharing a few images as part of your discussions you will never have problems, if you are sharing thousands of images daily per user then you will hit a limit.
 
+#### What is a "system" room?
+
+You may have come across this message in your admin dashboard: "This is a system room that cannot be deleted.".
+
+A "system" room is required by EMS to ensure smooth operation of your Matrix host.
+
 ### Pricing & Payments
 
 #### Do you offer other payment options like IBAN/SEPA?
