@@ -350,7 +350,8 @@ items here:
 - A Registry username and token, which will have been provided to you
 by Element.
 
-For the `macaroon` key and the `registration_shared_secret`, you may
+For the `macaroon` key, the `registration_shared_secret` key, and the
+`generic_shared_secret` key, you may
 generate them with the `pwgen` utility. If you do not have this utility,
 you may install it in Ubuntu with:
 
@@ -370,6 +371,7 @@ At this point, you can set the following items in `secrets.yml`:
 macaroon: "insert_pwgen_output_here"
 postgres_passwd: "insert_random_password_here"
 registration_shared_secret: "insert_different_pwgen_output_here"
+generic_shared_secret: "insert_third_pwgen_output_here"
 ```
 
 In order to generate the signing key, we need to run:

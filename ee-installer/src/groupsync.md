@@ -5,8 +5,8 @@
 - In the installer root directory, Copy the sample file from
 `config-sample/groupsync/gsync.yml` to `extra-config/groupsync`
 - Edit the file with the following values. Note that Element
-will provide you with the ems_bridges_registry_token_name and the
-ems_bridges_registry_token_password.
+will provide you with the `ems_bridges_registry_token_name` and the
+`ems_bridges_registry_token_password`.
   - `ems_bridges_registry_username`: ems_bridges_registry_token_name
   - `ems_bridges_registry_password`: ems_bridges_registry_token_password
   - `ldap_check_interval_seconds`: The interval check in seconds
