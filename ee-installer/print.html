@@ -417,7 +417,8 @@ items here:</p>
 <li>A Registry username and token, which will have been provided to you
 by Element.</li>
 </ul>
-<p>For the <code>macaroon</code> key and the <code>registration_shared_secret</code>, you may
+<p>For the <code>macaroon</code> key, the <code>registration_shared_secret</code> key, and the
+<code>generic_shared_secret</code> key, you may
 generate them with the <code>pwgen</code> utility. If you do not have this utility,
 you may install it in Ubuntu with:</p>
 <pre><code class="language-bash">apt-get install pwgen -y
@@ -429,6 +430,7 @@ you may install it in Ubuntu with:</p>
 <pre><code class="language-bash">macaroon: &quot;insert_pwgen_output_here&quot;
 postgres_passwd: &quot;insert_random_password_here&quot;
 registration_shared_secret: &quot;insert_different_pwgen_output_here&quot;
+generic_shared_secret: &quot;insert_third_pwgen_output_here&quot;
 </code></pre>
 <p>In order to generate the signing key, we need to run:</p>
 <pre><code class="language-bash">python3 tools/create_keys.py
@@ -592,8 +594,8 @@ as the MXID, the value here is mostly a suggestion :
 </li>
 <li>
 <p>Edit the file with the following values. Note that Element
-will provide you with the ems_bridges_registry_token_name and the
-ems_bridges_registry_token_password.</p>
+will provide you with the <code>ems_bridges_registry_token_name</code> and the
+<code>ems_bridges_registry_token_password</code>.</p>
 <ul>
 <li><code>ems_bridges_registry_username</code>: ems_bridges_registry_token_name</li>
 <li><code>ems_bridges_registry_password</code>: ems_bridges_registry_token_password</li>
