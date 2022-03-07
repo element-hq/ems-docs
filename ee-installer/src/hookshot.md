@@ -5,8 +5,6 @@ are provided by the hookshot package. This documentation explains how to
 configure the installer to install hookshot and then how to interact with
 hookshot once installed.
 
-# Configuring Hookshot
-
 ## Configuring Hookshot with the Installer
 
 - Copy sample file from `config-sample/hookshot/hookshot.yml` to
