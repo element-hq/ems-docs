@@ -19,3 +19,8 @@ infrastructure over SSO/SAML technologies for login.
 the application of ACLs from your LDAP/AD architecture to Spaces and Rooms in
 the Element ecosystem. Please note that the initial version we are providing
 only supports a single node, non-federated configuration.
+- Dimension Integration Manager - The installer is able to configure the
+dimension integration manager, which allows you to serve integrations
+on-premise.
+- Gitlab, Github, and Jira Integrations - The installer is able to configure
+hookshot, which provides integrations with Gitlab, Github, and Jira.
