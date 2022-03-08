@@ -8,6 +8,6 @@
 - [Setting up SSO/SAML](./saml.md)
 - [Setting up Group Sync](./groupsync.md)
 - [Setting Up the Integration Manager](./dimension.md)
-- [Setting up Gitlab, Github, and Jira Integrations](./hookshot.md)
+- [Setting up GitLab, GitHub, and JIRA Integrations](./hookshot.md)
 
-[Last Updated: March 7, 2022 at 8:30pm London Time](./SUMMARY.md)
+[Last Updated: March 8, 2022 at 8:30pm London Time](./SUMMARY.md)
