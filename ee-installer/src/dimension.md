@@ -29,7 +29,7 @@
  fqdn.
 - Restart the install script
 
-## Enabling big blue button
+## Enabling BigBlueButton
 
 To enable BigBlueButton integration into Element through Dimension, you
 should set the following variables.

@@ -1,6 +1,6 @@
-# Gitlab, Github, and Jira Integrations
+# GitLab, GitHub, and JIRA Integrations
 
-In Element Enterprise On-Premise, our gitlab, github, and jira integrations
+In Element Enterprise On-Premise, our GitLab, GitHub, and JIRA integrations
 are provided by the hookshot package. This documentation explains how to
 configure the installer to install hookshot and then how to interact with
 hookshot once installed.
@@ -23,11 +23,11 @@ hookshot once installed.
   - `bot_avatar` : An `mxc://` uri to the hookshot bot avatar image.
 - Restart the install script
 
-## Enabling github integration
+## Enabling GitHub Integration
 
-### On github
+### On GitHub
 
-- This bridge requires a [GitHub
+- This bridge requires a [GitHub 
  App](https://github.com/settings/apps/new). You will need to create one.
 - On the webhook URL, set the following one :
  `https://<hookshot_fqdn>/hookshot/`
@@ -74,9 +74,9 @@ hookshot once installed.
   - For Provisioning url : `http://instance-hookshot-headless:7776`
   - Share Secret : The value of `provisioning_secret`
 
-## Enabling gitlab integration
+## Enabling GitLab integration
 
-### On gitlab
+### On GitLab
 
 - Add a webhook under the group or the repository you are targeting
 - On the webhook URL, set the following one :
@@ -97,9 +97,9 @@ hookshot once installed.
 - Copy sample file from `config-sample/hookshot/gitlab.yml` to
  `extra-config/hookshot`
 - Edit the file with the following values :
-  - `gitlab_instances`: A mapping of the gitlab servers
-    - `git.example.org`: Replace with name of the gitlab server
-      - `url`: Replace with URL of the gitlab server
+  - `gitlab_instances`: A mapping of the GitLab servers
+    - `git.example.org`: Replace with name of the GitLab server
+      - `url`: Replace with URL of the GitLab server
   - `gitlab_webhook_secret`: The secret configured in the webhook.
 
 ### In Element's room
@@ -120,9 +120,9 @@ hookshot once installed.
 }
 ```
 
-## Enabling jira integration
+## Enabling JIRA integration
 
-### On jira
+### On JIRA
 
 - This should be done for all JIRA organisations you wish to bridge. The
  steps may differ for SaaS and on-prem, but you need to go to the
