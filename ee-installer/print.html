@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Element Enterprise Installer Documentation</title>
+        <title>Element Enterprise Installer Documentation - 0.5rc1</title>
         <meta name="robots" content="noindex" />
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="install-poc.html"><strong aria-hidden="true">1.</strong> How to Install a POC Environment</a></li><li class="chapter-item expanded "><a href="install-prod.html"><strong aria-hidden="true">2.</strong> How to Install a Production Environment</a></li><li class="chapter-item expanded "><a href="permalinks.html"><strong aria-hidden="true">3.</strong> Setting up Permalinks</a></li><li class="chapter-item expanded "><a href="saml.html"><strong aria-hidden="true">4.</strong> Setting up SSO/SAML</a></li><li class="chapter-item expanded "><a href="groupsync.html"><strong aria-hidden="true">5.</strong> Setting up Group Sync</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Last Updated: February 10, 2022 at 9:30pm London Time</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="install-poc.html"><strong aria-hidden="true">1.</strong> How to Install a POC Environment</a></li><li class="chapter-item expanded "><a href="install-prod.html"><strong aria-hidden="true">2.</strong> How to Install a Production Environment</a></li><li class="chapter-item expanded "><a href="permalinks.html"><strong aria-hidden="true">3.</strong> Setting up Permalinks</a></li><li class="chapter-item expanded "><a href="saml.html"><strong aria-hidden="true">4.</strong> Setting up SSO/SAML</a></li><li class="chapter-item expanded "><a href="groupsync.html"><strong aria-hidden="true">5.</strong> Setting up Group Sync</a></li><li class="chapter-item expanded "><a href="dimension.html"><strong aria-hidden="true">6.</strong> Setting Up the Integration Manager</a></li><li class="chapter-item expanded "><a href="hookshot.html"><strong aria-hidden="true">7.</strong> Setting up Gitlab, Github, and Jira Integrations</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Last Updated: March 7, 2022 at 8:30pm London Time</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -111,7 +111,7 @@
                         <img alt="Element logo" class="header-logo" src="">
                     </div>
 
-                    <h1 class="menu-title">Element Enterprise Installer Documentation</h1>
+                    <h1 class="menu-title">Element Enterprise Installer Documentation - 0.5rc1</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -164,6 +164,11 @@ infrastructure over SSO/SAML technologies for login.</li>
 the application of ACLs from your LDAP/AD architecture to Spaces and Rooms in
 the Element ecosystem. Please note that the initial version we are providing
 only supports a single node, non-federated configuration.</li>
+<li>Dimension Integration Manager - The installer is able to configure the
+dimension integration manager, which allows you to serve integrations
+on-premise.</li>
+<li>Gitlab, Github, and Jira Integrations - The installer is able to configure
+hookshot, which provides integrations with Gitlab, Github, and Jira.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="element-enterprise-installer-how-to-install-a-poc-environment"><a class="header" href="#element-enterprise-installer-how-to-install-a-poc-environment">Element Enterprise Installer: How to Install a POC Environment</a></h1>
 <h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
@@ -628,6 +633,285 @@ listed here will be wrapped in ^ and $ before matching.</li>
 <p>Restart the install script</p>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="configuring-dimension-integration-manager"><a class="header" href="#configuring-dimension-integration-manager">Configuring Dimension integration manager</a></h1>
+<h2 id="on-the-hosting-machine"><a class="header" href="#on-the-hosting-machine">On the hosting machine</a></h2>
+<ul>
+<li>Copy sample file from <code>config-sample/dimension/dimension.yml</code> to
+<code>extra-config/dimension</code></li>
+<li>Edit the file with the following values :
+<ul>
+<li><code>ems_bridges_registry_username</code>: ems bridges registry token name</li>
+<li><code>ems_bridges_registry_password</code>: ems bridges registry token password</li>
+<li><code>dimension_fqdn</code>: The access address to dimension. It should match
+something like <code>dimension.&lt;fqdn.tld&gt;</code></li>
+<li><code>admins</code>: List of mxids with admin access to dimension</li>
+<li><code>widget_blocklist</code>: CIDRs listed here will be blocked from becoming
+widgets.</li>
+<li><code>postgres_host</code>: PostgreSQL server fqdn or ip</li>
+<li><code>postgres_user</code>: PostgreSQL username</li>
+<li><code>postgres_db</code>: PostgreSQL dimension database</li>
+<li><code>postgres_password</code>: PostgreSQL dimension password</li>
+<li><code>bot_data_size</code>: The size of the space allocated to bot data.</li>
+<li><code>bot_data_path</code>: The path on the hosting machine to the space allocated
+to bot data</li>
+</ul>
+</li>
+<li>Restart the install script</li>
+</ul>
+<h2 id="on-element-1"><a class="header" href="#on-element-1">On element</a></h2>
+<ul>
+<li>Copy sample file from <code>config-sample/element/dimension.json</code> to
+<code>extra-config/element</code></li>
+<li>Edit the file to replace <code>&lt; dimension_fqdn &gt;</code> to your dimension instance
+fqdn.</li>
+<li>Restart the install script</li>
+</ul>
+<h2 id="enabling-bigbluebutton"><a class="header" href="#enabling-bigbluebutton">Enabling BigBlueButton</a></h2>
+<p>To enable BigBlueButton integration into Element through Dimension, you
+should set the following variables.</p>
+<ul>
+<li><code>bbb_api_base_url</code>: The full base URL of the API of your BigBlueButton
+instance</li>
+<li><code>bbb_shared_secret</code>:  The &quot;shared secret&quot; of your BigBlueButton
+instance. This is used to authenticate to the API above.</li>
+<li><code>bbb_widget_name</code>:  The title for BigBlueButton widgets that are generated
+by Dimension.</li>
+<li><code>bbb_widget_title</code>: The subtitle for BigBlueButton widgets that are
+generated by Dimension.</li>
+<li><code>bbb_widget_avatar_mxc</code>:  The avatar for BigBlueButton widgets that are
+generated by Dimension. Usually this doen't need to be changed, however if
+your homeserver is not able to reach t2bot.io then you should specify your
+own here.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gitlab-github-and-jira-integrations"><a class="header" href="#gitlab-github-and-jira-integrations">GitLab, GitHub, and JIRA Integrations</a></h1>
+<p>In Element Enterprise On-Premise, our GitLab, GitHub, and JIRA integrations
+are provided by the hookshot package. This documentation explains how to
+configure the installer to install hookshot and then how to interact with
+hookshot once installed.</p>
+<h2 id="configuring-hookshot-with-the-installer"><a class="header" href="#configuring-hookshot-with-the-installer">Configuring Hookshot with the Installer</a></h2>
+<ul>
+<li>Copy sample file from <code>config-sample/hookshot/hookshot.yml</code> to
+<code>extra-config/hookshot</code></li>
+<li>Edit the file with the following values :
+<ul>
+<li><code>ems_bridges_registry_username</code> :  ems bridges registry token name</li>
+<li><code>ems_bridges_registry_password</code> :  ems bridges registry token password</li>
+<li><code>logging_level</code> : The logging level</li>
+<li><code>hookshot_fqdn</code> : The adress of hookshot webhook fqdn. Can be the
+same as the synapse fqdn.</li>
+<li><code>passkey</code> : The name of the local key file. It can be generated using
+openssl - <code>openssl genrsa -out key.pem 4096</code></li>
+<li><code>provisioning_secret</code> : The provisioning secret used with integration
+managers. Necessary for integration with dimension.</li>
+<li><code>bot_name</code> : The name of hookshot bot</li>
+<li><code>bot_avatar</code> : An <code>mxc://</code> uri to the hookshot bot avatar image.</li>
+</ul>
+</li>
+<li>Restart the install script</li>
+</ul>
+<h2 id="enabling-github-integration"><a class="header" href="#enabling-github-integration">Enabling GitHub Integration</a></h2>
+<h3 id="on-github"><a class="header" href="#on-github">On GitHub</a></h3>
+<ul>
+<li>This bridge requires a <a href="https://github.com/settings/apps/new">GitHub
+App</a>. You will need to create one.</li>
+<li>On the webhook URL, set the following one :
+<code>https://&lt;hookshot_fqdn&gt;/hookshot/</code></li>
+<li>For the webhook secret, you can generate one using <code>pwgen 32 1</code>
+to generate one for example. Keep it somewhere safe, you'll need to to
+configure the bridge.</li>
+<li>Set the following permissions for the webhook :
+<ul>
+<li>Repository
+<ul>
+<li>Actions (read)</li>
+<li>Contents (read)</li>
+<li>Discussions (read &amp; write)</li>
+<li>Issues (read &amp; write)</li>
+<li>Metadata</li>
+<li>Projects (read &amp; write)</li>
+<li>Pull requests (read &amp; write)</li>
+</ul>
+</li>
+<li>Organisation
+<ul>
+<li>Team Discussions (read &amp; write)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="on-the-installation"><a class="header" href="#on-the-installation">On the installation</a></h3>
+<ul>
+<li>Copy sample file from <code>config-sample/hookshot/github.yml</code> to
+<code>extra-config/hookshot</code></li>
+<li>Edit the file with the following values :
+<ul>
+<li><code>github_auth_id</code> : The AppID given in your github app page</li>
+<li><code>github_key_file</code> : The key file received via the <code>Generate a private key</code> button under <code>Private keys</code> section of the github app page.</li>
+<li><code>github_webhook_secret</code> : The webhook secret configured in the app.</li>
+<li><code>github_oauth_client_id</code> : The OAuth ClientID of the github app page.</li>
+<li><code>github_oauth_client_secret</code> : The OAuth Client Secret of the github
+app page.</li>
+<li><code>github_oauth_default_options</code> A mapping to enable special oauth
+options.</li>
+</ul>
+</li>
+<li>Restart the install script</li>
+</ul>
+<h3 id="in-elements-room"><a class="header" href="#in-elements-room">In Element's room</a></h3>
+<ul>
+<li>As an administrator of the room, invite the hookshot bot</li>
+<li>Start a private conversation with the bot</li>
+<li>Type <code>github login</code></li>
+<li>Follow the link to connect the bot to the configured app</li>
+<li>If you have setup Dimension, you can use the integration manager to add
+a bridge to github</li>
+<li>In Dimension administration panel, you should use :
+<ul>
+<li>For Provisioning url : <code>http://instance-hookshot-headless:7776</code></li>
+<li>Share Secret : The value of <code>provisioning_secret</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="enabling-gitlab-integration"><a class="header" href="#enabling-gitlab-integration">Enabling GitLab integration</a></h2>
+<h3 id="on-gitlab"><a class="header" href="#on-gitlab">On GitLab</a></h3>
+<ul>
+<li>Add a webhook under the group or the repository you are targeting</li>
+<li>On the webhook URL, set the following one :
+<code>https://&lt;hookshot_fqdn&gt;/hookshot/</code></li>
+<li>For the webhook secret, you can generate one using <code>pwgen 32 1</code>
+to generate one for example. Keep it somewhere safe, you'll need to to
+configure the bridge.</li>
+<li>You should add the events you wish to trigger on. Hookshot currently
+supports:
+<ul>
+<li>Push events</li>
+<li>Tag events</li>
+<li>Issues events</li>
+<li>Merge request events</li>
+<li>Releases events</li>
+</ul>
+</li>
+</ul>
+<h3 id="on-the-installation-1"><a class="header" href="#on-the-installation-1">On the installation</a></h3>
+<ul>
+<li>Copy sample file from <code>config-sample/hookshot/gitlab.yml</code> to
+<code>extra-config/hookshot</code></li>
+<li>Edit the file with the following values :
+<ul>
+<li><code>gitlab_instances</code>: A mapping of the GitLab servers
+<ul>
+<li><code>git.example.org</code>: Replace with name of the GitLab server
+<ul>
+<li><code>url</code>: Replace with URL of the GitLab server</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>gitlab_webhook_secret</code>: The secret configured in the webhook.</li>
+</ul>
+</li>
+</ul>
+<h3 id="in-elements-room-1"><a class="header" href="#in-elements-room-1">In Element's room</a></h3>
+<ul>
+<li>As an administrator of the room, invite the hookshot bot</li>
+<li>As an administrator of the room, run the command <code>/devtools</code></li>
+<li>Choose <code>Send Custom Event</code></li>
+<li>Switch the button <code>Event</code> to <code>State Event</code> by clicking on it</li>
+<li>In <code>Event Type</code>, enter <code>uk.half-shot.matrix-hookshot.gitlab.repository</code></li>
+<li>In <code>State key</code>, enter a random value, for example generated after <code>pwgen 32 1</code></li>
+<li>In <code>Event Content</code>, enter :</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;instance&quot;: &quot;&lt;your instance name in gitlab.yml&gt;&quot;,
+    &quot;path&quot;: &quot;&lt;username-or-group/repo&gt;&quot;
+}
+</code></pre>
+<h2 id="enabling-jira-integration"><a class="header" href="#enabling-jira-integration">Enabling JIRA integration</a></h2>
+<h3 id="on-jira"><a class="header" href="#on-jira">On JIRA</a></h3>
+<ul>
+<li>This should be done for all JIRA organisations you wish to bridge. The
+steps may differ for SaaS and on-prem, but you need to go to the
+webhooks configuration page under Settings &gt; System. It should point to
+<code>https://&lt;hookshot_fqdn&gt;/hookshot/</code></li>
+<li>For the webhook secret, you can generate one using <code>pwgen 32 1</code>
+to generate one for example. Keep it somewhere safe, you'll need to to
+configure the bridge.</li>
+</ul>
+<h4 id="enable-oauth"><a class="header" href="#enable-oauth">Enable OAuth</a></h4>
+<p>The JIRA service currently only supports atlassian.com (JIRA SaaS) when
+handling user authentication. Support for on-prem deployments is hoping to
+land soon.</p>
+<ul>
+<li>You'll first need to head to
+<a href="https://developer.atlassian.com/console/myapps/create-3lo-app/">https://developer.atlassian.com/console/myapps/create-3lo-app/</a> to create a
+&quot;OAuth 2.0 (3LO)&quot; integration.</li>
+<li>Once named and created, you will need to:</li>
+<li>Enable the User REST, Jira Platform REST and User Identity APIs under
+Permissions.</li>
+<li>Use rotating tokens under Authorisation.</li>
+<li>Set a callback url. This will be the public URL to hookshot with a path
+of /jira/oauth.</li>
+<li>Copy the client ID and Secret from Settings</li>
+</ul>
+<h3 id="on-the-installation-2"><a class="header" href="#on-the-installation-2">On the installation</a></h3>
+<ul>
+<li>Copy sample file from <code>config-sample/hookshot/jira.yml</code> to
+<code>extra-config/hookshot</code></li>
+<li>Edit the file with the following values :
+<ul>
+<li><code>jira_webhook_secret</code>: The webhook secret configured</li>
+<li><code>jira_oauth_client_id</code>: If Oauth is enabled, it should point to the
+ClientID in Jira's App page. Else, you can keep it empty.</li>
+<li><code>jira_oauth_client_secret</code>: If Oauth is enabled, it should point to
+the Client secret in Jira's App page. Else, you can keep it empty.</li>
+</ul>
+</li>
+</ul>
+<h3 id="in-elements-room-2"><a class="header" href="#in-elements-room-2">In Element's room</a></h3>
+<ul>
+<li>As an administrator of the room, invite the hookshot bot</li>
+<li>If you have setup Dimension, you can use the integration manager to add
+a bridge to github</li>
+<li>Dimension administration panel, you should use :
+<ul>
+<li>For Provisioning url : <code>http://instance-hookshot-headless:7776</code></li>
+<li>Share Secret : The value of <code>provisioning_secret</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="enabling-generic-webhooks-integration"><a class="header" href="#enabling-generic-webhooks-integration">Enabling generic webhooks integration</a></h2>
+<h3 id="on-the-installation-3"><a class="header" href="#on-the-installation-3">On the installation</a></h3>
+<ul>
+<li>Copy sample file from <code>config-sample/hookshot/generic.yml</code> to
+<code>extra-config/hookshot</code></li>
+<li>Edit the file with the following values :
+<ul>
+<li><code>generic_enabled</code>: <code>true</code> to enable it</li>
+<li><code>generic_allow_js_transformation_functions</code>:
+<code>true</code> if you want to enable <a href="https://matrix-org.github.io/matrix-hookshot/setup/webhooks.html#javascript-transformations">javascript
+transformations</a></li>
+<li><code>generic_user_id_prefix</code>: Choose a prefix for the users generated by
+hookshot for webhooks you'll create</li>
+</ul>
+</li>
+</ul>
+<h3 id="in-elements-room-3"><a class="header" href="#in-elements-room-3">In Element's room</a></h3>
+<ul>
+<li>As an administrator of the room, invite the hookshot bot</li>
+<li>Type <code>!hookshot webhook &lt;name of the webhook&gt;</code></li>
+<li>The bot will answer with a URL that you can set up as a webhook.</li>
+<li>Please ensure that the <code>Content-Type</code> is set to the type matching what
+the webhook sends</li>
+<li>If you have setup Dimension, you can use the integration manager to add
+a bridge to github</li>
+<li>In Dimension administration panel, you should use :
+<ul>
+<li>Provisioning url : <code>http://instance-hookshot-headless:7776</code></li>
+<li>Share Secret : The value of <code>provisioning_secret</code></li>
+</ul>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="summary"><a class="header" href="#summary">Summary</a></h1>
 <p><a href="./introduction.html">Introduction</a></p>
 <ul>
@@ -636,8 +920,10 @@ listed here will be wrapped in ^ and $ before matching.</li>
 <li><a href="./permalinks.html">Setting up Permalinks</a></li>
 <li><a href="./saml.html">Setting up SSO/SAML</a></li>
 <li><a href="./groupsync.html">Setting up Group Sync</a></li>
+<li><a href="./dimension.html">Setting Up the Integration Manager</a></li>
+<li><a href="./hookshot.html">Setting up Gitlab, Github, and Jira Integrations</a></li>
 </ul>
-<p><a href="./SUMMARY.html">Last Updated: February 10, 2022 at 9:30pm London Time</a></p>
+<p><a href="./SUMMARY.html">Last Updated: March 7, 2022 at 8:30pm London Time</a></p>
 
                     </main>
 

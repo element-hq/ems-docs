@@ -1,0 +1,414 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js element">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Setting up Gitlab, Github, and Jira Integrations - Element Enterprise Installer Documentation - 0.5rc1</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="src/book-assets/element-theme.css">
+        <link rel="stylesheet" href="src/book-assets/font.css">
+        <link rel="stylesheet" href="src/book-assets/logo.css">
+        <link rel="stylesheet" href="src/book-assets/style.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "element";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('element')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="install-poc.html"><strong aria-hidden="true">1.</strong> How to Install a POC Environment</a></li><li class="chapter-item expanded "><a href="install-prod.html"><strong aria-hidden="true">2.</strong> How to Install a Production Environment</a></li><li class="chapter-item expanded "><a href="permalinks.html"><strong aria-hidden="true">3.</strong> Setting up Permalinks</a></li><li class="chapter-item expanded "><a href="saml.html"><strong aria-hidden="true">4.</strong> Setting up SSO/SAML</a></li><li class="chapter-item expanded "><a href="groupsync.html"><strong aria-hidden="true">5.</strong> Setting up Group Sync</a></li><li class="chapter-item expanded "><a href="dimension.html"><strong aria-hidden="true">6.</strong> Setting Up the Integration Manager</a></li><li class="chapter-item expanded "><a href="hookshot.html" class="active"><strong aria-hidden="true">7.</strong> Setting up Gitlab, Github, and Jira Integrations</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Last Updated: March 7, 2022 at 8:30pm London Time</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="element">Element (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <img alt="Element logo" class="header-logo" src="">
+                    </div>
+
+                    <h1 class="menu-title">Element Enterprise Installer Documentation - 0.5rc1</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!-- Page table of contents -->
+                        <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                        <h1 id="gitlab-github-and-jira-integrations"><a class="header" href="#gitlab-github-and-jira-integrations">GitLab, GitHub, and JIRA Integrations</a></h1>
+<p>In Element Enterprise On-Premise, our GitLab, GitHub, and JIRA integrations
+are provided by the hookshot package. This documentation explains how to
+configure the installer to install hookshot and then how to interact with
+hookshot once installed.</p>
+<h2 id="configuring-hookshot-with-the-installer"><a class="header" href="#configuring-hookshot-with-the-installer">Configuring Hookshot with the Installer</a></h2>
+<ul>
+<li>Copy sample file from <code>config-sample/hookshot/hookshot.yml</code> to
+<code>extra-config/hookshot</code></li>
+<li>Edit the file with the following values :
+<ul>
+<li><code>ems_bridges_registry_username</code> :  ems bridges registry token name</li>
+<li><code>ems_bridges_registry_password</code> :  ems bridges registry token password</li>
+<li><code>logging_level</code> : The logging level</li>
+<li><code>hookshot_fqdn</code> : The adress of hookshot webhook fqdn. Can be the
+same as the synapse fqdn.</li>
+<li><code>passkey</code> : The name of the local key file. It can be generated using
+openssl - <code>openssl genrsa -out key.pem 4096</code></li>
+<li><code>provisioning_secret</code> : The provisioning secret used with integration
+managers. Necessary for integration with dimension.</li>
+<li><code>bot_name</code> : The name of hookshot bot</li>
+<li><code>bot_avatar</code> : An <code>mxc://</code> uri to the hookshot bot avatar image.</li>
+</ul>
+</li>
+<li>Restart the install script</li>
+</ul>
+<h2 id="enabling-github-integration"><a class="header" href="#enabling-github-integration">Enabling GitHub Integration</a></h2>
+<h3 id="on-github"><a class="header" href="#on-github">On GitHub</a></h3>
+<ul>
+<li>This bridge requires a <a href="https://github.com/settings/apps/new">GitHub
+App</a>. You will need to create one.</li>
+<li>On the webhook URL, set the following one :
+<code>https://&lt;hookshot_fqdn&gt;/hookshot/</code></li>
+<li>For the webhook secret, you can generate one using <code>pwgen 32 1</code>
+to generate one for example. Keep it somewhere safe, you'll need to to
+configure the bridge.</li>
+<li>Set the following permissions for the webhook :
+<ul>
+<li>Repository
+<ul>
+<li>Actions (read)</li>
+<li>Contents (read)</li>
+<li>Discussions (read &amp; write)</li>
+<li>Issues (read &amp; write)</li>
+<li>Metadata</li>
+<li>Projects (read &amp; write)</li>
+<li>Pull requests (read &amp; write)</li>
+</ul>
+</li>
+<li>Organisation
+<ul>
+<li>Team Discussions (read &amp; write)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="on-the-installation"><a class="header" href="#on-the-installation">On the installation</a></h3>
+<ul>
+<li>Copy sample file from <code>config-sample/hookshot/github.yml</code> to
+<code>extra-config/hookshot</code></li>
+<li>Edit the file with the following values :
+<ul>
+<li><code>github_auth_id</code> : The AppID given in your github app page</li>
+<li><code>github_key_file</code> : The key file received via the <code>Generate a private key</code> button under <code>Private keys</code> section of the github app page.</li>
+<li><code>github_webhook_secret</code> : The webhook secret configured in the app.</li>
+<li><code>github_oauth_client_id</code> : The OAuth ClientID of the github app page.</li>
+<li><code>github_oauth_client_secret</code> : The OAuth Client Secret of the github
+app page.</li>
+<li><code>github_oauth_default_options</code> A mapping to enable special oauth
+options.</li>
+</ul>
+</li>
+<li>Restart the install script</li>
+</ul>
+<h3 id="in-elements-room"><a class="header" href="#in-elements-room">In Element's room</a></h3>
+<ul>
+<li>As an administrator of the room, invite the hookshot bot</li>
+<li>Start a private conversation with the bot</li>
+<li>Type <code>github login</code></li>
+<li>Follow the link to connect the bot to the configured app</li>
+<li>If you have setup Dimension, you can use the integration manager to add
+a bridge to github</li>
+<li>In Dimension administration panel, you should use :
+<ul>
+<li>For Provisioning url : <code>http://instance-hookshot-headless:7776</code></li>
+<li>Share Secret : The value of <code>provisioning_secret</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="enabling-gitlab-integration"><a class="header" href="#enabling-gitlab-integration">Enabling GitLab integration</a></h2>
+<h3 id="on-gitlab"><a class="header" href="#on-gitlab">On GitLab</a></h3>
+<ul>
+<li>Add a webhook under the group or the repository you are targeting</li>
+<li>On the webhook URL, set the following one :
+<code>https://&lt;hookshot_fqdn&gt;/hookshot/</code></li>
+<li>For the webhook secret, you can generate one using <code>pwgen 32 1</code>
+to generate one for example. Keep it somewhere safe, you'll need to to
+configure the bridge.</li>
+<li>You should add the events you wish to trigger on. Hookshot currently
+supports:
+<ul>
+<li>Push events</li>
+<li>Tag events</li>
+<li>Issues events</li>
+<li>Merge request events</li>
+<li>Releases events</li>
+</ul>
+</li>
+</ul>
+<h3 id="on-the-installation-1"><a class="header" href="#on-the-installation-1">On the installation</a></h3>
+<ul>
+<li>Copy sample file from <code>config-sample/hookshot/gitlab.yml</code> to
+<code>extra-config/hookshot</code></li>
+<li>Edit the file with the following values :
+<ul>
+<li><code>gitlab_instances</code>: A mapping of the GitLab servers
+<ul>
+<li><code>git.example.org</code>: Replace with name of the GitLab server
+<ul>
+<li><code>url</code>: Replace with URL of the GitLab server</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>gitlab_webhook_secret</code>: The secret configured in the webhook.</li>
+</ul>
+</li>
+</ul>
+<h3 id="in-elements-room-1"><a class="header" href="#in-elements-room-1">In Element's room</a></h3>
+<ul>
+<li>As an administrator of the room, invite the hookshot bot</li>
+<li>As an administrator of the room, run the command <code>/devtools</code></li>
+<li>Choose <code>Send Custom Event</code></li>
+<li>Switch the button <code>Event</code> to <code>State Event</code> by clicking on it</li>
+<li>In <code>Event Type</code>, enter <code>uk.half-shot.matrix-hookshot.gitlab.repository</code></li>
+<li>In <code>State key</code>, enter a random value, for example generated after <code>pwgen 32 1</code></li>
+<li>In <code>Event Content</code>, enter :</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;instance&quot;: &quot;&lt;your instance name in gitlab.yml&gt;&quot;,
+    &quot;path&quot;: &quot;&lt;username-or-group/repo&gt;&quot;
+}
+</code></pre>
+<h2 id="enabling-jira-integration"><a class="header" href="#enabling-jira-integration">Enabling JIRA integration</a></h2>
+<h3 id="on-jira"><a class="header" href="#on-jira">On JIRA</a></h3>
+<ul>
+<li>This should be done for all JIRA organisations you wish to bridge. The
+steps may differ for SaaS and on-prem, but you need to go to the
+webhooks configuration page under Settings &gt; System. It should point to
+<code>https://&lt;hookshot_fqdn&gt;/hookshot/</code></li>
+<li>For the webhook secret, you can generate one using <code>pwgen 32 1</code>
+to generate one for example. Keep it somewhere safe, you'll need to to
+configure the bridge.</li>
+</ul>
+<h4 id="enable-oauth"><a class="header" href="#enable-oauth">Enable OAuth</a></h4>
+<p>The JIRA service currently only supports atlassian.com (JIRA SaaS) when
+handling user authentication. Support for on-prem deployments is hoping to
+land soon.</p>
+<ul>
+<li>You'll first need to head to
+<a href="https://developer.atlassian.com/console/myapps/create-3lo-app/">https://developer.atlassian.com/console/myapps/create-3lo-app/</a> to create a
+&quot;OAuth 2.0 (3LO)&quot; integration.</li>
+<li>Once named and created, you will need to:</li>
+<li>Enable the User REST, Jira Platform REST and User Identity APIs under
+Permissions.</li>
+<li>Use rotating tokens under Authorisation.</li>
+<li>Set a callback url. This will be the public URL to hookshot with a path
+of /jira/oauth.</li>
+<li>Copy the client ID and Secret from Settings</li>
+</ul>
+<h3 id="on-the-installation-2"><a class="header" href="#on-the-installation-2">On the installation</a></h3>
+<ul>
+<li>Copy sample file from <code>config-sample/hookshot/jira.yml</code> to
+<code>extra-config/hookshot</code></li>
+<li>Edit the file with the following values :
+<ul>
+<li><code>jira_webhook_secret</code>: The webhook secret configured</li>
+<li><code>jira_oauth_client_id</code>: If Oauth is enabled, it should point to the
+ClientID in Jira's App page. Else, you can keep it empty.</li>
+<li><code>jira_oauth_client_secret</code>: If Oauth is enabled, it should point to
+the Client secret in Jira's App page. Else, you can keep it empty.</li>
+</ul>
+</li>
+</ul>
+<h3 id="in-elements-room-2"><a class="header" href="#in-elements-room-2">In Element's room</a></h3>
+<ul>
+<li>As an administrator of the room, invite the hookshot bot</li>
+<li>If you have setup Dimension, you can use the integration manager to add
+a bridge to github</li>
+<li>Dimension administration panel, you should use :
+<ul>
+<li>For Provisioning url : <code>http://instance-hookshot-headless:7776</code></li>
+<li>Share Secret : The value of <code>provisioning_secret</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="enabling-generic-webhooks-integration"><a class="header" href="#enabling-generic-webhooks-integration">Enabling generic webhooks integration</a></h2>
+<h3 id="on-the-installation-3"><a class="header" href="#on-the-installation-3">On the installation</a></h3>
+<ul>
+<li>Copy sample file from <code>config-sample/hookshot/generic.yml</code> to
+<code>extra-config/hookshot</code></li>
+<li>Edit the file with the following values :
+<ul>
+<li><code>generic_enabled</code>: <code>true</code> to enable it</li>
+<li><code>generic_allow_js_transformation_functions</code>:
+<code>true</code> if you want to enable <a href="https://matrix-org.github.io/matrix-hookshot/setup/webhooks.html#javascript-transformations">javascript
+transformations</a></li>
+<li><code>generic_user_id_prefix</code>: Choose a prefix for the users generated by
+hookshot for webhooks you'll create</li>
+</ul>
+</li>
+</ul>
+<h3 id="in-elements-room-3"><a class="header" href="#in-elements-room-3">In Element's room</a></h3>
+<ul>
+<li>As an administrator of the room, invite the hookshot bot</li>
+<li>Type <code>!hookshot webhook &lt;name of the webhook&gt;</code></li>
+<li>The bot will answer with a URL that you can set up as a webhook.</li>
+<li>Please ensure that the <code>Content-Type</code> is set to the type matching what
+the webhook sends</li>
+<li>If you have setup Dimension, you can use the integration manager to add
+a bridge to github</li>
+<li>In Dimension administration panel, you should use :
+<ul>
+<li>Provisioning url : <code>http://instance-hookshot-headless:7776</code></li>
+<li>Share Secret : The value of <code>provisioning_secret</code></li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="dimension.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="SUMMARY.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="dimension.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="SUMMARY.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

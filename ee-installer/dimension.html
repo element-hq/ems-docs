@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title></title>
-        <base href="/">
+        <title>Setting Up the Integration Manager - Element Enterprise Installer Documentation - 0.5rc1</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -80,7 +79,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="install-poc.html"><strong aria-hidden="true">1.</strong> How to Install a POC Environment</a></li><li class="chapter-item expanded "><a href="install-prod.html"><strong aria-hidden="true">2.</strong> How to Install a Production Environment</a></li><li class="chapter-item expanded "><a href="permalinks.html"><strong aria-hidden="true">3.</strong> Setting up Permalinks</a></li><li class="chapter-item expanded "><a href="saml.html"><strong aria-hidden="true">4.</strong> Setting up SSO/SAML</a></li><li class="chapter-item expanded "><a href="groupsync.html"><strong aria-hidden="true">5.</strong> Setting up Group Sync</a></li><li class="chapter-item expanded "><a href="dimension.html"><strong aria-hidden="true">6.</strong> Setting Up the Integration Manager</a></li><li class="chapter-item expanded "><a href="hookshot.html"><strong aria-hidden="true">7.</strong> Setting up Gitlab, Github, and Jira Integrations</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Last Updated: March 7, 2022 at 8:30pm London Time</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="install-poc.html"><strong aria-hidden="true">1.</strong> How to Install a POC Environment</a></li><li class="chapter-item expanded "><a href="install-prod.html"><strong aria-hidden="true">2.</strong> How to Install a Production Environment</a></li><li class="chapter-item expanded "><a href="permalinks.html"><strong aria-hidden="true">3.</strong> Setting up Permalinks</a></li><li class="chapter-item expanded "><a href="saml.html"><strong aria-hidden="true">4.</strong> Setting up SSO/SAML</a></li><li class="chapter-item expanded "><a href="groupsync.html"><strong aria-hidden="true">5.</strong> Setting up Group Sync</a></li><li class="chapter-item expanded "><a href="dimension.html" class="active"><strong aria-hidden="true">6.</strong> Setting Up the Integration Manager</a></li><li class="chapter-item expanded "><a href="hookshot.html"><strong aria-hidden="true">7.</strong> Setting up Gitlab, Github, and Jira Integrations</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Last Updated: March 7, 2022 at 8:30pm London Time</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -144,19 +143,79 @@
                         <!-- Page table of contents -->
                         <div class="sidetoc"><nav class="pagetoc"></nav></div>
 
-                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1 id="configuring-dimension-integration-manager"><a class="header" href="#configuring-dimension-integration-manager">Configuring Dimension integration manager</a></h1>
+<h2 id="on-the-hosting-machine"><a class="header" href="#on-the-hosting-machine">On the hosting machine</a></h2>
+<ul>
+<li>Copy sample file from <code>config-sample/dimension/dimension.yml</code> to
+<code>extra-config/dimension</code></li>
+<li>Edit the file with the following values :
+<ul>
+<li><code>ems_bridges_registry_username</code>: ems bridges registry token name</li>
+<li><code>ems_bridges_registry_password</code>: ems bridges registry token password</li>
+<li><code>dimension_fqdn</code>: The access address to dimension. It should match
+something like <code>dimension.&lt;fqdn.tld&gt;</code></li>
+<li><code>admins</code>: List of mxids with admin access to dimension</li>
+<li><code>widget_blocklist</code>: CIDRs listed here will be blocked from becoming
+widgets.</li>
+<li><code>postgres_host</code>: PostgreSQL server fqdn or ip</li>
+<li><code>postgres_user</code>: PostgreSQL username</li>
+<li><code>postgres_db</code>: PostgreSQL dimension database</li>
+<li><code>postgres_password</code>: PostgreSQL dimension password</li>
+<li><code>bot_data_size</code>: The size of the space allocated to bot data.</li>
+<li><code>bot_data_path</code>: The path on the hosting machine to the space allocated
+to bot data</li>
+</ul>
+</li>
+<li>Restart the install script</li>
+</ul>
+<h2 id="on-element"><a class="header" href="#on-element">On element</a></h2>
+<ul>
+<li>Copy sample file from <code>config-sample/element/dimension.json</code> to
+<code>extra-config/element</code></li>
+<li>Edit the file to replace <code>&lt; dimension_fqdn &gt;</code> to your dimension instance
+fqdn.</li>
+<li>Restart the install script</li>
+</ul>
+<h2 id="enabling-bigbluebutton"><a class="header" href="#enabling-bigbluebutton">Enabling BigBlueButton</a></h2>
+<p>To enable BigBlueButton integration into Element through Dimension, you
+should set the following variables.</p>
+<ul>
+<li><code>bbb_api_base_url</code>: The full base URL of the API of your BigBlueButton
+instance</li>
+<li><code>bbb_shared_secret</code>:  The &quot;shared secret&quot; of your BigBlueButton
+instance. This is used to authenticate to the API above.</li>
+<li><code>bbb_widget_name</code>:  The title for BigBlueButton widgets that are generated
+by Dimension.</li>
+<li><code>bbb_widget_title</code>: The subtitle for BigBlueButton widgets that are
+generated by Dimension.</li>
+<li><code>bbb_widget_avatar_mxc</code>:  The avatar for BigBlueButton widgets that are
+generated by Dimension. Usually this doen't need to be changed, however if
+your homeserver is not able to reach t2bot.io then you should specify your
+own here.</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="groupsync.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="hookshot.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="groupsync.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="hookshot.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
