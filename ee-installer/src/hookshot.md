@@ -27,8 +27,8 @@ hookshot once installed.
 
 ### On GitHub
 
-- This bridge requires a [GitHub 
- App](https://github.com/settings/apps/new). You will need to create one.
+- This bridge requires a [GitHub
+App](https://github.com/settings/apps/new). You will need to create one.
 - On the webhook URL, set the following one :
  `https://<hookshot_fqdn>/hookshot/`
 - For the webhook secret, you can generate one using `pwgen 32 1`
