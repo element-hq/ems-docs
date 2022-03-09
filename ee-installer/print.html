@@ -186,6 +186,7 @@ to be considered and this guide will work through them:</p>
 <li><a href="install-poc.html#machine-size">Machine Size</a></li>
 <li><a href="install-poc.html#operating-system">Operating System</a> (We’ve tested on
 Ubuntu Server 20.04)</li>
+<li><a href="install-poc.html#users">Users</a></li>
 <li><a href="install-poc.html#network-ports-to-open">Network Ports to Open</a></li>
 <li><a href="install-poc.html#postgresql-database">Postgresql Database</a></li>
 <li><a href="install-poc.html#ssl-certificates">SSL Certificates</a></li>
@@ -245,6 +246,15 @@ configuration of the installer.</p>
 <p>In a default Ubuntu installation, these ports are allowed through the
 firewall. You will need to ensure that these ports are passed through your
 firewall.</p>
+<h3 id="users"><a class="header" href="#users">Users</a></h3>
+<p>The installer requires that you run it as a non-root user who has sudo
+permissions. Please make sure that you have a user in the <code>sudo</code> group
+to complete the install. If you wanted to make a user called <code>element-demo</code>
+and place them in the <code>sudo</code> group, the following commands (run as root) would
+achieve that:</p>
+<pre><code class="language-bash">useradd element-demo
+gpasswd -a element-demo sudo
+</code></pre>
 <h3 id="unpacking-the-installer"><a class="header" href="#unpacking-the-installer">Unpacking the Installer</a></h3>
 <p>Please make sure that you unpack <code>element-enterprise-installer</code> onto your
 POC system. The directory that it unpacks into will be referenced in this
@@ -274,10 +284,7 @@ by doing:</p>
 <p>Then create a script, <code>start_postgresql</code>:</p>
 <pre><code class="language-bash">#!/bin/bash
 
-docker run -d -p 5432:5432 -v $(pwd)/data:/var/lib/postgresql/data -e
-POSTGRES_PASSWORD=&quot;insert_random_password_here&quot; -e POSTGRES_USER=&quot;element&quot;
--e POSTGRES_DB=&quot;element&quot; -e POSTGRES_INITDB_ARGS=&quot;--encoding UTF8 --locale C&quot; d
-ocker.io/postgres:latest
+docker run -d -p 5432:5432 -v $(pwd)/data:/var/lib/postgresql/data -e POSTGRES_PASSWORD=&quot;insert_random_password_here&quot; -e POSTGRES_USER=&quot;element&quot; -e POSTGRES_DB=&quot;element&quot; -e POSTGRES_INITDB_ARGS=&quot;--encoding UTF8 --locale C&quot; docker.io/postgres:latest
 </code></pre>
 <p>Now create a directory for the postgresql database:</p>
 <pre><code class="language-bash">mkdir data
