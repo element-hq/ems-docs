@@ -101,13 +101,13 @@ firewall.
 
 ### Users
 
-The installer requires that you run it as a non-root user who has sudo 
+The installer requires that you run it as a non-root user who has sudo
 permissions. Please make sure that you have a user in the `sudo` group
 to complete the install. If you wanted to make a user called `element-demo`
-and place them in the `sudo` group, the following commands (run as root) would 
+and place them in the `sudo` group, the following commands (run as root) would
 achieve that:
 
-```
+```bash
 useradd element-demo
 gpasswd -a element-demo sudo
 ```
