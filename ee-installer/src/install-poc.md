@@ -17,6 +17,7 @@ to be considered and this guide will work through them:
 - [Machine Size](install-poc.md#machine-size)
 - [Operating System](install-poc.md#operating-system) (We’ve tested on
 Ubuntu Server 20.04)
+- [Users](install-poc.md#users)
 - [Network Ports to Open](install-poc.md#network-ports-to-open)
 - [Postgresql Database](install-poc.md#postgresql-database)
 - [SSL Certificates](install-poc.md#ssl-certificates)
@@ -98,6 +99,19 @@ In a default Ubuntu installation, these ports are allowed through the
 firewall. You will need to ensure that these ports are passed through your
 firewall.
 
+### Users
+
+The installer requires that you run it as a non-root user who has sudo
+permissions. Please make sure that you have a user in the `sudo` group
+to complete the install. If you wanted to make a user called `element-demo`
+and place them in the `sudo` group, the following commands (run as root) would
+achieve that:
+
+```bash
+useradd element-demo
+gpasswd -a element-demo sudo
+```
+
 ### Unpacking the Installer
 
 Please make sure that you unpack `element-enterprise-installer` onto your
@@ -144,10 +158,7 @@ Then create a script, `start_postgresql`:
 ```bash
 #!/bin/bash
 
-docker run -d -p 5432:5432 -v $(pwd)/data:/var/lib/postgresql/data -e
-POSTGRES_PASSWORD="insert_random_password_here" -e POSTGRES_USER="element"
--e POSTGRES_DB="element" -e POSTGRES_INITDB_ARGS="--encoding UTF8 --locale C" d
-ocker.io/postgres:latest
+docker run -d -p 5432:5432 -v $(pwd)/data:/var/lib/postgresql/data -e POSTGRES_PASSWORD="insert_random_password_here" -e POSTGRES_USER="element" -e POSTGRES_DB="element" -e POSTGRES_INITDB_ARGS="--encoding UTF8 --locale C" docker.io/postgres:latest
 ```
 
 Now create a directory for the postgresql database:
