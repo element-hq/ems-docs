@@ -10,6 +10,8 @@ can be used to conduct a POC. On-premise production deployments use the
 same installer and operator, but are intended to be deployed into a full
 kubernetes environment.
 
+POC installations are not intended to be run for production purposes. You should plan on having a different installation for your production environment. The settings that you use with the installer will carry over for your production install, but your rooms and spaces will not.
+
 To get started with a POC installation, there are several things that need
 to be considered and this guide will work through them:
 
