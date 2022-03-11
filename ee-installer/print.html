@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Element Enterprise Installer Documentation - 0.5rc1</title>
+        <title>Element Enterprise Installer Documentation - 0.5.1</title>
         <meta name="robots" content="noindex" />
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="install-poc.html"><strong aria-hidden="true">1.</strong> How to Install a POC Environment</a></li><li class="chapter-item expanded "><a href="install-prod.html"><strong aria-hidden="true">2.</strong> How to Install a Production Environment</a></li><li class="chapter-item expanded "><a href="permalinks.html"><strong aria-hidden="true">3.</strong> Setting up Permalinks</a></li><li class="chapter-item expanded "><a href="saml.html"><strong aria-hidden="true">4.</strong> Setting up SSO/SAML</a></li><li class="chapter-item expanded "><a href="groupsync.html"><strong aria-hidden="true">5.</strong> Setting up Group Sync</a></li><li class="chapter-item expanded "><a href="dimension.html"><strong aria-hidden="true">6.</strong> Setting Up the Integration Manager</a></li><li class="chapter-item expanded "><a href="hookshot.html"><strong aria-hidden="true">7.</strong> Setting up GitLab, GitHub, and JIRA Integrations</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Last Updated: March 8, 2022 at 8:30pm London Time</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="install-poc.html"><strong aria-hidden="true">1.</strong> How to Install a POC Environment</a></li><li class="chapter-item expanded "><a href="install-prod.html"><strong aria-hidden="true">2.</strong> How to Install a Production Environment</a></li><li class="chapter-item expanded "><a href="permalinks.html"><strong aria-hidden="true">3.</strong> Setting up Permalinks</a></li><li class="chapter-item expanded "><a href="saml.html"><strong aria-hidden="true">4.</strong> Setting up SSO/SAML</a></li><li class="chapter-item expanded "><a href="groupsync.html"><strong aria-hidden="true">5.</strong> Setting up Group Sync</a></li><li class="chapter-item expanded "><a href="dimension.html"><strong aria-hidden="true">6.</strong> Setting Up the Integration Manager</a></li><li class="chapter-item expanded "><a href="hookshot.html"><strong aria-hidden="true">7.</strong> Setting up GitLab, GitHub, and JIRA Integrations</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Last Updated: March 11, 2022 at 8:30pm London Time</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -111,7 +111,7 @@
                         <img alt="Element logo" class="header-logo" src="">
                     </div>
 
-                    <h1 class="menu-title">Element Enterprise Installer Documentation - 0.5rc1</h1>
+                    <h1 class="menu-title">Element Enterprise Installer Documentation - 0.5.1</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -179,6 +179,7 @@ to, resulting in a fully functioning Synapse server with Element Web that
 can be used to conduct a POC. On-premise production deployments use the
 same installer and operator, but are intended to be deployed into a full
 kubernetes environment.</p>
+<p>POC installations are not intended to be run for production purposes. You should plan on having a different installation for your production environment. The settings that you use with the installer will carry over for your production install, but your rooms and spaces will not.</p>
 <p>To get started with a POC installation, there are several things that need
 to be considered and this guide will work through them:</p>
 <ul>
@@ -524,7 +525,7 @@ a test account with Element on your new homeserver. Using our example values,
 I am able to go to <code>https://element.local/</code> and register an account, sign
 in and begin testing the proof of concept!</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="element-enterprise-installer-how-to-install-a-production-environment"><a class="header" href="#element-enterprise-installer-how-to-install-a-production-environment">Element Enterprise Installer: How to Install a Production Environment</a></h1>
-<p>Needs to be written.</p>
+<p>We are working on getting support for production k8s environments in the installer. Once that has landed, we will update this documentation.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="configuring-permalinks"><a class="header" href="#configuring-permalinks">Configuring Permalinks</a></h1>
 <h2 id="on-element"><a class="header" href="#on-element">On Element</a></h2>
 <ul>
@@ -597,7 +598,10 @@ as the MXID, the value here is mostly a suggestion :
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="configuring-groupsync"><a class="header" href="#configuring-groupsync">Configuring Groupsync</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="configuring-group-sync"><a class="header" href="#configuring-group-sync">Configuring Group Sync</a></h1>
+<h2 id="what-is-group-sync"><a class="header" href="#what-is-group-sync">What is Group Sync?</a></h2>
+<p>Group Sync allows you to use the ACLs from your identity infrastructure in order to set up permissions on Spaces and Rooms in the Element Ecosystem. Please note that the initial version we are providing
+only supports a single node, non-federated configuration.</p>
 <h2 id="on-element-enterprise-1"><a class="header" href="#on-element-enterprise-1">On Element Enterprise</a></h2>
 <ul>
 <li>
@@ -930,7 +934,7 @@ a bridge to github</li>
 <li><a href="./dimension.html">Setting Up the Integration Manager</a></li>
 <li><a href="./hookshot.html">Setting up GitLab, GitHub, and JIRA Integrations</a></li>
 </ul>
-<p><a href="./SUMMARY.html">Last Updated: March 8, 2022 at 8:30pm London Time</a></p>
+<p><a href="./SUMMARY.html">Last Updated: March 11, 2022 at 8:30pm London Time</a></p>
 
                     </main>
 
