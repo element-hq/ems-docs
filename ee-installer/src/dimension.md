@@ -12,7 +12,7 @@
   - `admins`: List of mxids with admin access to dimension
   - `widget_blocklist`: CIDRs listed here will be blocked from becoming
     widgets.
-  - `postgres_host`: PostgreSQL server fqdn or ip
+  - `postgres_fqdn`: PostgreSQL server fqdn or ip
   - `postgres_user`: PostgreSQL username
   - `postgres_db`: PostgreSQL dimension database
   - `postgres_password`: PostgreSQL dimension password
