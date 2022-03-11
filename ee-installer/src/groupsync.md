@@ -1,4 +1,9 @@
-# Configuring Groupsync
+# Configuring Group Sync
+
+## What is Group Sync?
+
+Group Sync allows you to use the ACLs from your identity infrastructure in order to set up permissions on Spaces and Rooms in the Element Ecosystem. Please note that the initial version we are providing
+only supports a single node, non-federated configuration.
 
 ## On Element Enterprise
 

@@ -1,5 +1,5 @@
 [book]
-title="Element Enterprise Installer Documentation - 0.5rc1"
+title="Element Enterprise Installer Documentation - 0.5.1"
 authors = ["Element"]
 language = "en"
 multilingual = false
@@ -16,4 +16,3 @@ additional-css = [
 ]
 theme = "src/book-assets/theme"
 default-theme = "element"
-
