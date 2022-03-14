@@ -377,8 +377,7 @@ as you can fit 50Gi on <code>/mnt/data</code>.</p>
 media_size: &quot;50Gi&quot;
 </code></pre>
 <p>The next item in the configuration is the microk8s DNS resolvers. This
-defaults to using Google’s DNS. You may change this if you need to use
-your company’s DNS.</p>
+defaults to using Google’s DNS. If you have defined your hosts on a non-publicly available DNS server, then you should use your DNS servers instead of the publicly available Google DNS servers.</p>
 <pre><code class="language-bash">microk8s_dns_resolvers: &quot;8.8.8.8,8.8.4.4&quot;
 </code></pre>
 <p>The next section pertains to certmanager. If you are using your own
