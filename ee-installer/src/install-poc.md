@@ -327,8 +327,7 @@ media_size: "50Gi"
 ```
 
 The next item in the configuration is the microk8s DNS resolvers. This
-defaults to using Google’s DNS. You may change this if you need to use
-your company’s DNS.
+defaults to using Google’s DNS. If you have defined your hosts on a non-publicly available DNS server, then you should use your DNS servers instead of the publicly available Google DNS servers.
 
 ```bash
 microk8s_dns_resolvers: "8.8.8.8,8.8.4.4"
