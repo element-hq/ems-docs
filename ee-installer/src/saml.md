@@ -17,6 +17,8 @@ parameters to edit :
 
 [Keycloak](./saml.html#keycloak)
 
+Other SAML providers can be configured for use with Element Enterprise. Please contact Element for further information in the event that you are not using one of the above providers.
+
 ### Azure ADFS
 
 - With an account with enough rights, go to : [Enterprise Applications
