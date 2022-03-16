@@ -10,4 +10,4 @@
 - [Setting Up the Integration Manager](./dimension.md)
 - [Setting up GitLab, GitHub, and JIRA Integrations](./hookshot.md)
 
-[Last Updated: March 11, 2022 at 8:30pm London Time](./SUMMARY.md)
+[Last Updated: March 16, 2022 at 8:30pm London Time](./SUMMARY.md)
