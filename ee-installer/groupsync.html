@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Setting up Group Sync - Element Enterprise Installer Documentation - 0.5.1</title>
+        <title>Setting up Group Sync - Element Enterprise Installer Documentation - 0.5.4</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -79,7 +79,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="install-poc.html"><strong aria-hidden="true">1.</strong> How to Install a POC Environment</a></li><li class="chapter-item expanded "><a href="install-prod.html"><strong aria-hidden="true">2.</strong> How to Install a Production Environment</a></li><li class="chapter-item expanded "><a href="permalinks.html"><strong aria-hidden="true">3.</strong> Setting up Permalinks</a></li><li class="chapter-item expanded "><a href="saml.html"><strong aria-hidden="true">4.</strong> Setting up SSO/SAML</a></li><li class="chapter-item expanded "><a href="groupsync.html" class="active"><strong aria-hidden="true">5.</strong> Setting up Group Sync</a></li><li class="chapter-item expanded "><a href="dimension.html"><strong aria-hidden="true">6.</strong> Setting Up the Integration Manager</a></li><li class="chapter-item expanded "><a href="hookshot.html"><strong aria-hidden="true">7.</strong> Setting up GitLab, GitHub, and JIRA Integrations</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Last Updated: March 11, 2022 at 8:30pm London Time</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="install-poc.html"><strong aria-hidden="true">1.</strong> How to Install a POC Environment</a></li><li class="chapter-item expanded "><a href="install-prod.html"><strong aria-hidden="true">2.</strong> How to Install a Production Environment</a></li><li class="chapter-item expanded "><a href="permalinks.html"><strong aria-hidden="true">3.</strong> Setting up Permalinks</a></li><li class="chapter-item expanded "><a href="saml.html"><strong aria-hidden="true">4.</strong> Setting up SSO/SAML</a></li><li class="chapter-item expanded "><a href="groupsync.html" class="active"><strong aria-hidden="true">5.</strong> Setting up Group Sync</a></li><li class="chapter-item expanded "><a href="dimension.html"><strong aria-hidden="true">6.</strong> Setting Up the Integration Manager</a></li><li class="chapter-item expanded "><a href="hookshot.html"><strong aria-hidden="true">7.</strong> Setting up GitLab, GitHub, and JIRA Integrations</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Last Updated: March 16, 2022 at 8:30pm London Time</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -110,7 +110,7 @@
                         <img alt="Element logo" class="header-logo" src="">
                     </div>
 
-                    <h1 class="menu-title">Element Enterprise Installer Documentation - 0.5.1</h1>
+                    <h1 class="menu-title">Element Enterprise Installer Documentation - 0.5.4</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -145,36 +145,26 @@
 
                         <h1 id="configuring-group-sync"><a class="header" href="#configuring-group-sync">Configuring Group Sync</a></h1>
 <h2 id="what-is-group-sync"><a class="header" href="#what-is-group-sync">What is Group Sync?</a></h2>
-<p>Group Sync allows you to use the ACLs from your identity infrastructure in order to set up permissions on Spaces and Rooms in the Element Ecosystem. Please note that the initial version we are providing
+<p>Group Sync allows you to use the ACLs from your identity infrastructure
+in order to set up permissions on Spaces and Rooms in the Element
+Ecosystem. Please note that the initial version we are providing
 only supports a single node, non-federated configuration.</p>
-<h2 id="on-element-enterprise"><a class="header" href="#on-element-enterprise">On Element Enterprise</a></h2>
+<h2 id="general-settings"><a class="header" href="#general-settings">General settings</a></h2>
 <ul>
-<li>
-<p>In the installer root directory, Copy the sample file from
-<code>config-sample/groupsync/gsync.yml</code> to <code>extra-config/groupsync</code></p>
-</li>
-<li>
-<p>Edit the file with the following values. Note that Element
-will provide you with the <code>ems_bridges_registry_token_name</code> and the
-<code>ems_bridges_registry_token_password</code>.</p>
+<li>Copy sample file from <code>config-sample/groupsync/gsync.yml</code> to
+<code>extra-config/groupsync</code></li>
+<li>Edit the file with the following values :
 <ul>
-<li><code>ems_bridges_registry_username</code>: ems_bridges_registry_token_name</li>
-<li><code>ems_bridges_registry_password</code>: ems_bridges_registry_token_password</li>
-<li><code>ldap_check_interval_seconds</code>: The interval check in seconds</li>
-<li><code>ldap_uri</code>: The LDAP Uri to connect to the ldap server</li>
-<li><code>ldap_base</code>: The LDAP base used to build the space hierarchy. This OU
-will become the root space. Every OU below this base will be a child-space.</li>
-<li><code>ldap_bind_dn</code>: The user bind dn to use to read the space hierarchy.</li>
-<li><code>ldap_bind_password</code>: The user password</li>
-<li><code>ldap_attrs_uid</code>: The attribute to use to map to users mxids</li>
-<li><code>ldap_attrs_name</code>: The attribute to use to map to spaces names</li>
-<li><code>group_power_levels</code> : A list of LDAP security groups that'll determine
-people's Matrix power levels. This affects only the OU (Space) that the
-Group belongs to – doesn't leak up or down.</li>
-<li><code>provisioner.dn_default_prefix</code>: Display names starting with this prefix
-will get corrected according to the names we found for their users in
-LDAP. Optional. Useful if you're using an OIDC provider that doesn't give
-you users' display names.</li>
+<li><code>ems_bridges_registry_username</code>: <code>ems bridges registry token name</code></li>
+<li><code>ems_bridges_registry_password</code>: <code>ems bridges registry token password</code></li>
+<li><code>group_power_levels</code> : A list of groups that'll determine people's
+Matrix power levels. This affects only the space that the Group belongs
+to – doesn't leak up or down. For MSGraph source, groups should be
+identified by their ids. On LDAP, they should be identified by their names.</li>
+<li><code>provisioner.dn_default_prefix</code>: Display names starting with this
+prefix will get corrected according to the names we found for their
+users in LDAP. Optional. Useful if you're using an OIDC provider that
+doesn't give you users' display names.</li>
 <li><code>provisioner.default_rooms</code> : Optional. A list of rooms that'll get
 automatically created in in managed space. The ID is required to enable
 GPS to track whether they were already created or not. You can change it,
@@ -183,6 +173,56 @@ but it'll cause new rooms to be generated.</li>
 that will not get kicked from rooms even if they don't belong to them
 according to LDAP. This is useful for things like the auditbot. Patterns
 listed here will be wrapped in ^ and $ before matching.</li>
+</ul>
+</li>
+</ul>
+<h2 id="configuring-the-source"><a class="header" href="#configuring-the-source">Configuring the source</a></h2>
+<h3 id="ldap-servers"><a class="header" href="#ldap-servers">LDAP Servers</a></h3>
+<ul>
+<li>You should create a ldap account with read access to the OUs containing
+the users</li>
+<li>This account should use password authentication</li>
+<li>To use LDAP source, copy the file  <code>config-sample/groupsync/ldap.yml</code> to
+<code>extra-config/groupsync</code> the following variables :
+<ul>
+<li><code>ldap_check_interval_seconds</code>: The interval check in seconds</li>
+<li><code>ldap_uri</code>: The LDAP Uri to connect to the ldap server</li>
+<li><code>ldap_base</code>: The LDAP base used to build the space hierarchy. This OU
+will become the root space. Every OU below this base will be a child-space.</li>
+<li><code>ldap_bind_dn</code>: The user bind dn to use to read the space hierarchy.</li>
+<li><code>ldap_bind_password</code>: The user password</li>
+<li><code>ldap_attrs_uid</code>: The attribute to use to map to users mxids</li>
+<li><code>ldap_attrs_name</code>: The attribute to use to map to spaces names</li>
+</ul>
+</li>
+<li>Restart the install script</li>
+</ul>
+<h3 id="ms-graph-azure-ad"><a class="header" href="#ms-graph-azure-ad">MS Graph (Azure AD)</a></h3>
+<ul>
+<li>
+<p>You need to create an <code>App registration</code>. You'll need the <code>Tenant ID</code> of
+the organization, the <code>Application (client ID)</code> and a secret generated from
+<code>Certificates &amp; secrets</code> on the app.</p>
+</li>
+<li>
+<p>For the bridge to be able to operate correctly, navigate to API permissions
+and ensure it has access to Group.Read.All, GroupMember.Read.All and
+User.Read.All</p>
+</li>
+<li>
+<p>Remember to grant the admin consent for those.</p>
+</li>
+<li>
+<p>To use MSGraph source, copy the file  <code>config-sample/groupsync/msgraph.yml</code>
+to <code>extra-config/groupsync</code> the following variables :</p>
+<ul>
+<li><code>msgraph_tenant_id</code>: This is the &quot;Tenant ID&quot; from your Azure Active
+Directory Overview</li>
+<li><code>msgraph_client_id</code>: Register your app in &quot;App registrations&quot;. This
+will be its &quot;Application (client) ID&quot;</li>
+<li><code>msgraph_client_secret</code> : Go to &quot;Certificates &amp; secrets&quot;, and click
+on &quot;New client secret&quot;. This will be the &quot;Value&quot; of the created secret
+(not the &quot;Secret ID&quot;).</li>
 </ul>
 </li>
 <li>
