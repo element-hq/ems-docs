@@ -204,6 +204,7 @@ environment!</p>
 <li>Postgresql Server</li>
 <li>Element Server</li>
 <li>Synapse Server</li>
+<li>Dimension Server</li>
 </ul>
 <p>These hostnames must resolve to the appropriate IP addresses. If you have a
 proper DNS server with records for these hostnames in place, then you will
@@ -212,6 +213,7 @@ be good to go.</p>
 only. In this case, you will need entries similar to:</p>
 <pre><code class="language-plaintext">192.168.122.39 element.local element
 192.168.122.39 synapse.local synapse
+192.168.122.39 dimension.local dimension
 </code></pre>
 <h2 id="machine-size"><a class="header" href="#machine-size">Machine Size</a></h2>
 <p>For running a proof of concept with our installer, we support only the x86_64
@@ -313,7 +315,7 @@ environment, but will not be supported in a production environment as the
 security risk would be too high. Configuring mobile clients and federation
 will not be possible with self-signed certificates.</p>
 <h3 id="certificates-without-letsencrypt"><a class="header" href="#certificates-without-letsencrypt">Certificates without letsencrypt</a></h3>
-<p>If you have certificates for your Element fqdn and Synapse fqdn already,
+<p>If you have certificates for your Element fqdn, Synapse fqdn, and Dimension fqdn already,
 then you can simply place the <code>.crt</code> and <code>.key</code> files in the certs directory
 under the installer directory. Certificates in the certs directory must take
 the form of <code>fqdn.cert</code> and <code>fqdn.key</code>.</p>
@@ -369,6 +371,20 @@ The certificate is at &quot;./synapse.local+3.pem&quot; and the key at
 
 It will expire on 1 May 2024
 </code></pre>
+<p>If you will be installing dimension, the integration manager, you will also need to do the above for your dimension hostname. In this case, we'll call it dimension.local and the run will look like this:</p>
+<pre><code class="language-bash"># mkcert dimension.local dimension 192.168.122.39 127.0.0.1
+
+Created a new certificate valid for the following names
+- &quot;dimension.local&quot;
+- &quot;dimension&quot;
+- &quot;192.168.122.39&quot;
+- &quot;127.0.0.1&quot;
+
+The certificate is at &quot;./dimension.local+3.pem&quot; and the key at
+&quot;./dimension.local+3-key.pem&quot; ✅
+
+It will expire on 1 May 2024
+</code></pre>
 <p>Once you have self-signed certificates, you need to copy them into the certs
 directory under the installer directory. Certificates in the certs directory
 must take the form of <code>fqdn.crt</code> and <code>fqdn.key</code>.</p>
@@ -378,6 +394,10 @@ the installer directory: (We ran <code>mkcert</code> in that directory as well.)
 cp element.local+3-key.pem certs/element.local.key
 cp synapse.local+3.pem certs/synapse.local.crt
 cp synapse.local+3-key.pem certs/synapse.local.key
+</code></pre>
+<p>If installing dimension later on, go ahead and copy those certs as well:</p>
+<pre><code class="language-bash">cp dimension.local+3.pem certs/dimension.local.crt
+cp dimension.local+3-key.pem certs/dimension.local.key
 </code></pre>
 <h3 id="certificates-with-letsencrypt"><a class="header" href="#certificates-with-letsencrypt">Certificates with LetsEncrypt</a></h3>
 <p>Our installer also supports using LetsEncrypt to build certificates for your
