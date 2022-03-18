@@ -38,6 +38,7 @@ You will need hostnames for the following pieces of infrastructure:
 - Postgresql Server
 - Element Server
 - Synapse Server
+- Dimension Server
 
 These hostnames must resolve to the appropriate IP addresses. If you have a
 proper DNS server with records for these hostnames in place, then you will
@@ -49,6 +50,7 @@ only. In this case, you will need entries similar to:
 ```plaintext
 192.168.122.39 element.local element
 192.168.122.39 synapse.local synapse
+192.168.122.39 dimension.local dimension
 ```
 
 ## Machine Size
@@ -202,7 +204,7 @@ will not be possible with self-signed certificates.
 
 ### Certificates without letsencrypt
 
-If you have certificates for your Element fqdn and Synapse fqdn already,
+If you have certificates for your Element fqdn, Synapse fqdn, and Dimension fqdn already,
 then you can simply place the `.crt` and `.key` files in the certs directory
 under the installer directory. Certificates in the certs directory must take
 the form of `fqdn.cert` and `fqdn.key`.
@@ -311,7 +313,7 @@ If installing dimension later on, go ahead and copy those certs as well:
 
 ```bash
 cp dimension.local+3.pem certs/dimension.local.crt
-cp dimension.local+3-key.pem certs/dimension.local.key 
+cp dimension.local+3-key.pem certs/dimension.local.key
 ```
 
 ### Certificates with LetsEncrypt
