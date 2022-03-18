@@ -314,7 +314,6 @@ cp dimension.local+3.pem certs/dimension.local.crt
 cp dimension.local+3-key.pem certs/dimension.local.key 
 ```
 
-
 ### Certificates with LetsEncrypt
 
 Our installer also supports using LetsEncrypt to build certificates for your
