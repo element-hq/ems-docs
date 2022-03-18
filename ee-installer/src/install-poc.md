@@ -276,6 +276,23 @@ The certificate is at "./synapse.local+3.pem" and the key at
 It will expire on 1 May 2024
 ```
 
+If you will be installing dimension, the integration manager, you will also need to do the above for your dimension hostname. In this case, we'll call it dimension.local and the run will look like this:
+
+```bash
+# mkcert dimension.local dimension 192.168.122.39 127.0.0.1
+
+Created a new certificate valid for the following names
+- "dimension.local"
+- "dimension"
+- "192.168.122.39"
+- "127.0.0.1"
+
+The certificate is at "./dimension.local+3.pem" and the key at
+"./dimension.local+3-key.pem" ✅
+
+It will expire on 1 May 2024
+```
+
 Once you have self-signed certificates, you need to copy them into the certs
 directory under the installer directory. Certificates in the certs directory
 must take the form of `fqdn.crt` and `fqdn.key`.
@@ -289,6 +306,14 @@ cp element.local+3-key.pem certs/element.local.key
 cp synapse.local+3.pem certs/synapse.local.crt
 cp synapse.local+3-key.pem certs/synapse.local.key
 ```
+
+If installing dimension later on, go ahead and copy those certs as well:
+
+```bash
+cp dimension.local+3.pem certs/dimension.local.crt
+cp dimension.local+3-key.pem certs/dimension.local.key 
+```
+
 
 ### Certificates with LetsEncrypt
 
