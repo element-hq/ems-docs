@@ -30,6 +30,7 @@ An EMS server is not required.
 ![temp](/images/Screen%20Shot%202020-10-27%20at%2011.15.37%20AM.png)
 
 1. Click `Add Bridge`  
+**NOTE if you have purchased your Slack bridge from EMS:** Ensure it says `Slack integration on <your ems domain>` here.  
 ![temp](/images/Screen%20Shot%202020-10-27%20at%2011.16.21%20AM.png)
 
 1. Click `Add to Slack`  
