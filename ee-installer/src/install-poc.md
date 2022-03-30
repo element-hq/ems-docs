@@ -37,7 +37,6 @@ environment!
 
 You will need hostnames for the following pieces of infrastructure:
 
-- Postgresql Server
 - Element Server
 - Synapse Server
 - Dimension Server
@@ -163,23 +162,21 @@ sudo systemctl disable firewalld
 ### Users
 
 The installer requires that you run it as a non-root user who has sudo
-permissions. Please make sure that you have a user in the `sudo` group
-to complete the install. If you wanted to make a user called `element-demo`
-and place them in the `sudo` group, the following commands (run as root) would
+permissions. Please make sure that you have a user who can use `sudo`. If you wanted to make a user called `element-demo` that can use `sudo`, the following commands (run as root) would
 achieve that:
 
 On Ubuntu:
 
 ```bash
-sudo useradd element-demo
-sudo gpasswd -a element-demo sudo
+useradd element-demo
+gpasswd -a element-demo sudo
 ```
 
 On EL:
 
 ```bash
-sudo useradd element-demo
-sudo gpasswd -a element-demo wheel
+useradd element-demo
+gpasswd -a element-demo wheel
 ```
 
 ### Unpacking the Installer
