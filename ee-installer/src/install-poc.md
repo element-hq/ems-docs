@@ -5,7 +5,7 @@
 Our Element Enterprise PoC Installer can handle the installation of Element
 Proof
 of Concept (POC) environments. Our standard POC environment is a single node
-server with multik8s running that we deploy our Element Enterprise Operator
+server with microk8s running that we deploy our Element Enterprise Operator
 to, resulting in a fully functioning Synapse server with Element Web that
 can be used to conduct a POC. On-premise production deployments use the
 same installer and operator, but are intended to be deployed into a full
