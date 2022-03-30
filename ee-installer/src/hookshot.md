@@ -72,9 +72,9 @@ hookshot once installed.
 - If you have setup Dimension, you can use the integration manager to add
  a bridge to github
 
-## Enabling Gitlab integration
+## Enabling GitLab integration
 
-### On Gitlab
+### On GitLab
 
 - Add a webhook under the group or the repository you are targeting
 - On the webhook URL, set the following one : `https://<hookshot_fqdn>/`
@@ -94,9 +94,9 @@ hookshot once installed.
 - Copy sample file from `config-sample/hookshot/gitlab.yml` to
  `extra-config/hookshot`
 - Edit the file with the following values :
-  - `gitlab_instances`: A mapping of the gitlab servers
-    - `git.example.org`: Replace with name of the gitlab server
-      - `url`: Replace with URL of the gitlab server
+  - `gitlab_instances`: A mapping of the GitLab servers
+    - `git.example.org`: Replace with name of the GitLab server
+      - `url`: Replace with URL of the GitLab server
   - `gitlab_webhook_secret`: The secret configured in the webhook.
 
 ### In Element's room
