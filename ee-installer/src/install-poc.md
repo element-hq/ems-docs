@@ -240,10 +240,9 @@ Using our example hosts, this would mean that we need certificates for:
 - dimension.local
 - hookshot.local
 
-### Certificates without letsencrypt
+### Certificates without LetsEncrypt
 
-If you have certificates for your Element fqdn, Synapse fqdn, and Dimension
-fqdn already,
+If you have certificates for all of the aforementioned host names,
 then you can simply place the `.crt` and `.key` files in the certs directory
 under the installer directory. Certificates in the certs directory must take
 the form of `fqdn.cert` and `fqdn.key`.
@@ -359,7 +358,7 @@ synapse_fqdn: synapse.local
 ```
 
 Next, we need to set the variables related to Postgres. If you do not have
-an existing Postgres server, then do not make any changes. If you have an
+an existing Postgres server, do not make any changes. If you have an
 existing Postgres server, set the following:
 
 ```bash
