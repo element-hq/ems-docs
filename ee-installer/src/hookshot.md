@@ -110,7 +110,7 @@ hookshot once installed.
  32 1`
 - In `Event Content`, enter :
 
-```yaml
+```json
 {
     "instance": "<your instance name in gitlab.yml>",
     "path": "<username-or-group/repo>"
