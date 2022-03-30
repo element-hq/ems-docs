@@ -360,7 +360,7 @@ synapse_fqdn: synapse.local
 
 Next, we need to set the variables related to Postgres. If you do not have
 an existing Postgres server, then do not make any changes. If you have an
-exsting Postgres server, set the following:
+existing Postgres server, set the following:
 
 ```bash
 postgres_create_in_cluster: false
