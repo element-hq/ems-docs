@@ -16,8 +16,10 @@ jobs:
         with:
           mdbook-version: 'latest'
 
-      - name: Build ems-docs
+      - name: debug shit
         run: ldd --version
+
+      - name: Build ems-docs
         run: mdbook build
 
       - name: Build ee-installer
