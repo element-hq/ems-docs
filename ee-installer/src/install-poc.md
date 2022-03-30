@@ -2,9 +2,10 @@
 
 ## Overview
 
-Our Element Enterprise Installer can handle the installation of Element Proof
+Our Element Enterprise PoC Installer can handle the installation of Element
+Proof
 of Concept (POC) environments. Our standard POC environment is a single node
-server with multik8s running that we deploy our Element Enterprise Operator
+server with microk8s running that we deploy our Element Enterprise Operator
 to, resulting in a fully functioning Synapse server with Element Web that
 can be used to conduct a POC. On-premise production deployments use the
 same installer and operator, but are intended to be deployed into a full
@@ -25,6 +26,7 @@ Ubuntu Server 20.04)
 - [Users](install-poc.md#users)
 - [Network Ports to Open](install-poc.md#network-ports-to-open)
 - [Postgresql Database](install-poc.md#postgresql-database)
+- [TURN Server](install-poc.md#turn-server)
 - [SSL Certificates](install-poc.md#ssl-certificates)
 - [Extra configuration items](install-poc.md#extra-configuration-items)
 
@@ -35,10 +37,10 @@ environment!
 
 You will need hostnames for the following pieces of infrastructure:
 
-- Postgresql Server
 - Element Server
 - Synapse Server
 - Dimension Server
+- Hookshot Server
 
 These hostnames must resolve to the appropriate IP addresses. If you have a
 proper DNS server with records for these hostnames in place, then you will
@@ -51,6 +53,8 @@ only. In this case, you will need entries similar to:
 192.168.122.39 element.local element
 192.168.122.39 synapse.local synapse
 192.168.122.39 dimension.local dimension
+192.168.122.39 hookshot.local hookshot
+192.168.122.39 local
 ```
 
 ## Machine Size
@@ -63,10 +67,20 @@ architecture and recommend the following minimums:
 
 ## Operating System
 
-To get started, we have tested on Ubuntu 20.04 and suggest that you start
-there as well. For x86_64, you can grab the iso here:
+To get started, we have tested on Ubuntu 20.04 and Rocky Linux 8.5 (EL 8.5)
+and suggest that you start
+there as well. For x86_64, you can grab an Ubuntu iso here:
 
 <https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-live-server-amd64.iso>
+
+or a Rocky ISO here:
+
+<https://download.rockylinux.org/pub/rocky/8/isos/x86_64/Rocky-8.5-x86_64-dvd1.iso>
+
+Note that future references in this document to `EL` reference Enterprise
+Linux.
+
+### Ubuntu Specific Directions
 
 Make sure to select docker as a package option. Do set up ssh.
 
@@ -77,6 +91,21 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
+### EL Specific directions
+
+Make sure to select "Container Management" in the "Additional Software"
+section.
+
+Once you log in, please run:
+
+```bash
+sudo yum update -y
+sudo yum install podman-docker python39-pip -y
+sudo yum install
+https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
+sudo alternatives --set python3 /usr/bin/python3.9
+```
+
 ### Further Pre-requisites
 
 You should have the installer unpacked in a directory on your server. We
@@ -84,15 +113,32 @@ will refer to this as the installer directory. Both the `parameters.yml`
 and `secrets.yml` file live in this directory.
 
 Please run the following commands to create the `/mnt/data` directory and
-install the `python3-signedjson package` which will be used during the
+install the `python3-signedjson` and `pwgen` packages which will be used
+during the
 configuration of the installer.
 
 The `/mnt/data` directory should have at least 50 GB of space.
 
 ```bash
-# mkdir /mnt/data
+sudo mkdir /mnt/data
+```
 
-# apt-get install python3-signedjson -y
+Ubuntu:
+
+```bash
+sudo apt-get install python3-signedjson pwgen -y
+```
+
+EL:
+
+```bash
+sudo yum install make gcc python39-devel pwgen -y
+```
+
+EL: (as a normal user)
+
+```bash
+pip3 install signedjson --user
 ```
 
 ### Network Ports to Open
@@ -106,17 +152,31 @@ In a default Ubuntu installation, these ports are allowed through the
 firewall. You will need to ensure that these ports are passed through your
 firewall.
 
+For EL, you need to disable the firewall with these command:
+
+```bash
+sudo systemctl stop firewalld
+sudo systemctl disable firewalld
+```
+
 ### Users
 
 The installer requires that you run it as a non-root user who has sudo
-permissions. Please make sure that you have a user in the `sudo` group
-to complete the install. If you wanted to make a user called `element-demo`
-and place them in the `sudo` group, the following commands (run as root) would
+permissions. Please make sure that you have a user who can use `sudo`. If you wanted to make a user called `element-demo` that can use `sudo`, the following commands (run as root) would
 achieve that:
+
+On Ubuntu:
 
 ```bash
 useradd element-demo
 gpasswd -a element-demo sudo
+```
+
+On EL:
+
+```bash
+useradd element-demo
+gpasswd -a element-demo wheel
 ```
 
 ### Unpacking the Installer
@@ -135,56 +195,18 @@ for further details.
 If you have this already, please make note of the database name, user,
 and password as you will need these to begin the installation.
 
-If you do not have a database that you can already connect to and you are
-doing this for a POC only and not in production, you can create a quick
-Postgresql database on the machine you’ll be doing the POC on. Element
-does not ship Postgresql and you'll see these instructions rely on the Docker
-Hub image for Postgresql.
+If you do not already have a database, then the PoC installer will set up
+PostgreSQL on your behalf.
 
-To do this you can run:
+## TURN Server
 
-```bash
-docker pull docker.io/postgres:latest
-```
+For installations in which you desire to use video conferencing functionality,
+you will need to have a TURN server installed and available for Element to use.
 
-Install the `pwgen` utility:
-
-```bash
-apt-get install pwgen -y
-```
-
-Generate a password to replace `insert_random_password_here` in the script
-by doing:
-
-```bash
-pwgen 32 1
-```
-
-Then create a script, `start_postgresql`:
-
-```bash
-#!/bin/bash
-
-docker run -d -p 5432:5432 -v $(pwd)/data:/var/lib/postgresql/data -e POSTGRES_PASSWORD="insert_random_password_here" -e POSTGRES_USER="element" -e POSTGRES_DB="element" -e POSTGRES_INITDB_ARGS="--encoding UTF8 --locale C" docker.io/postgres:latest
-```
-
-Now create a directory for the postgresql database:
-
-```bash
-mkdir data
-```
-
-Set the executable permission on `start_postgresql`:
-
-```bash
-chmod +x start_postgresql
-```
-
-and finally start postgresql:
-
-```bash
-./start_postgresql
-```
+If you do not have an existing TURN server, we recommend installing
+`coturn`. Instructions on how to do that are available here:
+<https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.md>
+(Note: On EL, you can do `yum install coturn -y`.)
 
 ## SSL Certificates
 
@@ -202,9 +224,26 @@ environment, but will not be supported in a production environment as the
 security risk would be too high. Configuring mobile clients and federation
 will not be possible with self-signed certificates.
 
+You will need to configure certificates for the following names:
+
+- fqdn.tld
+- element.fqdn.tld
+- synapse.fqdn.tld
+- dimension.fqdn.tld
+- hookshot.fqdn.tld
+
+Using our example hosts, this would mean that we need certificates for:
+
+- local
+- element.local
+- synapse.local
+- dimension.local
+- hookshot.local
+
 ### Certificates without letsencrypt
 
-If you have certificates for your Element fqdn, Synapse fqdn, and Dimension fqdn already,
+If you have certificates for your Element fqdn, Synapse fqdn, and Dimension
+fqdn already,
 then you can simply place the `.crt` and `.key` files in the certs directory
 under the installer directory. Certificates in the certs directory must take
 the form of `fqdn.cert` and `fqdn.key`.
@@ -216,38 +255,50 @@ generate self-signed certificates. Element nor Canonical ship this tool and
 so these directions are provided as one example of how to get self-signed
 certificates.
 
+Ubuntu:
+
 ```bash
-apt-get install wget libnss3-tools
+sudo apt-get install wget libnss3-tools
+```
+
+EL:
+
+```bash
+sudo yum install wget nss-tools -y
+```
+
+Both EL and Ubuntu:
+
+```bash
 wget
 https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64
-mv mkcert-v1.4.3-linux-amd64 /usr/bin/mkcert
-
-chmod +x /usr/bin/mkcert
+sudo mv mkcert-v1.4.3-linux-amd64 /usr/bin/mkcert
+sudo chmod +x /usr/bin/mkcert
 ```
 
 Once you have mkcert executable, you can run:
 
 ```bash
-# mkcert -install
+mkcert -install
 The local CA is now installed in the system trust store! ⚡️
 ```
 
 Now, you can verify the CA Root by doing:
 
 ```bash
-# mkcert -CAROOT
-/root/.local/share/mkcert
+mkcert -CAROOT
+/home/element-demo/.local/share/mkcert
 ```
 
 Your output may not be exactly the same, but it should be similar. Once we’ve
-done this, we need to generate self-signed certificates for our hostnames. In
-our example, we’ll be using `element.local` and `synapse.local`, which
-are both on the same host, `192.168.122.39`:
+done this, we need to generate self-signed certificates for our hostnames. The
+following is an example of how to do it for `element.local`. You will need
+to do this for all of the aforementioned hostnames, including the `fqdn.tld`.
 
 The run for the element fqdn looks like this:
 
 ```bash
-# mkcert element.local element 192.168.122.39 127.0.0.1
+mkcert element.local element 192.168.122.39 127.0.0.1
 
 Created a new certificate valid for the following names
 - "element.local"
@@ -257,40 +308,6 @@ Created a new certificate valid for the following names
 
 The certificate is at "./element.local+3.pem" and the key at
 "./element.local+3-key.pem" ✅
-
-It will expire on 1 May 2024
-```
-
-The run for the synapse fqdn looks like this:
-
-```bash
-# mkcert synapse.local synapse 192.168.122.39 127.0.0.1
-
-Created a new certificate valid for the following names
-- "synapse.local"
-- "synapse"
-- "192.168.122.39"
-- "127.0.0.1"
-
-The certificate is at "./synapse.local+3.pem" and the key at
-"./synapse.local+3-key.pem" ✅
-
-It will expire on 1 May 2024
-```
-
-If you will be installing dimension, the integration manager, you will also need to do the above for your dimension hostname. In this case, we'll call it dimension.local and the run will look like this:
-
-```bash
-# mkcert dimension.local dimension 192.168.122.39 127.0.0.1
-
-Created a new certificate valid for the following names
-- "dimension.local"
-- "dimension"
-- "192.168.122.39"
-- "127.0.0.1"
-
-The certificate is at "./dimension.local+3.pem" and the key at
-"./dimension.local+3-key.pem" ✅
 
 It will expire on 1 May 2024
 ```
@@ -307,13 +324,12 @@ cp element.local+3.pem certs/element.local.crt
 cp element.local+3-key.pem certs/element.local.key
 cp synapse.local+3.pem certs/synapse.local.crt
 cp synapse.local+3-key.pem certs/synapse.local.key
-```
-
-If installing dimension later on, go ahead and copy those certs as well:
-
-```bash
 cp dimension.local+3.pem certs/dimension.local.crt
 cp dimension.local+3-key.pem certs/dimension.local.key
+cp hookshot.local+3.pem certs/hookshot.local.crt
+cp hookshot.local+3-key.pem certs/hookshot.local.key
+cp local+2.pem certs/local.crt
+cp local+2-key.pem certs/local.key
 ```
 
 ### Certificates with LetsEncrypt
@@ -325,7 +341,14 @@ an admin email address to provide to LetsEncrypt.
 
 ## parameters.yml
 
-Now it is time to set `parameters.yml`. Using the example hostnames of
+Now it is time to set `parameters.yml`. A sample has been provided and to
+get started, it is easiest to do:
+
+```bash
+cp parameters.yml.sample parameters.yml
+```
+
+Using the example hostnames of
 `element.local` and `synapse.local` (not resolvable on the internet), we
 would set the following parameters first in `parameters.yml`:
 
@@ -335,33 +358,27 @@ element_fqdn: element.local
 synapse_fqdn: synapse.local
 ```
 
-Next, we need to set the variables related to Postgres:
+Next, we need to set the variables related to Postgres. If you do not have
+an existing Postgres server, then do not make any changes. If you have an
+existing Postgres server, set the following:
 
 ```bash
-postgres_fqdn: element.local
-postgres_user: element
-postgres_db: element
-postgres_ssl_mode: "prefer"
-postgres_port: 5432
+postgres_create_in_cluster: false
+postgres_fqdn: `Postgres Server`
+postgres_user: `Postgres User`
+postgres_db: `Postgres Database for Element`
 ```
 
-Now, we need to set information about the media host. By default, these are
-set to `/mnt/data` for the path and a media size of 50Gi. If you need to
-make changes you can, but the defaults are safe to leave in place as long
-as you can fit 50Gi on `/mnt/data`.
-
-```bash
-media_host_data_path: "/mnt/data"
-media_size: "50Gi"
-```
-
-The next item in the configuration is the microk8s DNS resolvers. This
-defaults to using Google’s DNS. If you have defined your hosts on a
+The next item in the configuration is the microk8s DNS resolvers. By default,
+the installer will use Google's publicly available DNS servers. If you have
+defined your hosts on a
 non-publicly available DNS server, then you should use your DNS servers
-instead of the publicly available Google DNS servers.
+instead of the publicly available Google DNS servers. Let's assume that
+your local dns servers are 192.168.122.253 and 192.168.122.252. To use those
+servers, you would need to add this line:
 
 ```bash
-microk8s_dns_resolvers: "8.8.8.8,8.8.4.4"
+microk8s_dns_resolvers: "192.168.122.253,192.168.122.252"
 ```
 
 The next section pertains to certmanager. If you are using your own
@@ -378,7 +395,7 @@ certificates for certmanager_admin_email:
 
 ```bash
 certmanager_issuer: 'letsencrypt'
-certmanager_admin_email: admin@mydomain.com'
+certmanager_admin_email: 'admin@mydomain.com'
 ```
 
 ## secrets.yml
@@ -393,51 +410,31 @@ items here:
 - A Registry username and token, which will have been provided to you
 by Element.
 
-For the `macaroon` key, the `registration_shared_secret` key, and the
-`generic_shared_secret` key, you may
-generate them with the `pwgen` utility. If you do not have this utility,
-you may install it in Ubuntu with:
+To build a `secrets.yml` with the macaroon key, the registration shared secret,
+the generic shared secret, and the signing key already filled in, please run:
 
 ```bash
-apt-get install pwgen -y
+sh build_secrets.sh
 ```
 
-Once you have the 'pwgen' tool, you can use it as follows:
+If you are using your own Postgres server, you will need to uncomment and
+fill in the `postgres_password`. If you are letting the installer install
+Postgres for you, then you will need to set a random password. You can
+generate a random password with:
 
 ```bash
 pwgen 32 1
 ```
 
-At this point, you can set the following items in `secrets.yml`:
-
-```bash
-macaroon: "insert_pwgen_output_here"
-postgres_passwd: "insert_random_password_here"
-registration_shared_secret: "insert_different_pwgen_output_here"
-generic_shared_secret: "insert_third_pwgen_output_here"
-```
-
-In order to generate the signing key, we need to run:
-
-```bash
-python3 tools/create_keys.py
-```
-
-This will create output similar to:
-
-```bash
-Signing key: ed25519 0 8uCMyhmX5X3N78tkxGYzzjtZrKN0hGAw03ue4Pa/294
-Verify key: ed25519 0 m9//8YDBgKCssHDp9AHpa5umUjn/B1HJXL0TngdUiFo
-```
-
-From this, we can specify in `secrets.yml`:
-
-```bash
-signing_key: “ed25519 0 8uCMyhmX5X3N78tkxGYzzjtZrKN0hGAw03ue4Pa/294”
-```
+and then insert that value in the `postgres_password` field, making sure
+that you uncomment the line.
 
 Do not forget to also set the values for `registry_username` and
 `registry_token`, which will both be provided by Element.
+
+If you have a paid docker hub account, you can specify your username
+and password to avoid being throttled in the `dockerhub_username` and
+`dockerhub_token` fields. This is optional.
 
 ## Extra Configuration Items
 
@@ -482,9 +479,11 @@ Sync](./groupsync.md).
 Let’s review! Have you considered:
 
 - [Hostnames/DNS](install-poc.md#hostnamesdns)
-- [Operating System](install-poc.md#operating-system) (We’ve tested on
-Ubuntu Server 20.04)
+- [Operating System](install-poc.md#operating-system)
+- [Users](install-poc.md#users)
+- [Network Ports to Open](install-poc.md#network-ports-to-open)
 - [Postgresql Database](install-poc.md#postgresql-database)
+- [TURN Server](install-poc.md#turn-server)
 - [SSL Certificates](install-poc.md#ssl-certificates)
 - [Extra configuration items](install-poc.md#extra-configuration-items)
 
@@ -517,11 +516,12 @@ kubectl get pods -n element-onprem
 And you should get similar output to:
 
 ```bash
-NAME                                       READY   STATUS    RESTARTS   AGE
-app-element-web-5c8c6d8765-2hwvm           1/1     Running   0          52m
-server-well-known-59f87956d8-f5j2h         1/1     Running   0          52m
-instance-synapse-haproxy-f7c597bdb-tz28h   1/1     Running   0          52m
-instance-synapse-main-0                    1/1     Running   0          52m
+NAME                                        READY   STATUS    RESTARTS   AGE
+app-element-web-c5bd87777-rqr6s             1/1     Running   1          29m
+server-well-known-8c6bd8447-wddtm           1/1     Running   1          29m
+postgres-0                                  1/1     Running   1          40m
+instance-synapse-main-0                     1/1     Running   2          29m
+instance-synapse-haproxy-5b4b55fc9c-hnlmp   1/1     Running   0          20m
 ```
 
 At this time, you should also be able to browse to: `https://fqdn` and create

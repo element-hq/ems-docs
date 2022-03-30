@@ -13,8 +13,8 @@ hookshot once installed.
   - `ems_bridges_registry_username` :  ems bridges registry token name
   - `ems_bridges_registry_password` :  ems bridges registry token password
   - `logging_level` : The logging level
-  - `hookshot_fqdn` : The adress of hookshot webhook fqdn. Can be the
-     same as the synapse fqdn.
+  - `hookshot_fqdn` : The adress of hookshot webhook fqdn. It should match
+  something like `hookshot.<fqdn.tld>`
   - `passkey` : The name of the local key file. It can be generated using
      openssl - `openssl genrsa -out key.pem 4096`
   - `provisioning_secret` : The provisioning secret used with integration
@@ -28,9 +28,10 @@ hookshot once installed.
 ### On GitHub
 
 - This bridge requires a [GitHub
-App](https://github.com/settings/apps/new). You will need to create one.
-- On the webhook URL, set the following one :
- `https://<hookshot_fqdn>/hookshot/`
+ App](https://github.com/settings/apps/new). You will need to create one.
+- On the callback URL, set the following one : `https://<hookshot_fqdn>/oauth`
+ and enable `Request user authorization (OAuth) during installation`
+- On the webhook URL, set the following one : `https://<hookshot_fqdn>/`
 - For the webhook secret, you can generate one using `pwgen 32 1`
  to generate one for example. Keep it somewhere safe, you'll need to to
  configure the bridge.
@@ -70,17 +71,13 @@ App](https://github.com/settings/apps/new). You will need to create one.
 - Follow the link to connect the bot to the configured app
 - If you have setup Dimension, you can use the integration manager to add
  a bridge to github
-- In Dimension administration panel, you should use :
-  - For Provisioning url : `http://instance-hookshot-headless:7776`
-  - Share Secret : The value of `provisioning_secret`
 
 ## Enabling GitLab integration
 
 ### On GitLab
 
 - Add a webhook under the group or the repository you are targeting
-- On the webhook URL, set the following one :
- `https://<hookshot_fqdn>/hookshot/`
+- On the webhook URL, set the following one : `https://<hookshot_fqdn>/`
 - For the webhook secret, you can generate one using `pwgen 32 1`
  to generate one for example. Keep it somewhere safe, you'll need to to
  configure the bridge.
@@ -127,7 +124,7 @@ App](https://github.com/settings/apps/new). You will need to create one.
 - This should be done for all JIRA organisations you wish to bridge. The
  steps may differ for SaaS and on-prem, but you need to go to the
  webhooks configuration page under Settings > System. It should point to
- `https://<hookshot_fqdn>/hookshot/`
+ `https://<hookshot_fqdn>/`
 - For the webhook secret, you can generate one using `pwgen 32 1`
  to generate one for example. Keep it somewhere safe, you'll need to to
  configure the bridge.
@@ -142,7 +139,7 @@ land soon.
  <https://developer.atlassian.com/console/myapps/create-3lo-app/> to create a
  "OAuth 2.0 (3LO)" integration.
 - Once named and created, you will need to:
-- Enable the User REST, Jira Platform REST and User Identity APIs under
+- Enable the User REST, JIRA Platform REST and User Identity APIs under
   Permissions.
 - Use rotating tokens under Authorisation.
 - Set a callback url. This will be the public URL to hookshot with a path
@@ -164,10 +161,7 @@ land soon.
 
 - As an administrator of the room, invite the hookshot bot
 - If you have setup Dimension, you can use the integration manager to add
- a bridge to github
-- Dimension administration panel, you should use :
-  - For Provisioning url : `http://instance-hookshot-headless:7776`
-  - Share Secret : The value of `provisioning_secret`
+ a bridge to JIRA
 
 ## Enabling generic webhooks integration
 
@@ -191,7 +185,4 @@ land soon.
 - Please ensure that the `Content-Type` is set to the type matching what
  the webhook sends
 - If you have setup Dimension, you can use the integration manager to add
- a bridge to github
-- In Dimension administration panel, you should use :
-  - Provisioning url : `http://instance-hookshot-headless:7776`
-  - Share Secret : The value of `provisioning_secret`
+ a bridge to a new webhook
