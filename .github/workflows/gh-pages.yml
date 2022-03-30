@@ -16,9 +16,6 @@ jobs:
         with:
           mdbook-version: 'latest'
 
-      - name: debug shit
-        run: ldd --version
-
       - name: Build ems-docs
         run: mdbook build
 
