@@ -25,7 +25,7 @@ hookshot once installed.
 
 ## Enabling GitHub Integration
 
-### On github
+### On GitHub
 
 - This bridge requires a [GitHub
  App](https://github.com/settings/apps/new). You will need to create one.
@@ -72,9 +72,9 @@ hookshot once installed.
 - If you have setup Dimension, you can use the integration manager to add
  a bridge to github
 
-## Enabling gitlab integration
+## Enabling Gitlab integration
 
-### On gitlab
+### On Gitlab
 
 - Add a webhook under the group or the repository you are targeting
 - On the webhook URL, set the following one : `https://<hookshot_fqdn>/`
@@ -117,9 +117,9 @@ hookshot once installed.
 }
 ```
 
-## Enabling jira integration
+## Enabling JIRA integration
 
-### On jira
+### On JIRA
 
 - This should be done for all JIRA organisations you wish to bridge. The
  steps may differ for SaaS and on-prem, but you need to go to the
@@ -139,7 +139,7 @@ land soon.
  <https://developer.atlassian.com/console/myapps/create-3lo-app/> to create a
  "OAuth 2.0 (3LO)" integration.
 - Once named and created, you will need to:
-- Enable the User REST, Jira Platform REST and User Identity APIs under
+- Enable the User REST, JIRA Platform REST and User Identity APIs under
   Permissions.
 - Use rotating tokens under Authorisation.
 - Set a callback url. This will be the public URL to hookshot with a path
@@ -161,7 +161,7 @@ land soon.
 
 - As an administrator of the room, invite the hookshot bot
 - If you have setup Dimension, you can use the integration manager to add
- a bridge to jira
+ a bridge to JIRA
 
 ## Enabling generic webhooks integration
 
