@@ -162,7 +162,9 @@ sudo systemctl disable firewalld
 ### Users
 
 The installer requires that you run it as a non-root user who has sudo
-permissions. Please make sure that you have a user who can use `sudo`. If you wanted to make a user called `element-demo` that can use `sudo`, the following commands (run as root) would
+permissions. Please make sure that you have a user who can use `sudo`. If
+you wanted to make a user called `element-demo` that can use `sudo`, the
+following commands (run as root) would
 achieve that:
 
 On Ubuntu:

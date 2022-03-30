@@ -1,8 +1,10 @@
 # Element Enterprise Installer: How to Install a Production Environment
 
-Our Element Enterprise Production Installer can handle the installation of Element Enterprise into your production k8s environment.
+Our Element Enterprise Production Installer can handle the installation of
+Element Enterprise into your production k8s environment.
 
-To get started with a production installation, there are several things that need to be considered and this guide will work through them:
+To get started with a production installation, there are several things that
+need to be considered and this guide will work through them:
 
 - [Hostnames/DNS](install-prod.md#hostnamesdns)
 - [Machine Size](install-prod.md#machine-size)
@@ -12,7 +14,8 @@ To get started with a production installation, there are several things that nee
 - [SSL Certificates](install-prod.md#ssl-certificates)
 - [Extra configuation items](install-prod.md#extra-configuration-items)
 
-Once these areas have been covered, you'll be able to install a production environment!
+Once these areas have been covered, you'll be able to install a production
+environment!
 
 ## Hostnames/DNS
 
@@ -23,7 +26,8 @@ You will need hostnames for the following pieces of infrastructure:
 - Dimension Server
 - Hookshot Server
 
-These hostnames must resolve to the appropriate IP addresses. You must have a proper DNS server to serve these records in a production environment.
+These hostnames must resolve to the appropriate IP addresses. You must have
+a proper DNS server to serve these records in a production environment.
 
 ## Machine Size
 
@@ -35,21 +39,32 @@ architecture and recommend the following minimums:
 
 ### Unpacking the Installer
 
-Please make sure that you unpack `element-enterprise-installer` onto a system that has access to your k8s environment. The directory that it unpacks into will be referenced in this document as the installer directory.
+Please make sure that you unpack `element-enterprise-installer` onto a system
+that has access to your k8s environment. The directory that it unpacks into
+will be referenced in this document as the installer directory.
 
 ## k8s Environments
 
 To configure your k8s environment, you need to :
 
- - Configure a kubectl context able to connect to your kubernetes instance
- - Copy `k8s.yml.sample` to `k8s.yml`. Edit `k8s.yml` with the following values :
-     - `provider_storage_class_name`: The [storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) to use when creating PVCs.
-     - `ingress_annotations`: The annotations to add to the ingresses created by the operator.
-     - `tls_managed_externally`: Should be true if you don't expect the operator to manage the certificates of your kubernetes deployment. In this case, you will be able to skip the **Certificates** chapter of the `CONFIGURE.md` file.
-     - `operator_namespace`: The namespace to create to deploy the operator.
-     - `element_namespace`: The namespace to create to deploy the element resources.
-     - `k8s_auth_context`: The value of the context used in kubectl.
-If you want to use [cert-manager](https://cert-manager.io/docs/configuration/acme/) for your tls certificates, it needs to be already installed in the targeted k8s cluster.
+- Configure a kubectl context able to connect to your kubernetes instance
+- Copy `k8s.yml.sample` to `k8s.yml`. Edit `k8s.yml` with the following
+ values :
+- `provider_storage_class_name`: The [storage
+  class](https://kubernetes.io/docs/concepts/storage/storage-classes/)
+  to use when creating PVCs.
+- `ingress_annotations`: The annotations to add to the ingresses created
+  by the operator.
+- `tls_managed_externally`: Should be true if you don't expect the operator
+  to manage the certificates of your kubernetes deployment. In this case, you
+  will be able to skip the **Certificates*- chapter of the `CONFIGURE.md` file.
+- `operator_namespace`: The namespace to create to deploy the operator.
+- `element_namespace`: The namespace to create to deploy the element
+  resources.
+- `k8s_auth_context`: The value of the context used in kubectl.
+If you want to use
+[cert-manager](https://cert-manager.io/docs/configuration/acme/) for your
+tls certificates, it needs to be already installed in the targeted k8s cluster.
 
 ## Postgresql Database
 
@@ -67,7 +82,9 @@ For installations in which you desire to use video conferencing functionality,
 you will need to have a TURN server installed and available for Element to use.
 
 If you do not have an existing TURN server, we recommend installing
-`coturn` outside of your k8s environment. `coturn` must open a lot of ports to work and this can be problematic for k8s environments. Instructions on how to do that are available here:
+`coturn` outside of your k8s environment. `coturn` must open a lot of ports
+to work and this can be problematic for k8s environments. Instructions on
+how to do that are available here:
 <https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.md>
 
 ## SSL Certificates
@@ -78,7 +95,8 @@ For SSL Certificates, you have three options:
 - LetsEncrypt
 - Signed certificates from an internal to your company authority.
 
-In the case of Internet Recognized Signed certificates or LetsEncrypt, your hostnames must be
+In the case of Internet Recognized Signed certificates or LetsEncrypt,
+your hostnames must be
 accessible on the internet.
 
 ### Certificates without LetsEncrypt
@@ -114,7 +132,8 @@ element_fqdn: element.local
 synapse_fqdn: synapse.local
 ```
 
-Next, we need to set the variables related to Postgres. For your Postgres server, please set the following:
+Next, we need to set the variables related to Postgres. For your Postgres
+server, please set the following:
 
 ```bash
 postgres_fqdn: `Postgres Server`
@@ -134,7 +153,8 @@ servers, you would need to add this line:
 microk8s_dns_resolvers: "192.168.122.253,192.168.122.252"
 ```
 
-The next section pertains to certmanager. If you are not using LetsEncrypt, please leave these items both blank, as such:
+The next section pertains to certmanager. If you are not using LetsEncrypt,
+please leave these items both blank, as such:
 
 ```bash
 certmanager_issuer:
@@ -169,7 +189,8 @@ the generic shared secret, and the signing key already filled in, please run:
 sh build_secrets.sh
 ```
 
-You will need to uncomment and set your `postgres_password` field to the proper password for your database.
+You will need to uncomment and set your `postgres_password` field to the
+proper password for your database.
 
 Do not forget to also set the values for `registry_username` and
 `registry_token`, which will both be provided by Element.
