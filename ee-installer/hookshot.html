@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Setting up GitLab, GitHub, and JIRA Integrations - Element Enterprise Installer Documentation - 0.5.4</title>
+        <title>Setting up GitLab, GitHub, and JIRA Integrations - Element Enterprise Installer Documentation - 0.6.0</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -110,7 +110,7 @@
                         <img alt="Element logo" class="header-logo" src="">
                     </div>
 
-                    <h1 class="menu-title">Element Enterprise Installer Documentation - 0.5.4</h1>
+                    <h1 class="menu-title">Element Enterprise Installer Documentation - 0.6.0</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -157,8 +157,8 @@ hookshot once installed.</p>
 <li><code>ems_bridges_registry_username</code> :  ems bridges registry token name</li>
 <li><code>ems_bridges_registry_password</code> :  ems bridges registry token password</li>
 <li><code>logging_level</code> : The logging level</li>
-<li><code>hookshot_fqdn</code> : The adress of hookshot webhook fqdn. Can be the
-same as the synapse fqdn.</li>
+<li><code>hookshot_fqdn</code> : The adress of hookshot webhook fqdn. It should match
+something like <code>hookshot.&lt;fqdn.tld&gt;</code></li>
 <li><code>passkey</code> : The name of the local key file. It can be generated using
 openssl - <code>openssl genrsa -out key.pem 4096</code></li>
 <li><code>provisioning_secret</code> : The provisioning secret used with integration
@@ -174,8 +174,9 @@ managers. Necessary for integration with dimension.</li>
 <ul>
 <li>This bridge requires a <a href="https://github.com/settings/apps/new">GitHub
 App</a>. You will need to create one.</li>
-<li>On the webhook URL, set the following one :
-<code>https://&lt;hookshot_fqdn&gt;/hookshot/</code></li>
+<li>On the callback URL, set the following one : <code>https://&lt;hookshot_fqdn&gt;/oauth</code>
+and enable <code>Request user authorization (OAuth) during installation</code></li>
+<li>On the webhook URL, set the following one : <code>https://&lt;hookshot_fqdn&gt;/</code></li>
 <li>For the webhook secret, you can generate one using <code>pwgen 32 1</code>
 to generate one for example. Keep it somewhere safe, you'll need to to
 configure the bridge.</li>
@@ -226,19 +227,12 @@ options.</li>
 <li>Follow the link to connect the bot to the configured app</li>
 <li>If you have setup Dimension, you can use the integration manager to add
 a bridge to github</li>
-<li>In Dimension administration panel, you should use :
-<ul>
-<li>For Provisioning url : <code>http://instance-hookshot-headless:7776</code></li>
-<li>Share Secret : The value of <code>provisioning_secret</code></li>
-</ul>
-</li>
 </ul>
 <h2 id="enabling-gitlab-integration"><a class="header" href="#enabling-gitlab-integration">Enabling GitLab integration</a></h2>
 <h3 id="on-gitlab"><a class="header" href="#on-gitlab">On GitLab</a></h3>
 <ul>
 <li>Add a webhook under the group or the repository you are targeting</li>
-<li>On the webhook URL, set the following one :
-<code>https://&lt;hookshot_fqdn&gt;/hookshot/</code></li>
+<li>On the webhook URL, set the following one : <code>https://&lt;hookshot_fqdn&gt;/</code></li>
 <li>For the webhook secret, you can generate one using <code>pwgen 32 1</code>
 to generate one for example. Keep it somewhere safe, you'll need to to
 configure the bridge.</li>
@@ -293,7 +287,7 @@ supports:
 <li>This should be done for all JIRA organisations you wish to bridge. The
 steps may differ for SaaS and on-prem, but you need to go to the
 webhooks configuration page under Settings &gt; System. It should point to
-<code>https://&lt;hookshot_fqdn&gt;/hookshot/</code></li>
+<code>https://&lt;hookshot_fqdn&gt;/</code></li>
 <li>For the webhook secret, you can generate one using <code>pwgen 32 1</code>
 to generate one for example. Keep it somewhere safe, you'll need to to
 configure the bridge.</li>
@@ -307,7 +301,7 @@ land soon.</p>
 <a href="https://developer.atlassian.com/console/myapps/create-3lo-app/">https://developer.atlassian.com/console/myapps/create-3lo-app/</a> to create a
 &quot;OAuth 2.0 (3LO)&quot; integration.</li>
 <li>Once named and created, you will need to:</li>
-<li>Enable the User REST, Jira Platform REST and User Identity APIs under
+<li>Enable the User REST, JIRA Platform REST and User Identity APIs under
 Permissions.</li>
 <li>Use rotating tokens under Authorisation.</li>
 <li>Set a callback url. This will be the public URL to hookshot with a path
@@ -332,13 +326,7 @@ the Client secret in Jira's App page. Else, you can keep it empty.</li>
 <ul>
 <li>As an administrator of the room, invite the hookshot bot</li>
 <li>If you have setup Dimension, you can use the integration manager to add
-a bridge to github</li>
-<li>Dimension administration panel, you should use :
-<ul>
-<li>For Provisioning url : <code>http://instance-hookshot-headless:7776</code></li>
-<li>Share Secret : The value of <code>provisioning_secret</code></li>
-</ul>
-</li>
+a bridge to JIRA</li>
 </ul>
 <h2 id="enabling-generic-webhooks-integration"><a class="header" href="#enabling-generic-webhooks-integration">Enabling generic webhooks integration</a></h2>
 <h3 id="on-the-installation-3"><a class="header" href="#on-the-installation-3">On the installation</a></h3>
@@ -364,13 +352,7 @@ hookshot for webhooks you'll create</li>
 <li>Please ensure that the <code>Content-Type</code> is set to the type matching what
 the webhook sends</li>
 <li>If you have setup Dimension, you can use the integration manager to add
-a bridge to github</li>
-<li>In Dimension administration panel, you should use :
-<ul>
-<li>Provisioning url : <code>http://instance-hookshot-headless:7776</code></li>
-<li>Share Secret : The value of <code>provisioning_secret</code></li>
-</ul>
-</li>
+a bridge to a new webhook</li>
 </ul>
 
                     </main>
