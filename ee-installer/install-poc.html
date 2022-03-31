@@ -162,8 +162,7 @@ to be considered and this guide will work through them:</p>
 <ul>
 <li><a href="install-poc.html#hostnamesdns">Hostnames/DNS</a></li>
 <li><a href="install-poc.html#machine-size">Machine Size</a></li>
-<li><a href="install-poc.html#operating-system">Operating System</a> (We’ve tested on
-Ubuntu Server 20.04)</li>
+<li><a href="install-poc.html#operating-system">Operating System</a></li>
 <li><a href="install-poc.html#users">Users</a></li>
 <li><a href="install-poc.html#network-ports-to-open">Network Ports to Open</a></li>
 <li><a href="install-poc.html#postgresql-database">Postgresql Database</a></li>
@@ -259,7 +258,9 @@ sudo systemctl disable firewalld
 </code></pre>
 <h3 id="users"><a class="header" href="#users">Users</a></h3>
 <p>The installer requires that you run it as a non-root user who has sudo
-permissions. Please make sure that you have a user who can use <code>sudo</code>. If you wanted to make a user called <code>element-demo</code> that can use <code>sudo</code>, the following commands (run as root) would
+permissions. Please make sure that you have a user who can use <code>sudo</code>. If
+you wanted to make a user called <code>element-demo</code> that can use <code>sudo</code>, the
+following commands (run as root) would
 achieve that:</p>
 <p>On Ubuntu:</p>
 <pre><code class="language-bash">useradd element-demo
@@ -318,9 +319,8 @@ will not be possible with self-signed certificates.</p>
 <li>dimension.local</li>
 <li>hookshot.local</li>
 </ul>
-<h3 id="certificates-without-letsencrypt"><a class="header" href="#certificates-without-letsencrypt">Certificates without letsencrypt</a></h3>
-<p>If you have certificates for your Element fqdn, Synapse fqdn, and Dimension
-fqdn already,
+<h3 id="certificates-without-letsencrypt"><a class="header" href="#certificates-without-letsencrypt">Certificates without LetsEncrypt</a></h3>
+<p>If you have certificates for all of the aforementioned host names,
 then you can simply place the <code>.crt</code> and <code>.key</code> files in the certs directory
 under the installer directory. Certificates in the certs directory must take
 the form of <code>fqdn.cert</code> and <code>fqdn.key</code>.</p>
@@ -401,7 +401,7 @@ element_fqdn: element.local
 synapse_fqdn: synapse.local
 </code></pre>
 <p>Next, we need to set the variables related to Postgres. If you do not have
-an existing Postgres server, then do not make any changes. If you have an
+an existing Postgres server, do not make any changes. If you have an
 existing Postgres server, set the following:</p>
 <pre><code class="language-bash">postgres_create_in_cluster: false
 postgres_fqdn: `Postgres Server`

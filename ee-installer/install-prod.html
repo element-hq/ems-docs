@@ -144,9 +144,212 @@
                         <div class="sidetoc"><nav class="pagetoc"></nav></div>
 
                         <h1 id="element-enterprise-installer-how-to-install-a-production-environment"><a class="header" href="#element-enterprise-installer-how-to-install-a-production-environment">Element Enterprise Installer: How to Install a Production Environment</a></h1>
-<p>It is now possible to install into a k8s cluster with the production installer
-as of 0.6.0. However, we need to write this documentation. For now, please
-see the documentation in the production installer tarball.</p>
+<p>Our Element Enterprise Production Installer can handle the installation of
+Element Enterprise into your production k8s environment.</p>
+<p>To get started with a production installation, there are several things that
+need to be considered and this guide will work through them:</p>
+<ul>
+<li><a href="install-prod.html#hostnamesdns">Hostnames/DNS</a></li>
+<li><a href="install-prod.html#resource-requirements">Resource Requirements</a></li>
+<li><a href="install-prod.html#k8s-environments">k8s Environments</a></li>
+<li><a href="install-prod.html#postgresql-database">Postgresql Database</a></li>
+<li><a href="install-prod.html#turn-server">TURN Server</a></li>
+<li><a href="install-prod.html#ssl-certificates">SSL Certificates</a></li>
+<li><a href="install-prod.html#extra-configuration-items">Extra configuation items</a></li>
+</ul>
+<p>Once these areas have been covered, you'll be able to install a production
+environment!</p>
+<h2 id="hostnamesdns"><a class="header" href="#hostnamesdns">Hostnames/DNS</a></h2>
+<p>You will need hostnames for the following pieces of infrastructure:</p>
+<ul>
+<li>Element Server</li>
+<li>Synapse Server</li>
+<li>Dimension Server</li>
+<li>Hookshot Server</li>
+</ul>
+<p>These hostnames must resolve to the appropriate IP addresses. You must have
+a proper DNS server to serve these records in a production environment.</p>
+<h2 id="resource-requirements"><a class="header" href="#resource-requirements">Resource Requirements</a></h2>
+<p>For running running in production, we support only the x86_64
+architecture and recommend the following minimums:</p>
+<ul>
+<li>No federation: 4 vCPUs/CPUS and 16GB RAM</li>
+<li>Federation: 8 vCPUs/CPUS and 32GB RAM</li>
+</ul>
+<h3 id="unpacking-the-installer"><a class="header" href="#unpacking-the-installer">Unpacking the Installer</a></h3>
+<p>Please make sure that you unpack <code>element-enterprise-installer</code> onto a system
+that has access to your k8s environment. The directory that it unpacks into
+will be referenced in this document as the installer directory.</p>
+<h2 id="k8s-environments"><a class="header" href="#k8s-environments">k8s Environments</a></h2>
+<p>To configure your k8s environment, you need to :</p>
+<ul>
+<li>Configure a kubectl context able to connect to your kubernetes instance</li>
+<li>Copy <code>k8s.yml.sample</code> to <code>k8s.yml</code>. Edit <code>k8s.yml</code> with the following
+values :</li>
+<li><code>provider_storage_class_name</code>: The <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">storage
+class</a>
+to use when creating PVCs.</li>
+<li><code>ingress_annotations</code>: The annotations to add to the ingresses created
+by the operator.</li>
+<li><code>tls_managed_externally</code>: Should be true if you don't expect the operator
+to manage the certificates of your kubernetes deployment. In this case, you
+will be able to skip the *<em>Certificates</em>- chapter of the <code>CONFIGURE.md</code> file.</li>
+<li><code>operator_namespace</code>: The namespace to create to deploy the operator.</li>
+<li><code>element_namespace</code>: The namespace to create to deploy the element
+resources.</li>
+<li><code>k8s_auth_context</code>: The value of the context used in kubectl.
+If you want to use
+<a href="https://cert-manager.io/docs/configuration/acme/">cert-manager</a> for your
+tls certificates, it needs to be already installed in the targeted k8s cluster.</li>
+</ul>
+<h2 id="postgresql-database"><a class="header" href="#postgresql-database">Postgresql Database</a></h2>
+<p>The installation requires that you have a postgresql
+database with a locale of C and UTF8 encoding set up. See
+<a href="https://github.com/matrix-org/synapse/blob/develop/docs/postgres.md#set-up-database">https://github.com/matrix-org/synapse/blob/develop/docs/postgres.md#set-up-database</a>
+for further details.</p>
+<p>Please make note of the database hostname, database name, user,
+and password as you will need these to begin the installation.</p>
+<h2 id="turn-server"><a class="header" href="#turn-server">TURN Server</a></h2>
+<p>For installations in which you desire to use video conferencing functionality,
+you will need to have a TURN server installed and available for Element to use.</p>
+<p>If you do not have an existing TURN server, we recommend installing
+<code>coturn</code> outside of your k8s environment. <code>coturn</code> must open a lot of ports
+to work and this can be problematic for k8s environments. Instructions on
+how to do that are available here:
+<a href="https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.md">https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.md</a></p>
+<h2 id="ssl-certificates"><a class="header" href="#ssl-certificates">SSL Certificates</a></h2>
+<p>For SSL Certificates, you have three options:</p>
+<ul>
+<li>Signed certificates from an internet recognized authority.</li>
+<li>LetsEncrypt</li>
+<li>Signed certificates from an internal to your company authority.</li>
+</ul>
+<p>In the case of Internet Recognized Signed certificates or LetsEncrypt,
+your hostnames must be
+accessible on the internet.</p>
+<h3 id="certificates-without-letsencrypt"><a class="header" href="#certificates-without-letsencrypt">Certificates without LetsEncrypt</a></h3>
+<p>If you have certificates for all of the aforementioned host names,
+then you can simply place the <code>.crt</code> and <code>.key</code> files in the certs directory
+under the installer directory. Certificates in the certs directory must take
+the form of <code>fqdn.cert</code> and <code>fqdn.key</code>.</p>
+<h3 id="certificates-with-letsencrypt"><a class="header" href="#certificates-with-letsencrypt">Certificates with LetsEncrypt</a></h3>
+<p>Our installer also supports using LetsEncrypt to build certificates for your
+host names and automatically install them into your environment. If your
+hosts are internet accessible, this is the easiest method and only requires
+an admin email address to provide to LetsEncrypt.</p>
+<h2 id="parametersyml"><a class="header" href="#parametersyml">parameters.yml</a></h2>
+<p>Now it is time to set <code>parameters.yml</code>. A sample has been provided and to
+get started, it is easiest to do:</p>
+<pre><code class="language-bash">cp parameters.yml.sample parameters.yml
+</code></pre>
+<p>Using the example hostnames of
+<code>element.local</code> and <code>synapse.local</code> (not resolvable on the internet), we
+would set the following parameters first in <code>parameters.yml</code>:</p>
+<pre><code class="language-bash">domain_name: local
+element_fqdn: element.local
+synapse_fqdn: synapse.local
+</code></pre>
+<p>Next, we need to set the variables related to Postgres. For your Postgres
+server, please set the following:</p>
+<pre><code class="language-bash">postgres_fqdn: `Postgres Server`
+postgres_user: `Postgres User`
+postgres_db: `Postgres Database for Element`
+</code></pre>
+<p>The next item in the configuration is the microk8s DNS resolvers. By default,
+the installer will use Google's publicly available DNS servers. If you have
+defined your hosts on a
+non-publicly available DNS server, then you should use your DNS servers
+instead of the publicly available Google DNS servers. Let's assume that
+your local dns servers are 192.168.122.253 and 192.168.122.252. To use those
+servers, you would need to add this line:</p>
+<pre><code class="language-bash">microk8s_dns_resolvers: &quot;192.168.122.253,192.168.122.252&quot;
+</code></pre>
+<p>The next section pertains to certmanager. If you are not using LetsEncrypt,
+please leave these items both blank, as such:</p>
+<pre><code class="language-bash">certmanager_issuer:
+certmanager_admin_email:
+</code></pre>
+<p>If you have chosen to use LetsEncrypt, please specify “letsencrypt” for
+the certmanager_issue and an actual email address for who should manage the
+certificates for certmanager_admin_email:</p>
+<pre><code class="language-bash">certmanager_issuer: 'letsencrypt'
+certmanager_admin_email: 'admin@mydomain.com'
+</code></pre>
+<h2 id="secretsyml"><a class="header" href="#secretsyml">secrets.yml</a></h2>
+<p>Now we move on to configuring <code>secrets.yml</code>. You will need the following
+items here:</p>
+<ul>
+<li>A Macaroon key</li>
+<li>Your postgres password for the user specified in parameters.yml</li>
+<li>A Registration Shared Secret</li>
+<li>A signing Key</li>
+<li>A Registry username and token, which will have been provided to you
+by Element.</li>
+</ul>
+<p>To build a <code>secrets.yml</code> with the macaroon key, the registration shared secret,
+the generic shared secret, and the signing key already filled in, please run:</p>
+<pre><code class="language-bash">sh build_secrets.sh
+</code></pre>
+<p>You will need to uncomment and set your <code>postgres_password</code> field to the
+proper password for your database.</p>
+<p>Do not forget to also set the values for <code>registry_username</code> and
+<code>registry_token</code>, which will both be provided by Element.</p>
+<p>If you have a paid docker hub account, you can specify your username
+and password to avoid being throttled in the <code>dockerhub_username</code> and
+<code>dockerhub_token</code> fields. This is optional.</p>
+<h2 id="extra-configuration-items"><a class="header" href="#extra-configuration-items">Extra Configuration Items</a></h2>
+<p>It is possible to configure anything in Synapse's
+<a href="https://github.com/matrix-org/synapse/blob/develop/docs/sample_config.yaml">homeserver.yaml</a>
+or Element’s
+<a href="https://github.com/vector-im/element-web/blob/develop/docs/config.md">config.json</a>.</p>
+<p>To do so, you need to create json or yaml files in an <code>extra-config</code>
+directory under the installer directory. These files will be merged to the
+target configuration file.</p>
+<p>Samples are available in <code>config-sample</code> under the installer directory.</p>
+<p>To configure synapse:</p>
+<ul>
+<li>Create a directory <code>extra-config/synapse</code> at the root of the installer
+directory : <code>mkdir -p extra-config/synapse</code></li>
+<li>Copy the configurations extensions you want to setup from
+<code>config-sample/synapse</code> to <code>extra-config/synapse</code>.</li>
+<li>Edit the values in the file accordingly to your configuration</li>
+</ul>
+<p>To configure element:</p>
+<ul>
+<li>Create a directory <code>extra-config/element</code> at the root of the installer
+directory : <code>mkdir -p extra-config/element</code></li>
+<li>Copy the configurations extensions you want to setup from
+<code>config-sample/element</code> to <code>extra-config/element</code>.</li>
+<li>Edit the values in the file accordingly to your configuration</li>
+</ul>
+<p>For specifics on configuring permalinks for Element, please see <a href="./permalinks.html">Configuring
+Permalinks</a>.</p>
+<p>For specifics on setting up SSO/SAML, please see <a href="./saml.html">Setting up
+SSO/SAML</a>.</p>
+<p>For specifics on setting up Group Sync, please see <a href="./groupsync.html">Setting up Group
+Sync</a>.</p>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>Let’s review! Have you considered:</p>
+<ul>
+<li><a href="install-poc.html#hostnamesdns">Hostnames/DNS</a></li>
+<li><a href="install-prod.html#k8s-environments">k8s Environments</a></li>
+<li><a href="install-poc.html#postgresql-database">Postgresql Database</a></li>
+<li><a href="install-poc.html#turn-server">TURN Server</a></li>
+<li><a href="install-poc.html#ssl-certificates">SSL Certificates</a></li>
+<li><a href="install-poc.html#extra-configuration-items">Extra configuration items</a></li>
+</ul>
+<p>Once you have the above sections taken care of and your <code>parameters.yml</code>
+and <code>secrets.yml</code> files are in order, you are ready to begin the actual
+installation.</p>
+<p>From the installer directory, run:</p>
+<pre><code class="language-bash">bash install.sh
+</code></pre>
+<p>The first run should go for a little while and then exit, instructing you
+to log out and back in.</p>
+<p>Please log out and back in and re-run the installer from the installer
+directory again:</p>
+<pre><code class="language-bash">bash install.sh
+</code></pre>
 
                     </main>
 
