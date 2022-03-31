@@ -3,7 +3,7 @@
 Welcome to the Element Enterprise Installer Documentation! Element Enterprise
 Installer enables you to install Element Enterprise for two purposes:
 
-- Proof of concept on a single node. For this, we use microk8s on Ubuntu.
+- Proof of concept on a single node. For this, we use microk8s on Ubuntu or Eneterprise Linux.
 - Production on multiple nodes. For this, we will install into an existing
 kubernetes environment.
 

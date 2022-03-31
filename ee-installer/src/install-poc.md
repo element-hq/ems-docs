@@ -21,8 +21,7 @@ to be considered and this guide will work through them:
 
 - [Hostnames/DNS](install-poc.md#hostnamesdns)
 - [Machine Size](install-poc.md#machine-size)
-- [Operating System](install-poc.md#operating-system) (We’ve tested on
-Ubuntu Server 20.04)
+- [Operating System](install-poc.md#operating-system)
 - [Users](install-poc.md#users)
 - [Network Ports to Open](install-poc.md#network-ports-to-open)
 - [Postgresql Database](install-poc.md#postgresql-database)
@@ -162,7 +161,9 @@ sudo systemctl disable firewalld
 ### Users
 
 The installer requires that you run it as a non-root user who has sudo
-permissions. Please make sure that you have a user who can use `sudo`. If you wanted to make a user called `element-demo` that can use `sudo`, the following commands (run as root) would
+permissions. Please make sure that you have a user who can use `sudo`. If
+you wanted to make a user called `element-demo` that can use `sudo`, the
+following commands (run as root) would
 achieve that:
 
 On Ubuntu:
@@ -240,10 +241,9 @@ Using our example hosts, this would mean that we need certificates for:
 - dimension.local
 - hookshot.local
 
-### Certificates without letsencrypt
+### Certificates without LetsEncrypt
 
-If you have certificates for your Element fqdn, Synapse fqdn, and Dimension
-fqdn already,
+If you have certificates for all of the aforementioned host names,
 then you can simply place the `.crt` and `.key` files in the certs directory
 under the installer directory. Certificates in the certs directory must take
 the form of `fqdn.cert` and `fqdn.key`.
@@ -359,7 +359,7 @@ synapse_fqdn: synapse.local
 ```
 
 Next, we need to set the variables related to Postgres. If you do not have
-an existing Postgres server, then do not make any changes. If you have an
+an existing Postgres server, do not make any changes. If you have an
 existing Postgres server, set the following:
 
 ```bash
