@@ -21,8 +21,7 @@ to be considered and this guide will work through them:
 
 - [Hostnames/DNS](install-poc.md#hostnamesdns)
 - [Machine Size](install-poc.md#machine-size)
-- [Operating System](install-poc.md#operating-system) (We’ve tested on
-Ubuntu Server 20.04)
+- [Operating System](install-poc.md#operating-system)
 - [Users](install-poc.md#users)
 - [Network Ports to Open](install-poc.md#network-ports-to-open)
 - [Postgresql Database](install-poc.md#postgresql-database)

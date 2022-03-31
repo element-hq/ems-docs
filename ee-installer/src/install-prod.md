@@ -7,7 +7,7 @@ To get started with a production installation, there are several things that
 need to be considered and this guide will work through them:
 
 - [Hostnames/DNS](install-prod.md#hostnamesdns)
-- [Machine Size](install-prod.md#machine-size)
+- [Resource Requirements](install-prod.md#resource-requirements)
 - [k8s Environments](install-prod.md#k8s-environments)
 - [Postgresql Database](install-prod.md#postgresql-database)
 - [TURN Server](install-prod.md#turn-server)
@@ -29,7 +29,7 @@ You will need hostnames for the following pieces of infrastructure:
 These hostnames must resolve to the appropriate IP addresses. You must have
 a proper DNS server to serve these records in a production environment.
 
-## Machine Size
+## Resource Requirements
 
 For running running in production, we support only the x86_64
 architecture and recommend the following minimums:
