@@ -45,7 +45,9 @@ will be referenced in this document as the installer directory.
 
 ## k8s Environments
 
-To configure your k8s environment, you need to :
+Element Enterprise Installer allows you to either deploy directly into a kubernetes environment or to render a set of manifests for a future deployment in a kubernetes environment.
+
+To configure your kubernetes environment for a direct deployment, you need to :
 
 - Configure a kubectl context able to connect to your kubernetes instance
 - Copy `k8s.yml.sample` to `k8s.yml`. Edit `k8s.yml` with the following
@@ -65,6 +67,14 @@ To configure your k8s environment, you need to :
 If you want to use
 [cert-manager](https://cert-manager.io/docs/configuration/acme/) for your
 tls certificates, it needs to be already installed in the targeted k8s cluster.
+
+If you do not want to deploy directly to kubernetes, but wish to render manifests instead, set all of the above mentioned variables except for `k8s_auth_context` and define a value for the parameter `out_dir`, which specifies where to write the kubernetes manifests. Further, when you go to run the installer, you need to invoke it as such:
+
+```bash
+sudo install.sh --target render
+```
+
+Using the above syntax, you will have a set of manifests written out to `out_dir` that you can then deploy into your kubernetes environment.
 
 ## Postgresql Database
 
