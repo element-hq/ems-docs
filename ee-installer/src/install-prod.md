@@ -71,7 +71,7 @@ tls certificates, it needs to be already installed in the targeted k8s cluster.
 If you do not want to deploy directly to kubernetes, but wish to render manifests instead, set all of the above mentioned variables except for `k8s_auth_context` and define a value for the parameter `out_dir`, which specifies where to write the kubernetes manifests. Further, when you go to run the installer, you need to invoke it as such:
 
 ```bash
-sudo install.sh --target render
+bash install.sh --target render
 ```
 
 Using the above syntax, you will have a set of manifests written out to `out_dir` that you can then deploy into your kubernetes environment.
