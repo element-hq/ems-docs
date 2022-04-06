@@ -9,10 +9,10 @@ import os,sys
 # Variables for your bookstack install and api
 
 bookstack_protocol="http"
-bookstack_host="localhost"
-bookstack_port="6875"
-bookstack_api_secret_id="CsUQGvtnve8hzXOsuKBCAGXhhku7bwyO"
-bookstack_api_secret="nqPjmsWipgiLEYBkBh18WodkCtLXtI7b"
+bookstack_host="hostname"
+bookstack_port="port"
+bookstack_api_secret_id="api-secret-id"
+bookstack_api_secret="api-secret"
 
 
 # Establish a bookstack connection
