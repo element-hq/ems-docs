@@ -191,7 +191,7 @@ to be considered and this guide will work through them:</p>
 <li><a href="install-poc.html#machine-size">Machine Size</a></li>
 <li><a href="install-poc.html#operating-system">Operating System</a></li>
 <li><a href="install-poc.html#users">Users</a></li>
-<li><a href="install-poc.html#network-ports-to-open">Network Ports to Open</a></li>
+<li><a href="install-poc.html#network-specifics">Network Specifics</a></li>
 <li><a href="install-poc.html#postgresql-database">Postgresql Database</a></li>
 <li><a href="install-poc.html#turn-server">TURN Server</a></li>
 <li><a href="install-poc.html#ssl-certificates">SSL Certificates</a></li>
@@ -270,7 +270,7 @@ configuration of the installer.</p>
 <p>EL: (as a normal user)</p>
 <pre><code class="language-bash">pip3 install signedjson --user
 </code></pre>
-<h3 id="network-ports-to-open"><a class="header" href="#network-ports-to-open">Network Ports to Open</a></h3>
+<h3 id="network-specifics"><a class="header" href="#network-specifics">Network Specifics</a></h3>
 <p>Element Enterprise On-Premise needs to bind and serve content over:</p>
 <ul>
 <li>Port 80 TCP</li>
@@ -283,6 +283,15 @@ firewall.</p>
 <pre><code class="language-bash">sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 </code></pre>
+<p>Further, you need to make sure that your host is able to access the following hosts on the internet:</p>
+<ul>
+<li>api.snapcraft.io</li>
+<li>gitlab.matrix.org</li>
+<li>pypi.org</li>
+<li>docker.io</li>
+<li>*.docker.com</li>
+</ul>
+<p>Further, you will also need to make sure that your host can access your distributions' package repositories. As these hostnames can vary, it is beyond the scope of this documentation to enumerate them.</p>
 <h3 id="users"><a class="header" href="#users">Users</a></h3>
 <p>The installer requires that you run it as a non-root user who has sudo
 permissions. Please make sure that you have a user who can use <code>sudo</code>. If
@@ -520,7 +529,7 @@ Sync</a>.</p>
 <li><a href="install-poc.html#hostnamesdns">Hostnames/DNS</a></li>
 <li><a href="install-poc.html#operating-system">Operating System</a></li>
 <li><a href="install-poc.html#users">Users</a></li>
-<li><a href="install-poc.html#network-ports-to-open">Network Ports to Open</a></li>
+<li><a href="install-poc.html#network-specifics">Network Specifics</a></li>
 <li><a href="install-poc.html#postgresql-database">Postgresql Database</a></li>
 <li><a href="install-poc.html#turn-server">TURN Server</a></li>
 <li><a href="install-poc.html#ssl-certificates">SSL Certificates</a></li>
