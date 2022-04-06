@@ -23,7 +23,7 @@ to be considered and this guide will work through them:
 - [Machine Size](install-poc.md#machine-size)
 - [Operating System](install-poc.md#operating-system)
 - [Users](install-poc.md#users)
-- [Network Ports to Open](install-poc.md#network-ports-to-open)
+- [Network Specifics](install-poc.md#network-specifics)
 - [Postgresql Database](install-poc.md#postgresql-database)
 - [TURN Server](install-poc.md#turn-server)
 - [SSL Certificates](install-poc.md#ssl-certificates)
@@ -140,7 +140,7 @@ EL: (as a normal user)
 pip3 install signedjson --user
 ```
 
-### Network Ports to Open
+### Network Specifics
 
 Element Enterprise On-Premise needs to bind and serve content over:
 
@@ -157,6 +157,16 @@ For EL, you need to disable the firewall with these command:
 sudo systemctl stop firewalld
 sudo systemctl disable firewalld
 ```
+
+Further, you need to make sure that your host is able to access the following hosts on the internet:
+
+- api.snapcraft.io
+- gitlab.matrix.org
+- pypi.org
+- docker.io
+- *.docker.com
+
+Further, you will also need to make sure that your host can access your distributions' package repositories. As these hostnames can vary, it is beyond the scope of this documentation to enumerate them.
 
 ### Users
 
@@ -481,7 +491,7 @@ Let’s review! Have you considered:
 - [Hostnames/DNS](install-poc.md#hostnamesdns)
 - [Operating System](install-poc.md#operating-system)
 - [Users](install-poc.md#users)
-- [Network Ports to Open](install-poc.md#network-ports-to-open)
+- [Network Specifics](install-poc.md#network-specifics)
 - [Postgresql Database](install-poc.md#postgresql-database)
 - [TURN Server](install-poc.md#turn-server)
 - [SSL Certificates](install-poc.md#ssl-certificates)
