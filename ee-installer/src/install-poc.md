@@ -161,6 +161,7 @@ sudo systemctl disable firewalld
 Further, you need to make sure that your host is able to access the following hosts on the internet:
 
 - api.snapcraft.io
+- *.snapcraftcontent.com
 - gitlab.matrix.org
 - pypi.org
 - docker.io
