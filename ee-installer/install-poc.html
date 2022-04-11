@@ -223,6 +223,10 @@ sudo yum install
 https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
 sudo alternatives --set python3 /usr/bin/python3.9
 </code></pre>
+<p>Add the following lines to <code>/etc/security/limits.conf</code>:</p>
+<pre><code class="language-bash">*              soft    nofile  4096
+*              hard    nofile  10240
+</code></pre>
 <h3 id="further-pre-requisites"><a class="header" href="#further-pre-requisites">Further Pre-requisites</a></h3>
 <p>You should have the installer unpacked in a directory on your server. We
 will refer to this as the installer directory. Both the <code>parameters.yml</code>
