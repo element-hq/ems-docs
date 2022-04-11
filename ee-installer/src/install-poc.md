@@ -105,6 +105,13 @@ https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y
 sudo alternatives --set python3 /usr/bin/python3.9
 ```
 
+Add the following lines to `/etc/security/limits.conf`:
+
+```bash
+*              soft    nofile  4096
+*              hard    nofile  10240
+```
+
 ### Further Pre-requisites
 
 You should have the installer unpacked in a directory on your server. We
