@@ -2,7 +2,7 @@
 
 By default, our installer will give you an instance of element-web configured to use the `meet.element.io` Jitsi server. If you would like to specify your own Jitsi server for your element-web instance to use, please follow these directions.
 
-## On Element
+## Element Extra Configurations
 
 - Create a file called `jitsi.json` in the `extra-config/element` directory.
 - Edit the file :

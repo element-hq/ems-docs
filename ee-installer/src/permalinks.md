@@ -1,6 +1,6 @@
 # Configuring Permalinks
 
-## On Element
+## Element Extra Configurations
 
 - Copy sample file from `config-sample/element/permalinks.json` to
 `extra-config/element`
