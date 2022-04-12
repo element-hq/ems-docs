@@ -9,7 +9,7 @@ import os,sys
 # Variables for your bookstack install and api
 
 bookstack_protocol="http"
-bookstack_host="hostname"
+bookstack_host="host"
 bookstack_port="port"
 bookstack_api_secret_id="secret_id"
 bookstack_api_secret="secret"
@@ -59,11 +59,20 @@ for line in f:
 		# We have a link to a page that we need to go get and recreate in Bookstack.
 		page_title=line.split("[")[1].split("]")[0]
 		page_file=filepath+"/"+line.split("(")[1].split(")")[0]	
+		special_case=0
 		pars={}
 		pars["book_id"]=book_id
 		if not chapter_id==None:
 			pars["chapter_id"]=chapter_id
 		pars["name"]=page_title
+		# code explicitly for ems-docs repo to allow slugs to be the same as in ems docs
+		# nasty hack, but should work
+		if "public irc bridges" in pars["name"].lower():
+			pars["name"]="morg IRC Bridges"
+			special_case=1
+		if "public slack bridge" in pars["name"].lower():
+			pars["name"]="morg Slack Bridge"
+			special_case=2
 		pf=open(page_file)
 		linecount=0
 		# This moves the file past the first line before reading so that we don't have duplicate titles.
@@ -82,11 +91,25 @@ for line in f:
 					pars["markdown"]=pars["markdown"].replace(image_name,"https://vector-im.github.io/emsdocs-images/"+image_name)
 					images.append(image_name)
 		pf.close()
-		if bs.call_post_api("pages",pars)=="Too big":
+		pagestub=bs.call_post_api("pages",pars)
+		if pagestub=="Too big":
 			# Append this file to the failure list, but go ahead and put a stub in bookstack.
 			pars["markdown"]="Need to fill this in later. The markdown in file "+page_file+" was deemed too large to import via the Bookstack API."
 			pagestub=bs.call_post_api("pages",pars)
 			failed[page_file]=pagestub["slug"]
+		else:
+			print("Success")
+			# Code to handle the special case where slug is not the same as page title.
+			if special_case>0:
+				mypars={}
+				mypars["book_id"]=str(pagestub["book_id"])
+				mypars["chapter_id"]=str(pagestub["chapter_id"])
+				if special_case==1:
+					mypars["name"]="Public IRC Bridges"
+				if special_case==2:
+					mypars["name"]="Public Slack Bridge"
+				bs.call_put_api("pages/"+str(pagestub["id"]),mypars)
+
 	elif "-" in line:
 		# These were section headers in the SUMMARY.md and don't have an equivalent in bookstack.
 		pass

@@ -51,6 +51,19 @@ class bookstack_api(object):
 			return "Too big"
 	def call_post_json_api(self,apicall,jsonfile):
 		#return json.loads(subprocess.getoutput
-		print("curl -sk --request POST --url '"+self.protocol+"://"+self.bookstack_host+":"+str(self.port)+"/api/"+apicall+"' -H 'Content-Type:application/json' --data "+'"$(cat '+jsonfile+')"'+" --header 'Authorization: Token "+self.tokenid+":"+self.tokensecret+"'")
+		#print("curl -sk --request POST --url '"+self.protocol+"://"+self.bookstack_host+":"+str(self.port)+"/api/"+apicall+"' -H 'Content-Type:application/json' --data "+'"$(cat '+jsonfile+')"'+" --header 'Authorization: Token "+self.tokenid+":"+self.tokensecret+"'")
+	def call_put_api(self,apicall,parameters):
+		curlcommand="curl -sk --request PUT --url '"+self.protocol+"://"+self.bookstack_host+":"+str(self.port)+"/api/"+apicall+"?"
+		for param in parameters:
+			curlcommand=curlcommand+urllib.parse.quote(param)+"="+urllib.parse.quote(parameters[param])+"&"
+		curlcommand=curlcommand.rstrip("&")+"'"
+		curlcommand=curlcommand+" --header 'Authorization: Token "+self.tokenid+":"+self.tokensecret+"'"
+		#print(curlcommand)
+		x=subprocess.getoutput(curlcommand)
+		#print(x)
+		try:
+			return json.loads(x)
+		except:
+			return "Too big"
 
 
