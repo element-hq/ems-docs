@@ -11,8 +11,8 @@ import os,sys
 bookstack_protocol="http"
 bookstack_host="hostname"
 bookstack_port="port"
-bookstack_api_secret_id="api-secret-id"
-bookstack_api_secret="api-secret"
+bookstack_api_secret_id="secret_id"
+bookstack_api_secret="secret"
 
 
 # Establish a bookstack connection
@@ -79,7 +79,7 @@ for line in f:
 				image_name=mdline.split("(")[1].split(")")[0]
 				# Don't replace the image_name more than once.
 				if not image_name in images:
-					pars["markdown"]=pars["markdown"].replace(image_name,"https://ems-docs.element.io/"+image_name)
+					pars["markdown"]=pars["markdown"].replace(image_name,"https://vector-im.github.io/emsdocs-images/"+image_name)
 					images.append(image_name)
 		pf.close()
 		if bs.call_post_api("pages",pars)=="Too big":
