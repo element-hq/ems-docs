@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="install-poc.html"><strong aria-hidden="true">1.</strong> How to Install a POC Environment</a></li><li class="chapter-item expanded "><a href="install-prod.html"><strong aria-hidden="true">2.</strong> How to Install a Production Environment</a></li><li class="chapter-item expanded "><a href="permalinks.html"><strong aria-hidden="true">3.</strong> Setting up Permalinks</a></li><li class="chapter-item expanded "><a href="saml.html"><strong aria-hidden="true">4.</strong> Setting up SSO/SAML</a></li><li class="chapter-item expanded "><a href="groupsync.html"><strong aria-hidden="true">5.</strong> Setting up Group Sync</a></li><li class="chapter-item expanded "><a href="dimension.html"><strong aria-hidden="true">6.</strong> Setting Up the Integration Manager</a></li><li class="chapter-item expanded "><a href="hookshot.html"><strong aria-hidden="true">7.</strong> Setting up GitLab, GitHub, and JIRA Integrations</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Last Updated: April 4, 2022 at 8:30pm London Time</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="install-poc.html"><strong aria-hidden="true">1.</strong> How to Install a POC Environment</a></li><li class="chapter-item expanded "><a href="install-prod.html"><strong aria-hidden="true">2.</strong> How to Install a Production Environment</a></li><li class="chapter-item expanded "><a href="permalinks.html"><strong aria-hidden="true">3.</strong> Setting up Permalinks</a></li><li class="chapter-item expanded "><a href="jitsi.html"><strong aria-hidden="true">4.</strong> Setting up Jitsi</a></li><li class="chapter-item expanded "><a href="saml.html"><strong aria-hidden="true">5.</strong> Setting up SSO/SAML</a></li><li class="chapter-item expanded "><a href="groupsync.html"><strong aria-hidden="true">6.</strong> Setting up Group Sync</a></li><li class="chapter-item expanded "><a href="dimension.html"><strong aria-hidden="true">7.</strong> Setting Up the Integration Manager</a></li><li class="chapter-item expanded "><a href="hookshot.html"><strong aria-hidden="true">8.</strong> Setting up GitLab, GitHub, and JIRA Integrations</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Last Updated: April 4, 2022 at 8:30pm London Time</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -780,7 +780,7 @@ directory again:</p>
 <pre><code class="language-bash">bash install.sh
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="configuring-permalinks"><a class="header" href="#configuring-permalinks">Configuring Permalinks</a></h1>
-<h2 id="on-element"><a class="header" href="#on-element">On Element</a></h2>
+<h2 id="element-extra-configurations"><a class="header" href="#element-extra-configurations">Element Extra Configurations</a></h2>
 <ul>
 <li>Copy sample file from <code>config-sample/element/permalinks.json</code> to
 <code>extra-config/element</code></li>
@@ -790,6 +790,23 @@ directory again:</p>
     &quot;permalinkPrefix&quot;: &quot;https://&lt;element fqdn&gt;&quot;
 }
 </code></pre>
+<ul>
+<li>Restart the install script</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="configuring-jitsi"><a class="header" href="#configuring-jitsi">Configuring Jitsi</a></h1>
+<p>By default, our installer will give you an instance of element-web configured to use the <code>meet.element.io</code> Jitsi server. If you would like to specify your own Jitsi server for your element-web instance to use, please follow these directions.</p>
+<h2 id="element-extra-configurations-1"><a class="header" href="#element-extra-configurations-1">Element Extra Configurations</a></h2>
+<ul>
+<li>Create a file called <code>jitsi.json</code> in the <code>extra-config/element</code> directory.</li>
+<li>Edit the file :</li>
+</ul>
+<pre><code class="language-lang-none">{
+      &quot;jitsi&quot;: {
+            &quot;preferredDomain&quot;: &quot;your.jitsi.example.org&quot;
+      }
+}
+</code></pre>
+<p>replacing <code>your.jitsi.example.org</code> with the hostname of your Jitsi server.</p>
 <ul>
 <li>Restart the install script</li>
 </ul>
@@ -965,7 +982,7 @@ to bot data</li>
 </li>
 <li>Restart the install script</li>
 </ul>
-<h2 id="on-element-1"><a class="header" href="#on-element-1">On element</a></h2>
+<h2 id="on-element"><a class="header" href="#on-element">On element</a></h2>
 <ul>
 <li>Copy sample file from <code>config-sample/element/dimension.json</code> to
 <code>extra-config/element</code></li>
@@ -1207,6 +1224,7 @@ a bridge to a new webhook</li>
 <li><a href="./install-poc.html">How to Install a POC Environment</a></li>
 <li><a href="./install-prod.html">How to Install a Production Environment</a></li>
 <li><a href="./permalinks.html">Setting up Permalinks</a></li>
+<li><a href="./jitsi.html">Setting up Jitsi</a></li>
 <li><a href="./saml.html">Setting up SSO/SAML</a></li>
 <li><a href="./groupsync.html">Setting up Group Sync</a></li>
 <li><a href="./dimension.html">Setting Up the Integration Manager</a></li>
