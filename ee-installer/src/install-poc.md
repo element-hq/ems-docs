@@ -173,6 +173,7 @@ Further, you need to make sure that your host is able to access the following ho
 - pypi.org
 - docker.io
 - *.docker.com
+- get.helm.sh
 
 Further, you will also need to make sure that your host can access your distributions' package repositories. As these hostnames can vary, it is beyond the scope of this documentation to enumerate them.
 
