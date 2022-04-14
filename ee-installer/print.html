@@ -292,6 +292,7 @@ sudo systemctl disable firewalld
 <li>api.snapcraft.io</li>
 <li>*.snapcraftcontent.com</li>
 <li>gitlab.matrix.org</li>
+<li>gitlab-registry.matrix.org</li>
 <li>pypi.org</li>
 <li>docker.io</li>
 <li>*.docker.com</li>
@@ -332,6 +333,13 @@ you will need to have a TURN server installed and available for Element to use.<
 <code>coturn</code>. Instructions on how to do that are available here:
 <a href="https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.md">https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.md</a>
 (Note: On EL, you can do <code>yum install coturn -y</code>.)</p>
+<p>Under &quot;Synapse Setup&quot; in the above instructions, you'll see what to change on the config. With the installer, you can create a file called <code>extra-config/synapse/turn.yml</code> and put the following in it:</p>
+<pre><code class="language-yaml">turn_uris: [ &quot;turn:turn.matrix.org?transport=udp&quot;, &quot;turn:turn.matrix.org?transport=tcp&quot; ]
+turn_shared_secret: &quot;n0t4ctuAllymatr1Xd0TorgSshar3d5ecret4obvIousreAsons&quot;
+turn_user_lifetime: 86400000
+turn_allow_guests: True
+</code></pre>
+<p>based on how you installed the TURN server. This will allow the installer to configure synapse to use your TURN server.</p>
 <h2 id="ssl-certificates"><a class="header" href="#ssl-certificates">SSL Certificates</a></h2>
 <p>For SSL Certificates, you have three options:</p>
 <ul>
@@ -958,7 +966,14 @@ on &quot;New client secret&quot;. This will be the &quot;Value&quot; of the crea
 <p>Restart the install script</p>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="configuring-dimension-integration-manager"><a class="header" href="#configuring-dimension-integration-manager">Configuring Dimension integration manager</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="configuring-dimension-integration-manager"><a class="header" href="#configuring-dimension-integration-manager">Configuring Dimension Integration Manager</a></h1>
+<h2 id="known-issues"><a class="header" href="#known-issues">Known Issues</a></h2>
+<p>The Dimension Integration Manager ships with a number of integrations that do not work in an on-premise environment. The following integrations are known to work with proper internet connectivity:</p>
+<ul>
+<li>Jitsi Widget</li>
+<li>Hookshot Frontend</li>
+</ul>
+<p>Please note that we recognise this situation is less than ideal. We will be working to improve the situation around integrations in the near future.</p>
 <h2 id="on-the-hosting-machine"><a class="header" href="#on-the-hosting-machine">On the hosting machine</a></h2>
 <ul>
 <li>Copy sample file from <code>config-sample/dimension/dimension.yml</code> to
