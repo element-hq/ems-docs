@@ -1,4 +1,13 @@
-# Configuring Dimension integration manager
+# Configuring Dimension Integration Manager
+
+## Known Issues
+
+The Dimension Integration Manager ships with a number of integrations that do not work in an on-premise environment. The following integrations are known to work with proper internet connectivity:
+
+- Jitsi Widget
+- Hookshot Frontend
+
+Please note that we recognise this situation is less than ideal. We will be working to improve the situation around integrations in the near future.
 
 ## On the hosting machine
 

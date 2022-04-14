@@ -170,6 +170,7 @@ Further, you need to make sure that your host is able to access the following ho
 - api.snapcraft.io
 - *.snapcraftcontent.com
 - gitlab.matrix.org
+- gitlab-registry.matrix.org
 - pypi.org
 - docker.io
 - *.docker.com
@@ -227,6 +228,17 @@ If you do not have an existing TURN server, we recommend installing
 `coturn`. Instructions on how to do that are available here:
 <https://github.com/matrix-org/synapse/blob/master/docs/turn-howto.md>
 (Note: On EL, you can do `yum install coturn -y`.)
+
+Under "Synapse Setup" in the above instructions, you'll see what to change on the config. With the installer, you can create a file called `extra-config/synapse/turn.yml` and put the following in it:
+
+```yaml
+turn_uris: [ "turn:turn.matrix.org?transport=udp", "turn:turn.matrix.org?transport=tcp" ]
+turn_shared_secret: "n0t4ctuAllymatr1Xd0TorgSshar3d5ecret4obvIousreAsons"
+turn_user_lifetime: 86400000
+turn_allow_guests: True
+```
+
+based on how you installed the TURN server. This will allow the installer to configure synapse to use your TURN server.
 
 ## SSL Certificates
 
