@@ -13,7 +13,13 @@ bookstack_host="host"
 bookstack_port="port"
 bookstack_api_secret_id="secret_id"
 bookstack_api_secret="secret"
+bookstack_hosted_domain="mydomain"
 
+
+# extra_url should be filled in if your mdbook is not hosted at / on a server. This would be all the extra stuff from / to the root
+# of your mdbook for the purposes of rewrite rule generation.
+
+extra_url=""
 
 # Establish a bookstack connection
 
@@ -45,10 +51,14 @@ f.close()
 print("Creating a book named: '"+pars["name"]+"' in Bookstack....")
 
 newbook=bs.call_post_api("books",pars)
+print(newbook)
 book_id=str(newbook["id"])
 book_slug=str(newbook["slug"])
 chapter_id=None
 failed={}
+
+
+rewrite_rules=open("rewrite.conf","w")
 
 # Read the SUMMARY.md file to determine chapter / page layout and import pages into Bookstack
 
@@ -58,7 +68,8 @@ for line in f:
 	if "-" in line and ".md" in line.lower():
 		# We have a link to a page that we need to go get and recreate in Bookstack.
 		page_title=line.split("[")[1].split("]")[0]
-		page_file=filepath+"/"+line.split("(")[1].split(")")[0]	
+		page_filename=line.split("(")[1].split(")")[0]
+		page_file=filepath+"/"+page_filename
 		special_case=0
 		pars={}
 		pars["book_id"]=book_id
@@ -109,6 +120,13 @@ for line in f:
 				if special_case==2:
 					mypars["name"]="Public Slack Bridge"
 				bs.call_put_api("pages/"+str(pagestub["id"]),mypars)
+		# code to put the requisite rewrite rule in place
+		if len(extra_url)>0:
+			rewrite_rules.write("\tlocation /"+extra_url+"/"+page_filename.replace(".md",".html")+" {\n")
+		else:
+			rewrite_rules.write("\tlocation /"+page_filename.replace(".md",".html")+" {\n")
+		rewrite_rules.write("\t\treturn 301 $scheme://"+bookstack_hosted_domain+"/books/"+book_slug+"/page/"+pagestub["slug"]+";\n")
+		rewrite_rules.write("\t}\n\n")
 
 	elif "-" in line:
 		# These were section headers in the SUMMARY.md and don't have an equivalent in bookstack.
@@ -125,6 +143,7 @@ for line in f:
 			chapter_id=str(newchapter["id"])
 
 f.close()
+rewrite_rules.close()
 print()
 print("The following files failed to automatically convert via the API due to being too large:")
 print
