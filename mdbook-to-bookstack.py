@@ -51,6 +51,7 @@ f.close()
 print("Creating a book named: '"+pars["name"]+"' in Bookstack....")
 
 newbook=bs.call_post_api("books",pars)
+print(newbook)
 book_id=str(newbook["id"])
 book_slug=str(newbook["slug"])
 chapter_id=None
