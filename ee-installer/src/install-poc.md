@@ -158,7 +158,7 @@ In a default Ubuntu installation, these ports are allowed through the
 firewall. You will need to ensure that these ports are passed through your
 firewall.
 
-For EL, you need to disable the firewall with these command:
+For EL, you need to disable firewalld with these commands:
 
 ```bash
 sudo systemctl stop firewalld
