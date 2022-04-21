@@ -910,6 +910,7 @@ but it'll cause new rooms to be generated.</li>
 that will not get kicked from rooms even if they don't belong to them
 according to LDAP. This is useful for things like the auditbot. Patterns
 listed here will be wrapped in ^ and $ before matching.</li>
+<li><code>verify_tls</code> : Optional. If doing a POC with self-signed certs, set this to 0. The default value is 1.</li>
 </ul>
 </li>
 </ul>
@@ -994,6 +995,7 @@ widgets.</li>
 <li><code>bot_data_size</code>: The size of the space allocated to bot data.</li>
 <li><code>bot_data_path</code>: The path on the hosting machine to the space allocated
 to bot data</li>
+<li><code>verify_tls</code> : Optional. If doing a POC with self-signed certs, set this to 0. The default is 1.</li>
 </ul>
 </li>
 <li>Restart the install script</li>
@@ -1045,6 +1047,7 @@ openssl - <code>openssl genrsa -out key.pem 4096</code></li>
 managers. Necessary for integration with dimension.</li>
 <li><code>bot_name</code> : The name of hookshot bot</li>
 <li><code>bot_avatar</code> : An <code>mxc://</code> uri to the hookshot bot avatar image.</li>
+<li><code>verify_tls</code> : Optional. If doing a POC with self-signed certificates, set this to 0. Defaults to 1.</li>
 </ul>
 </li>
 <li>Restart the install script</li>
