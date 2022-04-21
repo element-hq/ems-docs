@@ -28,6 +28,7 @@ Please note that we recognise this situation is less than ideal. We will be work
   - `bot_data_size`: The size of the space allocated to bot data.
   - `bot_data_path`: The path on the hosting machine to the space allocated
     to bot data
+  - `verify_tls` : Optional. If doing a POC with self-signed certs, set this to 0. The default is 1.
 - Restart the install script
 
 ## On element

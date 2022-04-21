@@ -21,6 +21,7 @@ hookshot once installed.
      managers. Necessary for integration with dimension.
   - `bot_name` : The name of hookshot bot
   - `bot_avatar` : An `mxc://` uri to the hookshot bot avatar image.
+  - `verify_tls` : Optional. If doing a POC with self-signed certificates, set this to 0. Defaults to 1.
 - Restart the install script
 
 ## Enabling GitHub Integration

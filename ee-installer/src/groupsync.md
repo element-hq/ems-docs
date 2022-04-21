@@ -30,6 +30,7 @@ only supports a single node, non-federated configuration.
     that will not get kicked from rooms even if they don't belong to them
     according to LDAP. This is useful for things like the auditbot. Patterns
     listed here will be wrapped in ^ and $ before matching.
+  - `verify_tls` : Optional. If doing a POC with self-signed certs, set this to 0. The default value is 1.
 
 ## Configuring the source
 
